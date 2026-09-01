@@ -18,11 +18,11 @@ Create an internationally readable, Malaysia-first job-search package that posit
 
 Completed on 2026-09-01. Established a public-safe repository, generated approved ATS-readable one-page CV variants, prepared and validated consistent LinkedIn/GitHub positioning, and enabled applications to begin without depending on the website.
 
-### 2. Case-study content — active
+### 2. Case-study content — completed on 2026-09-01
 
-Produce disclosure-reviewed SAFAPAC and AnotherEdenAI flagship narratives, a compact AIRIS contribution, and original sanitized visual contracts. Keep the deliverables framework-neutral and reusable for the later Astro/MDX implementation.
+Produced disclosure-reviewed SAFAPAC and AnotherEdenAI flagship narratives, a compact AIRIS contribution, and original sanitized visual contracts. The framework-neutral content is reusable for the later Astro/MDX implementation.
 
-### 3. UX/UI specification
+### 3. UX/UI specification — next
 
 Use `ux-ui-bridge` to convert the approved technical-editorial direction into a design system, component hierarchy, responsive states, accessibility behavior, and page specifications.
 

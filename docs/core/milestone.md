@@ -1,6 +1,6 @@
-# Active milestone: Case-study content
+# Completed milestone: Case-study content
 
-- Status: active
+- Status: completed on 2026-09-01
 - Activated: 2026-09-01
 
 ## Outcome
@@ -103,12 +103,19 @@ The content contract must remain readable without a site runtime. It must not as
 ### Feature 2C — AIRIS supporting contribution package
 
 - Type: build (content and evidence)
-- Status: planned
+- Status: completed
 - Outcome: deliver a compact supporting-contribution narrative and a sanitized concurrency/load-testing visual contract.
 - Scope: structured narrative covering AI workload/concurrency testing, bottleneck diagnosis, optimization research, accepted engineering handoff, and stakeholder training; newly redrawn flow from test workload through observations, diagnosis, research, handoff, and training.
 - Non-goals: architecture ownership, implementation of recommendations, production performance claims, confidential load-test values, internal dashboards/reports, copied visuals, or a dedicated AIRIS route.
 - Entry gate: AIRIS claims are separated from SAFAPAC ownership and reconciled with the approved profile contract and private evidence categories.
 - Exit gate: the contribution remains compact and accurately scoped, the visual is sanitized and newly redrawn, and the public-boundary check passes.
+- Durable outputs:
+  - `docs/content/case-studies/airis.md`: compact supporting-contribution entry with approved role language, contribution narrative, limitations, and disclosure state.
+  - `docs/content/visual-contracts/airis.md`: one newly redrawn concurrency/load-testing flow contract showing generalized workload, observation, diagnosis, research, handoff, and training stages.
+  - `docs/content/disclosure/airis.md`: claim/source record that keeps detailed private architecture, configuration, metrics, and report material excluded.
+- Narrative contract: identify AIRIS as a supporting contribution at AMIC; describe AI workload and concurrency testing, bottleneck diagnosis, optimization research, an optimization/testing handoff accepted by the senior engineer, and stakeholder training; state that Hydar did not own the overall AIRIS architecture or implement the recommendations; close with the absence of public production-improvement claims.
+- Visual contract rules: `airis-load-testing` uses generalized stages for test workload, concurrent requests, observed signals, bottleneck diagnosis, optimization research, engineering handoff, and stakeholder training. It may name Locust as an approved supporting technology when tied to the testing contribution, but it must not show private service names, ports, model/configuration details, exact load values, dashboards, report figures, customer data, or resulting performance claims. It requires `newly-redrawn` status, alt text, caption, source class, and exclusions.
+- Evidence strategy: use the approved career/profile and disclosure contracts as public authority; use private AIRIS evidence only to confirm the contribution boundary; validate the durable paths with `git diff --check`, `bash scripts/check-public-boundary.sh`, and content-specific exclusion checks. Do not retain private report excerpts or detailed audit ledgers.
 - Acceptance:
   - 2C-01: AIRIS is presented as a supporting contribution, not a flagship or architecture-ownership claim.
   - 2C-02: Testing, diagnosis, research, handoff, and training claims are preserved without claiming recommendation implementation or resulting production improvement.
@@ -116,18 +123,23 @@ The content contract must remain readable without a site runtime. It must not as
   - 2C-04: No private report content, internal metric, copied diagram, internal identifier, phone number, or unsupported result enters the durable content.
 - Durable evidence: framework-neutral AIRIS content entry, sanitized visual contract, and claim/disclosure record.
 - Route: `contract-auditor -> feature-planner -> builder-executor -> tdd-loop`
-- Human checkpoint: Hydar's manual disclosure review of the contribution boundary and load-testing visual before staging.
+- Human checkpoint: passed — Hydar approved the contribution boundary and newly redrawn load-testing visual on 2026-09-01.
+- Evidence: framework-neutral content, visual and disclosure records are present; `git diff --check`, staged-path inspection, `bash scripts/check-public-boundary.sh`, and content-specific exclusion checks pass.
 - Commit boundary: one completed-feature commit containing the durable AIRIS content, evidence/disclosure record, validation updates, and milestone progress.
 
 ## Milestone exit gate
 
 - [x] SAFAPAC narrative and visual contracts pass manual disclosure review.
 - [x] AnotherEdenAI narrative and visual contracts are grounded in the current public repository and retain active-development wording.
-- [ ] AIRIS narrative and sanitized concurrency/load-testing visual contract preserve the supporting-contribution boundary.
-- [ ] All packages use the shared framework-neutral structured content contract and include limitations, provenance class, alt text, and exclusions.
-- [ ] No confidential employer material, phone number, copied visual, or unsupported maturity/ownership/performance claim is present.
-- [ ] Public-boundary validation and content-specific checks pass.
-- [ ] UX/UI specification, Astro/MDX implementation, deployment, domain configuration, and LinkedIn launch work remain deferred to later milestones.
+- [x] AIRIS narrative and sanitized concurrency/load-testing visual contract preserve the supporting-contribution boundary.
+- [x] All packages use the shared framework-neutral structured content contract and include limitations, provenance class, alt text, and exclusions.
+- [x] No confidential employer material, phone number, copied visual, or unsupported maturity/ownership/performance claim is present.
+- [x] Public-boundary validation and content-specific checks pass.
+- [x] UX/UI specification, Astro/MDX implementation, deployment, domain configuration, and LinkedIn launch work remain deferred to later milestones.
+
+## Completion summary
+
+Milestone 2 delivered disclosure-reviewed, framework-neutral content packages for the approved hierarchy: SAFAPAC as the primary professional case study, AnotherEdenAI as the primary personal case study, and AIRIS as a compact supporting contribution. Each package includes structured narrative content, disclosure boundaries, and visual contracts with alt text and explicit exclusions. SAFAPAC and AIRIS visuals are newly redrawn and sanitized; AnotherEdenAI visuals are grounded in the current public repository and retain actively-developed wording. UX/UI specification, Astro/MDX implementation, deployment, domain configuration, and launch publishing remain deferred.
 
 ## Planning decisions and gaps
 

@@ -28,6 +28,7 @@ Private local references include the earlier CV, AMIC project documentation and 
 - The public AnotherEdenAI repository was rechecked on 2026-09-01 at public `main` revision `b56766c`. The README and first-party source confirm the graph ETL, Neo4j model, LangGraph workflow, typed validation/correction paths, candidate preparation, and SSE web path used by the planned narrative. The repository's current opening still uses maturity language that conflicts with the approved active-development contract; the portfolio must follow the approved contract and must not infer production readiness from repository activity.
 - Public-source implementation claims for AnotherEdenAI must be rechecked at feature execution time because the repository remains actively developed.
 - SAFAPAC and AIRIS source materials remain local evidence only. Future durable source notes may name approved source categories and public links, but may not reproduce private report text, screenshots, diagrams, formulas, internal identifiers, or sensitive measurements.
+- AIRIS evidence review confirms that detailed architecture, service configuration, model details, security material, and performance/optimization artifacts are private source material. The portfolio contribution is limited to the approved workload/concurrency testing, bottleneck diagnosis, optimization research, accepted engineering handoff, and stakeholder training claims.
 
 ## Known gaps and conservative policy
 
