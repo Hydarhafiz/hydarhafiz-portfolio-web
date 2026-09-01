@@ -72,12 +72,23 @@ The content contract must remain readable without a site runtime. It must not as
 ### Feature 2B — AnotherEdenAI flagship content package
 
 - Type: build (content and public-source evidence)
-- Status: planned
+- Status: completed
 - Outcome: deliver the primary personal case-study narrative and public-repository-grounded visual contract set.
 - Scope: structured narrative covering the graph ETL, Neo4j retrieval, LangGraph workflow, typed validation, bounded retry/correction/fallback behavior, candidate preparation, and streaming web path; newly drawn graph/recommendation pipeline and validation/fallback visual contracts based on the current public repository.
 - Non-goals: changing the separate AnotherEdenAI repository, claiming production maturity or completed evaluation, claiming proven recommendation quality or cost/performance improvement, claiming live deployment, or beginning portfolio UI design.
 - Entry gate: public repository HEAD and relevant first-party source files are rechecked at execution time; active-development wording remains explicit.
 - Exit gate: every implementation claim links to current public evidence, current work and limitations are visible, visuals distinguish implemented paths from future work, and public-boundary checks pass.
+- Durable outputs:
+  - `docs/content/case-studies/anotheredenai.md`: structured personal-project narrative with active-development status, public-source links, implementation claims, and explicit limitations.
+  - `docs/content/visual-contracts/anotheredenai.md`: contracts for the public ETL/recommendation pipeline and its typed validation/correction/fallback boundary.
+  - `docs/content/disclosure/anotheredenai.md`: claim/source record that quarantines stale README maturity wording and records the current public-source review state.
+- Narrative contract: introduce AnotherEdenAI as an actively developed personal project; explain the problem as source-grounded lineup recommendations constrained by a player's roster; trace the public implementation from wiki ETL through Pydantic models and idempotent Neo4j loading, graph retrieval and LangGraph orchestration, candidate preparation, bounded analysis, typed output validation, and SSE progress delivery; close with current evaluation, recommendation reliability, graph quality, and cost-control work as active limitations.
+- Public-source contract: implementation claims must be traceable to the current public repository's README and first-party source files for graph wiring, shared state, candidate preparation, typed formatting, streaming, and loading. The public repository's current opening uses stronger maturity wording than this portfolio allows; the case study must use the approved active-development wording and must not imply that repository activity proves production readiness.
+- Visual contract rules:
+  - `anotheredenai-pipeline` shows the public data-to-recommendation path: source data and ETL, Neo4j graph, roster/query input, LangGraph workflow, candidate preparation, analysis, typed formatting, and SSE/web result delivery.
+  - `anotheredenai-guardrails` shows the public hard-field boundary: canonical input and retrieval, candidate legality constraints, bounded validation/correction/fallback handling, typed output formatting, and graceful failure paths.
+  - Both contracts must carry public source links, active-development status, alt text, captions, implemented-vs-future notes, and explicit exclusions for production, evaluation, deployment, quality, and measured-improvement claims.
+- Evidence strategy: use the current public repository as the implementation oracle and the approved recruiter/profile contract as the public wording boundary. Recheck the public HEAD before staging; validate the durable paths with `git diff --check`, `bash scripts/check-public-boundary.sh`, and content-specific source/claim checks. Do not modify the separate AnotherEdenAI repository.
 - Acceptance:
   - 2B-01: Narrative identifies AnotherEdenAI as an actively developed personal project and preserves the approved public-description boundary.
   - 2B-02: Graph, workflow, validation, and streaming claims are traceable to the current public repository rather than private copies or assumptions.
@@ -85,7 +96,8 @@ The content contract must remain readable without a site runtime. It must not as
   - 2B-04: No completed-quality, production, live-deployment, guaranteed-factuality, or unsupported measured-improvement claim is published.
 - Durable evidence: framework-neutral AnotherEdenAI content entry, public-source note, visual contracts, and source-gap note if the public README remains stale.
 - Route: `feature-planner -> builder-executor -> tdd-loop`
-- Human checkpoint: Hydar's manual review of active-development wording and the selected public visual scope before staging.
+- Human checkpoint: passed — Hydar approved the active-development wording and both public-source-grounded visual contracts on 2026-09-01.
+- Evidence: current public source review recorded at revision `b56766c`; framework-neutral content, visual and disclosure records are present; `git diff --check`, staged-path inspection, `bash scripts/check-public-boundary.sh`, and content-specific source/claim checks pass.
 - Commit boundary: one completed-feature commit containing the durable AnotherEdenAI content, visual contracts, source notes, validation updates, and milestone progress.
 
 ### Feature 2C — AIRIS supporting contribution package
@@ -110,7 +122,7 @@ The content contract must remain readable without a site runtime. It must not as
 ## Milestone exit gate
 
 - [x] SAFAPAC narrative and visual contracts pass manual disclosure review.
-- [ ] AnotherEdenAI narrative and visual contracts are grounded in the current public repository and retain active-development wording.
+- [x] AnotherEdenAI narrative and visual contracts are grounded in the current public repository and retain active-development wording.
 - [ ] AIRIS narrative and sanitized concurrency/load-testing visual contract preserve the supporting-contribution boundary.
 - [ ] All packages use the shared framework-neutral structured content contract and include limitations, provenance class, alt text, and exclusions.
 - [ ] No confidential employer material, phone number, copied visual, or unsupported maturity/ownership/performance claim is present.
