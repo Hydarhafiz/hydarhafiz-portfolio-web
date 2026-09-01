@@ -9,7 +9,10 @@
     "resume:validate": "node scripts/validate-resume.mjs public/resume/hydar-hafiz-bin-hydzelan-resume.pdf --variant public",
     "resume:validate:private": "node scripts/validate-resume.mjs .private/hydar-hafiz-bin-hydzelan-application-resume.pdf --variant application",
     "resume:check": "npm run resume:render && npm run resume:validate",
-    "resume:check:all": "npm run resume:render && npm run resume:render:private && npm run resume:validate && npm run resume:validate:private"
+    "resume:check:all": "npm run resume:render && npm run resume:render:private && npm run resume:validate && npm run resume:validate:private",
+    "profile:validate": "node scripts/validate-profile-alignment.mjs",
+    "profile:self-test": "node scripts/validate-profile-alignment.mjs --self-test",
+    "career:validate": "npm run resume:validate && npm run profile:validate"
   },
   "engines": {
     "node": ">=22"

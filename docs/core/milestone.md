@@ -42,7 +42,7 @@ Make Hydar ready to apply for backend software engineering roles with a confiden
 ## Feature C — Recruiter-profile alignment package
 
 - Type: build
-- Status: pending
+- Status: completed
 - Route: `feature-planner -> builder-executor -> tdd-loop`
 - Outcome: provide consistent, ready-to-apply LinkedIn and GitHub profile copy and a calibrated AnotherEdenAI public-description contract.
 - Scope: headline, About/summary, location and availability, AMIC/PETRONAS descriptions, project summaries, capability groupings, and an external-update checklist.
@@ -51,7 +51,9 @@ Make Hydar ready to apply for backend software engineering roles with a confiden
   - C-01: Identity, dates, role, location, availability, certifications, and project ownership match the CV contract.
   - C-02: AnotherEdenAI is described as actively developed and does not use unsupported production or completion claims.
   - C-03: LinkedIn and GitHub updates are concise and ready for the user to apply.
-- Manual checkpoint: user reviews external-facing copy before updating accounts.
+  - C-04: A durable validator detects stale positioning, prohibited claims, missing career evidence, and copy that exceeds platform-oriented length limits.
+- Manual checkpoint: passed — user approved the package, applied the relevant LinkedIn/GitHub updates, and enabled LinkedIn Open to Work on 2026-09-01.
+- Evidence: the durable validator confirms required career facts and public references, platform-oriented field lengths, checklist coverage, public-phone exclusion, and absence of prohibited claims; negative self-tests prove failures for stale claims, missing facts, excessive field length and public phone exposure; the public resume/profile combined validation and repository boundary guard pass.
 - Commit boundary: one completed-feature commit.
 
 ## Milestone exit gate
