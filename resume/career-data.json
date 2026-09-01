@@ -1,0 +1,98 @@
+{
+  "basics": {
+    "name": "Hydar Hafiz bin Hydzelan",
+    "title": "Backend Software Engineer",
+    "location": "Bangi, Selangor, Malaysia",
+    "mobility": "Open to relocation across Malaysia",
+    "availability": "Available November 2026",
+    "email": "shogunix.chan@gmail.com",
+    "links": [
+      {
+        "label": "LinkedIn",
+        "display": "linkedin.com/in/hydar-hafiz-356128233",
+        "url": "https://www.linkedin.com/in/hydar-hafiz-356128233"
+      },
+      {
+        "label": "GitHub",
+        "display": "github.com/Hydarhafiz",
+        "url": "https://github.com/Hydarhafiz"
+      }
+    ]
+  },
+  "summary": "Backend software engineer with hands-on ownership of FastAPI/PostgreSQL services and AWS deployment operations. Experienced taking over early-stage systems, improving calculation traceability and release reliability, and designing graph-backed AI workflows with deterministic validation and bounded LLM analysis. AWS Certified Machine Learning Engineer – Associate.",
+  "capabilities": [
+    {
+      "category": "Backend",
+      "items": ["Python", "FastAPI", "REST APIs", "PostgreSQL", "SQL", "Async Python", "Pytest"]
+    },
+    {
+      "category": "Cloud & DevOps",
+      "items": ["AWS", "Docker", "GitHub Actions", "GHCR", "Nginx", "Linux", "CI/CD"]
+    },
+    {
+      "category": "Applied AI",
+      "items": ["Neo4j", "GraphRAG", "Knowledge Graphs", "LLM Integration", "Deterministic Retrieval", "Validation & Fallback"]
+    },
+    {
+      "category": "Supporting Technologies",
+      "items": ["TypeScript", "Angular", "Ionic", "Node.js", "MongoDB", "Locust", "Git"]
+    }
+  ],
+  "experience": [
+    {
+      "role": "Backend Software Developer (Contract)",
+      "organization": "Aerospace Malaysia Innovation Centre",
+      "dates": "Nov 2025 – Oct 2026",
+      "bullets": [
+        "Own backend, database and AWS delivery for SAFAPAC, a deployed beta sustainable aviation fuel analysis platform developed by AMIC in collaboration with Airbus; took over an early boilerplate implementation and substantially rebuilt and productionized the assigned scope.",
+        "Collaborated with five TEA-SAF domain researchers and one frontend developer to restructure FastAPI/PostgreSQL schema and calculation workflows, improving formula traceability, validation, testability and documentation for a five-person Airbus internal pilot group.",
+        "Built containerized staging and production delivery using Docker, GHCR and GitHub Actions; operated AWS VPC, EC2/RDS, S3/CloudFront and Cognito integration alongside Nginx and HTTPS.",
+        "For AIRIS, designed AI workload and concurrency tests, diagnosed bottlenecks, and authored an optimization/testing handoff accepted by the senior engineer; also supported stakeholder training."
+      ]
+    },
+    {
+      "role": "Web & Mobile Development Intern",
+      "organization": "PETRONAS Digital Sdn Bhd",
+      "dates": "Jan 2024 – Aug 2024",
+      "bullets": [
+        "Collaborated within a five-person project team on a MEAN/Ionic booking prototype used to introduce new staff and interns to the technology stack.",
+        "Developed Angular data views and paired on Ionic booking, QR check-in, validation and Android deployment while documenting setup and development practices."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "name": "AnotherEdenAI",
+      "context": "Personal project · Active development",
+      "dates": "Dec 2025 – Present",
+      "url": "https://github.com/Hydarhafiz/AnotherEdenAI",
+      "bullets": [
+        "Designing an AI-assisted lineup recommendation system using Neo4j graph retrieval, deterministic candidate generation, typed backend validation and bounded LLM analysis.",
+        "Implemented capability-evidence materialization, package-first candidate search, token-budgeted analysis, correction and fallback paths, and provider-neutral interfaces to improve cost control and reliability."
+      ]
+    }
+  ],
+  "education": {
+    "institution": "Universiti Teknologi PETRONAS",
+    "qualification": "Bachelor of Computer Science (Hons)",
+    "dates": "May 2022 – Aug 2025",
+    "detail": "CGPA: 3.51"
+  },
+  "certifications": [
+    {
+      "name": "AWS Certified Machine Learning Engineer – Associate",
+      "issued": "Mar 2026",
+      "url": "https://www.credly.com/badges/7e465217-d4bb-4080-a529-259747407fa3/public_url"
+    },
+    {
+      "name": "AWS Certified Cloud Practitioner",
+      "issued": "Sep 2025",
+      "url": "https://www.credly.com/badges/b8964358-719b-4a4d-81c2-a0e1e6602550/public_url"
+    },
+    {
+      "name": "Microsoft Certified: Azure AI Fundamentals",
+      "issued": "Jun 2025",
+      "url": "https://learn.microsoft.com/en-us/users/hydarhafizbinhydzelan-7550/credentials/255781426dc44f9c"
+    }
+  ]
+}

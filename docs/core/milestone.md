@@ -24,17 +24,19 @@ Make Hydar ready to apply for backend software engineering roles with a confiden
 ## Feature B — ATS-ready CV V2
 
 - Type: build
-- Status: pending
+- Status: completed
 - Route: `feature-planner -> builder-executor -> tdd-loop`
 - Outcome: generate a recruiter-scannable, one-page backend CV from structured verified career data.
-- Scope: semantic resume source, print CSS, automated Chromium rendering, a public PDF without phone, and an ignored private application PDF with phone.
+- Scope: structured career data, semantic resume source, locally bundled Source Sans 3 typography with comfortable left-aligned spacing, automated Chromium rendering, PDF text/page validation, a public PDF without phone, and an ignored private application PDF with phone.
 - Non-goals: multi-page CV, photo, self-rated skill levels, unsupported metrics, or DOCX at launch.
 - Acceptance:
   - B-01: CV uses the approved backend/cloud/applied-AI positioning and accurate evidence hierarchy.
   - B-02: Public and private outputs share professional content; only the private variant contains the phone number.
   - B-03: PDF is one page with selectable text, sensible extraction order, working links, and accurate metadata.
   - B-04: No stale or unsupported percentage, performance, accuracy, or ownership claim remains.
-- Manual checkpoint: user approves final CV wording and rendered application PDF.
+  - B-05: SAFAPAC quantitative scope distinguishes five domain researchers and one frontend collaborator from the separate five-person Airbus internal pilot group.
+- Manual checkpoint: passed — user approved both the public and private rendered PDFs on 2026-09-01.
+- Evidence: both variants pass automated one-page PDF validation with selectable ATS text, required wording, working links and accurate metadata; the public PDF contains no phone number, the ignored private PDF contains the configured phone number, the public-boundary guard passes, Source Sans 3 is embedded locally, and the user approved both rendered variants.
 - Commit boundary: one completed-feature commit containing only public-safe artifacts.
 
 ## Feature C — Recruiter-profile alignment package
