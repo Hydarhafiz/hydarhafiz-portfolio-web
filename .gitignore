@@ -1,0 +1,25 @@
+# Ephemeral SDD workflow state
+.sdd/
+
+# Confidential and private source material
+/portfolio source/
+/Hydar Hafiz Hydzelan - Resume(Software AI Engineer).pdf
+/.private/
+
+# Local configuration and credentials
+.env
+.env.*
+*.local
+
+# Dependencies and generated output
+node_modules/
+.astro/
+dist/
+coverage/
+playwright-report/
+test-results/
+
+# Local operating-system metadata
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
