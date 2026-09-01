@@ -2,7 +2,13 @@
 
 Source for the public portfolio and resume of Hydar Hafiz bin Hydzelan, a backend engineer focused on cloud and applied AI systems.
 
-The project is currently in the job-search foundation milestone. The approved first launch will use Astro, TypeScript, MDX, selective React components, and Cloudflare Pages.
+The job-search foundation milestone is complete. The repository now contains an approved public resume, a private application-resume workflow, recruiter-profile alignment copy, and automated public-boundary and career-content validation. Case-study content is the next planned milestone; the approved first website launch will use Astro, TypeScript, MDX, selective React components, and Cloudflare Pages.
+
+## Job-search assets
+
+- [Public resume](public/resume/hydar-hafiz-bin-hydzelan-resume.pdf)
+- [Recruiter-profile alignment package](docs/career/profile-alignment.md)
+- Private application resume generated locally through the documented ignored-contact workflow
 
 ## Public-source boundary
 

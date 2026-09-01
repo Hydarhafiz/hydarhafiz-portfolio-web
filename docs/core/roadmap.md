@@ -14,11 +14,11 @@ Create an internationally readable, Malaysia-first job-search package that posit
 
 ## Milestones
 
-### 1. Job-search foundation — active
+### 1. Job-search foundation — completed
 
-Establish a public-safe repository, generate an ATS-readable one-page CV in public and private variants, and prepare consistent LinkedIn/GitHub positioning. Exit when applications can begin without depending on the website.
+Completed on 2026-09-01. Established a public-safe repository, generated approved ATS-readable one-page CV variants, prepared and validated consistent LinkedIn/GitHub positioning, and enabled applications to begin without depending on the website.
 
-### 2. Case-study content
+### 2. Case-study content — next
 
 Produce disclosure-reviewed SAFAPAC and AnotherEdenAI flagship narratives, a compact AIRIS contribution, and original sanitized visual contracts.
 
@@ -33,6 +33,8 @@ Build the Astro/TypeScript/MDX site through feature-level implementation and ver
 ### 5. Deployment and launch
 
 Connect GitHub preview deployments and the protected production branch to Cloudflare Pages, configure `hydarhafiz.com`, enable aggregate analytics, and complete final disclosure, accessibility, responsive, SEO, and rollback checks.
+
+- After the site is successfully live and launch checks pass, create a customized LinkedIn post announcing Hydar's availability for backend software engineering opportunities and introducing the live portfolio. Hydar must review and publish the post; do not publish it automatically.
 
 ## Deferred scope
 

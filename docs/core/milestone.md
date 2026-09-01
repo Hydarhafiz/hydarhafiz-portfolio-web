@@ -1,4 +1,6 @@
-# Active milestone: Job-search foundation
+# Completed milestone: Job-search foundation
+
+- Status: completed on 2026-09-01
 
 ## Outcome
 
@@ -56,10 +58,15 @@ Make Hydar ready to apply for backend software engineering roles with a confiden
 - Evidence: the durable validator confirms required career facts and public references, platform-oriented field lengths, checklist coverage, public-phone exclusion, and absence of prohibited claims; negative self-tests prove failures for stale claims, missing facts, excessive field length and public phone exposure; the public resume/profile combined validation and repository boundary guard pass.
 - Commit boundary: one completed-feature commit.
 
-## Milestone exit gate
+## Milestone exit gate — passed
 
-- Private application CV is accurate, approved, one page, and includes the phone number.
-- Public resume omits the phone number.
-- LinkedIn/GitHub alignment copy is approved and ready to apply.
-- Public repository contains no prohibited source or private-contact material.
-- Applications can begin without waiting for the portfolio site or AnotherEdenAI completion.
+- [x] Private application CV is accurate, approved, one page, and includes the phone number.
+- [x] Public resume omits the phone number.
+- [x] LinkedIn/GitHub alignment copy is approved and ready to apply.
+- [x] User applied the relevant LinkedIn/GitHub changes and enabled LinkedIn Open to Work.
+- [x] Public repository contains no prohibited source or private-contact material.
+- [x] Applications can begin without waiting for the portfolio site or AnotherEdenAI completion.
+
+## Completion summary
+
+Milestone 1 established the public-source boundary, deterministic public/private CV workflow, approved one-page backend CV, recruiter-profile copy, and automated career-content validation. Temporary workflow state and generated previews were purged; the private application CV and private contact input remain ignored local assets. The full feature plan remains here as the historical milestone record until the next milestone is activated.
