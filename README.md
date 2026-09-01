@@ -2,7 +2,7 @@
 
 Source for the public portfolio and resume of Hydar Hafiz bin Hydzelan, a backend engineer focused on cloud and applied AI systems.
 
-The job-search foundation, case-study content, and UX/UI specification milestones are complete. The repository contains an approved public resume, a private application-resume workflow, recruiter-profile alignment copy, disclosure-reviewed framework-neutral case-study packages, and an implementation-ready UX/UI specification. The later Astro, TypeScript, MDX, selective React, and Cloudflare Pages implementation remains deferred pending UX/UI approval.
+The job-search foundation, case-study content, and UX/UI specification milestones are complete, and the Astro portfolio implementation milestone is active. The repository contains an approved public resume, a private application-resume workflow, recruiter-profile alignment copy, disclosure-reviewed framework-neutral case-study packages, and the approved implementation-ready UX/UI specification. Cloudflare Pages deployment, domain configuration, analytics, and LinkedIn launch remain deferred.
 
 ## Job-search assets
 

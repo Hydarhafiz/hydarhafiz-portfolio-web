@@ -1,0 +1,33 @@
+<button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+  <span class="theme-toggle__mark" aria-hidden="true">◐</span>
+  <span class="theme-toggle__label">Dark theme</span>
+</button>
+
+<script>
+  const themeButton = document.querySelector<HTMLButtonElement>("[data-theme-toggle]");
+
+  if (themeButton) {
+    const root = document.documentElement;
+
+    const syncThemeControl = () => {
+      const isDark = root.dataset.theme === "dark";
+      themeButton.setAttribute("aria-pressed", String(isDark));
+      themeButton.querySelector(".theme-toggle__label")!.textContent = isDark ? "Light theme" : "Dark theme";
+      themeButton.setAttribute("aria-label", isDark ? "Switch to light theme" : "Switch to dark theme");
+    };
+
+    syncThemeControl();
+
+    themeButton.addEventListener("click", () => {
+      const nextTheme = root.dataset.theme === "dark" ? "light" : "dark";
+      root.dataset.theme = nextTheme;
+      syncThemeControl();
+
+      try {
+        localStorage.setItem("theme", nextTheme);
+      } catch {
+        // The current theme remains usable when storage is unavailable.
+      }
+    });
+  }
+</script>

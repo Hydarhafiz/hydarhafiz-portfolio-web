@@ -1,0 +1,74 @@
+---
+import ThemeToggle from "./ThemeToggle.astro";
+
+interface Props {
+  currentPath: string;
+}
+
+const { currentPath } = Astro.props;
+const workIsCurrent = currentPath === "/" || currentPath === "/safapac" || currentPath === "/anotheredenai";
+const resumeIsCurrent = currentPath === "/resume";
+---
+
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="brand" href="/" aria-label="Hydar Hafiz home">
+      <span class="brand__name">Hydar Hafiz</span>
+      <span class="brand__role">Backend Software Engineer</span>
+    </a>
+
+    <nav class="primary-nav primary-nav--desktop" aria-label="Primary navigation">
+      <a href="/#work" aria-current={workIsCurrent ? "page" : undefined}>Work</a>
+      <a href="/resume" aria-current={resumeIsCurrent ? "page" : undefined}>Resume</a>
+      <a href="mailto:shogunix.chan@gmail.com">Email</a>
+    </nav>
+
+    <div class="site-header__actions">
+      <ThemeToggle />
+      <details class="mobile-nav" data-mobile-nav>
+        <summary class="menu-toggle" aria-controls="mobile-nav-panel" aria-expanded="false">
+          <span class="menu-toggle__label">Menu</span>
+          <span class="menu-toggle__icon" aria-hidden="true"><span></span><span></span></span>
+        </summary>
+        <nav id="mobile-nav-panel" class="primary-nav primary-nav--mobile" aria-label="Mobile primary navigation">
+          <a href="/#work">Work</a>
+          <a href="/resume">Resume</a>
+          <a href="mailto:shogunix.chan@gmail.com">Email</a>
+          <a href="https://github.com/Hydarhafiz">GitHub</a>
+          <a href="https://www.linkedin.com/in/hydar-hafiz-356128233">LinkedIn</a>
+        </nav>
+      </details>
+    </div>
+  </div>
+</header>
+
+<script>
+  const mobileNav = document.querySelector<HTMLElement>("[data-mobile-nav]");
+
+  if (mobileNav instanceof HTMLDetailsElement) {
+    const summary = mobileNav.querySelector("summary");
+
+    const closeMobileNav = () => {
+      mobileNav.open = false;
+      summary?.focus();
+    };
+
+    mobileNav.addEventListener("toggle", () => {
+      summary?.setAttribute("aria-expanded", String(mobileNav.open));
+    });
+
+    mobileNav.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && mobileNav.open) {
+        event.preventDefault();
+        closeMobileNav();
+      }
+    });
+
+    mobileNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileNav.open = false;
+      });
+    });
+  }
+</script>

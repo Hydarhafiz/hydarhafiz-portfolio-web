@@ -1,0 +1,17 @@
+---
+interface Props {
+  eyebrow: string;
+  title: string;
+  description: string;
+}
+
+const { eyebrow, title, description } = Astro.props;
+---
+
+<section class="placeholder-page container" id={Astro.url.pathname === "/" ? "work" : undefined}>
+  <p class="eyebrow">{eyebrow}</p>
+  <h1>{title}</h1>
+  <p class="placeholder-page__description">{description}</p>
+  <div class="placeholder-page__rule" aria-hidden="true"></div>
+  <p class="placeholder-page__note">Approved portfolio content will be integrated in the next implementation feature.</p>
+</section>
