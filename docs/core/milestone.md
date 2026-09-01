@@ -1,72 +1,126 @@
-# Completed milestone: Job-search foundation
+# Active milestone: Case-study content
 
-- Status: completed on 2026-09-01
+- Status: active
+- Activated: 2026-09-01
 
 ## Outcome
 
-Make Hydar ready to apply for backend software engineering roles with a confidentially safe public repository, a defensible one-page application CV, and consistent recruiter-facing profile copy. Portfolio implementation is outside this milestone.
+Produce disclosure-reviewed, public-safe case-study content for the portfolio without beginning Astro/MDX implementation, UX/UI specification, deployment, domain configuration, or external launch work. The content must be reusable by the later Astro/MDX milestone and preserve the approved hierarchy:
 
-## Feature A — Public-safe repository foundation
+1. SAFAPAC — primary professional case study
+2. AnotherEdenAI — primary personal case study
+3. AIRIS — compact supporting contribution
 
-- Type: build
+The completed Milestone 1 plan remains preserved in Git history. This file is the reusable active-milestone plan and will be reused after Milestone 2 completion.
+
+## Shared content contract
+
+Every package will be authored as framework-neutral structured editorial content that can later become an Astro/MDX content entry. The durable shape is:
+
+- identity: stable slug, title, project type, hierarchy, dates/context, and current status;
+- summary: one-sentence positioning and a short recruiter-readable overview;
+- narrative: context, problem, role, approach, engineering decisions, trade-offs, evidence, outcome, and limitations;
+- capabilities: only technologies connected to an evidenced contribution;
+- visuals: stable visual IDs, purpose, elements, relationships, alt text, caption, source class, and explicit exclusions;
+- disclosure: review state, allowed claim classes, forbidden claim classes, and maturity/ownership wording;
+- sources: public links or sanitized source categories only; never private file contents, internal URLs, credentials, customer data, or copied employer artifacts.
+
+The content contract must remain readable without a site runtime. It must not assume page components, routes, responsive states, animation behavior, or a final visual design system.
+
+## Public-safety rules
+
+- Private portfolio-source material is evidence only. It is never staged, quoted, reproduced, screenshotted, or visually copied.
+- SAFAPAC diagrams and AIRIS diagrams are newly redrawn and sanitized. They may show role-level systems, boundaries, sequence, and generalized engineering decisions, but not proprietary formulas, internal screenshots, copied diagrams, customer/stakeholder data, credentials, internal URLs, infrastructure identifiers, detailed security configuration, costs, or unapproved performance results.
+- SAFAPAC uses deployed beta/internal-validation wording. It may describe Hydar inheriting early boilerplate and substantially rebuilding and productionizing his assigned backend, database, and AWS scope; it must not imply sole authorship of the whole product.
+- AIRIS remains a supporting contribution. It may describe workload/concurrency testing, bottleneck diagnosis, optimization research, engineering handoff, and stakeholder training; it must not claim architecture ownership, implementation of recommendations, or resulting production improvements.
+- AnotherEdenAI is actively developed. It may describe public repository implementation, but must not claim production maturity, completed evaluation, proven recommendation quality, or live deployment without current evidence.
+- The public site and content must not expose the phone number.
+
+## Feature sequence
+
+### Feature 2A — SAFAPAC flagship content package
+
+- Type: build (content and evidence)
 - Status: completed
+- Outcome: deliver the primary professional case-study narrative and a sanitized visual contract set.
+- Scope: structured narrative covering the inherited-system transition, backend/database ownership, calculation traceability and validation work, AWS delivery, collaboration boundaries, beta/internal-validation context, and defensible outcomes; newly redrawn transformation timeline and high-level deployment architecture contracts.
+- Non-goals: copied source material, confidential formulas or reports, exact rollout size or geography, unapproved metrics, internal screenshots, detailed security configuration, product UI specification, or claims that Hydar built the whole system alone.
+- Entry gate: current canonical boundary, career data, recruiter package, and private evidence classes are reconciled; important claim provenance is mapped without copying private content.
+- Exit gate: every public claim is disclosure-reviewed, every visual is sanitized and newly redrawn, structured content is framework-neutral, and the public-boundary check passes.
+- Durable outputs:
+  - `docs/content/contract.md`: framework-neutral content and visual-contract schema shared by the later packages.
+  - `docs/content/case-studies/safapac.md`: structured narrative source with front matter, recruiter summary, narrative sections, capabilities, limitations, and disclosure state.
+  - `docs/content/visual-contracts/safapac.md`: contracts for a transformation timeline and a high-level deployment/delivery architecture; this is a drawing specification, not a copied diagram or final UI asset.
+  - `docs/content/disclosure/safapac.md`: claim-level allow/exclude record naming only approved canonical sources or sanitized private-evidence categories.
+- Narrative contract: introduce SAFAPAC as a deployed beta/internal-validation platform; explain the inherited early-boilerplate starting point; distinguish Hydar's backend, database, calculation-traceability, validation, testability, documentation, containerized delivery, and AWS operations scope from the wider product; identify collaboration with five TEA-SAF domain researchers and one frontend developer; keep the separate five-person Airbus internal pilot group as validation context; close with defensible outcomes and explicit limitations.
+- Visual contract rules:
+  - `safapac-transition` shows the generalized progression from inherited application scope through backend/data and calculation workflow strengthening to delivery and beta/internal validation, with ownership lanes and no confidential implementation detail.
+  - `safapac-delivery` shows only role-level delivery relationships among the user-facing application, backend/API, PostgreSQL data, container/CI delivery, and the approved AWS service categories; it excludes formulas, internal endpoints, account/region identifiers, network topology, secrets, customer data, and detailed security configuration.
+  - Both contracts require a plain-language alt text, a caption, allowed-claim notes, excluded-claim notes, and an explicit `newly redrawn` status before staging.
+- Evidence strategy: use the approved career/profile contract and canonical disclosure rules as public authority; use private AMIC documentation only to verify claim provenance; validate the durable paths with `git diff --check`, `bash scripts/check-public-boundary.sh`, and manual claim/visual review. No private PDF text, image, diagram, generated screenshot, or detailed audit ledger is retained.
+- Acceptance:
+  - 2A-01: Narrative preserves SAFAPAC as the primary professional case study and uses the approved deployed beta/internal-validation status.
+  - 2A-02: Role, collaboration counts, ownership boundary, technologies, and outcomes match the approved career/profile contract.
+  - 2A-03: Transformation and deployment visuals expose only generalized, public-safe relationships and include alt text and exclusions.
+  - 2A-04: No private artifact, proprietary formula, internal identifier, copied screenshot/diagram, phone number, or unsupported claim enters the durable content.
+- Durable evidence: framework-neutral SAFAPAC content entry, visual contracts, sanitized claim/disclosure record, and source notes that identify only approved public links or private evidence categories.
 - Route: `contract-auditor -> feature-planner -> builder-executor -> tdd-loop`
-- Outcome: protect private evidence before the first commit and establish canonical program decisions.
-- Scope: defensive ignores, prohibited-path automation, public README, roadmap, active milestone, architecture, disclosure boundary, and planning sources.
-- Non-goals: Astro scaffolding, CV content/rendering, case-study prose, deployment, moving or deleting private source files.
+- Human checkpoint: passed — Hydar approved the narrative and both newly redrawn visual contracts for disclosure on 2026-09-01.
+- Evidence: framework-neutral content, visual and disclosure records are present; `git diff --check`, staged-path inspection, `bash scripts/check-public-boundary.sh`, and content-specific private-marker checks pass.
+- Commit boundary: one completed-feature commit containing the durable SAFAPAC content, evidence/disclosure record, validation updates, and milestone progress.
+
+### Feature 2B — AnotherEdenAI flagship content package
+
+- Type: build (content and public-source evidence)
+- Status: planned
+- Outcome: deliver the primary personal case-study narrative and public-repository-grounded visual contract set.
+- Scope: structured narrative covering the graph ETL, Neo4j retrieval, LangGraph workflow, typed validation, bounded retry/correction/fallback behavior, candidate preparation, and streaming web path; newly drawn graph/recommendation pipeline and validation/fallback visual contracts based on the current public repository.
+- Non-goals: changing the separate AnotherEdenAI repository, claiming production maturity or completed evaluation, claiming proven recommendation quality or cost/performance improvement, claiming live deployment, or beginning portfolio UI design.
+- Entry gate: public repository HEAD and relevant first-party source files are rechecked at execution time; active-development wording remains explicit.
+- Exit gate: every implementation claim links to current public evidence, current work and limitations are visible, visuals distinguish implemented paths from future work, and public-boundary checks pass.
 - Acceptance:
-  - A-01: Confidential references, the stale CV, private outputs, environment files, and ephemeral SDD state are ignored.
-  - A-02: A durable script and CI workflow reject prohibited tracked paths and pass their own boundary test.
-  - A-03: Canonical documentation preserves the approved career, content, architecture, privacy, and milestone decisions without confidential implementation detail.
-  - A-04: The first feature commit contains only public-safe files; ignored private sources remain local and unmodified.
-- Manual checkpoint: none.
-- Evidence: boundary script syntax and self-tests pass; workflow YAML parses; Git ignore checks confirm private references, stale CV, and ephemeral SDD state remain excluded; final staged-path inspection contains only public-safe feature files.
-- Commit boundary: one completed-feature commit.
-
-## Feature B — ATS-ready CV V2
-
-- Type: build
-- Status: completed
+  - 2B-01: Narrative identifies AnotherEdenAI as an actively developed personal project and preserves the approved public-description boundary.
+  - 2B-02: Graph, workflow, validation, and streaming claims are traceable to the current public repository rather than private copies or assumptions.
+  - 2B-03: Visual contracts include alt text, public source links, status labels, and explicit exclusions for maturity/evaluation/deployment claims.
+  - 2B-04: No completed-quality, production, live-deployment, guaranteed-factuality, or unsupported measured-improvement claim is published.
+- Durable evidence: framework-neutral AnotherEdenAI content entry, public-source note, visual contracts, and source-gap note if the public README remains stale.
 - Route: `feature-planner -> builder-executor -> tdd-loop`
-- Outcome: generate a recruiter-scannable, one-page backend CV from structured verified career data.
-- Scope: structured career data, semantic resume source, locally bundled Source Sans 3 typography with comfortable left-aligned spacing, automated Chromium rendering, PDF text/page validation, a public PDF without phone, and an ignored private application PDF with phone.
-- Non-goals: multi-page CV, photo, self-rated skill levels, unsupported metrics, or DOCX at launch.
+- Human checkpoint: Hydar's manual review of active-development wording and the selected public visual scope before staging.
+- Commit boundary: one completed-feature commit containing the durable AnotherEdenAI content, visual contracts, source notes, validation updates, and milestone progress.
+
+### Feature 2C — AIRIS supporting contribution package
+
+- Type: build (content and evidence)
+- Status: planned
+- Outcome: deliver a compact supporting-contribution narrative and a sanitized concurrency/load-testing visual contract.
+- Scope: structured narrative covering AI workload/concurrency testing, bottleneck diagnosis, optimization research, accepted engineering handoff, and stakeholder training; newly redrawn flow from test workload through observations, diagnosis, research, handoff, and training.
+- Non-goals: architecture ownership, implementation of recommendations, production performance claims, confidential load-test values, internal dashboards/reports, copied visuals, or a dedicated AIRIS route.
+- Entry gate: AIRIS claims are separated from SAFAPAC ownership and reconciled with the approved profile contract and private evidence categories.
+- Exit gate: the contribution remains compact and accurately scoped, the visual is sanitized and newly redrawn, and the public-boundary check passes.
 - Acceptance:
-  - B-01: CV uses the approved backend/cloud/applied-AI positioning and accurate evidence hierarchy.
-  - B-02: Public and private outputs share professional content; only the private variant contains the phone number.
-  - B-03: PDF is one page with selectable text, sensible extraction order, working links, and accurate metadata.
-  - B-04: No stale or unsupported percentage, performance, accuracy, or ownership claim remains.
-  - B-05: SAFAPAC quantitative scope distinguishes five domain researchers and one frontend collaborator from the separate five-person Airbus internal pilot group.
-- Manual checkpoint: passed — user approved both the public and private rendered PDFs on 2026-09-01.
-- Evidence: both variants pass automated one-page PDF validation with selectable ATS text, required wording, working links and accurate metadata; the public PDF contains no phone number, the ignored private PDF contains the configured phone number, the public-boundary guard passes, Source Sans 3 is embedded locally, and the user approved both rendered variants.
-- Commit boundary: one completed-feature commit containing only public-safe artifacts.
+  - 2C-01: AIRIS is presented as a supporting contribution, not a flagship or architecture-ownership claim.
+  - 2C-02: Testing, diagnosis, research, handoff, and training claims are preserved without claiming recommendation implementation or resulting production improvement.
+  - 2C-03: The concurrency/load-testing visual contract contains only generalized stages, roles, and signals, with alt text and exclusions.
+  - 2C-04: No private report content, internal metric, copied diagram, internal identifier, phone number, or unsupported result enters the durable content.
+- Durable evidence: framework-neutral AIRIS content entry, sanitized visual contract, and claim/disclosure record.
+- Route: `contract-auditor -> feature-planner -> builder-executor -> tdd-loop`
+- Human checkpoint: Hydar's manual disclosure review of the contribution boundary and load-testing visual before staging.
+- Commit boundary: one completed-feature commit containing the durable AIRIS content, evidence/disclosure record, validation updates, and milestone progress.
 
-## Feature C — Recruiter-profile alignment package
+## Milestone exit gate
 
-- Type: build
-- Status: completed
-- Route: `feature-planner -> builder-executor -> tdd-loop`
-- Outcome: provide consistent, ready-to-apply LinkedIn and GitHub profile copy and a calibrated AnotherEdenAI public-description contract.
-- Scope: headline, About/summary, location and availability, AMIC/PETRONAS descriptions, project summaries, capability groupings, and an external-update checklist.
-- Non-goals: publishing to external accounts without authorization, modifying the separate AnotherEdenAI repository without its own safe write scope, or claiming unfinished work as complete.
-- Acceptance:
-  - C-01: Identity, dates, role, location, availability, certifications, and project ownership match the CV contract.
-  - C-02: AnotherEdenAI is described as actively developed and does not use unsupported production or completion claims.
-  - C-03: LinkedIn and GitHub updates are concise and ready for the user to apply.
-  - C-04: A durable validator detects stale positioning, prohibited claims, missing career evidence, and copy that exceeds platform-oriented length limits.
-- Manual checkpoint: passed — user approved the package, applied the relevant LinkedIn/GitHub updates, and enabled LinkedIn Open to Work on 2026-09-01.
-- Evidence: the durable validator confirms required career facts and public references, platform-oriented field lengths, checklist coverage, public-phone exclusion, and absence of prohibited claims; negative self-tests prove failures for stale claims, missing facts, excessive field length and public phone exposure; the public resume/profile combined validation and repository boundary guard pass.
-- Commit boundary: one completed-feature commit.
+- [x] SAFAPAC narrative and visual contracts pass manual disclosure review.
+- [ ] AnotherEdenAI narrative and visual contracts are grounded in the current public repository and retain active-development wording.
+- [ ] AIRIS narrative and sanitized concurrency/load-testing visual contract preserve the supporting-contribution boundary.
+- [ ] All packages use the shared framework-neutral structured content contract and include limitations, provenance class, alt text, and exclusions.
+- [ ] No confidential employer material, phone number, copied visual, or unsupported maturity/ownership/performance claim is present.
+- [ ] Public-boundary validation and content-specific checks pass.
+- [ ] UX/UI specification, Astro/MDX implementation, deployment, domain configuration, and LinkedIn launch work remain deferred to later milestones.
 
-## Milestone exit gate — passed
+## Planning decisions and gaps
 
-- [x] Private application CV is accurate, approved, one page, and includes the phone number.
-- [x] Public resume omits the phone number.
-- [x] LinkedIn/GitHub alignment copy is approved and ready to apply.
-- [x] User applied the relevant LinkedIn/GitHub changes and enabled LinkedIn Open to Work.
-- [x] Public repository contains no prohibited source or private-contact material.
-- [x] Applications can begin without waiting for the portfolio site or AnotherEdenAI completion.
-
-## Completion summary
-
-Milestone 1 established the public-source boundary, deterministic public/private CV workflow, approved one-page backend CV, recruiter-profile copy, and automated career-content validation. Temporary workflow state and generated previews were purged; the private application CV and private contact input remain ignored local assets. The full feature plan remains here as the historical milestone record until the next milestone is activated.
+- The approved hierarchy is fixed for this milestone; no case study may displace SAFAPAC or AnotherEdenAI as a flagship.
+- The content source is framework-neutral editorial Markdown/structured data. It is not the later Astro content collection or UI implementation.
+- SAFAPAC and AIRIS require source-authority/disclosure auditing before content implementation. AnotherEdenAI requires a fresh public-source check at execution time.
+- Exact SAFAPAC rollout size/geography, SAFAPAC formula/default validation, AIRIS recommendation implementation/results, and AnotherEdenAI evaluation/deployment remain intentionally unresolved and must be represented as limitations rather than filled with assumptions.
+- A stale maturity statement in the current public AnotherEdenAI README is an external-source gap. The portfolio content follows the approved active-development contract; changing the external repository is outside this milestone.

@@ -2,7 +2,7 @@
 
 Source for the public portfolio and resume of Hydar Hafiz bin Hydzelan, a backend engineer focused on cloud and applied AI systems.
 
-The job-search foundation milestone is complete. The repository now contains an approved public resume, a private application-resume workflow, recruiter-profile alignment copy, and automated public-boundary and career-content validation. Case-study content is the next planned milestone; the approved first website launch will use Astro, TypeScript, MDX, selective React components, and Cloudflare Pages.
+The job-search foundation milestone is complete and the case-study content milestone is active. The repository contains an approved public resume, a private application-resume workflow, recruiter-profile alignment copy, and automated public-boundary and career-content validation. Case-study deliverables are being prepared as framework-neutral structured content before the later Astro, TypeScript, MDX, selective React, and Cloudflare Pages implementation.
 
 ## Job-search assets
 
