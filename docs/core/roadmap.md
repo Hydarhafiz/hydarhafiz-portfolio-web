@@ -22,11 +22,11 @@ Completed on 2026-09-01. Established a public-safe repository, generated approve
 
 Produced disclosure-reviewed SAFAPAC and AnotherEdenAI flagship narratives, a compact AIRIS contribution, and original sanitized visual contracts. The framework-neutral content is reusable for the later Astro/MDX implementation.
 
-### 3. UX/UI specification — next
+### 3. UX/UI specification — completed on 2026-09-01
 
-Use `ux-ui-bridge` to convert the approved technical-editorial direction into a design system, component hierarchy, responsive states, accessibility behavior, and page specifications.
+Used `architect-planner` to activate the milestone boundary and `ux-ui-bridge` to produce the implementation-ready UX/UI specification at `docs/ux-ui/specification.md`. The specification defines the technical-editorial design system, launch page hierarchy, reusable content presentation, responsive states, accessibility and theme behavior, purposeful animation, approved project visual treatment, and the later Astro/TypeScript/MDX handoff. Astro implementation remains deferred until the UX/UI specification receives human approval.
 
-### 4. Portfolio implementation
+### 4. Portfolio implementation — next
 
 Build the Astro/TypeScript/MDX site through feature-level implementation and verification commits. Keep technical capabilities and AMIC/PETRONAS experience clearly visible on the homepage without dedicated routes.
 
