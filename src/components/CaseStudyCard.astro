@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from "astro:content";
+import StatusBadge from "./StatusBadge.astro";
+
+interface Props {
+  entry: CollectionEntry<"caseStudies">;
+  href: string;
+  hierarchyLabel: string;
+  tone: "professional" | "personal" | "supporting";
+  featured?: boolean;
+}
+
+const { entry, href, hierarchyLabel, tone, featured = false } = Astro.props;
+const { data } = entry;
+const status = data.status.charAt(0).toUpperCase() + data.status.slice(1);
+---
+
+<article class:list={["case-card", `case-card--${tone}`, { "case-card--featured": featured }]}>
+  <div class="case-card__topline">
+    <span>{hierarchyLabel}</span>
+    <StatusBadge label={status} tone={tone} />
+  </div>
+  <div class="case-card__body">
+    <p class="case-card__context">{data.context} · {data.period}</p>
+    <h3><a href={href}>{data.title}</a></h3>
+    <p class="case-card__summary">{data.summary}</p>
+    <ul class="case-card__capabilities" aria-label={`${data.title} capabilities`}>
+      {data.capabilities.slice(0, 3).map((capability) => <li>{capability.name}</li>)}
+    </ul>
+  </div>
+  <a class="case-card__action" href={href}>Read case study <span aria-hidden="true">→</span></a>
+</article>

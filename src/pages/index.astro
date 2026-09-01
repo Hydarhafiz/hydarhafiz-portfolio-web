@@ -1,12 +1,197 @@
 ---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+import { siGit, siGithub, siPydantic } from "simple-icons";
+import CaseStudyCard from "../components/CaseStudyCard.astro";
+import CredentialList from "../components/CredentialList.astro";
+import ExperienceList from "../components/ExperienceList.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import SkillExpertise from "../components/SkillExpertise.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
-import PlaceholderPage from "../components/PlaceholderPage.astro";
+import profileImage from "../../docs/career/hydarhafiz-image.jpg";
+import careerData from "../../resume/career-data.json";
+
+const caseStudies = await getCollection("caseStudies");
+const findCaseStudy = (slug: string) => {
+  const entry = caseStudies.find((candidate) => candidate.data.slug === slug);
+  if (!entry) throw new Error(`Missing approved case study: ${slug}`);
+  return entry;
+};
+
+const safapac = findCaseStudy("safapac");
+const anotherEdenAI = findCaseStudy("anotheredenai");
+const airis = findCaseStudy("airis");
 ---
 
-<SiteLayout title="Hydar Hafiz — Backend Software Engineer">
-  <PlaceholderPage
-    eyebrow="Portfolio foundation"
-    title="Hydar Hafiz"
-    description="A calm, accessible foundation for a backend software engineering portfolio."
-  />
+<SiteLayout
+  title="Hydar Hafiz — Backend Software Engineer"
+  description="Hydar Hafiz is a backend software engineer building reliable services and applied-AI systems."
+>
+  <div class="home-page">
+    <section class="home-introduction container" aria-labelledby="hero-title">
+      <div class="home-introduction__top">
+        <div class="home-introduction__copy">
+          <p class="eyebrow">Backend software engineer · Malaysia</p>
+          <h1 id="hero-title">Hi, I'm Hydar</h1>
+          <div class="home-introduction__actions">
+            <a class="button button--primary" href="#work">View selected work <span aria-hidden="true">↓</span></a>
+            <a class="button button--secondary" href="/resume">Download resume <span aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+        <figure class="home-introduction__portrait">
+          <Image src={profileImage} alt="Portrait of Hydar Hafiz bin Hydzelan" width={400} height={400} loading="eager" />
+        </figure>
+      </div>
+      <div class="home-introduction__bottom">
+        <div class="home-introduction__role">
+          <p class="eyebrow">Current role</p>
+          <h2>{careerData.basics.title}</h2>
+        </div>
+        <p class="home-introduction__summary">{careerData.summary}</p>
+        <aside class="home-introduction__aside" aria-label="Availability">
+          <p class="home-introduction__aside-label">Current coordinates</p>
+          <dl class="metadata-list">
+            <div>
+              <dt>Based in</dt>
+              <dd>{careerData.basics.location}</dd>
+            </div>
+            <div>
+              <dt>Mobility</dt>
+              <dd>{careerData.basics.mobility}</dd>
+            </div>
+            <div>
+              <dt>Availability</dt>
+              <dd>{careerData.basics.availability}</dd>
+            </div>
+          </dl>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about" class="home-section home-section--tinted" aria-labelledby="about-title">
+      <div class="container">
+        <SectionHeading id="about-title" index="01" title="About me" />
+      <div class="about-me">
+        <div class="about-me__story">
+          <p>I’m a backend software engineer based in Bangi, Selangor, focused on Python, FastAPI, PostgreSQL, and AWS delivery. I enjoy taking early-stage systems beyond boilerplate by strengthening data models, calculation traceability, testing, deployment workflows, and operational documentation.</p>
+          <p>At AMIC, I own the backend, database, and AWS delivery scope for SAFAPAC, while contributing to AIRIS through workload testing, bottleneck diagnosis, optimization research, engineering handoff, and stakeholder training. Outside work, I’m actively developing AnotherEdenAI to explore how graph retrieval and deterministic controls can make AI-backed systems more reliable and cost-conscious.</p>
+          <p>I hold three approved cloud and AI credentials and am open to backend software engineering opportunities across Malaysia from November 2026.</p>
+        </div>
+        <div class="characteristic-grid" aria-label="Working characteristics">
+          <article class="characteristic-card">
+            <span class="characteristic-card__logo" aria-hidden="true"><svg viewBox="0 0 24 24" role="img" focusable="false"><path fill="currentColor" d={siGit.path} /></svg></span>
+            <span class="characteristic-card__index">01</span>
+            <h3>Ownership-minded</h3>
+            <p>Takes early-stage backend, data, and cloud scope beyond boilerplate and follows it through delivery.</p>
+          </article>
+          <article class="characteristic-card">
+            <span class="characteristic-card__logo" aria-hidden="true"><svg viewBox="0 0 24 24" role="img" focusable="false"><path fill="currentColor" d={siPydantic.path} /></svg></span>
+            <span class="characteristic-card__index">02</span>
+            <h3>Traceability-first</h3>
+            <p>Strengthens data models, calculation traceability, validation, testing, and operational documentation.</p>
+          </article>
+          <article class="characteristic-card">
+            <span class="characteristic-card__logo" aria-hidden="true"><svg viewBox="0 0 24 24" role="img" focusable="false"><path fill="currentColor" d={siGithub.path} /></svg></span>
+            <span class="characteristic-card__index">03</span>
+            <h3>Collaborative</h3>
+            <p>Works across domain research, frontend delivery, senior engineering, and stakeholder training.</p>
+          </article>
+        </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="work" class="home-section container" aria-labelledby="work-title">
+      <SectionHeading
+        id="work-title"
+        index="02"
+        title="Featured work"
+      />
+      <div class="case-grid">
+        <CaseStudyCard
+          entry={safapac}
+          href="/safapac"
+          hierarchyLabel="Primary professional case study"
+          tone="professional"
+          featured
+        />
+        <CaseStudyCard
+          entry={anotherEdenAI}
+          href="/anotheredenai"
+          hierarchyLabel="Primary personal case study"
+          tone="personal"
+          featured
+        />
+      </div>
+      <article class="supporting-card">
+        <div>
+          <p class="supporting-card__label">Supporting contribution</p>
+          <h3>{airis.data.title}</h3>
+        </div>
+        <p>{airis.data.summary}</p>
+        <p class="supporting-card__meta">{airis.data.context} · {airis.data.period} · {airis.data.status}</p>
+      </article>
+    </section>
+
+    <section id="experience" class="home-section home-section--tinted" aria-labelledby="experience-title">
+      <div class="container">
+        <SectionHeading
+          id="experience-title"
+          index="03"
+          title="Work experience"
+        />
+        <ExperienceList entries={careerData.experience} />
+      </div>
+    </section>
+
+    <section id="skills" class="home-section container" aria-labelledby="skills-title">
+      <SectionHeading
+        id="skills-title"
+        index="04"
+        title="Skills & expertise"
+      />
+      <SkillExpertise groups={careerData.capabilities} />
+    </section>
+
+    <section id="credentials" class="home-section home-section--tinted" aria-labelledby="credentials-title">
+      <div class="container">
+        <SectionHeading
+          id="credentials-title"
+          index="05"
+          title="Credentials"
+        />
+        <CredentialList certifications={careerData.certifications} education={careerData.education} />
+      </div>
+    </section>
+
+    <section id="contact" class="home-section home-section--contact container" aria-labelledby="contact-title">
+      <SectionHeading
+        id="contact-title"
+        index="06"
+        title="Get in touch"
+      />
+      <nav class="contact-links" aria-label="Public contact links">
+        <a class="contact-link" href={`mailto:${careerData.basics.email}`}>
+          <span>Email</span>
+          <strong>{careerData.basics.email}</strong>
+        </a>
+        {careerData.basics.links.map((link) => (
+          <a
+            class="contact-link"
+            href={link.url}
+            target="_blank"
+            rel="noreferrer"
+            aria-label={`${link.label}: ${link.display} (opens in new tab)`}
+          >
+            <span>{link.label}</span>
+            <strong>{link.display}</strong>
+          </a>
+        ))}
+        <a class="contact-link" href="/resume">
+          <span>Public resume</span>
+          <strong>View resume page <span aria-hidden="true">↗</span></strong>
+        </a>
+      </nav>
+    </section>
+  </div>
 </SiteLayout>

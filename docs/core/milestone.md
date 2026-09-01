@@ -55,16 +55,17 @@ AIRIS remains a compact supporting contribution on the homepage and has no dedic
 ### Feature 4B — content collection and homepage
 
 - Type: build
-- Status: active
+- Status: completed
 - Outcome: map the framework-neutral content and approved career facts into typed Astro content presentation and the recruiter homepage.
 - Scope: MDX/content collection schema, approved content entries, homepage hero, selected work hierarchy, AMIC/PETRONAS experience, AIRIS compact contribution, capability groups, certifications, education, contact links, and public resume CTA.
 - Non-goals: changing source claims, adding metrics, creating dedicated experience/skills/AIRIS routes, phone exposure, or implementing case-study page layouts.
+- Evidence: `ASTRO_TELEMETRY_DISABLED=1 npm run check`, `ASTRO_TELEMETRY_DISABLED=1 npm run build`, `npm run site:validate`, `npm run homepage:validate`, `git diff --check`, and `bash scripts/check-public-boundary.sh` pass. Hydar approved the homepage hierarchy, wording, matching current-role/About me typography, circular portrait, theme/responsive behavior, and keyboard order on 2026-09-02.
 - Route: `builder-executor -> tdd-loop`
 
 ### Feature 4C — flagship case-study routes
 
 - Type: build
-- Status: pending
+- Status: active
 - Outcome: implement reusable case-study presentation for `/safapac` and `/anotheredenai` from the approved structured content.
 - Scope: case-study layout, metadata/status/boundary callouts, narrative sections, contents navigation, limitations, source notes, and adjacent-work navigation.
 - Non-goals: changing content contracts, claiming production/evaluation maturity, adding screenshots, or implementing unapproved visuals.
@@ -104,4 +105,4 @@ AIRIS remains a compact supporting contribution on the homepage and has no dedic
 - [ ] Public resume and homepage facts remain reconciled with career sources, and the phone number remains absent.
 - [ ] Astro/type/build/accessibility/content-boundary checks pass; deployment, domain, analytics, and LinkedIn work remain deferred.
 
-Next human checkpoint: review the implemented Feature 4A foundation visually and with keyboard navigation before Feature 4B content integration.
+Next human checkpoint: review the Feature 4C SAFAPAC and AnotherEdenAI case-study routes, including disclosure-safe metadata, narrative hierarchy, contents navigation, limitations, source notes, adjacent-work navigation, responsive behavior, theme states, and keyboard order before Feature 4D visual integration.

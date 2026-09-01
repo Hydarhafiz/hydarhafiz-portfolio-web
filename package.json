@@ -9,6 +9,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "site:validate": "node scripts/validate-site-foundation.mjs",
+    "homepage:validate": "node scripts/validate-homepage.mjs",
     "resume:render": "node scripts/render-resume.mjs --variant public",
     "resume:render:private": "node scripts/render-resume.mjs --variant application",
     "resume:validate": "node scripts/validate-resume.mjs public/resume/hydar-hafiz-bin-hydzelan-resume.pdf --variant public",
@@ -24,9 +25,13 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "@astrojs/mdx": "^8.0.0",
     "@fontsource/source-sans-3": "5.2.8",
     "astro": "^7.2.10",
     "pdfjs-dist": "6.3.289",
     "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "simple-icons": "^16.29.0"
   }
 }

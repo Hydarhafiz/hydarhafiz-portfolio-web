@@ -1,0 +1,99 @@
+---
+import {
+  siAngular,
+  siDocker,
+  siFastapi,
+  siGit,
+  siGithub,
+  siGithubactions,
+  siIonic,
+  siLangchain,
+  siLinux,
+  siLocust,
+  siMongodb,
+  siNeo4j,
+  siNginx,
+  siNodedotjs,
+  siOpenapiinitiative,
+  siPydantic,
+  siPostgresql,
+  siPython,
+  siTypescript
+} from "simple-icons";
+import type { SimpleIcon } from "simple-icons";
+
+interface CapabilityGroup {
+  category: string;
+  items: string[];
+}
+
+interface Props {
+  groups: CapabilityGroup[];
+}
+
+const { groups } = Astro.props;
+
+const iconByExpertise: Record<string, SimpleIcon | undefined> = {
+  Python: siPython,
+  "Async Python": siPython,
+  FastAPI: siFastapi,
+  "REST APIs": siOpenapiinitiative,
+  PostgreSQL: siPostgresql,
+  Docker: siDocker,
+  "GitHub Actions": siGithubactions,
+  GHCR: siGithub,
+  Nginx: siNginx,
+  Linux: siLinux,
+  "CI/CD": siGithubactions,
+  Neo4j: siNeo4j,
+  GraphRAG: siNeo4j,
+  "Knowledge Graphs": siNeo4j,
+  "LLM Integration": siLangchain,
+  "Validation & Fallback": siPydantic,
+  TypeScript: siTypescript,
+  Angular: siAngular,
+  Ionic: siIonic,
+  "Node.js": siNodedotjs,
+  MongoDB: siMongodb,
+  Locust: siLocust,
+  Git: siGit
+};
+
+const fallbackMark = (expertise: string) => {
+  const words = expertise.split(/\s+/).filter(Boolean);
+  if (expertise === "SQL") return "DB";
+  if (expertise === "Pytest") return "T";
+  if (expertise === "AWS") return "☁";
+  if (expertise === "Deterministic Retrieval") return "DR";
+  return words.map((word) => word[0]).join("").slice(0, 2).toUpperCase();
+};
+
+const slugify = (value: string) => value.toLowerCase().replace(/[^a-z0-9]+/g, "-");
+---
+
+<div class="skill-groups">
+  {groups.map((group) => (
+    <section class="skill-group" aria-labelledby={`skill-${slugify(group.category)}`}>
+      <h3 id={`skill-${slugify(group.category)}`}>{group.category}</h3>
+      <div class="skill-grid">
+        {group.items.map((expertise) => {
+          const icon = iconByExpertise[expertise];
+          return (
+            <article class="skill-card">
+              <span class="skill-card__icon" aria-hidden="true">
+                {icon ? (
+                  <svg viewBox="0 0 24 24" role="img" focusable="false">
+                    <path fill="currentColor" d={icon.path} />
+                  </svg>
+                ) : (
+                  fallbackMark(expertise)
+                )}
+              </span>
+              <span class="skill-card__name">{expertise}</span>
+            </article>
+          );
+        })}
+      </div>
+    </section>
+  ))}
+</div>
