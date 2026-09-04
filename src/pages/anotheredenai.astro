@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import AnotherEdenAISectionHeading from "../components/AnotherEdenAISectionHeading.astro";
 import CaseStudyPage from "../components/CaseStudyPage.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
 
@@ -21,6 +22,6 @@ const adjacent = entries.filter((candidate) => candidate.data.slug !== entry.dat
     adjacent={adjacent}
     repositoryHref="https://github.com/Hydarhafiz/AnotherEdenAI"
   >
-    <Content />
+    <Content components={{ h2: AnotherEdenAISectionHeading }} />
   </CaseStudyPage>
 </SiteLayout>

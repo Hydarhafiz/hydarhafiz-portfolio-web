@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import SafapacSectionHeading from "../components/SafapacSectionHeading.astro";
 import CaseStudyPage from "../components/CaseStudyPage.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
 
@@ -16,6 +17,6 @@ const adjacent = entries.filter((candidate) => candidate.data.slug !== entry.dat
 
 <SiteLayout title="SAFAPAC — Hydar Hafiz" description={entry.data.summary}>
   <CaseStudyPage entry={entry} headings={headings} adjacent={adjacent}>
-    <Content />
+    <Content components={{ h2: SafapacSectionHeading }} />
   </CaseStudyPage>
 </SiteLayout>

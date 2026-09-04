@@ -72,14 +72,17 @@ AIRIS remains a compact supporting contribution on the homepage and has no dedic
 - Non-goals: changing content contracts, claiming production/evaluation maturity, adding screenshots, or implementing unapproved visuals.
 - Route: `builder-executor -> tdd-loop`
 
-### Feature 4D — approved visuals and AIRIS presentation
+### Feature 4D — recruiter-facing visual contract revision
 
 - Type: build
-- Status: active
-- Outcome: recreate the approved SAFAPAC, AnotherEdenAI, and AIRIS visuals as accessible original SVG/Astro or appropriately simple Mermaid components.
-- Scope: `safapac-transition`, `safapac-delivery`, `anotheredenai-pipeline`, `anotheredenai-guardrails`, and `airis-load-testing`, including captions, approved alt text, legends, responsive transformations, linear fallbacks, and disclosure-safe labels.
+- Status: completed on 2026-09-05
+- Outcome: implement and verify the concise, unified visual language, page-wide project accent system, and five recruiter-facing figures through the approved contracts, then complete the feature after browser review.
+- Scope: `safapac-transition`, `safapac-delivery`, `anotheredenai-pipeline`, `anotheredenai-guardrails`, and `airis-load-testing`, using short recruiter-facing titles and labels, one shared diagram grammar, centralized project tokens, dominant ownership/outcome hierarchy, concise captions, approved alt text, responsive transformations, collapsed semantic text alternatives, and disclosure-safe boundaries.
 - Non-goals: copied diagrams/screenshots, private source reproduction, interactive claims, invented metrics, or diagram behavior that hides content behind animation.
-- Route: `builder-executor -> tdd-loop`
+- Route: `feature-planner -> builder-executor -> tdd-loop`
+- Contract checkpoint: all five visual contracts and mockups approved; the corrected AnotherEdenAI pipeline layout and final project-page color refinement are included in the implementation scope.
+- Evidence: `ASTRO_TELEMETRY_DISABLED=1 npm run check`, `ASTRO_TELEMETRY_DISABLED=1 npm run build`, `npm run visuals:validate`, `npm run case-studies:validate`, `npm run homepage:validate`, `npm run site:validate`, `git diff --check`, and `bash scripts/check-public-boundary.sh` pass. Hydar approved the browser review of the integrated visuals, project accents, responsive composition, centered mobile flowcharts, and disclosure-safe presentation on 2026-09-05.
+- Human checkpoint: complete. Feature 4E is the next implementation checkpoint.
 
 ### Feature 4E — semantic resume and launch-quality accessibility
 
@@ -106,4 +109,4 @@ AIRIS remains a compact supporting contribution on the homepage and has no dedic
 - [ ] Public resume and homepage facts remain reconciled with career sources, and the phone number remains absent.
 - [ ] Astro/type/build/accessibility/content-boundary checks pass; deployment, domain, analytics, and LinkedIn work remain deferred.
 
-Next human checkpoint: review the Feature 4D original SAFAPAC, AnotherEdenAI, and AIRIS visuals for disclosure-safe labels, alt text, captions, linear fallbacks, responsive behavior, theme states, and keyboard reading order before Feature 4E resume/accessibility hardening.
+Next human checkpoint: review the integrated Feature 4D SAFAPAC, AnotherEdenAI, and AIRIS visuals for narrative placement, disclosure-safe labels, alt text, captions, linear fallbacks, responsive behavior, theme states, and keyboard reading order before Feature 4E resume/accessibility hardening.

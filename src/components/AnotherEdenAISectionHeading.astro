@@ -1,0 +1,28 @@
+---
+import AnotherEdenAIGuardrails from "./AnotherEdenAIGuardrails.astro";
+import AnotherEdenAIPipeline from "./AnotherEdenAIPipeline.astro";
+
+interface Props {
+  id?: string;
+  [key: string]: unknown;
+}
+
+const { id, ...attributes } = Astro.props;
+const inlineVisual = id === "pipeline"
+  ? "pipeline"
+  : id === "reliability-boundary"
+    ? "guardrails"
+    : undefined;
+---
+
+<h2 id={id} {...attributes}><slot /></h2>
+{inlineVisual === "pipeline" && (
+  <div class="case-study__inline-visual">
+    <AnotherEdenAIPipeline />
+  </div>
+)}
+{inlineVisual === "guardrails" && (
+  <div class="case-study__inline-visual">
+    <AnotherEdenAIGuardrails />
+  </div>
+)}

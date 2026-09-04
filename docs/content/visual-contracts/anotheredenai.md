@@ -1,54 +1,102 @@
 # AnotherEdenAI visual contracts
 
-Status: approved. Both visuals are newly drawn and disclosure-reviewed; no screenshot is required.
+Status: approved for the Feature 4D visual rebuild.
+
+AnotherEdenAI is the primary personal case study and must remain labelled actively developed. The visuals should communicate the system shape and its reliability boundaries without presenting evaluation, production maturity, or recommendation-quality claims. Apply the [shared Feature 4D diagram rules](./shared.md).
 
 ## `anotheredenai-pipeline`
 
-- Type: public-source-grounded system flow.
-- Purpose: show the implemented path from source data to a roster-aware recommendation result without implying production maturity.
-- Elements:
-  - `Selected source data`
-  - `ETL models and loader`
-  - `Neo4j graph`
-  - `Query and roster input`
-  - `LangGraph workflow`
-  - `Candidate preparation`
-  - `Bounded analysis`
-  - `Typed formatter`
-  - `FastAPI + HTMX/SSE web result`
-- Relationships: source data flows through ETL into Neo4j; query and roster input enters workflow orchestration; retrieval supplies candidate preparation and analysis; typed formatting produces a result or failure path; SSE carries progress to the web layer.
-- Implemented/future note: show the listed path as implemented in the reviewed public source; label evaluation, recommendation optimization, graph cleanup, cost control, and deployment as active or future work outside the flow.
-- Source links: `README.md`, `src/etl/loader.py`, `src/workflow/graph.py`, `src/web/streaming.py` in the public repository.
-- Exclusions: production-ready labels, live-service claims, completed evaluation, recommendation-quality claims, private model configuration, credentials, database access details, copied code screenshots, and unsupported measurements.
-- Alt text: `A left-to-right flow moves selected source data through ETL models and an idempotent loader into a Neo4j graph. A query and roster enter the LangGraph workflow, which prepares candidates, performs bounded analysis, validates typed output, and sends progress and a final result or failure through FastAPI and HTMX/SSE.`
-- Caption: `AnotherEdenAI's public implementation path from graph ETL to a typed, streaming recommendation workflow.`
-- Source class: `newly-redrawn` from the current public repository.
+- Type: primary three-layer architecture visual.
+- Recruiter takeaway: user input and graph-backed knowledge feed one recommendation engine with typed boundaries.
+- Title: `How AnotherEdenAI generates a recommendation`
+- Main story: `User input + Knowledge base → Recommendation engine`.
+
+### Visible content
+
+| Layer | Label | Short content | Treatment |
+| --- | --- | --- | --- |
+| Top | `User input` | `Query + roster` | Quiet entry layer |
+| Middle | `Recommendation engine` | `Prepare candidates` · `Analyze with LangGraph` · `Validate or fall back` | Largest, strongest accent |
+| Bottom | `Knowledge base` | `Source data → ETL → Neo4j` | Supporting foundation |
+| Interface | `FastAPI` on the request connector · `HTMX / SSE` for progress and result | None | Delivery/interface labels, not pipeline stages |
+
+### Low-fidelity content mockup
+
+```text
+HOW ANOTHEREDENAI IS STRUCTURED
+
+┌───────────────────┐                         ┌──────────────────────────────┐
+│ USER INPUT        │                         │ KNOWLEDGE BASE                │
+│ Query + roster    │                         │ Source data → ETL → Neo4j    │
+└─────────┬─────────┘                         └──────────────┬───────────────┘
+          ↓ request · FastAPI                              ↓ graph context
+          └──────────────────┐              ┌───────────────┘
+                             ▼              ▼
+                 ┌────────────────────────────────┐
+                 │ RECOMMENDATION ENGINE           │
+                 │ Prepare candidates              │
+                 │ Analyze with LangGraph          │
+                 │ Validate or fall back           │
+                 └────────────────────────────────┘
+
+                 interface: HTMX / SSE · progress + result
+```
+
+The top row presents user input and knowledge as peer inputs. Both relationships point downward into the dominant recommendation engine, matching the expected top-to-bottom reading pattern. `FastAPI` belongs on the request connection, while `HTMX / SSE` labels progress and result delivery from the application; neither is another stage. On compact screens, stack the two input blocks first, then the engine, while preserving that order and the downward relationships; give the stacked cards a shared centered width and center the engine content.
+
+Placement: render immediately after the `Pipeline` heading, beside the architecture narrative.
+
+### Accessibility and disclosure
+
+- Alt text: `A three-part architecture places user input and a knowledge base side by side above a dominant recommendation engine. Query and roster input, plus graph context from source data through ETL into Neo4j, flow downward to candidate preparation, LangGraph analysis, and typed validation or fallback; FastAPI and SSE appear as interface technology.`
+- Caption: `An actively developed recommendation system combining typed workflow logic with graph-backed knowledge.`
+- The collapsed text alternative describes the two top inputs first, then the recommendation engine, without repeating every visible label or presenting knowledge retrieval as a later sequential stage.
+- Do not show production-ready labels, live-service claims, completed evaluation, recommendation-quality claims, private model configuration, credentials, database access details, copied code screenshots, or unsupported measurements.
 
 ## `anotheredenai-guardrails`
 
-- Type: validation and fallback flow.
-- Purpose: make the project's hard-field and bounded-analysis safeguards understandable without treating them as proof of final recommendation quality.
-- Elements:
-  - `Canonical request and roster resolution`
-  - `Graph and mechanic retrieval`
-  - `Candidate legality boundary`
-  - `Bounded query validation/retry`
-  - `Bounded analysis correction/fallback`
-  - `Pydantic output and legality validation`
-  - `Typed recommendation result`
-  - `Graceful failure`
-- Relationships: invalid or incomplete retrieval may return through a bounded retry path; valid retrieval enters candidate preparation; analysis correction remains bounded; formatter validation branches to a typed result or graceful failure.
-- Implemented/future note: show retry, correction, fallback, and legality paths as public implementation boundaries; do not label them as independently evaluated quality guarantees.
-- Source links: `src/workflow/state.py`, `src/workflow/graph.py`, `src/workflow/candidates.py`, `src/workflow/nodes/format.py`, `src/workflow/production.py`, and `src/web/streaming.py` in the public repository.
-- Exclusions: guaranteed factuality, win-rate or success-rate claims, production maturity, live deployment, model/provider credentials, raw prompts, private logs, and measured cost/performance outcomes.
-- Alt text: `A guarded recommendation flow resolves a typed request and roster, retrieves graph context, prepares legal candidates, runs bounded validation and analysis correction, and then branches through typed output and legality validation to either a recommendation result or graceful failure.`
-- Caption: `Typed and bounded safeguards around AnotherEdenAI's public recommendation workflow.`
-- Source class: `newly-redrawn` from the current public repository.
+- Type: secondary four-card safeguard strip.
+- Recruiter takeaway: recommendation output is constrained, checked, and given an explicit failure path.
+- Title: `How AnotherEdenAI validates recommendations`
+- Main story: four safeguards around one recommendation boundary; this is not a process flow.
 
-## Redraw checklist
+### Visible content
 
-- [x] Visuals are drawn from the public source structure, not copied from private material.
-- [x] Active-development status is visible in the caption or adjacent content.
-- [x] Implemented paths are distinct from evaluation, deployment, and future-work claims.
-- [x] Alt text, public source links, and exclusions remain attached to each contract.
-- [x] Hydar manually approves the wording and visual scope before staging.
+| Card | Short label | Supporting phrase |
+| --- | --- | --- |
+| 1 | `Legality rules` | `Bound candidates` |
+| 2 | `Retry limits` | `Correct within bounds` |
+| 3 | `Typed output` | `Reject malformed results` |
+| 4 | `Fallback path` | `Return clear failure` |
+
+Outcome strip: `Valid result  |  Clear failure`.
+
+### Low-fidelity content mockup
+
+```text
+HOW ANOTHEREDENAI CHECKS OUTPUT
+
+[ LEGALITY RULES ]  [ RETRY LIMITS ]  [ TYPED OUTPUT ]  [ FALLBACK PATH ]
+   Bound candidates     Correct within     Reject malformed    Return clear
+                         bounds             results             failure
+
+                 ───── recommendation boundary ─────
+                       [ VALID RESULT | CLEAR FAILURE ]
+```
+
+Do not connect the four cards into a chain or loop. A shared rule, brace, or quiet boundary line is enough to show that all four safeguards surround the recommendation boundary. On compact screens, use a two-by-two grid or a vertical stack, then the outcome strip.
+
+Placement: render immediately after the `Reliability boundary` heading, beside the validation narrative.
+
+### Accessibility and disclosure
+
+- Alt text: `Four safeguard cards surround AnotherEdenAI's recommendation boundary: legality rules, retry limits, typed output validation, and a fallback path. The shared outcome is a valid result or a clear failure, not a claim of guaranteed recommendation quality.`
+- Caption: `Four bounded checks around AnotherEdenAI's AI-assisted recommendation output.`
+- The collapsed text alternative lists the four independent safeguards and the result/failure boundary without inventing a sequence.
+- Do not show guaranteed factuality, success rates, production maturity, live deployment, model or provider credentials, raw prompts, private logs, or measured cost/performance outcomes.
+
+## Contract boundary
+
+Both figures are newly redrawn from the current public repository and approved active-development boundary. FastAPI, HTMX/SSE, LangGraph, typed validation, fallback, ETL, and Neo4j describe the public project shape; they do not establish production readiness or evaluated recommendation quality.
+
+Hydar approved the revised titles, labels, shared rules, and mockups for both AnotherEdenAI visuals before implementation resumed.

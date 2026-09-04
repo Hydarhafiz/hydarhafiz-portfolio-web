@@ -1,0 +1,50 @@
+---
+import VisualFigure from "./VisualFigure.astro";
+---
+
+<VisualFigure
+  id="safapac-delivery"
+  label="02 · Delivery"
+  title="How SAFAPAC gets delivered"
+  tone="safapac"
+  altText="A compact SAFAPAC delivery path connects a web app through HTTPS and Nginx to a FastAPI backend and PostgreSQL. Docker, CI, AWS, and authentication form a supporting platform layer, with beta delivery as the outcome."
+  caption="High-level web-to-data delivery within Hydar's SAFAPAC backend, database, and AWS scope."
+>
+  <div slot="graphic" class="visual-art visual-art--safapac-delivery" aria-hidden="true">
+    <p class="v4d-label">Delivery path</p>
+
+    <div class="v4d-delivery__path">
+      <article class="v4d-delivery__node">
+        <strong>Web app</strong>
+      </article>
+      <span class="v4d-delivery__arrow" aria-hidden="true">→</span>
+      <article class="v4d-delivery__node">
+        <strong>HTTPS / Nginx</strong>
+      </article>
+      <span class="v4d-delivery__arrow" aria-hidden="true">→</span>
+      <article class="v4d-delivery__node">
+        <strong>FastAPI</strong>
+      </article>
+      <span class="v4d-delivery__arrow" aria-hidden="true">→</span>
+      <article class="v4d-delivery__node">
+        <strong>PostgreSQL</strong>
+      </article>
+    </div>
+
+    <div class="v4d-platform">
+      <p class="v4d-label">Supports</p>
+      <div class="v4d-platform__items">
+        <span>Docker</span>
+        <span>CI</span>
+        <span>AWS</span>
+        <span>Auth</span>
+      </div>
+    </div>
+
+  </div>
+  <ol slot="fallback" class="visual-figure__fallback-list">
+    <li>The web app connects through HTTPS and Nginx to FastAPI.</li>
+    <li>FastAPI reads and writes PostgreSQL data.</li>
+    <li>Docker, CI, AWS, and authentication support the delivery path as a platform layer.</li>
+  </ol>
+</VisualFigure>

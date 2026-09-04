@@ -1,0 +1,32 @@
+---
+interface Props {
+  id: string;
+  label: string;
+  title: string;
+  altText: string;
+  caption: string;
+  tone: "safapac" | "anotheredenai" | "airis";
+}
+
+const { id, label, title, altText, caption, tone } = Astro.props;
+---
+
+<figure id={id} class:list={["visual-figure", `visual-figure--${tone}`]}>
+  <div class="visual-figure__heading">
+    <p class="visual-figure__label">{label}</p>
+    <h3 id={`${id}-title`}>{title}</h3>
+  </div>
+  <div class="visual-figure__graphic" role="img" aria-label={altText} aria-describedby={`${id}-caption`}>
+    <slot name="graphic" />
+  </div>
+  <figcaption id={`${id}-caption`}>{caption}</figcaption>
+  <div class="visual-figure__alternative">
+    <details>
+      <summary>Read this visual as text</summary>
+      <div class="visual-figure__fallback">
+        <p>{altText}</p>
+        <slot name="fallback" />
+      </div>
+    </details>
+  </div>
+</figure>

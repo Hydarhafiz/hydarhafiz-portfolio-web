@@ -1,0 +1,57 @@
+---
+import VisualFigure from "./VisualFigure.astro";
+---
+
+<VisualFigure
+  id="anotheredenai-pipeline"
+  label="01 · Architecture · actively developed"
+  title="How AnotherEdenAI generates a recommendation"
+  tone="anotheredenai"
+  altText="A three-part architecture places user input and a knowledge base side by side above a dominant recommendation engine. Query and roster input, plus graph context from source data through ETL into Neo4j, flow downward to candidate preparation, LangGraph analysis, and typed validation or fallback; FastAPI and SSE appear as interface technology."
+  caption="An actively developed recommendation system combining typed workflow logic with graph-backed knowledge."
+>
+  <div slot="graphic" class="visual-art visual-art--anotheredenai-pipeline" aria-hidden="true">
+    <div class="architecture-inputs">
+      <div class="architecture-input-lane">
+        <section class="architecture-input architecture-input--query">
+          <div class="architecture-input__heading">
+            <p class="visual-art__eyebrow">User input</p>
+            <strong>Query + roster</strong>
+          </div>
+        </section>
+        <div class="architecture-input-connector" aria-hidden="true">
+          <span>request · FastAPI</span>
+          <strong>↓</strong>
+        </div>
+      </div>
+
+      <div class="architecture-input-lane">
+        <section class="architecture-input architecture-input--knowledge">
+          <div class="architecture-input__heading">
+            <p class="visual-art__eyebrow">Knowledge base</p>
+            <strong>Source data → ETL → Neo4j</strong>
+          </div>
+        </section>
+        <div class="architecture-input-connector architecture-input-connector--knowledge" aria-hidden="true">
+          <span>graph context</span>
+          <strong>↓</strong>
+        </div>
+      </div>
+    </div>
+
+    <section class="architecture-engine">
+      <p class="visual-art__eyebrow">Recommendation engine</p>
+      <div class="engine-capabilities">
+        <span>Prepare candidates</span>
+        <span>Analyze with LangGraph</span>
+        <span>Validate or fall back</span>
+      </div>
+      <p class="architecture-interface-note">HTMX / SSE · progress + result</p>
+    </section>
+  </div>
+  <ol slot="fallback" class="visual-figure__fallback-list">
+    <li>User input includes a query and roster and is delivered through FastAPI and HTMX/SSE.</li>
+    <li>Knowledge comes from source data processed through ETL into Neo4j and supplies graph context.</li>
+    <li>The recommendation engine prepares candidates, coordinates LangGraph analysis, and validates typed output or follows a fallback path; the project remains actively developed.</li>
+  </ol>
+</VisualFigure>

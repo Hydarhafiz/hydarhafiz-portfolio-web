@@ -45,6 +45,10 @@ if (failures.length === 0) {
   assert(html.includes("AnotherEdenAI"), "Homepage: missing AnotherEdenAI content");
   assert(html.includes('href="https://github.com/Hydarhafiz/AnotherEdenAI"'), "Homepage: missing direct AnotherEdenAI GitHub link");
   assert(html.includes("AIRIS"), "Homepage: missing AIRIS content");
+  assert(html.indexOf('home-introduction__portrait') < html.indexOf('home-introduction__actions'), "Homepage: portrait should precede hero actions in mobile reading order");
+  assert(html.includes('id="airis-load-testing"'), "Homepage: missing AIRIS visual");
+  assert(html.includes('class="supporting-card__visual"'), "Homepage: AIRIS visual is not integrated into its contribution card");
+  assert(html.includes("Supporting contribution: controlled testing, bottleneck diagnosis, and an accepted engineering handoff. No resulting production improvement is claimed."), "Homepage: missing AIRIS visual caption");
   assert(html.includes("Aerospace Malaysia Innovation Centre"), "Homepage: missing AMIC experience");
   assert(html.includes("PETRONAS Digital Sdn Bhd"), "Homepage: missing PETRONAS experience");
   for (const heading of ["Backend", "Cloud &amp; DevOps", "Applied AI", "Supporting Technologies"]) {

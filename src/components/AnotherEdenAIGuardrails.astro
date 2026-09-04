@@ -1,0 +1,45 @@
+---
+import VisualFigure from "./VisualFigure.astro";
+---
+
+<VisualFigure
+  id="anotheredenai-guardrails"
+  label="02 · Safeguards · actively developed"
+  title="How AnotherEdenAI validates recommendations"
+  tone="anotheredenai"
+  altText="Four safeguard cards surround AnotherEdenAI's recommendation boundary: legality rules, retry limits, typed output validation, and a fallback path. The shared outcome is a valid result or a clear failure, not a claim of guaranteed recommendation quality."
+  caption="Four bounded checks around AnotherEdenAI's AI-assisted recommendation output."
+>
+  <div slot="graphic" class="visual-art visual-art--anotheredenai-guardrails" aria-hidden="true">
+    <div class="v4d-safeguard-grid">
+      <article class="v4d-safeguard v4d-safeguard--rules">
+        <p class="v4d-label">Legality rules</p>
+        <strong>Bound candidates</strong>
+      </article>
+      <article class="v4d-safeguard v4d-safeguard--retries">
+        <p class="v4d-label">Retry limits</p>
+        <strong>Correct within bounds</strong>
+      </article>
+      <article class="v4d-safeguard v4d-safeguard--typed">
+        <p class="v4d-label">Typed output</p>
+        <strong>Reject malformed results</strong>
+      </article>
+      <article class="v4d-safeguard v4d-safeguard--fallback">
+        <p class="v4d-label">Fallback path</p>
+        <strong>Return clear failure</strong>
+      </article>
+    </div>
+
+    <div class="v4d-safeguard-result">
+      <strong>Valid result</strong>
+      <span aria-hidden="true">|</span>
+      <strong>Clear failure</strong>
+    </div>
+  </div>
+  <ol slot="fallback" class="visual-figure__fallback-list">
+    <li>Legality rules bound candidates.</li>
+    <li>Retry limits keep correction within explicit bounds.</li>
+    <li>Typed output rejects malformed results.</li>
+    <li>A fallback path returns a clear failure; the project does not claim guaranteed recommendation quality.</li>
+  </ol>
+</VisualFigure>

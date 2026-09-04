@@ -1,48 +1,87 @@
 # SAFAPAC visual contracts
 
-Status: approved. Both visuals are newly redrawn and disclosure-reviewed.
+Status: approved for the Feature 4D visual rebuild.
+
+SAFAPAC is the primary professional case study. These two figures should make Hydar's assigned engineering scope and the resulting beta state legible before any technical detail is read. Apply the [shared Feature 4D diagram rules](./shared.md).
 
 ## `safapac-transition`
 
-- Type: transformation timeline with responsibility lanes.
-- Purpose: show how Hydar's assigned engineering scope moved from an inherited early-boilerplate starting point toward a more traceable, testable, and operationally dependable beta/internal-validation platform.
-- Elements:
-  - `Inherited application scope`
-  - `Backend and PostgreSQL restructuring`
-  - `Calculation boundary, traceability, and validation`
-  - `Containerized CI/delivery and AWS operations`
-  - `Deployed beta / internal validation`
-  - Role lanes for `Hydar's assigned scope`, `TEA-SAF domain collaboration`, `frontend collaboration`, and `Airbus internal pilot validation`
-- Relationships: left-to-right progression; collaboration lanes may connect to the engineering stages but must not imply that Hydar owned collaborators' work or the full product.
-- Allowed labels: the generic stages above, approved technologies at category level, and the approved collaboration counts.
-- Exclusions: proprietary formulas, report excerpts, exact metrics, customer data, internal URLs, environment names, infrastructure identifiers, copied source diagrams, and any claim of sole authorship.
-- Alt text: `A left-to-right timeline shows an inherited application being strengthened through backend and data restructuring, traceable calculation and validation work, and containerized cloud delivery before deployed beta and internal validation. Separate lanes distinguish Hydar's assigned scope, domain and frontend collaboration, and Airbus pilot validation.`
-- Caption: `From inherited application scope to a more traceable and deployable SAFAPAC beta — Hydar's assigned contribution shown with collaboration boundaries.`
-- Source class: `newly-redrawn` from approved career/profile claims, disclosure rules, and sanitized professional evidence.
+- Type: primary transformation visual.
+- Recruiter takeaway: Hydar inherited an early implementation, rebuilt his assigned scope, and supported a deployable beta.
+- Title: `What I rebuilt at SAFAPAC`
+- Main story: `Inherited code → Hydar's scope → Beta delivered`.
+
+### Visible content
+
+| Area | Label | Supporting phrase | Treatment |
+| --- | --- | --- | --- |
+| Start | `Inherited code` | `Early boilerplate` | Small, quiet anchor |
+| Center | `Hydar's scope` | `Backend + PostgreSQL` · `Traceable calculations` · `Container delivery` · `AWS operations` | Largest, strongest accent |
+| Result | `Beta delivered` | `Internal validation` | Filled outcome anchor |
+| Context | `Domain team` · `Frontend partner` · `Airbus pilot` | None | Muted context rail, not stages |
+
+### Low-fidelity content mockup
+
+```text
+WHAT HYDAR REBUILT AT SAFAPAC
+
+[ INHERITED CODE ]  ─────→  [ HYDAR'S SCOPE ]  ─────→  [ BETA DELIVERED ]
+  Early boilerplate          Backend + PostgreSQL        Internal validation
+                             Traceable calculations
+                             Container delivery
+                             AWS operations
+
+          context: Domain team · Frontend partner · Airbus pilot
+```
+
+The center block must be visibly larger than either outer anchor. Context labels sit above or below the main path with no sequential arrows. On compact screens, stack the three anchors vertically and move the context row after the result.
+
+Placement: render immediately after the `Role and approach` heading in the case-study narrative.
+
+### Accessibility and disclosure
+
+- Alt text: `A three-part transformation map shows Hydar's assigned SAFAPAC work between inherited early boilerplate code and a delivered beta with internal validation. The dominant center scope covers backend and PostgreSQL, traceable calculations, container delivery, and AWS operations; domain, frontend, and Airbus groups appear as context.`
+- Caption: `Hydar's assigned engineering scope moved SAFAPAC from inherited code toward a deployable beta under internal validation.`
+- The collapsed text alternative names the three main states first, then identifies the domain team, frontend partner, and Airbus pilot as collaboration or validation context.
+- Do not show proprietary formulas, defaults, report excerpts, exact metrics, customer data, internal URLs, environment identifiers, copied source diagrams, or claims of sole authorship or broad production maturity.
 
 ## `safapac-delivery`
 
-- Type: high-level deployment and delivery architecture flow.
-- Purpose: explain the delivery relationships Hydar operated without exposing proprietary infrastructure detail.
-- Elements:
-  - `Analyst-facing web application`
-  - `HTTPS / Nginx edge`
-  - `FastAPI backend`
-  - `PostgreSQL data`
-  - `Container image and CI delivery`
-  - `AWS service categories: VPC, EC2/RDS, S3/CloudFront, Cognito`
-  - `Beta / internal-validation environment`
-- Relationships: user-facing application reaches the backend through HTTPS; the backend reads/writes PostgreSQL; CI publishes a containerized delivery path; the approved AWS categories host or support the application, data, static delivery, and authentication concerns at a high level.
-- Allowed labels: service names already present in the approved public career/profile contract; generic arrows for request, data, image delivery, and authentication.
-- Exclusions: account IDs, region, instance sizes, costs, subnet/security-group topology, ports, credentials, internal URLs, customer data, copied cloud diagrams, and detailed security configuration.
-- Alt text: `A sanitized architecture flow connects an analyst-facing web application through HTTPS and Nginx to a FastAPI backend and PostgreSQL data, with containerized CI delivery and high-level AWS service categories supporting deployment, static delivery, and authentication.`
-- Caption: `High-level SAFAPAC delivery relationships within Hydar's assigned backend, database, and AWS operations scope.`
-- Source class: `newly-redrawn` from the approved career/profile contract and sanitized professional evidence.
+- Type: secondary compact architecture visual.
+- Recruiter takeaway: SAFAPAC connects from web to data through a clear service path supported by container, CI, AWS, and authentication concerns.
+- Title: `How SAFAPAC gets delivered`
+- Main story: `Web app → HTTPS / Nginx → FastAPI → PostgreSQL`.
 
-## Redraw checklist
+### Visible content
 
-- [x] Shapes and labels are drawn from scratch.
-- [x] No private screenshot, report, diagram, URL, identifier, or measurement is used as a visual source.
-- [x] The beta/internal-validation status is visible in the caption or adjacent text.
-- [x] Alt text and exclusions remain attached to the final asset contract.
-- [x] Hydar manually approves disclosure before staging.
+| Area | Label | Treatment |
+| --- | --- | --- |
+| Path | `Web app` → `HTTPS / Nginx` → `FastAPI` → `PostgreSQL` | Solid arrows; use the same neutral compact card treatment for each service |
+| Platform | `Docker` · `CI` · `AWS` · `Auth` | Quiet supporting band, not a second process |
+
+### Low-fidelity content mockup
+
+```text
+HOW SAFAPAC GETS DELIVERED
+
+[ WEB APP ]  ──→  [ HTTPS / NGINX ]  ──→  [ FASTAPI ]  ──→  [ POSTGRESQL ]
+                                             │
+                         supports:  Docker · CI · AWS · Auth
+```
+
+The primary chain is the only strong relationship. The platform band supports the chain through a quiet rule or subtle upward links; it is not a linear sequence. On compact screens, stack the primary path and wrap the platform labels below it without shrinking the text into tiny nodes.
+
+Placement: render immediately after the `Engineering decisions` heading in the case-study narrative.
+
+### Accessibility and disclosure
+
+- Alt text: `A compact SAFAPAC delivery path connects a web app through HTTPS and Nginx to a FastAPI backend and PostgreSQL. Docker, CI, AWS, and authentication form a supporting platform layer, with beta delivery as the outcome.`
+- Caption: `High-level web-to-data delivery within Hydar's SAFAPAC backend, database, and AWS scope.`
+- The collapsed text alternative describes the four-part path first and the platform labels second; it must not imply a specific identity topology.
+- Do not show account IDs, regions, instance sizes, costs, subnet or security-group topology, ports, credentials, internal URLs, customer data, copied cloud diagrams, or detailed security configuration.
+
+## Contract boundary
+
+Both figures are newly redrawn from the approved career/profile claims and sanitized professional evidence. SAFAPAC remains a deployed beta with internal validation context; no proprietary implementation detail or unsupported metric is part of the visual contract.
+
+Hydar approved the revised titles, labels, shared rules, and mockups before implementation resumed.

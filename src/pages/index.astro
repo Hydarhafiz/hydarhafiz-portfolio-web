@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { siGit, siGithub, siPydantic } from "simple-icons";
+import AirisLoadTesting from "../components/AirisLoadTesting.astro";
 import CaseStudyCard from "../components/CaseStudyCard.astro";
 import CredentialList from "../components/CredentialList.astro";
 import ExperienceList from "../components/ExperienceList.astro";
@@ -33,14 +34,14 @@ const airis = findCaseStudy("airis");
         <div class="home-introduction__copy">
           <p class="eyebrow">Backend software engineer · Malaysia</p>
           <h1 id="hero-title">Hi, I'm Hydar</h1>
-          <div class="home-introduction__actions">
-            <a class="button button--primary" href="#work">View selected work <span aria-hidden="true">↓</span></a>
-            <a class="button button--secondary" href="/resume">Download resume <span aria-hidden="true">↗</span></a>
-          </div>
         </div>
         <figure class="home-introduction__portrait">
           <Image src={profileImage} alt="Portrait of Hydar Hafiz bin Hydzelan" width={400} height={400} loading="eager" />
         </figure>
+        <div class="home-introduction__actions">
+          <a class="button button--primary" href="#work">View selected work <span aria-hidden="true">↓</span></a>
+          <a class="button button--secondary" href="/resume">Download resume <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
       <div class="home-introduction__bottom">
         <div class="home-introduction__role">
@@ -126,12 +127,17 @@ const airis = findCaseStudy("airis");
         />
       </div>
       <article class="supporting-card">
-        <div>
-          <p class="supporting-card__label">Supporting contribution</p>
-          <h3>{airis.data.title}</h3>
+        <div class="supporting-card__intro">
+          <div>
+            <p class="supporting-card__label">Supporting contribution</p>
+            <h3>{airis.data.title}</h3>
+          </div>
+          <p>{airis.data.summary}</p>
+          <p class="supporting-card__meta">{airis.data.context} · {airis.data.period} · {airis.data.status}</p>
         </div>
-        <p>{airis.data.summary}</p>
-        <p class="supporting-card__meta">{airis.data.context} · {airis.data.period} · {airis.data.status}</p>
+        <div class="supporting-card__visual">
+          <AirisLoadTesting />
+        </div>
       </article>
     </section>
 

@@ -18,6 +18,7 @@ interface Props {
 const { entry, headings, adjacent, repositoryHref } = Astro.props;
 const { data } = entry;
 const tone = data.hierarchy === "primary-personal" ? "personal" : "professional";
+const project = data.slug;
 const hierarchyLabel = data.hierarchy === "primary-personal"
   ? "Primary personal case study"
   : "Primary professional case study";
@@ -32,7 +33,7 @@ const adjacentLabel = (hierarchy: string) => {
 
 ---
 
-<article class:list={["case-study", `case-study--${tone}`]}>
+<article class:list={["case-study", `case-study--${tone}`, `case-study--${project}`]} data-project={project}>
   <header class="case-study__hero">
     <div class="container case-study__hero-inner">
       <p class="case-study__back"><a href="/#work">← Back to Featured work</a></p>

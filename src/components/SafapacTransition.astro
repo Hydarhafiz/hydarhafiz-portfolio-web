@@ -1,0 +1,54 @@
+---
+import VisualFigure from "./VisualFigure.astro";
+---
+
+<VisualFigure
+  id="safapac-transition"
+  label="01 · Transformation"
+  title="What I rebuilt at SAFAPAC"
+  tone="safapac"
+  altText="A three-part transformation map shows Hydar's assigned SAFAPAC work between inherited early boilerplate code and a delivered beta with internal validation. The dominant center scope covers backend and PostgreSQL, traceable calculations, container delivery, and AWS operations; domain, frontend, and Airbus groups appear as context."
+  caption="Hydar's assigned engineering scope moved SAFAPAC from inherited code toward a deployable beta under internal validation."
+>
+  <div slot="graphic" class="visual-art visual-art--safapac-transition" aria-hidden="true">
+    <div class="v4d-transform">
+      <article class="v4d-transform__anchor v4d-transform__anchor--origin">
+        <p class="v4d-label">Inherited code</p>
+        <strong>Early boilerplate</strong>
+      </article>
+
+      <span class="v4d-transform__arrow" aria-hidden="true">→</span>
+
+      <article class="v4d-transform__anchor v4d-transform__anchor--scope">
+        <p class="v4d-label">Hydar's scope</p>
+        <div class="v4d-scope-list">
+          <span>Backend + PostgreSQL</span>
+          <span>Traceable calculations</span>
+          <span>Container delivery</span>
+          <span>AWS operations</span>
+        </div>
+      </article>
+
+      <span class="v4d-transform__arrow" aria-hidden="true">→</span>
+
+      <article class="v4d-transform__anchor v4d-transform__anchor--result">
+        <p class="v4d-label">Beta delivered</p>
+        <strong>Internal validation</strong>
+      </article>
+    </div>
+
+    <div class="v4d-context">
+      <span class="v4d-context__label">Context</span>
+      <div class="v4d-context__items">
+        <span>Domain team</span>
+        <span>Frontend partner</span>
+        <span>Airbus pilot</span>
+      </div>
+    </div>
+  </div>
+  <ol slot="fallback" class="visual-figure__fallback-list">
+    <li>Hydar inherited early-boilerplate SAFAPAC code.</li>
+    <li>His scope covered backend and PostgreSQL, traceable calculations, container delivery, and AWS operations.</li>
+    <li>The work moved SAFAPAC toward a deployable beta with internal validation; domain, frontend, and Airbus groups are context.</li>
+  </ol>
+</VisualFigure>

@@ -1,0 +1,28 @@
+---
+import SafapacDelivery from "./SafapacDelivery.astro";
+import SafapacTransition from "./SafapacTransition.astro";
+
+interface Props {
+  id?: string;
+  [key: string]: unknown;
+}
+
+const { id, ...attributes } = Astro.props;
+const inlineVisual = id === "role-and-approach"
+  ? "transition"
+  : id === "engineering-decisions"
+    ? "delivery"
+    : undefined;
+---
+
+<h2 id={id} {...attributes}><slot /></h2>
+{inlineVisual === "transition" && (
+  <div class="case-study__inline-visual">
+    <SafapacTransition />
+  </div>
+)}
+{inlineVisual === "delivery" && (
+  <div class="case-study__inline-visual">
+    <SafapacDelivery />
+  </div>
+)}

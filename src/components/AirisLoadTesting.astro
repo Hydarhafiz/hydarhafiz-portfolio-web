@@ -1,0 +1,48 @@
+---
+import VisualFigure from "./VisualFigure.astro";
+---
+
+<VisualFigure
+  id="airis-load-testing"
+  label="AIRIS · Supporting contribution"
+  title="From workload testing to engineering handoff"
+  tone="airis"
+  altText="A compact three-stage AIRIS contribution path shows controlled workload testing, bottleneck diagnosis with optimization research, and an engineering handoff with senior-engineer acceptance and stakeholder training as outcomes. No resulting production improvement is claimed."
+  caption="Supporting contribution: controlled testing, bottleneck diagnosis, and an accepted engineering handoff. No resulting production improvement is claimed."
+>
+  <div slot="graphic" class="visual-art visual-art--airis" aria-hidden="true">
+    <div class="v4d-airis-path">
+      <article class="v4d-airis-stage">
+        <span class="v4d-airis-stage__number">01</span>
+        <p class="v4d-label">Test workload</p>
+        <strong>Controlled testing</strong>
+      </article>
+
+      <span class="v4d-airis-path__arrow" aria-hidden="true">→</span>
+
+      <article class="v4d-airis-stage v4d-airis-stage--focus">
+        <span class="v4d-airis-stage__number">02</span>
+        <p class="v4d-label">Diagnose bottlenecks</p>
+        <strong>Optimization research</strong>
+      </article>
+
+      <span class="v4d-airis-path__arrow" aria-hidden="true">→</span>
+
+      <article class="v4d-airis-stage v4d-airis-stage--handoff">
+        <span class="v4d-airis-stage__number">03</span>
+        <p class="v4d-label">Handoff findings</p>
+        <div class="v4d-airis-outcomes">
+          <span>Senior-engineer accepted</span>
+          <span>Stakeholder training</span>
+        </div>
+      </article>
+    </div>
+
+    <p class="v4d-boundary-note">No resulting production improvement is claimed.</p>
+  </div>
+  <ol slot="fallback" class="visual-figure__fallback-list">
+    <li>Hydar performed controlled workload testing.</li>
+    <li>Observed behavior informed bottleneck diagnosis and optimization research.</li>
+    <li>The findings became an engineering handoff accepted by the senior engineer and supported stakeholder training; no resulting production improvement is claimed.</li>
+  </ol>
+</VisualFigure>
