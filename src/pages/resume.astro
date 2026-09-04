@@ -1,12 +1,12 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
-import PlaceholderPage from "../components/PlaceholderPage.astro";
+import ResumePage from "../components/ResumePage.astro";
+import careerData from "../../resume/career-data.json";
 ---
 
-<SiteLayout title="Resume — Hydar Hafiz">
-  <PlaceholderPage
-    eyebrow="Public resume"
-    title="Resume"
-    description="The semantic public resume presentation will be integrated in a later feature."
-  />
+<SiteLayout
+  title="Hydar Hafiz — Public resume"
+  description="Public resume for Hydar Hafiz bin Hydzelan, Backend Software Engineer."
+>
+  <ResumePage data={careerData} />
 </SiteLayout>

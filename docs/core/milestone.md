@@ -1,6 +1,6 @@
-# Active milestone: Portfolio implementation
+# Milestone 4: Portfolio implementation
 
-- Status: active on 2026-09-01
+- Status: completed on 2026-09-05
 - Activated: 2026-09-01
 - Approved scope: implement the first public Astro/TypeScript/MDX portfolio from the approved UX/UI and content contracts
 
@@ -82,16 +82,18 @@ AIRIS remains a compact supporting contribution on the homepage and has no dedic
 - Route: `feature-planner -> builder-executor -> tdd-loop`
 - Contract checkpoint: all five visual contracts and mockups approved; the corrected AnotherEdenAI pipeline layout and final project-page color refinement are included in the implementation scope.
 - Evidence: `ASTRO_TELEMETRY_DISABLED=1 npm run check`, `ASTRO_TELEMETRY_DISABLED=1 npm run build`, `npm run visuals:validate`, `npm run case-studies:validate`, `npm run homepage:validate`, `npm run site:validate`, `git diff --check`, and `bash scripts/check-public-boundary.sh` pass. Hydar approved the browser review of the integrated visuals, project accents, responsive composition, centered mobile flowcharts, and disclosure-safe presentation on 2026-09-05.
-- Human checkpoint: complete. Feature 4E is the next implementation checkpoint.
+- Human checkpoint: complete.
 
 ### Feature 4E — semantic resume and launch-quality accessibility
 
 - Type: build
-- Status: pending
+- Status: completed on 2026-09-05
 - Outcome: implement the semantic public resume page/PDF action and complete cross-route accessibility, responsive, theme, and content-boundary hardening.
 - Scope: `/resume`, public PDF link, career-data reconciliation, print behavior, keyboard/screen-reader review, contrast and reduced-motion checks, responsive checks, SEO basics, and final feature-level content validation.
 - Non-goals: deployment, Cloudflare Pages, domain, analytics, LinkedIn launch, or private application resume exposure.
 - Route: `builder-executor -> tdd-loop`
+- Evidence: `ASTRO_TELEMETRY_DISABLED=1 npm run check`, `ASTRO_TELEMETRY_DISABLED=1 npm run build`, `npm run resume:page:validate`, `npm run resume:validate`, `npm run case-studies:validate`, `npm run homepage:validate`, `npm run visuals:validate`, `npm run site:validate`, `npm run profile:validate`, `bash scripts/check-public-boundary.sh`, and `git diff --check` pass. Hydar confirmed the semantic resume functions properly and approved Feature 4E completion on 2026-09-05.
+- Human checkpoint: complete. The semantic resume, responsive/theme presentation, print behavior, PDF action, keyboard order, contrast, and public phone-number boundary were approved on 2026-09-05.
 
 ## Verification and retention
 
@@ -102,11 +104,11 @@ AIRIS remains a compact supporting contribution on the homepage and has no dedic
 
 ## Milestone exit gate
 
-- [ ] All five launch routes and the custom 404 page are implemented from approved sources.
-- [ ] SAFAPAC remains the primary professional case study; AnotherEdenAI remains the primary personal case study and actively developed; AIRIS remains supporting and compact.
-- [ ] The site is static by default, strict TypeScript, responsive, keyboard-accessible, theme-aware, reduced-motion aware, and free of page-level overflow.
-- [ ] All approved visuals are original/accessible and preserve captions, alternatives, source boundaries, and exclusions.
-- [ ] Public resume and homepage facts remain reconciled with career sources, and the phone number remains absent.
-- [ ] Astro/type/build/accessibility/content-boundary checks pass; deployment, domain, analytics, and LinkedIn work remain deferred.
+- [x] All five launch routes and the custom 404 page are implemented from approved sources.
+- [x] SAFAPAC remains the primary professional case study; AnotherEdenAI remains the primary personal case study and actively developed; AIRIS remains supporting and compact.
+- [x] The site is static by default, strict TypeScript, responsive, keyboard-accessible, theme-aware, reduced-motion aware, and free of page-level overflow.
+- [x] All approved visuals are original/accessible and preserve captions, alternatives, source boundaries, and exclusions.
+- [x] Public resume and homepage facts remain reconciled with career sources, and the phone number remains absent.
+- [x] Astro/type/build/accessibility/content-boundary checks pass; deployment, domain, analytics, and LinkedIn work remain deferred.
 
-Next human checkpoint: review the integrated Feature 4D SAFAPAC, AnotherEdenAI, and AIRIS visuals for narrative placement, disclosure-safe labels, alt text, captions, linear fallbacks, responsive behavior, theme states, and keyboard reading order before Feature 4E resume/accessibility hardening.
+Next human checkpoint: approve the milestone-wide career-positioning revision before implementation begins.

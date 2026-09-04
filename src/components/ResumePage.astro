@@ -1,0 +1,179 @@
+---
+import ExperienceList from "./ExperienceList.astro";
+import CredentialList from "./CredentialList.astro";
+
+interface Basics {
+  name: string;
+  title: string;
+  location: string;
+  mobility: string;
+  availability: string;
+  email: string;
+  links: Array<{ label: string; display: string; url: string }>;
+}
+
+interface CapabilityGroup {
+  category: string;
+  items: string[];
+}
+
+interface Experience {
+  role: string;
+  organization: string;
+  dates: string;
+  bullets: string[];
+}
+
+interface Project {
+  name: string;
+  context: string;
+  dates: string;
+  url: string;
+  bullets: string[];
+}
+
+interface Education {
+  institution: string;
+  qualification: string;
+  dates: string;
+  detail: string;
+}
+
+interface Certification {
+  name: string;
+  issued: string;
+  url: string;
+}
+
+interface CareerData {
+  basics: Basics;
+  summary: string;
+  capabilities: CapabilityGroup[];
+  experience: Experience[];
+  projects: Project[];
+  education: Education;
+  certifications: Certification[];
+}
+
+interface Props {
+  data: CareerData;
+}
+
+const { data } = Astro.props;
+const pdfHref = "/resume/hydar-hafiz-bin-hydzelan-resume.pdf";
+const selectedProject = data.projects[0];
+---
+
+<article class="resume-page container">
+  <header class="resume-page__header">
+    <div class="resume-page__identity">
+      <p class="eyebrow">Public resume</p>
+      <h1>{data.basics.name}</h1>
+      <p class="resume-page__role">{data.basics.title}</p>
+    </div>
+
+    <div class="resume-page__actions" aria-label="Resume actions">
+      <a class="button button--primary" href={pdfHref} download>
+        Download PDF <span aria-hidden="true">↓</span>
+      </a>
+      <a class="button button--secondary" href={`mailto:${data.basics.email}`}>
+        Email Hydar <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <dl class="resume-page__meta">
+      <div>
+        <dt>Based in</dt>
+        <dd>{data.basics.location}</dd>
+      </div>
+      <div>
+        <dt>Mobility</dt>
+        <dd>{data.basics.mobility}</dd>
+      </div>
+      <div>
+        <dt>Availability</dt>
+        <dd>{data.basics.availability}</dd>
+      </div>
+    </dl>
+
+    <nav class="resume-page__contact" aria-label="Public resume contact links">
+      <a href={`mailto:${data.basics.email}`}>{data.basics.email}</a>
+      {data.basics.links.map((link) => (
+        <a href={link.url} target="_blank" rel="noreferrer" aria-label={`${link.label}: ${link.display} (opens in new tab)`}>
+          {link.label}
+        </a>
+      ))}
+    </nav>
+  </header>
+
+  <div class="resume-page__body">
+    <aside class="resume-page__rail">
+      <nav class="resume-page__toc" aria-labelledby="resume-contents-title">
+        <p class="resume-page__rail-label">Resume index</p>
+        <h2 id="resume-contents-title">On this page</h2>
+        <ol>
+          <li><a href="#summary">Professional summary</a></li>
+          <li><a href="#capabilities">Technical capabilities</a></li>
+          <li><a href="#experience">Professional experience</a></li>
+          <li><a href="#project">Selected project</a></li>
+          <li><a href="#credentials">Credentials &amp; education</a></li>
+        </ol>
+      </nav>
+      <p class="resume-page__rail-note">Public contact is limited to email, LinkedIn, and GitHub.</p>
+    </aside>
+
+    <div class="resume-page__content">
+      <section id="summary" class="resume-page__section" aria-labelledby="summary-title">
+        <p class="resume-page__section-label">01 · Profile</p>
+        <h2 id="summary-title">Professional summary</h2>
+        <p class="resume-page__summary">{data.summary}</p>
+      </section>
+
+      <section id="capabilities" class="resume-page__section" aria-labelledby="capabilities-title">
+        <p class="resume-page__section-label">02 · Technical scope</p>
+        <h2 id="capabilities-title">Technical capabilities</h2>
+        <dl class="resume-capability-list">
+          {data.capabilities.map((group) => (
+            <div>
+              <dt>{group.category}</dt>
+              <dd>{group.items.join(" · ")}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+
+      <section id="experience" class="resume-page__section" aria-labelledby="experience-title">
+        <p class="resume-page__section-label">03 · Experience</p>
+        <h2 id="experience-title">Professional experience</h2>
+        <ExperienceList entries={data.experience} />
+      </section>
+
+      {selectedProject && (
+        <section id="project" class="resume-page__section" aria-labelledby="project-title">
+          <p class="resume-page__section-label">04 · Project work</p>
+          <h2 id="project-title">Selected project</h2>
+          <article class="resume-project-entry">
+            <div class="resume-project-entry__heading">
+              <h3>
+                <a href={selectedProject.url} target="_blank" rel="noreferrer" aria-label={`${selectedProject.name} source repository (opens in new tab)`}>
+                  {selectedProject.name} <span aria-hidden="true">↗</span>
+                </a>
+              </h3>
+              <p>{selectedProject.dates}</p>
+            </div>
+            <p class="resume-project-entry__context">{selectedProject.context}</p>
+            <ul>
+              {selectedProject.bullets.map((bullet) => <li>{bullet}</li>)}
+            </ul>
+          </article>
+        </section>
+      )}
+
+      <section id="credentials" class="resume-page__section" aria-labelledby="credentials-title">
+        <p class="resume-page__section-label">05 · Credentials</p>
+        <h2 id="credentials-title">Credentials &amp; education</h2>
+        <CredentialList certifications={data.certifications} education={data.education} />
+      </section>
+    </div>
+  </div>
+</article>

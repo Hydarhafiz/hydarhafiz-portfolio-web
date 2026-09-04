@@ -15,6 +15,7 @@
     "resume:render": "node scripts/render-resume.mjs --variant public",
     "resume:render:private": "node scripts/render-resume.mjs --variant application",
     "resume:validate": "node scripts/validate-resume.mjs public/resume/hydar-hafiz-bin-hydzelan-resume.pdf --variant public",
+    "resume:page:validate": "node scripts/validate-resume-page.mjs",
     "resume:validate:private": "node scripts/validate-resume.mjs .private/hydar-hafiz-bin-hydzelan-application-resume.pdf --variant application",
     "resume:check": "npm run resume:render && npm run resume:validate",
     "resume:check:all": "npm run resume:render && npm run resume:render:private && npm run resume:validate && npm run resume:validate:private",

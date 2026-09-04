@@ -26,9 +26,9 @@ Produced disclosure-reviewed SAFAPAC and AnotherEdenAI flagship narratives, a co
 
 Used `architect-planner` to activate the milestone boundary and `ux-ui-bridge` to produce the implementation-ready UX/UI specification at `docs/ux-ui/specification.md`. The specification defines the technical-editorial design system, launch page hierarchy, reusable content presentation, responsive states, accessibility and theme behavior, purposeful animation, approved project visual treatment, and the later Astro/TypeScript/MDX handoff. Astro implementation remains deferred until the UX/UI specification receives human approval.
 
-### 4. Portfolio implementation — active on 2026-09-01
+### 4. Portfolio implementation — completed on 2026-09-05
 
-Activated the approved Astro/TypeScript/MDX implementation milestone. The first feature is the shared Astro site foundation, followed by typed content/homepage presentation, flagship case-study routes, approved visuals/AIRIS presentation, and semantic resume plus launch-quality accessibility hardening. Keep technical capabilities and AMIC/PETRONAS experience clearly visible on the homepage without dedicated routes.
+Implemented the approved Astro/TypeScript/MDX portfolio with its shared accessible shell, recruiter homepage, typed case-study content, flagship SAFAPAC and AnotherEdenAI routes, supporting AIRIS presentation, original project visuals, semantic public resume, responsive/theme behavior, and launch-quality content-boundary validation. Deployment and external launch remain separate work.
 
 ### 5. Deployment and launch
 
