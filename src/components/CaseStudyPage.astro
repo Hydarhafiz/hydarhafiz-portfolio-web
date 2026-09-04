@@ -1,0 +1,119 @@
+---
+import type { CollectionEntry } from "astro:content";
+import StatusBadge from "./StatusBadge.astro";
+
+interface Heading {
+  depth: number;
+  slug: string;
+  text: string;
+}
+
+interface Props {
+  entry: CollectionEntry<"caseStudies">;
+  headings: Heading[];
+  adjacent: CollectionEntry<"caseStudies">[];
+  repositoryHref?: string;
+}
+
+const { entry, headings, adjacent, repositoryHref } = Astro.props;
+const { data } = entry;
+const tone = data.hierarchy === "primary-personal" ? "personal" : "professional";
+const hierarchyLabel = data.hierarchy === "primary-personal"
+  ? "Primary personal case study"
+  : "Primary professional case study";
+const status = data.status.charAt(0).toUpperCase() + data.status.slice(1);
+const contentHeadings = headings.filter((heading) => heading.depth === 2);
+
+const adjacentLabel = (hierarchy: string) => {
+  if (hierarchy === "primary-personal") return "Primary personal case study";
+  if (hierarchy === "primary-professional") return "Primary professional case study";
+  return "Supporting contribution";
+};
+
+---
+
+<article class:list={["case-study", `case-study--${tone}`]}>
+  <header class="case-study__hero">
+    <div class="container case-study__hero-inner">
+      <p class="case-study__back"><a href="/#work">← Back to Featured work</a></p>
+      <p class="eyebrow">{hierarchyLabel}</p>
+      <div class="case-study__title-row">
+        <h1 id="case-study-title">{data.title}</h1>
+        <StatusBadge label={status} tone={tone} />
+      </div>
+      <p class="case-study__summary">{data.summary}</p>
+      {repositoryHref && (
+        <p class="case-study__repository">
+          <a href={repositoryHref} target="_blank" rel="noreferrer">
+            View public repository on GitHub <span aria-hidden="true">↗</span>
+          </a>
+        </p>
+      )}
+
+      <dl class="case-study__meta">
+        <div>
+          <dt>Role</dt>
+          <dd>{data.role}</dd>
+        </div>
+        <div>
+          <dt>Context</dt>
+          <dd>{data.context}</dd>
+        </div>
+        <div>
+          <dt>Period</dt>
+          <dd>{data.period}</dd>
+        </div>
+      </dl>
+
+      <aside class="case-study__boundary" aria-labelledby="scope-title">
+        <p class="case-study__section-label">Project scope</p>
+        <h2 id="scope-title">Scope &amp; status</h2>
+        <p class="case-study__boundary-status"><strong>Status:</strong> {status}.</p>
+        <p class="case-study__boundary-role"><strong>Role:</strong> {data.role}</p>
+        <ul class="case-study__scope-list" aria-label={`${data.title} contribution areas`}>
+          {data.capabilities.map((capability) => <li>{capability.name}</li>)}
+        </ul>
+      </aside>
+    </div>
+  </header>
+
+  <div class="container case-study__content">
+    <div class="case-study__content-grid">
+      {contentHeadings.length > 0 && (
+        <nav class="case-study__toc" aria-labelledby="contents-title">
+          <p class="case-study__section-label">Contents</p>
+          <h2 id="contents-title">On this page</h2>
+          <ol>
+            {contentHeadings.map((heading) => (
+              <li><a href={`#${heading.slug}`}>{heading.text}</a></li>
+            ))}
+          </ol>
+        </nav>
+      )}
+
+      <div class="case-study__main">
+        <div class="case-study__prose">
+          <slot />
+        </div>
+
+      </div>
+    </div>
+
+    <nav class="case-study__adjacent" aria-labelledby="adjacent-title">
+      <div>
+        <p class="case-study__section-label">Continue exploring</p>
+        <h2 id="adjacent-title">Adjacent work</h2>
+      </div>
+      <a class="button button--secondary" href="/#work">All Featured work <span aria-hidden="true">↗</span></a>
+      <div class="case-study__adjacent-grid">
+        {adjacent.map((item) => (
+          <a class="case-study__adjacent-card" href={`/${item.data.slug}`}>
+            <span>{adjacentLabel(item.data.hierarchy)}</span>
+            <strong>{item.data.title}</strong>
+            <small>{item.data.status}</small>
+          </a>
+        ))}
+      </div>
+    </nav>
+  </div>
+</article>

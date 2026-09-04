@@ -43,6 +43,7 @@ if (failures.length === 0) {
   assert(html.includes("Supporting contribution"), "Homepage: missing AIRIS supporting label");
   assert(html.includes("SAFAPAC"), "Homepage: missing SAFAPAC content");
   assert(html.includes("AnotherEdenAI"), "Homepage: missing AnotherEdenAI content");
+  assert(html.includes('href="https://github.com/Hydarhafiz/AnotherEdenAI"'), "Homepage: missing direct AnotherEdenAI GitHub link");
   assert(html.includes("AIRIS"), "Homepage: missing AIRIS content");
   assert(html.includes("Aerospace Malaysia Innovation Centre"), "Homepage: missing AMIC experience");
   assert(html.includes("PETRONAS Digital Sdn Bhd"), "Homepage: missing PETRONAS experience");

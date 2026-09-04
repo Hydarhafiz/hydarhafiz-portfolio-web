@@ -8,9 +8,19 @@ interface Props {
   hierarchyLabel: string;
   tone: "professional" | "personal" | "supporting";
   featured?: boolean;
+  externalHref?: string;
+  externalLabel?: string;
 }
 
-const { entry, href, hierarchyLabel, tone, featured = false } = Astro.props;
+const {
+  entry,
+  href,
+  hierarchyLabel,
+  tone,
+  featured = false,
+  externalHref,
+  externalLabel = "View on GitHub"
+} = Astro.props;
 const { data } = entry;
 const status = data.status.charAt(0).toUpperCase() + data.status.slice(1);
 ---
@@ -28,5 +38,18 @@ const status = data.status.charAt(0).toUpperCase() + data.status.slice(1);
       {data.capabilities.slice(0, 3).map((capability) => <li>{capability.name}</li>)}
     </ul>
   </div>
-  <a class="case-card__action" href={href}>Read case study <span aria-hidden="true">→</span></a>
+  <div class="case-card__actions">
+    <a class="case-card__action" href={href}>Read case study <span aria-hidden="true">→</span></a>
+    {externalHref && (
+      <a
+        class="case-card__external"
+        href={externalHref}
+        target="_blank"
+        rel="noreferrer"
+        aria-label={`${externalLabel}: ${data.title} (opens in new tab)`}
+      >
+        {externalLabel} <span aria-hidden="true">↗</span>
+      </a>
+    )}
+  </div>
 </article>

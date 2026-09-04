@@ -65,16 +65,17 @@ AIRIS remains a compact supporting contribution on the homepage and has no dedic
 ### Feature 4C — flagship case-study routes
 
 - Type: build
-- Status: active
+- Status: completed
 - Outcome: implement reusable case-study presentation for `/safapac` and `/anotheredenai` from the approved structured content.
-- Scope: case-study layout, metadata/status/boundary callouts, narrative sections, contents navigation, limitations, source notes, and adjacent-work navigation.
+- Scope: case-study layout, metadata/status/scope callouts, narrative sections, contents navigation, limitations, directly useful public links, and adjacent-work navigation; retain source provenance in the approved content contracts without rendering a recruiter-facing source inventory.
+- Evidence: `ASTRO_TELEMETRY_DISABLED=1 npm run check`, `ASTRO_TELEMETRY_DISABLED=1 npm run build`, `npm run case-studies:validate`, `npm run site:validate`, `npm run homepage:validate`, `git diff --check`, and `bash scripts/check-public-boundary.sh` pass. Hydar approved the route presentation and recruiter-first scope/source treatment on 2026-09-04.
 - Non-goals: changing content contracts, claiming production/evaluation maturity, adding screenshots, or implementing unapproved visuals.
 - Route: `builder-executor -> tdd-loop`
 
 ### Feature 4D — approved visuals and AIRIS presentation
 
 - Type: build
-- Status: pending
+- Status: active
 - Outcome: recreate the approved SAFAPAC, AnotherEdenAI, and AIRIS visuals as accessible original SVG/Astro or appropriately simple Mermaid components.
 - Scope: `safapac-transition`, `safapac-delivery`, `anotheredenai-pipeline`, `anotheredenai-guardrails`, and `airis-load-testing`, including captions, approved alt text, legends, responsive transformations, linear fallbacks, and disclosure-safe labels.
 - Non-goals: copied diagrams/screenshots, private source reproduction, interactive claims, invented metrics, or diagram behavior that hides content behind animation.
@@ -105,4 +106,4 @@ AIRIS remains a compact supporting contribution on the homepage and has no dedic
 - [ ] Public resume and homepage facts remain reconciled with career sources, and the phone number remains absent.
 - [ ] Astro/type/build/accessibility/content-boundary checks pass; deployment, domain, analytics, and LinkedIn work remain deferred.
 
-Next human checkpoint: review the Feature 4C SAFAPAC and AnotherEdenAI case-study routes, including disclosure-safe metadata, narrative hierarchy, contents navigation, limitations, source notes, adjacent-work navigation, responsive behavior, theme states, and keyboard order before Feature 4D visual integration.
+Next human checkpoint: review the Feature 4D original SAFAPAC, AnotherEdenAI, and AIRIS visuals for disclosure-safe labels, alt text, captions, linear fallbacks, responsive behavior, theme states, and keyboard reading order before Feature 4E resume/accessibility hardening.

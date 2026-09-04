@@ -232,8 +232,8 @@ The shared content envelope in `docs/content/contract.md` remains the source sha
 | `role` | A visible contribution-boundary line near the page title and, where necessary, a boundary callout. |
 | `capabilities` | Evidence-bearing grouped tags/list items. Show the supporting contribution in text; do not render levels or scores. |
 | `visuals` | `VisualFigure` with contract ID, title, drawing, caption, alt text, source class, and exclusions. |
-| `disclosure` | Visible maturity/boundary callout and limitations content. Never expose private source paths or internal review notes. |
-| `sources` | Public links or sanitized source categories in a compact source note. Do not link to private material. |
+| `disclosure` | Concise project scope/status callout and limitations content. Keep excluded claims as editorial controls, not a recruiter-facing exclusion list. Never expose private source paths or internal review notes. |
+| `sources` | Retain public links or sanitized source categories in content metadata; show only directly useful public links, such as a public repository link. Do not render a dedicated source/context block on recruiter-facing case-study pages. |
 
 `VisualFigure` must have a visible title or lead-in, a caption, a plain-language text alternative, and an adjacent explanation when the relationships are important to the narrative. If a visual cannot be understood at compact width, the same sequence or relationships must be provided as a linear accessible fallback.
 
@@ -245,7 +245,7 @@ The shared content envelope in `docs/content/contract.md` remains the source sha
 - Limit badges to meaningful metadata: hierarchy, status, and public-source/newly-redrawn context. Do not turn every technology into a pill.
 - Preserve limitations as a first-class section. Never hide them behind a required click.
 - External links should have descriptive labels. A new tab is not required; if used, announce it.
-- Render only approved public links. Disclosure source categories may be shown as plain text, never as private filenames or paths.
+- Render only approved public links when they help the reader continue, such as the AnotherEdenAI GitHub repository. Keep sanitized source categories in the content contract rather than presenting them as a source inventory; never expose private filenames or paths.
 
 ## 6. Page specifications
 
@@ -308,7 +308,7 @@ Purpose: show the primary professional case study with a clear personal contribu
 - H1: `SAFAPAC`.
 - Summary: use the approved one-sentence summary.
 - Metadata: `November 2025 – October 2026`, `Aerospace Malaysia Innovation Centre in collaboration with Airbus`, and `Backend Software Developer (Contract)`.
-- Boundary callout near the header: Hydar inherited an early boilerplate implementation and substantially rebuilt and productionized the assigned backend, database, calculation-traceability, validation, testability, documentation, and AWS delivery scope. This is not a whole-product or sole-authorship claim.
+- Concise `Scope & status` callout near the header: show the approved status, role, and evidence-bearing contribution areas without displaying an exclusion checklist. The narrative must still make clear that the work is Hydar's assigned scope, not a whole-product or sole-authorship claim.
 
 #### Narrative order
 

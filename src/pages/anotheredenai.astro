@@ -1,12 +1,26 @@
 ---
+import { getCollection, render } from "astro:content";
+import CaseStudyPage from "../components/CaseStudyPage.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
-import PlaceholderPage from "../components/PlaceholderPage.astro";
+
+const entries = await getCollection("caseStudies");
+const entry = entries.find((candidate) => candidate.data.slug === "anotheredenai");
+
+if (!entry) {
+  throw new Error("Missing approved AnotherEdenAI case-study content.");
+}
+
+const { Content, headings } = await render(entry);
+const adjacent = entries.filter((candidate) => candidate.data.slug !== entry.data.slug);
 ---
 
-<SiteLayout title="AnotherEdenAI — Hydar Hafiz">
-  <PlaceholderPage
-    eyebrow="Primary personal case study"
-    title="AnotherEdenAI"
-    description="The actively developed project presentation will be integrated in a later feature."
-  />
+<SiteLayout title="AnotherEdenAI — Hydar Hafiz" description={entry.data.summary}>
+  <CaseStudyPage
+    entry={entry}
+    headings={headings}
+    adjacent={adjacent}
+    repositoryHref="https://github.com/Hydarhafiz/AnotherEdenAI"
+  >
+    <Content />
+  </CaseStudyPage>
 </SiteLayout>

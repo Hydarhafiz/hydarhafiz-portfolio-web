@@ -10,6 +10,7 @@
     "check": "astro check",
     "site:validate": "node scripts/validate-site-foundation.mjs",
     "homepage:validate": "node scripts/validate-homepage.mjs",
+    "case-studies:validate": "node scripts/validate-case-studies.mjs",
     "resume:render": "node scripts/render-resume.mjs --variant public",
     "resume:render:private": "node scripts/render-resume.mjs --variant application",
     "resume:validate": "node scripts/validate-resume.mjs public/resume/hydar-hafiz-bin-hydzelan-resume.pdf --variant public",

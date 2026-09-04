@@ -1,12 +1,21 @@
 ---
+import { getCollection, render } from "astro:content";
+import CaseStudyPage from "../components/CaseStudyPage.astro";
 import SiteLayout from "../layouts/SiteLayout.astro";
-import PlaceholderPage from "../components/PlaceholderPage.astro";
+
+const entries = await getCollection("caseStudies");
+const entry = entries.find((candidate) => candidate.data.slug === "safapac");
+
+if (!entry) {
+  throw new Error("Missing approved SAFAPAC case-study content.");
+}
+
+const { Content, headings } = await render(entry);
+const adjacent = entries.filter((candidate) => candidate.data.slug !== entry.data.slug);
 ---
 
-<SiteLayout title="SAFAPAC — Hydar Hafiz">
-  <PlaceholderPage
-    eyebrow="Primary professional case study"
-    title="SAFAPAC"
-    description="The approved case-study presentation will be integrated in a later feature."
-  />
+<SiteLayout title="SAFAPAC — Hydar Hafiz" description={entry.data.summary}>
+  <CaseStudyPage entry={entry} headings={headings} adjacent={adjacent}>
+    <Content />
+  </CaseStudyPage>
 </SiteLayout>
