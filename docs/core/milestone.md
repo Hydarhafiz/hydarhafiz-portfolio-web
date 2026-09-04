@@ -1,114 +1,76 @@
-# Milestone 4: Portfolio implementation
+# Active milestone: T-shaped career positioning
 
 - Status: completed on 2026-09-05
-- Activated: 2026-09-01
-- Approved scope: implement the first public Astro/TypeScript/MDX portfolio from the approved UX/UI and content contracts
+- Activated: 2026-09-05
+- Approved scope: reposition the shared resume and public portfolio around one software-engineering identity spanning Backend, Cloud & DevOps, and Applied AI
 
 ## Outcome
 
-Build the static portfolio experience defined by `docs/ux-ui/specification.md`, using Astro with strict TypeScript, Git-maintained content, accessible responsive presentation, and reusable components. Keep the site recruiter-readable and preserve all approved case-study hierarchy, maturity wording, contribution boundaries, public contact rules, and visual exclusions.
+Present Hydar Hafiz bin Hydzelan as a `Software Engineer — Backend, Cloud & Applied AI`: a production-oriented engineer whose strongest foundation is backend development, whose professional scope includes substantial cloud/DevOps ownership, and whose emerging specialization is reliable applied-AI systems.
 
-The launch route set is fixed:
+The milestone must support three genuine target job families without presenting three unrelated careers or forcing equal weighting:
 
-- `/` — recruiter-oriented homepage
-- `/safapac` — primary professional case study
-- `/anotheredenai` — primary personal case study, labelled actively developed
-- `/resume` — semantic public resume and PDF action
-- custom 404 fallback
+1. Backend Software Engineer — strongest/default foundation.
+2. Cloud & DevOps Engineer — supported by application-to-infrastructure delivery ownership.
+3. Applied AI Engineer — supported by professional AI workload testing and a substantial active personal system.
 
-AIRIS remains a compact supporting contribution on the homepage and has no dedicated route.
+## Shared boundaries
 
-## Shared implementation boundaries
-
-- Source authority remains current repository behavior and verified artifacts, then `resume/career-data.json`, `docs/career/profile-alignment.md`, the approved architecture/boundary/planning documents, and approved Milestone 2 content/visual/disclosure contracts.
-- The UX/UI contract in `docs/ux-ui/specification.md` governs visual direction, page hierarchy, responsive states, accessibility, theme behavior, motion, and implementation handoff.
-- Use static rendering by default. Hydrate only theme persistence/toggle, mobile navigation, and contents disclosure when needed.
-- Keep capabilities, AMIC/PETRONAS experience, credentials, contact links, and selected work visible on the homepage without dedicated About, Skills, Experience, AIRIS, Blog, Writing, or Notes routes.
-- Never publish the phone number, private resume overlay, confidential employer material, private screenshots/reports, copied diagrams, internal URLs, credentials, customer/stakeholder data, proprietary formulas, unsupported metrics, or unsupported maturity/ownership/performance claims.
-- Do not modify the separate AnotherEdenAI repository, deploy, configure the domain, enable analytics, or publish LinkedIn content in this milestone.
+- Preserve every official employment title, organization, date, maturity label, contribution boundary, and disclosure rule. A resume headline is positioning, not a historical job-title rewrite.
+- Use one canonical evidence model for shared facts and four emphasis profiles: balanced/default, Backend, Cloud, and Applied AI.
+- Treat resume emphasis and contact privacy as independent concerns. The public balanced resume remains phone-free; ignored application outputs may use the approved private contact overlay.
+- Keep the public website as one broad umbrella. Expose one normal `Download Resume` action for the balanced PDF; targeted resumes remain local application artifacts.
+- Backend remains strongest. Cloud/DevOps and Applied AI must be visible through evidence rather than artificial one-third weighting or keyword stuffing.
+- Prefer recruiter-readable industry language over project-internal vocabulary. Do not invent metrics, technologies, adoption, ownership, or outcomes.
+- Do not position Hydar as a mature traditional MLOps specialist. Model training pipelines, feature stores, drift monitoring, model registries, and retraining systems remain unsupported.
+- Preserve the existing technical-editorial site design. This is a content, data-model, PDF-layout, metadata, and validation revision rather than a visual redesign.
+- Keep SAFAPAC as deployed beta/internal validation, AIRIS as a supporting contribution, PETRONAS as an internship/prototype context, and AnotherEdenAI as actively developed.
+- For AIRIS, distinguish authored testing, analysis, reporting, and optimization recommendations from the senior developer/project manager's final decisions and implementation work.
+- Do not deploy, configure the domain, enable analytics, publish external profiles, expose private application resumes, or modify the separate AnotherEdenAI repository.
 
 ## Feature sequence
 
-### Feature 4A — Astro site foundation
+### Feature 5A — canonical T-shaped positioning and resume profiles
 
 - Type: build
-- Status: completed
-- Outcome: create the runnable Astro application foundation with the shared site shell and accessible 404 page.
-- Scope: Astro/TypeScript project configuration; package scripts and dependency lockfile; global design tokens and Source Sans 3 loading; responsive primitives; shared `SiteLayout`, skip link, header/navigation, mobile navigation, footer, theme toggle, and 404 components; launch route placeholders that do not invent case-study content; and foundation-level validation.
-- Non-goals: MDX/content collection implementation, homepage copy, case-study narratives, final project visuals, resume data rendering, deployment, domain, analytics, contact form, or external profile updates.
-- Entry gate: approved UX/UI specification and this active milestone are present; worktree is clean; existing resume/content assets remain untouched.
-- Exit gate: local Astro dev/build path works; foundation routes render with semantic landmarks; theme and mobile navigation are keyboard-operable; responsive overflow is controlled; 404 recovery works; no unapproved content or private data is introduced.
-- Durable outputs: Astro project configuration, reusable shell/components/styles, 404 route, package scripts/lockfile, and capability-focused foundation checks.
-- Evidence: `ASTRO_TELEMETRY_DISABLED=1 npm run check`, `ASTRO_TELEMETRY_DISABLED=1 npm run build`, `npm run site:validate`, `git diff --check`, and `bash scripts/check-public-boundary.sh` pass; Hydar manually confirmed the initial design and navigation behavior on 2026-09-01.
+- Status: complete on 2026-09-05
+- Outcome: introduce the approved umbrella identity across the canonical career source, four ATS-readable one-page resume profiles, semantic web resume, portfolio copy, project positioning, metadata, and recruiter-profile guidance without weakening factual or disclosure boundaries.
+- Scope: canonical evidence/profile modelling; independent profile/contact selection; balanced public PDF plus Backend, Cloud, and Applied AI application outputs; recruiter-readable summary, skills, experience, and project language; resume typography/spacing; homepage, header, footer, resume page, project summaries/details, SEO/social metadata, profile-alignment guidance, and all affected validators/documentation.
+- Non-goals: separate portfolio sites or public variant selectors; multi-column resumes; new project visuals; project-specific resume colors; invented metrics or technologies; changing official job titles; public phone exposure; completed-evaluation, production-readiness, broad ownership, or traditional-MLOps claims; deployment or external publishing.
+- Entry gate: Milestone 4 is complete; Hydar approved the umbrella identity and T-shaped hierarchy on 2026-09-05; current public AnotherEdenAI `main` remains revision `b56766c` or any later revision is re-audited before claim changes.
+- Exit gate: one canonical source resolves all four profiles; every PDF is one readable searchable A4 page; the site consistently presents the umbrella identity; evidence and maturity boundaries remain intact; automated and manual ATS, browser, print, accessibility, responsive, theme, link, and disclosure checks pass.
 - Acceptance:
-  - 4A-01: The repository runs an Astro static build with strict TypeScript configuration and scripts documented through package commands.
-  - 4A-02: Every page foundation uses the shared shell with skip link, semantic header/nav/main/footer landmarks, one page H1, responsive gutters, and the approved Source Sans 3/local-font direction.
-  - 4A-03: Light-first theme tokens and an accessible theme toggle support light/dark states without relying on color alone or causing a theme flash where the implementation can prevent it.
-  - 4A-04: Mobile navigation is a real disclosure with accessible state, keyboard operation, Escape close, focus restoration, and no keyboard trap.
-  - 4A-05: The custom 404 page provides clear recovery links to home, work, and resume while preserving the global shell.
-  - 4A-06: The foundation reflows at the approved compact/standard/wide states and does not introduce page-level horizontal overflow.
-  - 4A-07: No case-study claim, private artifact, phone number, deployment configuration, analytics, or external launch work enters the feature.
-- Route: `builder-executor -> tdd-loop`
-- Human checkpoint: manual visual and keyboard review of the foundation before Feature 4B content integration.
-- Commit boundary: one detailed feature commit containing only the foundation implementation, durable checks, and milestone progress.
-
-### Feature 4B — content collection and homepage
-
-- Type: build
-- Status: completed
-- Outcome: map the framework-neutral content and approved career facts into typed Astro content presentation and the recruiter homepage.
-- Scope: MDX/content collection schema, approved content entries, homepage hero, selected work hierarchy, AMIC/PETRONAS experience, AIRIS compact contribution, capability groups, certifications, education, contact links, and public resume CTA.
-- Non-goals: changing source claims, adding metrics, creating dedicated experience/skills/AIRIS routes, phone exposure, or implementing case-study page layouts.
-- Evidence: `ASTRO_TELEMETRY_DISABLED=1 npm run check`, `ASTRO_TELEMETRY_DISABLED=1 npm run build`, `npm run site:validate`, `npm run homepage:validate`, `git diff --check`, and `bash scripts/check-public-boundary.sh` pass. Hydar approved the homepage hierarchy, wording, matching current-role/About me typography, circular portrait, theme/responsive behavior, and keyboard order on 2026-09-02.
-- Route: `builder-executor -> tdd-loop`
-
-### Feature 4C — flagship case-study routes
-
-- Type: build
-- Status: completed
-- Outcome: implement reusable case-study presentation for `/safapac` and `/anotheredenai` from the approved structured content.
-- Scope: case-study layout, metadata/status/scope callouts, narrative sections, contents navigation, limitations, directly useful public links, and adjacent-work navigation; retain source provenance in the approved content contracts without rendering a recruiter-facing source inventory.
-- Evidence: `ASTRO_TELEMETRY_DISABLED=1 npm run check`, `ASTRO_TELEMETRY_DISABLED=1 npm run build`, `npm run case-studies:validate`, `npm run site:validate`, `npm run homepage:validate`, `git diff --check`, and `bash scripts/check-public-boundary.sh` pass. Hydar approved the route presentation and recruiter-first scope/source treatment on 2026-09-04.
-- Non-goals: changing content contracts, claiming production/evaluation maturity, adding screenshots, or implementing unapproved visuals.
-- Route: `builder-executor -> tdd-loop`
-
-### Feature 4D — recruiter-facing visual contract revision
-
-- Type: build
-- Status: completed on 2026-09-05
-- Outcome: implement and verify the concise, unified visual language, page-wide project accent system, and five recruiter-facing figures through the approved contracts, then complete the feature after browser review.
-- Scope: `safapac-transition`, `safapac-delivery`, `anotheredenai-pipeline`, `anotheredenai-guardrails`, and `airis-load-testing`, using short recruiter-facing titles and labels, one shared diagram grammar, centralized project tokens, dominant ownership/outcome hierarchy, concise captions, approved alt text, responsive transformations, collapsed semantic text alternatives, and disclosure-safe boundaries.
-- Non-goals: copied diagrams/screenshots, private source reproduction, interactive claims, invented metrics, or diagram behavior that hides content behind animation.
+  - 5A-01: Public identity is `Software Engineer — Backend, Cloud & Applied AI`, with Backend explicitly retained as the strongest foundation.
+  - 5A-02: Official AMIC and PETRONAS titles, dates, contexts, and contribution boundaries remain unchanged and distinguish employment history from target headlines.
+  - 5A-03: Canonical shared facts and evidence-bearing bullet IDs feed `default`, `backend`, `cloud`, and `ai` profiles without duplicating whole employment or project records.
+  - 5A-04: Profile selection and `public`/`application` contact policy are independent, validated inputs.
+  - 5A-05: The tracked public output remains the balanced phone-free resume; ignored application outputs use clear Backend, Cloud, and AI filenames and are not linked from the site.
+  - 5A-06: Each profile changes headline, summary emphasis, capability ordering, and evidence ordering while preserving the same factual career history.
+  - 5A-07: Resume body, entry headings, and section headings meet the approved readability direction where one-page rendering permits; content is shortened before typography is compressed.
+  - 5A-08: PDF extraction preserves name, headline, contacts, headings, dates, official titles, organizations, project name, skills, and profile-specific natural keyword coverage in logical reading order.
+  - 5A-09: SAFAPAC communicates backend/database ownership, domain collaboration/traceability, and reproducible AWS delivery through Terraform, GitHub Actions, OIDC, SSM, Docker, and the approved service estate; AIRIS communicates testing, bottleneck analysis, reporting, and optimization recommendations without claiming final decisions or implementation; AnotherEdenAI communicates graph retrieval, deterministic candidate generation, constrained LLM refinement, structured validation, evaluation, correction/fallback, and cost controls with accurate maturity qualifiers.
+  - 5A-10: The homepage, site chrome, About copy, project cards/details, resume page, metadata, repository description, and recruiter-profile guidance share the umbrella positioning without suggesting indecision or three separate careers.
+  - 5A-11: SQLAlchemy, implemented AIRIS optimization results, AIRIS decision authority, sensitive-data-protection ownership, measured token/cost savings, unverified infrastructure, and traditional-MLOps capabilities remain absent unless newly approved evidence supports them.
+  - 5A-12: The existing visual system, keyboard behavior, responsive/theme support, public-contact boundary, case-study hierarchy, and disclosure-safe visuals continue to pass regression checks.
+- Durable evidence: profile-aware resume validator; semantic resume-page and homepage validators; current case-study, visual, site-foundation, profile-alignment, and public-boundary validators; tracked balanced PDF; canonical source/provenance notes; and final milestone evidence summary.
 - Route: `feature-planner -> builder-executor -> tdd-loop`
-- Contract checkpoint: all five visual contracts and mockups approved; the corrected AnotherEdenAI pipeline layout and final project-page color refinement are included in the implementation scope.
-- Evidence: `ASTRO_TELEMETRY_DISABLED=1 npm run check`, `ASTRO_TELEMETRY_DISABLED=1 npm run build`, `npm run visuals:validate`, `npm run case-studies:validate`, `npm run homepage:validate`, `npm run site:validate`, `git diff --check`, and `bash scripts/check-public-boundary.sh` pass. Hydar approved the browser review of the integrated visuals, project accents, responsive composition, centered mobile flowcharts, and disclosure-safe presentation on 2026-09-05.
-- Human checkpoint: complete.
-
-### Feature 4E — semantic resume and launch-quality accessibility
-
-- Type: build
-- Status: completed on 2026-09-05
-- Outcome: implement the semantic public resume page/PDF action and complete cross-route accessibility, responsive, theme, and content-boundary hardening.
-- Scope: `/resume`, public PDF link, career-data reconciliation, print behavior, keyboard/screen-reader review, contrast and reduced-motion checks, responsive checks, SEO basics, and final feature-level content validation.
-- Non-goals: deployment, Cloudflare Pages, domain, analytics, LinkedIn launch, or private application resume exposure.
-- Route: `builder-executor -> tdd-loop`
-- Evidence: `ASTRO_TELEMETRY_DISABLED=1 npm run check`, `ASTRO_TELEMETRY_DISABLED=1 npm run build`, `npm run resume:page:validate`, `npm run resume:validate`, `npm run case-studies:validate`, `npm run homepage:validate`, `npm run visuals:validate`, `npm run site:validate`, `npm run profile:validate`, `bash scripts/check-public-boundary.sh`, and `git diff --check` pass. Hydar confirmed the semantic resume functions properly and approved Feature 4E completion on 2026-09-05.
-- Human checkpoint: complete. The semantic resume, responsive/theme presentation, print behavior, PDF action, keyboard order, contrast, and public phone-number boundary were approved on 2026-09-05.
+- Human checkpoint: review the balanced website and all four PDFs at normal print scale; confirm target-role emphasis, one-page readability, ATS text order, public/private contact behavior, and honest claim boundaries before the feature commit.
+- Commit boundary: one detailed feature commit containing the canonical model, four-profile renderer, durable validators, balanced public artifact, site/content/docs revisions, and milestone status update.
 
 ## Verification and retention
 
-- Each feature must have an ignored `.sdd/active/milestone-4/<feature>.json` handoff before writes and must stage only its allowed durable paths.
-- Keep permanent capability tests/validators that protect supported site behavior; purge handoffs, command ledgers, generated renders, exploratory screenshots, and temporary fixtures after each feature.
-- Foundation verification starts with the narrowest Astro/static checks, then broader build and accessibility checks. Manual keyboard, theme, responsive, and visual review is required at the feature checkpoint because it cannot be established by static checks alone.
-- At Milestone 4 completion, run the repository-wide test/fixture/artifact disposition sweep and leave deployment/launch work for Milestone 5.
+- Use the repository's Node/Astro toolchain; adding a formatter, linter, dependency, or CI policy is outside scope unless an implementation blocker makes it necessary and Hydar approves it.
+- Run `ASTRO_TELEMETRY_DISABLED=1 npm run check`, `ASTRO_TELEMETRY_DISABLED=1 npm run build`, all four profile renders and validations, resume-page/homepage/case-study/visual/site/profile/public-boundary validators, and `git diff --check`. Cloud-profile extraction must find AWS, Terraform, Infrastructure as Code, Docker, GitHub Actions, CI/CD, EC2, RDS, S3, CloudFront, Cognito, Linux, Nginx, OIDC, and SSM.
+- Keep durable capability validators and the balanced public PDF. Keep targeted PDFs, rendered HTML, screenshots, extraction logs, and private contact data ignored; purge exploratory outputs and the `.sdd/` handoff after completion.
+- Current public-source verification supports AnotherEdenAI typed graph retrieval, deterministic candidate generation, structured validation, bounded correction, provider-neutral analyzer adapters, token/output limits, usage tracking, degraded fallback, and an opt-in evaluation harness. Public copy must still say actively developed and must not claim completed evaluation or proven quality.
 
 ## Milestone exit gate
 
-- [x] All five launch routes and the custom 404 page are implemented from approved sources.
-- [x] SAFAPAC remains the primary professional case study; AnotherEdenAI remains the primary personal case study and actively developed; AIRIS remains supporting and compact.
-- [x] The site is static by default, strict TypeScript, responsive, keyboard-accessible, theme-aware, reduced-motion aware, and free of page-level overflow.
-- [x] All approved visuals are original/accessible and preserve captions, alternatives, source boundaries, and exclusions.
-- [x] Public resume and homepage facts remain reconciled with career sources, and the phone number remains absent.
-- [x] Astro/type/build/accessibility/content-boundary checks pass; deployment, domain, analytics, and LinkedIn work remain deferred.
+- [x] All four resume profiles resolve from canonical shared facts and pass automated one-page ATS/readability checks.
+- [x] The tracked public resume and website use the balanced umbrella identity; targeted application artifacts remain private.
+- [x] Backend, Cloud/DevOps, and Applied AI emphasis is evidence-backed, intentionally unequal, and consistent across resume, site, case studies, metadata, and recruiter guidance.
+- [x] Official titles, maturity wording, contribution boundaries, and public-contact/privacy rules remain accurate.
+- [x] Automated checks and the required manual PDF/browser review pass.
+- [x] One focused feature commit contains every durable change, with targeted artifacts retained locally and ephemeral handoff state purged after commit.
 
-Next human checkpoint: approve the milestone-wide career-positioning revision before implementation begins.
+Milestone 5 completed after Hydar approved the balanced website and all four generated resume profiles on 2026-09-05. Milestone 6 deployment remains deferred until separately authorized.

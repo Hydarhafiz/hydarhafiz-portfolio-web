@@ -1,10 +1,12 @@
 import { access, readFile } from "node:fs/promises";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { resolveCareerProfile } from "../resume/resolve-profile.mjs";
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const resumePath = path.join(repositoryRoot, "dist", "resume", "index.html");
-const careerData = JSON.parse(await readFile(path.join(repositoryRoot, "resume/career-data.json"), "utf8"));
+const careerSource = JSON.parse(await readFile(path.join(repositoryRoot, "resume/career-data.json"), "utf8"));
+const careerData = resolveCareerProfile(careerSource, "default");
 
 const failures = [];
 const assert = (condition, message) => {
@@ -26,7 +28,7 @@ if (failures.length === 0) {
   assert(h1Count === 1, `/resume: expected one page-level h1, found ${h1Count}`);
   assert(/class="[^\"]*\bresume-page\b/.test(html), "/resume: missing semantic resume page wrapper");
   assert(html.includes('href="/resume/hydar-hafiz-bin-hydzelan-resume.pdf"'), "/resume: missing public PDF action");
-  assert(html.includes("download"), "/resume: public PDF action must support download");
+  assert(html.includes('download="Hydar_Hafiz_Resume.pdf"'), "/resume: public PDF action must use the approved download name");
   assert(html.includes('aria-label="Public resume contact links"'), "/resume: missing contact navigation label");
   assert(html.includes('aria-labelledby="resume-contents-title"'), "/resume: missing resume contents navigation label");
   assert(html.includes('id="summary"'), "/resume: missing professional summary anchor");

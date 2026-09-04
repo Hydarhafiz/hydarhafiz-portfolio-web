@@ -1,7 +1,6 @@
 {
   "basics": {
     "name": "Hydar Hafiz bin Hydzelan",
-    "title": "Backend Software Engineer",
     "location": "Bangi, Selangor, Malaysia",
     "mobility": "Open to relocation across Malaysia",
     "availability": "Available November 2026",
@@ -19,56 +18,136 @@
       }
     ]
   },
-  "summary": "Backend software engineer with hands-on ownership of FastAPI/PostgreSQL services and AWS deployment operations. Experienced taking over early-stage systems, improving calculation traceability and release reliability, and designing graph-backed AI workflows with deterministic validation and bounded LLM analysis. AWS Certified Machine Learning Engineer – Associate.",
-  "capabilities": [
+  "capabilityGroups": [
     {
+      "id": "backend",
       "category": "Backend",
-      "items": ["Python", "FastAPI", "REST APIs", "PostgreSQL", "SQL", "Async Python", "Pytest"]
+      "items": [
+        { "id": "python", "label": "Python" },
+        { "id": "fastapi", "label": "FastAPI" },
+        { "id": "rest-apis", "label": "REST APIs" },
+        { "id": "postgresql", "label": "PostgreSQL" },
+        { "id": "sql", "label": "SQL" },
+        { "id": "async-python", "label": "Async Python" },
+        { "id": "pytest", "label": "Pytest" },
+        { "id": "pydantic", "label": "Pydantic" }
+      ]
     },
     {
+      "id": "cloud",
       "category": "Cloud & DevOps",
-      "items": ["AWS", "Docker", "GitHub Actions", "GHCR", "Nginx", "Linux", "CI/CD"]
+      "items": [
+        { "id": "aws", "label": "AWS" },
+        { "id": "terraform", "label": "Terraform" },
+        { "id": "infrastructure-as-code", "label": "Infrastructure as Code" },
+        { "id": "ec2-rds", "label": "EC2 / RDS" },
+        { "id": "s3-cloudfront", "label": "S3 / CloudFront" },
+        { "id": "cognito", "label": "Cognito" },
+        { "id": "docker", "label": "Docker" },
+        { "id": "github-actions", "label": "GitHub Actions" },
+        { "id": "oidc", "label": "OIDC" },
+        { "id": "ssm", "label": "AWS Systems Manager (SSM)" },
+        { "id": "ghcr", "label": "GHCR" },
+        { "id": "nginx", "label": "Nginx" },
+        { "id": "linux", "label": "Linux" },
+        { "id": "cicd", "label": "CI/CD" }
+      ]
     },
     {
+      "id": "ai",
       "category": "Applied AI",
-      "items": ["Neo4j", "GraphRAG", "Knowledge Graphs", "LLM Integration", "Deterministic Retrieval", "Validation & Fallback"]
+      "items": [
+        { "id": "neo4j", "label": "Neo4j" },
+        { "id": "graphrag", "label": "RAG / GraphRAG" },
+        { "id": "knowledge-graphs", "label": "Knowledge Graphs" },
+        { "id": "langgraph", "label": "LangGraph" },
+        { "id": "llm-integration", "label": "LLM Integration" },
+        { "id": "retrieval-systems", "label": "Retrieval Systems" },
+        { "id": "structured-validation", "label": "Structured Validation" },
+        { "id": "ai-evaluation", "label": "AI Evaluation" },
+        { "id": "token-cost-controls", "label": "Token & Cost Controls" }
+      ]
     },
     {
+      "id": "supporting",
       "category": "Supporting Technologies",
-      "items": ["TypeScript", "Angular", "Ionic", "Node.js", "MongoDB", "Locust", "Git"]
+      "items": [
+        { "id": "typescript", "label": "TypeScript" },
+        { "id": "angular", "label": "Angular" },
+        { "id": "ionic", "label": "Ionic" },
+        { "id": "nodejs", "label": "Node.js" },
+        { "id": "mongodb", "label": "MongoDB" },
+        { "id": "locust", "label": "Locust" },
+        { "id": "git", "label": "Git" }
+      ]
     }
   ],
   "experience": [
     {
+      "id": "amic",
       "role": "Backend Software Developer (Contract)",
       "organization": "Aerospace Malaysia Innovation Centre",
       "dates": "Nov 2025 – Oct 2026",
       "bullets": [
-        "Own backend, database and AWS delivery for SAFAPAC, a deployed beta sustainable aviation fuel analysis platform developed by AMIC in collaboration with Airbus; took over an early boilerplate implementation and substantially rebuilt and productionized the assigned scope.",
-        "Collaborated with five TEA-SAF domain researchers and one frontend developer to restructure FastAPI/PostgreSQL schema and calculation workflows, improving formula traceability, validation, testability and documentation for a five-person Airbus internal pilot group.",
-        "Built containerized staging and production delivery using Docker, GHCR and GitHub Actions; operated AWS VPC, EC2/RDS, S3/CloudFront and Cognito integration alongside Nginx and HTTPS.",
-        "For AIRIS, designed AI workload and concurrency tests, diagnosed bottlenecks, and authored an optimization/testing handoff accepted by the senior engineer; also supported stakeholder training."
+        {
+          "id": "safapac-backend",
+          "text": "Own the backend, database and AWS delivery for SAFAPAC, a deployed-beta sustainable aviation fuel analysis platform developed by AMIC with Airbus; substantially rebuilt and productionized an inherited early-stage implementation."
+        },
+        {
+          "id": "safapac-collaboration",
+          "text": "Collaborated with five TEA-SAF researchers and one frontend developer to restructure FastAPI/PostgreSQL schemas and calculation workflows, strengthening formula traceability, validation, testability and documentation for an Airbus internal pilot group."
+        },
+        {
+          "id": "safapac-cloud",
+          "text": "Automated Terraform-managed AWS staging and production delivery with Docker, GHCR and GitHub Actions, using OIDC authentication and SSM execution to keep environments reproducible and reduce configuration drift."
+        },
+        {
+          "id": "safapac-cloud-estate",
+          "text": "Operated the supporting VPC, EC2/RDS, S3/CloudFront, Cognito, Linux, Nginx and HTTPS estate alongside application delivery."
+        },
+        {
+          "id": "airis-reliability",
+          "text": "For AIRIS, designed AI workload and concurrency tests, analyzed bottlenecks, and authored optimization recommendations for senior developer/project manager review; also supported stakeholder training."
+        }
       ]
     },
     {
+      "id": "petronas",
       "role": "Web & Mobile Development Intern",
       "organization": "PETRONAS Digital Sdn Bhd",
       "dates": "Jan 2024 – Aug 2024",
       "bullets": [
-        "Collaborated within a five-person project team on a MEAN/Ionic booking prototype used to introduce new staff and interns to the technology stack.",
-        "Developed Angular data views and paired on Ionic booking, QR check-in, validation and Android deployment while documenting setup and development practices."
+        {
+          "id": "petronas-team",
+          "text": "Collaborated in a five-person team on a MEAN/Ionic booking prototype used to introduce new staff and interns to the technology stack."
+        },
+        {
+          "id": "petronas-delivery",
+          "text": "Built Angular data views and paired on Ionic booking, QR check-in, validation, Android deployment and development documentation."
+        }
       ]
     }
   ],
   "projects": [
     {
+      "id": "anotheredenai",
       "name": "AnotherEdenAI",
       "context": "Personal project · Active development",
       "dates": "Dec 2025 – Present",
       "url": "https://github.com/Hydarhafiz/AnotherEdenAI",
       "bullets": [
-        "Designing an AI-assisted lineup recommendation system using Neo4j graph retrieval, deterministic candidate generation, typed backend validation and bounded LLM analysis.",
-        "Implemented capability-evidence materialization, package-first candidate search, token-budgeted analysis, correction and fallback paths, and provider-neutral interfaces to improve cost control and reliability."
+        {
+          "id": "anotheredenai-architecture",
+          "text": "Building an actively developed FastAPI/Neo4j recommendation system with typed graph retrieval, deterministic candidate generation and LangGraph orchestration."
+        },
+        {
+          "id": "anotheredenai-controls",
+          "text": "Designed structured candidate validation, bounded correction, provider-neutral adapters, token/output limits, usage tracking and a backend fallback to constrain LLM refinement."
+        },
+        {
+          "id": "anotheredenai-evaluation",
+          "text": "Developed automated workflow coverage and an opt-in AI evaluation harness for factuality, roster adherence, tactical synergy and schema compliance."
+        }
       ]
     }
   ],
@@ -94,5 +173,75 @@
       "issued": "Jun 2025",
       "url": "https://learn.microsoft.com/en-us/users/hydarhafizbinhydzelan-7550/credentials/255781426dc44f9c"
     }
-  ]
+  ],
+  "profiles": {
+    "default": {
+      "title": "Software Engineer — Backend, Cloud & Applied AI",
+      "summary": "Software engineer with hands-on experience building Python/FastAPI backends, automating Terraform-managed AWS delivery and CI/CD, and developing reliable applied-AI systems with graph retrieval and structured validation. Experienced productionizing early-stage systems for stronger traceability, testability and reliability. AWS Certified Machine Learning Engineer – Associate.",
+      "capabilities": {
+        "backend": ["python", "fastapi", "rest-apis", "postgresql", "sql", "async-python", "pytest"],
+        "cloud": ["aws", "terraform", "docker", "github-actions", "oidc", "ssm", "ec2-rds", "s3-cloudfront", "nginx", "cicd"],
+        "ai": ["neo4j", "graphrag", "langgraph", "llm-integration", "retrieval-systems", "structured-validation", "ai-evaluation", "token-cost-controls"],
+        "supporting": ["typescript", "angular", "ionic", "locust", "git"]
+      },
+      "experienceBullets": {
+        "amic": ["safapac-backend", "safapac-collaboration", "safapac-cloud", "airis-reliability"],
+        "petronas": ["petronas-team", "petronas-delivery"]
+      },
+      "projectBullets": {
+        "anotheredenai": ["anotheredenai-architecture", "anotheredenai-controls"]
+      }
+    },
+    "backend": {
+      "title": "Backend Software Engineer",
+      "summary": "Backend software engineer with hands-on ownership of Python/FastAPI services, PostgreSQL schemas, REST APIs, calculation workflows, validation and testing. Experienced productionizing early-stage systems and carrying backend changes through containerized CI/CD and AWS operations.",
+      "capabilities": {
+        "backend": ["python", "fastapi", "postgresql", "sql", "rest-apis", "async-python", "pytest", "pydantic"],
+        "cloud": ["aws", "terraform", "docker", "github-actions", "cicd"],
+        "ai": ["neo4j", "graphrag", "langgraph", "structured-validation", "llm-integration"],
+        "supporting": ["typescript", "angular", "ionic", "nodejs", "mongodb", "git"]
+      },
+      "experienceBullets": {
+        "amic": ["safapac-backend", "safapac-collaboration", "safapac-cloud", "airis-reliability"],
+        "petronas": ["petronas-team", "petronas-delivery"]
+      },
+      "projectBullets": {
+        "anotheredenai": ["anotheredenai-architecture", "anotheredenai-controls"]
+      }
+    },
+    "cloud": {
+      "title": "Cloud & DevOps Engineer",
+      "summary": "Cloud and DevOps engineer automating AWS staging and production infrastructure with Terraform, Docker, GHCR and GitHub Actions. Uses OIDC for secure AWS authentication and SSM for deployment execution, backed by Python/FastAPI experience across application-to-infrastructure delivery, validation and troubleshooting.",
+      "capabilities": {
+        "cloud": ["aws", "terraform", "infrastructure-as-code", "ec2-rds", "s3-cloudfront", "cognito", "docker", "github-actions", "oidc", "ssm", "ghcr", "nginx", "linux", "cicd"],
+        "backend": ["python", "fastapi", "postgresql", "sql", "rest-apis", "pytest"],
+        "ai": ["neo4j", "graphrag", "llm-integration", "structured-validation"],
+        "supporting": ["typescript", "angular", "ionic", "locust", "git"]
+      },
+      "experienceBullets": {
+        "amic": ["safapac-cloud", "safapac-cloud-estate", "safapac-backend", "safapac-collaboration"],
+        "petronas": ["petronas-delivery", "petronas-team"]
+      },
+      "projectBullets": {
+        "anotheredenai": ["anotheredenai-architecture", "anotheredenai-controls"]
+      }
+    },
+    "ai": {
+      "title": "Applied AI Engineer",
+      "summary": "Applied AI engineer with a Python/FastAPI foundation, building reliable LLM systems through graph retrieval, deterministic candidate generation, structured validation and AI evaluation. Professional experience includes AI workload and concurrency testing, bottleneck analysis and reliability recommendations.",
+      "capabilities": {
+        "ai": ["neo4j", "graphrag", "knowledge-graphs", "langgraph", "llm-integration", "retrieval-systems", "structured-validation", "ai-evaluation", "token-cost-controls"],
+        "backend": ["python", "fastapi", "pydantic", "async-python", "pytest", "postgresql"],
+        "cloud": ["aws", "docker", "github-actions", "cicd"],
+        "supporting": ["locust", "git", "typescript"]
+      },
+      "experienceBullets": {
+        "amic": ["safapac-backend", "airis-reliability", "safapac-collaboration", "safapac-cloud"],
+        "petronas": ["petronas-team", "petronas-delivery"]
+      },
+      "projectBullets": {
+        "anotheredenai": ["anotheredenai-architecture", "anotheredenai-controls", "anotheredenai-evaluation"]
+      }
+    }
+  }
 }

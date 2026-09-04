@@ -17,7 +17,7 @@ The first launch contains a homepage, SAFAPAC case study, AnotherEdenAI case stu
 
 The homepage must expose:
 
-1. Backend positioning and primary calls to action.
+1. The `Software Engineer — Backend, Cloud & Applied AI` umbrella identity and primary calls to action, with Backend presented as the strongest foundation.
 2. SAFAPAC and AnotherEdenAI as flagship work.
 3. AMIC and PETRONAS experience.
 4. A compact AIRIS supporting contribution.
@@ -41,10 +41,14 @@ Avoid terminal/hacker styling, generic AI neon imagery, excessive glassmorphism,
 
 ## Resume generation
 
-- Shared structured career facts feed semantic single-column HTML and dedicated print CSS.
+- One canonical structured evidence model stores identity, official titles/dates, evidence-bearing experience/project bullets, capabilities, education, and certifications.
+- Four profile configurations (`default`, `backend`, `cloud`, and `ai`) select and order shared facts while owning only their headline, summary emphasis, capability order, and evidence priority.
+- Profile emphasis and contact privacy are independent inputs. The tracked default profile is public and phone-free; ignored application outputs may use the private contact overlay.
+- The website and semantic resume consume the resolved default profile; all PDFs use the same resolver and semantic single-column HTML with dedicated print CSS.
 - Chromium produces deterministic, searchable PDFs.
-- The public website artifact omits the phone number.
+- The public website exposes only the balanced resume artifact and omits the phone number.
 - An ignored private overlay supplies the phone number for the application CV.
+- Targeted Backend, Cloud, and Applied AI PDFs remain ignored application artifacts and are not normal portfolio navigation choices.
 - Public phone exposure remains a reversible future policy switch.
 
 ## Operations and quality

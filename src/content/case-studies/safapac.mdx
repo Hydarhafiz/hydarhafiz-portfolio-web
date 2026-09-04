@@ -6,15 +6,15 @@ hierarchy: primary-professional
 status: deployed beta / internal validation
 period: November 2025 – October 2026
 context: Aerospace Malaysia Innovation Centre in collaboration with Airbus
-summary: Rebuilding the backend, data, calculation-traceability, and AWS delivery foundations of a sustainable aviation fuel analysis platform.
+summary: Rebuilding FastAPI/PostgreSQL backend and calculation workflows while owning Terraform-managed AWS staging/production delivery and containerized CI/CD.
 role: Backend Software Developer (Contract)
 capabilities:
   - name: Python, FastAPI, PostgreSQL, and SQL
     evidence: Backend and database delivery, schema work, and calculation workflow ownership within the assigned scope.
   - name: Validation, testability, and documentation
     evidence: Strengthened traceability and validation around calculation workflows and their researcher-facing use.
-  - name: Docker, GHCR, GitHub Actions, and AWS
-    evidence: Containerized staging and production delivery plus AWS operations across the approved service categories.
+  - name: Terraform, Docker, GitHub Actions, and AWS
+    evidence: Reproducible staging and production infrastructure, OIDC-authenticated delivery, SSM execution, container publishing, and AWS operations across the approved service categories.
 disclosure:
   review_state: approved
   allowed_claims:
@@ -52,14 +52,15 @@ The inherited application needed a stronger foundation for traceable calculation
 
 ## Role and approach
 
-Hydar owned the assigned backend, database, and AWS delivery work. He restructured the FastAPI/PostgreSQL schema and calculation workflows, strengthened formula traceability and validation, and improved testability and documentation around the parts he maintained. He also built containerized staging and production delivery using Docker, GHCR, and GitHub Actions, while operating the approved AWS service categories alongside Nginx and HTTPS.
+Hydar owned the assigned backend, database, and AWS delivery work. He restructured the FastAPI/PostgreSQL schema and calculation workflows, strengthened formula traceability and validation, and improved testability and documentation around the parts he maintained. He also automated Terraform-managed staging and production infrastructure using Docker, GHCR, and GitHub Actions, with OIDC authentication to AWS and SSM-based deployment execution across the approved AWS service categories, Linux, Nginx, and HTTPS.
 
 ## Engineering decisions
 
 - Keep calculation behavior behind a clear service boundary so callers can use a consistent workflow and trace without duplicating formula logic.
 - Treat validation and provenance as part of the calculation contract, not as an afterthought in the interface.
 - Separate database/default resolution from the calculation boundary so the assigned workflows remain easier to test and document.
-- Use repeatable container and CI delivery paths so the beta can be moved through environments with less manual drift.
+- Use Terraform and repeatable container/CI delivery paths to keep staging and production reproducible and reduce configuration drift.
+- Use GitHub OIDC authentication instead of long-lived AWS credentials, with SSM providing the deployment-execution boundary.
 
 ## Collaboration and boundaries
 

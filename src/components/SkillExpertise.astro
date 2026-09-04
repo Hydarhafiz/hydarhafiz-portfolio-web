@@ -18,6 +18,7 @@ import {
   siPydantic,
   siPostgresql,
   siPython,
+  siTerraform,
   siTypescript
 } from "simple-icons";
 import type { SimpleIcon } from "simple-icons";
@@ -38,7 +39,9 @@ const iconByExpertise: Record<string, SimpleIcon | undefined> = {
   "Async Python": siPython,
   FastAPI: siFastapi,
   "REST APIs": siOpenapiinitiative,
+  Pydantic: siPydantic,
   PostgreSQL: siPostgresql,
+  Terraform: siTerraform,
   Docker: siDocker,
   "GitHub Actions": siGithubactions,
   GHCR: siGithub,
@@ -46,10 +49,14 @@ const iconByExpertise: Record<string, SimpleIcon | undefined> = {
   Linux: siLinux,
   "CI/CD": siGithubactions,
   Neo4j: siNeo4j,
-  GraphRAG: siNeo4j,
+  "RAG / GraphRAG": siNeo4j,
   "Knowledge Graphs": siNeo4j,
+  LangGraph: siLangchain,
   "LLM Integration": siLangchain,
-  "Validation & Fallback": siPydantic,
+  "Retrieval Systems": siNeo4j,
+  "Structured Validation": siPydantic,
+  "AI Evaluation": siPydantic,
+  "Token & Cost Controls": siLangchain,
   TypeScript: siTypescript,
   Angular: siAngular,
   Ionic: siIonic,
@@ -64,7 +71,7 @@ const fallbackMark = (expertise: string) => {
   if (expertise === "SQL") return "DB";
   if (expertise === "Pytest") return "T";
   if (expertise === "AWS") return "☁";
-  if (expertise === "Deterministic Retrieval") return "DR";
+  if (expertise === "Retrieval Systems") return "RS";
   return words.map((word) => word[0]).join("").slice(0, 2).toUpperCase();
 };
 

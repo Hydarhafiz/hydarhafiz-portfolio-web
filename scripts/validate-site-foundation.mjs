@@ -43,6 +43,7 @@ for (const [route, relativePath] of routes) {
 }
 
 const notFound = await readFile(path.join(distRoot, "404.html"), "utf8");
+const homepage = await readFile(path.join(distRoot, "index.html"), "utf8");
 assert(notFound.includes("This route does not exist."), "404: missing recovery heading");
 assert(notFound.includes('href="/"'), "404: missing home recovery link");
 assert(notFound.includes('href="/#work"'), "404: missing work recovery link");
@@ -51,6 +52,9 @@ assert(notFound.includes('href="/resume"'), "404: missing resume recovery link")
 const stylesheet = await readFile(path.join(distRoot, "_astro", (await readFile(path.join(distRoot, "index.html"), "utf8")).match(/href="(\/_astro\/[^\"]+\.css)"/)?.[1]?.split("/").at(-1) ?? ""), "utf8").catch(() => "");
 assert(stylesheet.includes("prefers-reduced-motion"), "stylesheet: missing reduced-motion behavior");
 assert(stylesheet.includes("--canvas"), "stylesheet: missing design tokens");
+assert(homepage.includes('property="og:title"'), "Homepage: missing OpenGraph title metadata");
+assert(homepage.includes('property="og:description"'), "Homepage: missing OpenGraph description metadata");
+assert(homepage.includes('name="twitter:card"'), "Homepage: missing social card metadata");
 
 if (failures.length > 0) {
   console.error(failures.join("\n"));

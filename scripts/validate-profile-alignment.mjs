@@ -1,12 +1,14 @@
 import { readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { resolveCareerProfile } from "../resume/resolve-profile.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const profilePath = join(root, "docs/career/profile-alignment.md");
 const careerDataPath = join(root, "resume/career-data.json");
 const profile = readFileSync(profilePath, "utf8");
-const careerData = JSON.parse(readFileSync(careerDataPath, "utf8"));
+const careerSource = JSON.parse(readFileSync(careerDataPath, "utf8"));
+const careerData = resolveCareerProfile(careerSource, "default");
 
 function extractTextBlock(profileText, marker) {
   const escapedMarker = marker.replaceAll(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -21,6 +23,9 @@ function extractTextBlock(profileText, marker) {
 const requiredFacts = [
   careerData.basics.name,
   careerData.basics.title,
+  "Backend Software Engineer",
+  "Cloud & DevOps Engineer",
+  "Applied AI Engineer",
   careerData.basics.location,
   "November 2026",
   "Aerospace Malaysia Innovation Centre",
@@ -29,6 +34,10 @@ const requiredFacts = [
   "one frontend developer",
   "five-person Airbus internal pilot group",
   "AIRIS",
+  "Terraform",
+  "OIDC",
+  "SSM",
+  "senior developer/project manager review",
   "PETRONAS Digital",
   "AnotherEdenAI",
   "Active development",
@@ -47,6 +56,7 @@ const prohibitedClaims = [
   "95% calculation accuracy",
   "200+ users",
   "<50ms",
+  "implemented AIRIS optimization",
 ];
 
 const lengthContracts = [

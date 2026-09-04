@@ -6,7 +6,7 @@ Date: 2026-09-01
 
 ## 1. Product brief
 
-This is a recruiter-readable portfolio for Hydar Hafiz bin Hydzelan, positioned as a Backend Software Engineer based in Bangi, Selangor, Malaysia. The first public launch should help a recruiter or hiring manager understand Hydar's backend, cloud, and applied-AI strengths quickly, then provide enough engineering substance for a closer read.
+This is a recruiter-readable portfolio for Hydar Hafiz bin Hydzelan, positioned as a `Software Engineer — Backend, Cloud & Applied AI` based in Bangi, Selangor, Malaysia. The public experience should present one T-shaped engineering identity: Backend as the strongest foundation, Cloud/DevOps as substantial delivery ownership, and Applied AI as an emerging specialization.
 
 Primary user goals:
 
@@ -38,7 +38,7 @@ The following are fixed product constraints:
 - AnotherEdenAI is the primary personal case study and must be labelled `actively developed`.
 - AIRIS is a compact supporting contribution; it must not become a fourth flagship or a dedicated route.
 - SAFAPAC retains `deployed beta / internal validation` wording and Hydar's assigned backend, database, calculation-traceability, validation, testability, documentation, and AWS delivery boundary.
-- AIRIS retains workload/concurrency testing, bottleneck diagnosis, optimization research, accepted engineering handoff, and stakeholder training wording without architecture ownership, recommendation implementation, or production-improvement claims.
+- AIRIS retains workload/concurrency testing, bottleneck diagnosis, reporting, optimization recommendations for senior developer/project manager review, and stakeholder training wording without architecture ownership, final-decision authority, recommendation implementation, or production-improvement claims.
 - No phone number is shown anywhere in the public site.
 - No confidential employer material, copied diagrams, private screenshots, internal URLs, credentials, customer/stakeholder data, proprietary formulas, exact private metrics, or unapproved performance/evaluation claims are presented.
 
@@ -153,7 +153,7 @@ The header must not imply that the domain is live before deployment. The portfol
 
 | Priority | Content | Presentation |
 | --- | --- | --- |
-| 1 | Backend positioning and primary CTA | Homepage hero and first action group. |
+| 1 | T-shaped software-engineering positioning and primary CTA | Homepage hero and first action group. |
 | 2 | SAFAPAC | Largest selected-work treatment; primary professional label is visible before the title or immediately beside it. |
 | 3 | AnotherEdenAI | Equally deliberate flagship treatment, with `Actively developed` visible in the card and page header. |
 | 4 | AMIC/PETRONAS experience and capabilities | Scannable homepage sections, not separate routes. |
@@ -256,7 +256,7 @@ Purpose: establish positioning, evidence hierarchy, and clear next actions in on
 #### Order and content
 
 1. **Hero / positioning**
-   - Eyebrow: `Backend Software Engineer`.
+   - Eyebrow: `Software Engineer · Backend, Cloud & Applied AI`.
    - H1: a concise backend/reliability/applied-AI positioning statement sourced from the approved profile and resume language.
    - Supporting copy: Python, FastAPI, PostgreSQL, AWS, and applied-AI systems; keep the sentence factual and compact.
    - Metadata: `Bangi, Selangor, Malaysia` and `Available November 2026`.
@@ -372,7 +372,7 @@ Purpose: provide a semantic, readable web resume and a direct download of the ap
 
 #### Order and content
 
-1. Page header with full name, `Backend Software Engineer`, Bangi/Selangor/Malaysia, and contact links.
+1. Page header with full name, `Software Engineer — Backend, Cloud & Applied AI`, Bangi/Selangor/Malaysia, and contact links.
 2. `Download public resume (PDF)` as the primary action; identify it as a PDF download and keep it adjacent to the web version.
 3. Summary matching the public resume/career data.
 4. Experience: AMIC then PETRONAS Digital with approved titles, dates, and public-safe bullets.
@@ -559,7 +559,7 @@ Deployment, Cloudflare Pages, domain, analytics, and LinkedIn launch checks rema
 The following is the single implementation-ready prompt to use if an external UI generator is engaged later. It is deliberately constrained to this approved specification:
 
 ```text
-Design a static, recruiter-readable portfolio for Hydar Hafiz bin Hydzelan, positioned as a Backend Software Engineer in Bangi, Selangor, Malaysia. Use the attached UX/UI specification and approved framework-neutral content contracts as the only product source of truth.
+Design a static, recruiter-readable portfolio for Hydar Hafiz bin Hydzelan, positioned as a Software Engineer — Backend, Cloud & Applied AI in Bangi, Selangor, Malaysia. Keep Backend as the strongest foundation while making Cloud/DevOps ownership and Applied AI specialization visible through evidence. Use the attached UX/UI specification and approved framework-neutral content contracts as the only product source of truth.
 
 Create the launch experience for exactly these routes: /, /safapac, /anotheredenai, /resume, and an accessible 404 fallback. Use a calm technical-editorial direction: light-first off-white/charcoal foundation, restrained blue-teal accents, strong Source Sans 3 typography, generous whitespace, ruled sections, short readable prose measure, and original explanatory diagrams. The page must feel authored and precise, not like a dashboard or generic corporate landing page.
 

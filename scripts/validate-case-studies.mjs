@@ -53,6 +53,19 @@ for (const { route, title, status, adjacent } of routes) {
   assert(html.includes('href="/#work"'), `${route}: missing Featured work recovery link`);
   if (route === "anotheredenai") {
     assert(html.includes('href="https://github.com/Hydarhafiz/AnotherEdenAI"'), "anotheredenai: missing public repository link");
+    for (const phrase of ["typed graph retrieval", "deterministic candidate generation", "constrained LLM refinement", "structured validation", "degraded backend fallback", "opt-in evaluation harness"]) {
+      assert(html.toLowerCase().includes(phrase.toLowerCase()), `anotheredenai: missing recruiter-readable AI evidence: ${phrase}`);
+    }
+    assert(!html.toLowerCase().includes("production-grade"), "anotheredenai: unsupported production-grade claim is present");
+    assert(!html.toLowerCase().includes("completed evaluation"), "anotheredenai: unsupported completed-evaluation claim is present");
+  }
+  if (route === "safapac") {
+    for (const phrase of ["Terraform-managed", "OIDC authentication", "SSM-based deployment execution", "reduce configuration drift"]) {
+      assert(html.toLowerCase().includes(phrase.toLowerCase()), `safapac: missing approved cloud-delivery evidence: ${phrase}`);
+    }
+    for (const unsupported of ["Kubernetes", "EKS", "ECS", "Helm", "ArgoCD", "Prometheus", "Grafana"]) {
+      assert(!html.toLowerCase().includes(unsupported.toLowerCase()), `safapac: unsupported infrastructure claim is present: ${unsupported}`);
+    }
   }
   const expectedVisuals = route === "safapac"
     ? ["safapac-transition", "safapac-delivery"]

@@ -6,25 +6,26 @@ hierarchy: supporting
 status: supporting contribution
 period: November 2025 – October 2026
 context: Aerospace Malaysia Innovation Centre
-summary: Investigating AI workload and concurrency behavior, diagnosing bottlenecks, and turning the findings into an accepted engineering handoff.
+summary: Testing AI workloads under concurrent demand, analyzing bottlenecks, and translating findings into optimization recommendations for senior engineering review.
 role: Backend Software Developer (Contract) — supporting contribution
 capabilities:
   - name: AI workload and concurrency testing
     evidence: Designed workload/concurrency tests to observe behavior under parallel demand.
   - name: Bottleneck diagnosis and optimization research
     evidence: Investigated observed bottlenecks and researched optimization directions without claiming implementation ownership.
-  - name: Engineering communication and stakeholder training
-    evidence: Authored an optimization/testing handoff accepted by the senior engineer and supported stakeholder training.
+  - name: Engineering reporting and stakeholder training
+    evidence: Authored a testing and optimization report with recommendations for senior developer/project manager review and supported stakeholder training.
 disclosure:
   review_state: approved
   allowed_claims:
     - supporting contribution within AIRIS at AMIC
     - AI workload and concurrency testing
     - bottleneck diagnosis and optimization research
-    - optimization/testing handoff accepted by the senior engineer
+    - testing and optimization report with recommendations for senior developer/project manager review
     - stakeholder training support
   excluded_claims:
     - ownership of the overall AIRIS architecture
+    - final optimization decisions or project-management authority
     - implementation of optimization recommendations
     - resulting production improvements or performance gains
     - exact load, latency, throughput, error, cost, or token measurements
@@ -39,7 +40,7 @@ sources:
 
 ## Summary
 
-AIRIS is an AI-assisted policy-document analysis project at the Aerospace Malaysia Innovation Centre. Hydar's role was a compact supporting contribution focused on workload and concurrency testing, bottleneck diagnosis, optimization research, an engineering handoff accepted by the senior engineer, and stakeholder training.
+AIRIS is an AI-assisted policy-document analysis project at the Aerospace Malaysia Innovation Centre. Hydar's role was a compact supporting contribution focused on workload and concurrency testing, bottleneck diagnosis, optimization research, reporting recommendations for senior developer/project manager review, and stakeholder training.
 
 ## Context
 
@@ -47,20 +48,20 @@ AI-assisted analysis workflows combine retrieval, model calls, and application s
 
 ## Contribution
 
-Hydar designed AI workload and concurrency tests, investigated bottlenecks, and researched optimization directions. He then documented the testing and optimization findings in a handoff accepted by the senior engineer and supported stakeholder training around the work.
+Hydar designed AI workload and concurrency tests, investigated bottlenecks, and researched optimization directions. He documented the findings and recommendations for review with the senior developer/project manager and supported stakeholder training around the work; final decisions and implementation remained with the senior developer/project manager.
 
 ## Engineering approach
 
 - Define representative workload scenarios without exposing private documents or stakeholder data.
 - Exercise the workflow under controlled concurrent demand and observe the resulting behavior.
 - Separate observed symptoms from bottleneck hypotheses so the handoff does not overstate causality.
-- Record optimization research as research and recommendations, leaving implementation ownership with the responsible engineering team.
+- Record optimization research as evidence-backed recommendations, leaving final decisions and implementation ownership with the senior developer/project manager.
 - Use stakeholder training to make the testing findings understandable beyond the immediate investigation.
 
 ## Outcome
 
-The contribution produced a clearer testing and optimization handoff for senior-engineer review and helped stakeholders understand the investigation. It demonstrates performance-oriented engineering analysis and communication without claiming that the researched recommendations were implemented or that they produced a measured production improvement.
+The contribution produced a clearer testing and optimization report for engineering review and helped stakeholders understand the investigation. It demonstrates performance-oriented analysis and communication without claiming final decision authority, implementation of the recommendations, or a measured production improvement.
 
 ## Boundaries and limitations
 
-AIRIS is not a flagship case study and does not claim ownership of the overall architecture. This public version omits exact load-test values, latency/throughput/error results, model and service configuration, internal endpoints and ports, dashboards, report figures, costs, token details, private data, and any resulting production-performance claim.
+AIRIS is not a flagship case study and does not claim ownership of the overall architecture, optimization decisions, or implementation. This public version omits exact load-test values, latency/throughput/error results, model and service configuration, internal endpoints and ports, dashboards, report figures, costs, token details, private data, and any resulting production-performance claim.

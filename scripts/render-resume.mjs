@@ -9,6 +9,7 @@ import {
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { spawnSync } from "node:child_process";
+import { listCareerProfiles, resolveCareerProfile } from "../resume/resolve-profile.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -84,8 +85,8 @@ function renderHtml(data, phone, css) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="${escapeHtml(data.basics.name)}">
-    <meta name="description" content="Resume of ${escapeHtml(data.basics.name)}, Backend Software Engineer">
-    <title>${escapeHtml(data.basics.name)} — Resume</title>
+    <meta name="description" content="Resume of ${escapeHtml(data.basics.name)}, ${escapeHtml(data.basics.title)}">
+    <title>${escapeHtml(data.basics.name)} — ${escapeHtml(data.basics.title)} Resume</title>
     <style>${css}</style>
   </head>
   <body>
@@ -159,16 +160,21 @@ function findChromium(explicitPath) {
   return chromium;
 }
 
-const variant = readArgument("--variant", "public");
-if (!new Set(["public", "application"]).has(variant)) {
-  throw new Error("--variant must be either public or application.");
+const profile = readArgument("--profile", "default");
+const contactPolicy = readArgument("--contact", "public");
+if (!listCareerProfiles().includes(profile)) {
+  throw new Error("--profile must be default, backend, cloud, or ai.");
+}
+if (!new Set(["public", "application"]).has(contactPolicy)) {
+  throw new Error("--contact must be either public or application.");
 }
 
-const careerData = JSON.parse(readFileSync(join(root, "resume/career-data.json"), "utf8"));
+const careerSource = JSON.parse(readFileSync(join(root, "resume/career-data.json"), "utf8"));
+const careerData = resolveCareerProfile(careerSource, profile);
 const css = `${loadResumeFonts()}\n${readFileSync(join(root, "resume/resume.css"), "utf8")}`;
 let phone = null;
 
-if (variant === "application") {
+if (contactPolicy === "application") {
   const privateContactPath = join(root, ".private/resume-contact.json");
   if (!existsSync(privateContactPath)) {
     throw new Error("Private contact data is missing; create .private/resume-contact.json locally.");
@@ -180,16 +186,21 @@ if (variant === "application") {
   }
 }
 
-const defaultOutput =
-  variant === "public"
-    ? "public/resume/hydar-hafiz-bin-hydzelan-resume.pdf"
-    : ".private/hydar-hafiz-bin-hydzelan-application-resume.pdf";
+const profileSuffix = {
+  default: "",
+  backend: "_Backend",
+  cloud: "_Cloud",
+  ai: "_AI",
+}[profile];
+const defaultOutput = profile === "default" && contactPolicy === "public"
+  ? "public/resume/hydar-hafiz-bin-hydzelan-resume.pdf"
+  : `.private/Hydar_Hafiz_Resume${profileSuffix}.pdf`;
 const outputPath = resolve(root, readArgument("--output", defaultOutput));
 const htmlOutput = readArgument("--html-output");
 const chromium = findChromium(readArgument("--chromium"));
 mkdirSync(join(root, ".private"), { recursive: true });
 const temporaryDirectory = mkdtempSync(join(root, ".private/render-"));
-const htmlPath = join(temporaryDirectory, `${variant}-resume.html`);
+const htmlPath = join(temporaryDirectory, `${profile}-${contactPolicy}-resume.html`);
 
 try {
   const html = renderHtml(careerData, phone, css);
@@ -220,7 +231,7 @@ try {
     throw new Error(`Chromium PDF rendering failed: ${result.stderr || result.stdout}`);
   }
 
-  console.log(`Rendered ${variant} resume: ${outputPath}`);
+  console.log(`Rendered ${profile}/${contactPolicy} resume: ${outputPath}`);
 } finally {
   rmSync(temporaryDirectory, { recursive: true, force: true });
 }

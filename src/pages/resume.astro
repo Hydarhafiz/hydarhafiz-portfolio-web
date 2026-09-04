@@ -1,12 +1,15 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 import ResumePage from "../components/ResumePage.astro";
-import careerData from "../../resume/career-data.json";
+import careerSource from "../../resume/career-data.json";
+import { resolveCareerProfile } from "../../resume/resolve-profile.mjs";
+
+const careerData = resolveCareerProfile(careerSource, "default");
 ---
 
 <SiteLayout
-  title="Hydar Hafiz — Public resume"
-  description="Public resume for Hydar Hafiz bin Hydzelan, Backend Software Engineer."
+  title="Hydar Hafiz — Software Engineer Resume"
+  description="Public resume for Hydar Hafiz bin Hydzelan, a software engineer focused on Backend, Cloud and Applied AI."
 >
   <ResumePage data={careerData} />
 </SiteLayout>

@@ -19,9 +19,9 @@ Never publish or reproduce:
 - Detailed live security configuration
 - Confidential costs, budgets, or unapproved internal performance results
 
-SAFAPAC must be described as a deployed beta/internal-validation platform. The narrative may explain that Hydar inherited an early boilerplate application and became primarily responsible for backend, database, and AWS operations, then substantially rebuilt and productionized that scope. It must not claim the entire product was built alone or entirely from scratch.
+SAFAPAC must be described as a deployed beta/internal-validation platform. The narrative may explain that Hydar inherited an early boilerplate application and became primarily responsible for backend, database, and AWS operations, then substantially rebuilt and productionized that scope. Approved infrastructure claims include Terraform-managed staging/production consistency, configuration-drift reduction, Docker/GHCR delivery, GitHub Actions with OIDC authentication to AWS, SSM deployment execution, and the approved VPC, EC2, RDS, S3, CloudFront, Cognito, Nginx, HTTPS, and Linux estate. It must not claim the entire product was built alone or entirely from scratch, expose configuration details, or imply unsupported platform/SRE scope.
 
-AIRIS is a supporting contribution. Public claims may cover workload/concurrency testing, bottleneck diagnosis, optimization research, engineering handoff, and stakeholder training. They must not claim ownership of the architecture, implementation of recommendations, or resulting production improvements.
+AIRIS is a supporting contribution. Public claims may cover workload/concurrency testing, bottleneck diagnosis, report writing, optimization recommendations, engineering handoff, and stakeholder training. They must state or preserve the boundary that the senior developer/project manager retained final decisions and implementation ownership, and must not claim Hydar owned the architecture or resulting production improvements.
 
 ## Personal and internship work
 

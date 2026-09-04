@@ -23,7 +23,8 @@ if (failures.length === 0) {
 
   assert(h1Count === 1, `Homepage: expected one page-level h1, found ${h1Count}`);
   assert(html.includes("Hi, I'm Hydar"), "Homepage: missing requested hero introduction");
-  assert(html.includes("Backend Software Engineer"), "Homepage: missing current role introduction");
+  assert(html.includes("Software Engineer — Backend, Cloud &amp; Applied AI"), "Homepage: missing umbrella engineering identity");
+  assert(html.includes("Engineering focus"), "Homepage: missing engineering-focus label");
   assert(html.includes("Portrait of Hydar Hafiz bin Hydzelan"), "Homepage: missing accessible profile portrait");
   assert(html.includes("About me"), "Homepage: missing About me section");
   assert(html.includes('section id="about" class="home-section home-section--tinted"'), "Homepage: About me must use the alternating tinted band");
@@ -45,6 +46,9 @@ if (failures.length === 0) {
   assert(html.includes("AnotherEdenAI"), "Homepage: missing AnotherEdenAI content");
   assert(html.includes('href="https://github.com/Hydarhafiz/AnotherEdenAI"'), "Homepage: missing direct AnotherEdenAI GitHub link");
   assert(html.includes("AIRIS"), "Homepage: missing AIRIS content");
+  assert(html.includes("Terraform-managed AWS delivery"), "Homepage: missing approved Terraform/AWS positioning");
+  assert(html.includes("optimization recommendations for senior developer/project manager review"), "Homepage: AIRIS recommendation and review boundary is missing");
+  assert(!html.includes('href="/airis"'), "Homepage: AIRIS must remain a supporting contribution without a dedicated route");
   assert(html.indexOf('home-introduction__portrait') < html.indexOf('home-introduction__actions'), "Homepage: portrait should precede hero actions in mobile reading order");
   assert(html.includes('id="airis-load-testing"'), "Homepage: missing AIRIS visual");
   assert(html.includes('class="supporting-card__visual"'), "Homepage: AIRIS visual is not integrated into its contribution card");
@@ -67,6 +71,8 @@ if (failures.length === 0) {
   assert(html.includes("linkedin.com/in/hydar-hafiz-356128233"), "Homepage: missing LinkedIn contact");
   assert(html.includes("github.com/Hydarhafiz"), "Homepage: missing GitHub contact");
   assert(html.includes('href="/resume"'), "Homepage: missing public resume CTA");
+  assert(html.includes('href="/resume/hydar-hafiz-bin-hydzelan-resume.pdf"'), "Homepage: missing direct balanced-resume download");
+  assert(html.includes('download="Hydar_Hafiz_Resume.pdf"'), "Homepage: balanced-resume download name is missing");
   assert(!html.toLowerCase().includes("whatsapp"), "Homepage: must not expose a phone/WhatsApp contact");
 }
 

@@ -5,12 +5,13 @@ This is the approved source for updating Hydar Hafiz bin Hydzelan's recruiter-fa
 ## Shared positioning
 
 - Public name: Hydar Hafiz bin Hydzelan
-- Primary role: Backend Software Engineer
+- Public identity: Software Engineer — Backend, Cloud & Applied AI
+- Target roles: Backend Software Engineer, Cloud & DevOps Engineer, and Applied AI Engineer
 - Location: Bangi, Selangor, Malaysia
 - Mobility: Open to relocation across Malaysia
 - Availability: Available November 2026; available to interview while completing the current contract
 - Primary market: Malaysia, especially Kuala Lumpur and Selangor
-- Supporting strengths: Cloud & DevOps and Applied AI systems
+- Positioning hierarchy: Backend foundation, substantial Cloud/DevOps delivery ownership, and an emerging Applied AI specialization
 
 ## LinkedIn
 
@@ -18,22 +19,22 @@ This is the approved source for updating Hydar Hafiz bin Hydzelan's recruiter-fa
 
 <!-- linkedin-headline -->
 ```text
-Backend Software Engineer | Python, FastAPI, PostgreSQL & AWS | Applied AI Systems | AWS Certified ML Engineer – Associate
+Software Engineer | Backend, Cloud & Applied AI | Python, FastAPI, AWS, Neo4j | AWS Certified ML Engineer – Associate
 ```
 
 ### About
 
 <!-- linkedin-about -->
 ```text
-I am a backend software engineer based in Bangi, Selangor, focused on Python, FastAPI, PostgreSQL and AWS delivery. I enjoy taking early-stage systems beyond boilerplate by strengthening data models, calculation traceability, testing, deployment workflows and operational documentation.
+I am a software engineer based in Bangi, Selangor, with a backend foundation in Python, FastAPI and PostgreSQL, hands-on AWS and delivery ownership, and an emerging specialization in reliable applied-AI systems.
 
-At Aerospace Malaysia Innovation Centre (AMIC), I own the backend, database and AWS delivery scope for SAFAPAC, a deployed beta sustainable aviation fuel analysis platform developed by AMIC in collaboration with Airbus. I took over an early boilerplate implementation and substantially rebuilt and productionized my assigned scope while collaborating with five TEA-SAF domain researchers and one frontend developer. The beta has been reviewed by a separate five-person Airbus internal pilot group.
+At Aerospace Malaysia Innovation Centre (AMIC), I own the backend, database and AWS delivery scope for SAFAPAC, a deployed beta sustainable aviation fuel analysis platform developed by AMIC in collaboration with Airbus. I took over an early boilerplate implementation and substantially rebuilt and productionized my assigned scope while collaborating with five TEA-SAF domain researchers and one frontend developer. I automate staging and production infrastructure with Terraform, Docker, GHCR and GitHub Actions, using OIDC authentication to AWS and SSM deployment execution. The beta has been reviewed by a separate five-person Airbus internal pilot group.
 
-I also contributed to AIRIS through AI workload and concurrency testing, bottleneck diagnosis, optimization research, an engineering handoff accepted by the senior engineer, and stakeholder training. My role was a supporting engineering contribution rather than ownership of the overall AIRIS architecture.
+I also contributed to AIRIS through AI workload and concurrency testing, bottleneck diagnosis, and a report with optimization recommendations for senior developer/project manager review. I supported stakeholder training, while final decisions and implementation remained outside my supporting contribution.
 
-Outside work, I am actively developing AnotherEdenAI, an AI-assisted recommendation system that combines Neo4j graph retrieval with typed validation, bounded LLM analysis, correction and fallback paths. This project lets me explore how deterministic controls can make AI-backed systems more reliable and cost-conscious.
+Outside work, I am actively developing AnotherEdenAI, an AI-assisted recommendation system that combines typed Neo4j retrieval and deterministic candidate generation with constrained LLM refinement, structured validation, bounded correction, degraded fallback, token/output controls and an opt-in evaluation harness.
 
-I hold AWS Certified Machine Learning Engineer – Associate, AWS Certified Cloud Practitioner and Microsoft Certified: Azure AI Fundamentals credentials. I am open to backend software engineering opportunities across Malaysia, especially Kuala Lumpur and Selangor, and can start from November 2026.
+I hold AWS Certified Machine Learning Engineer – Associate, AWS Certified Cloud Practitioner and Microsoft Certified: Azure AI Fundamentals credentials. I am open to Backend Software Engineer, Cloud & DevOps Engineer and Applied AI Engineer opportunities across Malaysia, especially Kuala Lumpur and Selangor, and can start from November 2026.
 ```
 
 ### AMIC experience
@@ -47,8 +48,9 @@ Contract ending October 2026
 
 • Own backend, database and AWS delivery for SAFAPAC, a deployed beta sustainable aviation fuel analysis platform developed by AMIC in collaboration with Airbus; took over an early boilerplate implementation and substantially rebuilt and productionized the assigned scope.
 • Collaborate with five TEA-SAF domain researchers and one frontend developer to restructure FastAPI/PostgreSQL schema and calculation workflows, improving formula traceability, validation, testability and documentation for a five-person Airbus internal pilot group.
-• Built containerized staging and production delivery using Docker, GHCR and GitHub Actions; operate AWS VPC, EC2/RDS, S3/CloudFront and Cognito integration alongside Nginx and HTTPS.
-• For AIRIS, designed AI workload and concurrency tests, diagnosed bottlenecks, and authored an optimization/testing handoff accepted by the senior engineer; also supported stakeholder training.
+• Automate Terraform-managed AWS staging and production delivery using Docker, GHCR and GitHub Actions, with OIDC authentication and SSM execution to keep environments reproducible and reduce configuration drift.
+• Operate the supporting VPC, EC2/RDS, S3/CloudFront, Cognito, Linux, Nginx and HTTPS estate alongside application delivery.
+• For AIRIS, designed AI workload and concurrency tests, diagnosed bottlenecks, and authored optimization recommendations for senior developer/project manager review; also supported stakeholder training.
 ```
 
 ### PETRONAS Digital experience
@@ -71,7 +73,7 @@ Use dates `December 2025 – Present`, link to `https://github.com/Hydarhafiz/An
 ```text
 AnotherEdenAI · Personal project · Active development
 
-Designing an AI-assisted lineup recommendation system using FastAPI, Neo4j graph retrieval, deterministic candidate generation, typed backend validation and bounded LLM analysis. Implemented capability-evidence materialization, package-first candidate search, token-budgeted analysis, correction and fallback paths, and provider-neutral interfaces to improve cost control and reliability.
+Building an actively developed FastAPI/Neo4j recommendation system with typed graph retrieval, deterministic candidate generation and LangGraph orchestration. I designed structured candidate validation, bounded correction, provider-neutral adapters, token/output limits, usage tracking and a backend fallback; an opt-in evaluation harness covers factuality, roster adherence, tactical synergy and schema compliance.
 ```
 
 ### Certifications
@@ -84,7 +86,7 @@ Enter these under Licenses & Certifications and use the supplied verification UR
 
 ### Open-to-work settings
 
-- Target titles: Backend Software Engineer, Backend Developer, Python Developer and Software Engineer.
+- Target titles: Backend Software Engineer, Cloud & DevOps Engineer, DevOps Engineer, Applied AI Engineer, AI Engineer, Python Developer and Software Engineer.
 - Locations: Kuala Lumpur, Selangor and Malaysia-wide roles; include remote roles based in Malaysia.
 - Workplace types: hybrid, remote and on-site, in that preference order.
 - Start date: November 2026.
@@ -96,7 +98,7 @@ Enter these under Licenses & Certifications and use the supplied verification UR
 
 <!-- github-bio -->
 ```text
-Backend Software Engineer building reliable Python, PostgreSQL, AWS and applied-AI systems. Based in Malaysia; available from Nov 2026.
+Software Engineer building reliable backend, AWS cloud and applied-AI systems. Based in Malaysia; available from Nov 2026.
 ```
 
 ### Profile README
@@ -107,26 +109,26 @@ Use this in a public `Hydarhafiz/Hydarhafiz` profile repository.
 ```text
 # Hydar Hafiz bin Hydzelan
 
-Backend Software Engineer building reliable cloud and applied-AI systems.
+Software Engineer — Backend, Cloud & Applied AI.
 
 I am based in Bangi, Selangor, Malaysia, open to relocation across Malaysia, and available from November 2026.
 
 ## What I work on
 
-- **SAFAPAC at AMIC:** backend, PostgreSQL and AWS delivery for a deployed beta sustainable aviation fuel analysis platform developed by AMIC in collaboration with Airbus.
-- **AnotherEdenAI:** an actively developed AI-assisted lineup recommendation system using FastAPI, Neo4j graph retrieval, typed validation, bounded LLM analysis and fallback paths.
-- **AIRIS at AMIC:** supporting contribution through AI workload/concurrency testing, bottleneck diagnosis, optimization research, engineering handoff and stakeholder training.
+- **SAFAPAC at AMIC:** backend, PostgreSQL, Terraform-managed AWS staging/production delivery and containerized CI/CD for a deployed beta sustainable aviation fuel analysis platform developed by AMIC in collaboration with Airbus.
+- **AnotherEdenAI:** an actively developed AI-assisted lineup recommendation system using typed Neo4j retrieval, deterministic candidate generation, constrained LLM refinement, structured validation, evaluation and fallback paths.
+- **AIRIS at AMIC:** supporting contribution through AI workload/concurrency testing, bottleneck diagnosis, reporting and optimization recommendations for senior developer/project manager review, plus stakeholder training.
 
 ## Capabilities backed by project work
 
 - **Backend:** Python, FastAPI, REST APIs, PostgreSQL, SQL, async Python and Pytest
-- **Cloud & DevOps:** AWS, Docker, GitHub Actions, GHCR, Nginx, Linux and CI/CD
-- **Applied AI:** Neo4j, GraphRAG, knowledge graphs, LLM integration, deterministic retrieval, validation and fallback
+- **Cloud & DevOps:** AWS, Terraform, Infrastructure as Code, Docker, GitHub Actions, OIDC, SSM, GHCR, EC2/RDS, S3/CloudFront, Cognito, Nginx, Linux and CI/CD
+- **Applied AI:** Neo4j, RAG/GraphRAG, knowledge graphs, LangGraph, retrieval systems, structured validation, AI evaluation and token/cost controls
 - **Supporting technologies:** TypeScript, Angular, Ionic, Node.js, MongoDB, Locust and Git
 
 ## Current focus
 
-I am improving the evaluation, reliability and cost controls in [AnotherEdenAI](https://github.com/Hydarhafiz/AnotherEdenAI) while preparing for backend software engineering opportunities in Malaysia.
+I am improving the evaluation, reliability and cost controls in [AnotherEdenAI](https://github.com/Hydarhafiz/AnotherEdenAI) while preparing for Backend, Cloud/DevOps and Applied AI opportunities in Malaysia.
 
 ## Contact
 
@@ -151,19 +153,19 @@ The current public README opening uses unsupported production-maturity wording. 
 ```text
 # Another Eden AI — GraphRAG Team Builder
 
-An actively developed AI-assisted team recommendation system for the JRPG Another Eden. It combines FastAPI, Neo4j graph retrieval and LangGraph orchestration with typed validation, bounded retries, correction and fallback paths.
+An actively developed AI-assisted team recommendation system for the JRPG Another Eden. It combines typed Neo4j retrieval and deterministic backend candidate generation with constrained LLM refinement, structured validation, bounded correction and degraded fallback.
 
-This project explores a source-grounded recommendation pipeline from graph ETL and roster-aware retrieval through structured analysis and a streaming web interface. Current work focuses on evaluation, recommendation reliability, graph quality and cost control.
+The current implementation includes provider-neutral analyzer adapters, token/output limits, usage tracking, a streaming web interface and an opt-in evaluation harness. Evaluation results, recommendation-quality gates, graph quality and deployment decisions remain active work.
 ```
 
 Use this GitHub repository description:
 
 <!-- anothereden-repo-description -->
 ```text
-Actively developed AI-assisted team builder using FastAPI, Neo4j, LangGraph, typed validation, bounded retries and fallback paths.
+Actively developed AI team builder with Neo4j retrieval, deterministic candidates, constrained LLM refinement, validation and fallback.
 ```
 
-Acceptable claims include implemented components that are visible in the public repository: FastAPI, Neo4j, LangGraph, graph ETL, Pydantic validation, bounded retry behavior, provider configuration, fallback paths, SSE progress and automated tests. Avoid claims of proven recommendation quality, production readiness, live deployment, guaranteed factuality or measured cost/performance improvement until independent evidence supports them.
+Acceptable claims include implemented components visible in the public repository: FastAPI, Neo4j, LangGraph, graph ETL, typed deterministic retrieval, backend candidate generation, Pydantic validation, bounded correction, provider-neutral analyzer adapters, token/output controls, usage tracking, degraded fallback, SSE progress, automated tests and the opt-in evaluation harness. Avoid claims of completed evaluation, proven recommendation quality, production readiness, live deployment, guaranteed factuality or measured cost/performance improvement until independent evidence supports them.
 
 ## External update checklist
 
@@ -189,8 +191,8 @@ Acceptable claims include implemented components that are visible in the public 
 
 ### Final consistency check
 
-- [ ] Use `Backend Software Engineer` as the primary role everywhere.
-- [ ] Keep `Cloud & DevOps` and `Applied AI` as supporting strengths rather than senior-level positioning.
+- [ ] Use `Software Engineer — Backend, Cloud & Applied AI` as the public umbrella identity.
+- [ ] Keep Backend as the strongest foundation, with Cloud/DevOps ownership and Applied AI specialization presented as evidence-backed target paths rather than senior-level claims.
 - [ ] Keep AMIC dates at November 2025 – October 2026 and PETRONAS Digital dates at January 2024 – August 2024.
 - [ ] Keep AnotherEdenAI at December 2025 – Present and label it active development.
 - [ ] Use `Available November 2026`; do not suggest immediate employment availability.

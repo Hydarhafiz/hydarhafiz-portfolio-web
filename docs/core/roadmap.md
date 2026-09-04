@@ -2,12 +2,13 @@
 
 ## Program outcome
 
-Create an internationally readable, Malaysia-first job-search package that positions Hydar Hafiz bin Hydzelan as a backend software engineer with cloud and applied-AI strengths. The application-ready CV and public-profile alignment must not wait for the portfolio website or for AnotherEdenAI to be finished.
+Create an internationally readable, Malaysia-first job-search package that positions Hydar Hafiz bin Hydzelan as a `Software Engineer — Backend, Cloud & Applied AI`. Backend remains the strongest foundation, while Cloud/DevOps and Applied AI are evidence-backed target paths within one coherent T-shaped engineering identity.
 
 ## Durable boundaries
 
-- Primary role: Backend Software Engineer.
-- Supporting strengths: Cloud & DevOps and Applied AI systems.
+- Public umbrella identity: Software Engineer — Backend, Cloud & Applied AI.
+- Target roles: Backend Software Engineer, Cloud & DevOps Engineer, and Applied AI Engineer.
+- T-shaped hierarchy: Backend is the strongest foundation; Cloud/DevOps reflects substantial production-delivery ownership; Applied AI is a strong emerging specialization.
 - Primary market: Malaysia, especially Kuala Lumpur and Selangor; secondary market: Singapore and realistic international remote roles.
 - Public claims must be defensible, source-grounded, and inside the approved disclosure boundary.
 - The public repository must never contain confidential source material or private application-contact data.
@@ -30,11 +31,15 @@ Used `architect-planner` to activate the milestone boundary and `ux-ui-bridge` t
 
 Implemented the approved Astro/TypeScript/MDX portfolio with its shared accessible shell, recruiter homepage, typed case-study content, flagship SAFAPAC and AnotherEdenAI routes, supporting AIRIS presentation, original project visuals, semantic public resume, responsive/theme behavior, and launch-quality content-boundary validation. Deployment and external launch remain separate work.
 
-### 5. Deployment and launch
+### 5. T-shaped career positioning — completed on 2026-09-05
+
+Established the approved `Software Engineer — Backend, Cloud & Applied AI` umbrella identity across one canonical career model, the portfolio, case studies, metadata, and recruiter guidance. Produced one balanced public resume and targeted Backend, Cloud, and Applied AI application profiles from shared facts, strengthened verified Terraform/OIDC/SSM cloud evidence, preserved AIRIS as a supporting recommendation/reporting contribution, and passed one-page ATS, privacy, disclosure, site, and manual review gates.
+
+### 6. Deployment and launch
 
 Connect GitHub preview deployments and the protected production branch to Cloudflare Pages, configure `hydarhafiz.com`, enable aggregate analytics, and complete final disclosure, accessibility, responsive, SEO, and rollback checks.
 
-- After the site is successfully live and launch checks pass, create a customized LinkedIn post announcing Hydar's availability for backend software engineering opportunities and introducing the live portfolio. Hydar must review and publish the post; do not publish it automatically.
+- After the site is successfully live and launch checks pass, create a customized LinkedIn post announcing Hydar's availability for Backend, Cloud/DevOps, and Applied AI opportunities under the shared software-engineering identity. Hydar must review and publish the post; do not publish it automatically.
 
 ## Deferred scope
 
@@ -44,3 +49,5 @@ Connect GitHub preview deployments and the protected production branch to Cloudf
 - CMS
 - AWS hosting for static portfolio files
 - AnotherEdenAI live deployment unless it adds meaningful backend evidence
+- Separate portfolio sites or public resume selectors for each target role
+- Traditional MLOps positioning without new evidence
