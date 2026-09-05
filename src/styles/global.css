@@ -461,6 +461,10 @@ main {
   line-height: 1;
 }
 
+.home-introduction__role {
+  min-width: 0;
+}
+
 .home-introduction__summary {
   max-width: 47rem;
   margin: 0;
@@ -2240,7 +2244,6 @@ main {
   .home-introduction__role h2 {
     max-width: none;
     font-size: clamp(1.25rem, 6.5vw, 1.8rem);
-    white-space: nowrap;
   }
 
   .skill-group {
