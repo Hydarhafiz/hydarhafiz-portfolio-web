@@ -25,21 +25,23 @@ Produced disclosure-reviewed SAFAPAC and AnotherEdenAI flagship narratives, a co
 
 ### 3. UX/UI specification — completed on 2026-09-01
 
-Used `architect-planner` to activate the milestone boundary and `ux-ui-bridge` to produce the implementation-ready UX/UI specification at `docs/ux-ui/specification.md`. The specification defines the technical-editorial design system, launch page hierarchy, reusable content presentation, responsive states, accessibility and theme behavior, purposeful animation, approved project visual treatment, and the later Astro/TypeScript/MDX handoff. Astro implementation remains deferred until the UX/UI specification receives human approval.
+Used `architect-planner` to activate the milestone boundary and `ux-ui-bridge` to produce the implementation-ready UX/UI specification at `docs/ux-ui/specification.md`. The specification defines the technical-editorial design system, launch page hierarchy, reusable content presentation, responsive states, accessibility and theme behavior, purposeful animation, approved project visual treatment, and the later Astro/TypeScript/MDX handoff. Astro implementation remained deferred until the UX/UI specification received human approval.
 
 ### 4. Portfolio implementation — completed on 2026-09-05
 
-Implemented the approved Astro/TypeScript/MDX portfolio with its shared accessible shell, recruiter homepage, typed case-study content, flagship SAFAPAC and AnotherEdenAI routes, supporting AIRIS presentation, original project visuals, semantic public resume, responsive/theme behavior, and launch-quality content-boundary validation. Deployment and external launch remain separate work.
+Implemented the approved Astro/TypeScript/MDX portfolio with its shared accessible shell, recruiter homepage, typed case-study content, flagship SAFAPAC and AnotherEdenAI routes, supporting AIRIS presentation, original project visuals, semantic public resume, responsive/theme behavior, and launch-quality content-boundary validation. Deployment and external launch remained separate work.
 
 ### 5. T-shaped career positioning — completed on 2026-09-05
 
 Established the approved `Software Engineer — Backend, Cloud & Applied AI` umbrella identity across one canonical career model, the portfolio, case studies, metadata, and recruiter guidance. Produced one balanced public resume and targeted Backend, Cloud, and Applied AI application profiles from shared facts, strengthened verified Terraform/OIDC/SSM cloud evidence, preserved AIRIS as a supporting recommendation/reporting contribution, and passed one-page ATS, privacy, disclosure, site, and manual review gates.
 
-### 6. Deployment and launch
+### 6. Deployment and launch — active
 
-Connect GitHub preview deployments and the protected production branch to Cloudflare Pages, configure `hydarhafiz.com`, enable aggregate analytics, and complete final disclosure, accessibility, responsive, SEO, and rollback checks.
+Activated on 2026-09-05. Acquire or transfer/control `hydarhafiz.com`, onboard its DNS safely to Cloudflare, connect the GitHub repository to Cloudflare Pages with PR previews and `main` production deploys, protect `main` with required PR + CI/Cloudflare checks but no mandatory reviewer, enable aggregate analytics, and complete live disclosure, accessibility, responsive, SEO, redirect, HTTPS, and rollback checks.
 
-- After the site is successfully live and launch checks pass, create a customized LinkedIn post announcing Hydar's availability for Backend, Cloud/DevOps, and Applied AI opportunities under the shared software-engineering identity. Hydar must review and publish the post; do not publish it automatically.
+After the site is verified live, add `https://hydarhafiz.com` to the canonical source for the balanced/default, Backend, Cloud, and Applied AI resume outputs. Regenerate and validate the tracked phone-free public PDF plus the ignored targeted variants, redeploy the semantic resume page, and prepare a customized LinkedIn post for Hydar's review and manual publication.
+
+The executable contract is maintained in `docs/core/milestone.md` with the sequence: domain acquisition/onboarding, CI/Pages/protected production path, canonical live launch/analytics/rollback, then post-live resume and announcement updates.
 
 ## Deferred scope
 

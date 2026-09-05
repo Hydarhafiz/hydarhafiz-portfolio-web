@@ -552,7 +552,7 @@ Before launch implementation is considered complete, the later workflow should i
 - Verification that all figures retain captions, alternatives, source/exclusion boundaries, and no unsupported claim.
 - Manual visual review of homepage hierarchy, case-study readability, resume print behavior, mobile navigation, and 404 recovery.
 
-Deployment, Cloudflare Pages, domain, analytics, and LinkedIn launch checks remain Milestone 5 concerns.
+Deployment, Cloudflare Pages, domain, analytics, and LinkedIn launch checks are Milestone 6 concerns.
 
 ## 12. External UI generator prompt
 

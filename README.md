@@ -2,7 +2,7 @@
 
 Source for the public portfolio and resume of Hydar Hafiz bin Hydzelan, a software engineer focused on Backend, Cloud and Applied AI systems.
 
-The Astro portfolio implementation is complete, and the active milestone broadens its recruiter positioning through one balanced public resume and targeted Backend, Cloud, and Applied AI application profiles. The repository also contains recruiter-profile guidance, disclosure-reviewed case-study packages, and the approved UX/UI specification. Cloudflare Pages deployment, domain configuration, analytics, and external profile publishing remain deferred.
+The Astro portfolio implementation and T-shaped career positioning are complete. Milestone 6 is active for domain acquisition, Cloudflare Pages deployment, protected GitHub releases, aggregate analytics, live launch validation, and the post-live `hydarhafiz.com` update across the balanced and targeted resume profiles. External account actions and LinkedIn publication remain manual.
 
 ## Job-search assets
 

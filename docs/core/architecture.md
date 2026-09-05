@@ -7,9 +7,19 @@
 - Visuals: Mermaid for simple flows; original Astro/SVG or selective React components for important diagrams, timelines, responsibility breakdowns, and engineering decisions.
 - Rendering: static by default, with client-side hydration only where interaction provides clear value.
 - Hosting: Cloudflare Pages with GitHub pull-request previews and production deployment from protected `main`.
-- Domain: canonical `hydarhafiz.com` with one consistent apex/`www` redirect and HTTPS.
+- Domain: canonical `https://hydarhafiz.com` with one consistent apex/`www` redirect and HTTPS.
 - Analytics: Cloudflare Web Analytics for aggregate usage and performance only.
 - Contact: email, LinkedIn, GitHub, and resume download; no contact form.
+
+## Launch operations
+
+- Acquire `hydarhafiz.com` before Pages launch. Cloudflare Registrar registration is the simplest single-provider path when the `.com` is available; external registration plus Cloudflare full DNS is also valid. A registrar transfer to Cloudflare is optional and must not be confused with merely delegating DNS.
+- For external registration, review/import records, handle DNSSEC/DS state, update the registrar to exactly the Cloudflare-assigned nameservers, and verify the zone is active before attaching the apex custom domain in Pages.
+- Connect the GitHub repository through Pages Git integration with `main` as production, PR/non-production branches as previews, `npm run build` as the build command, and `dist` as the output directory. Do not use Direct Upload or repository-held Cloudflare credentials.
+- Protect `main` with required pull requests, CI, and Cloudflare deployment checks; prevent force-push and deletion. No additional reviewer is required for the solo repository.
+- Configure the Pages custom domain for the apex and the `www` host as needed, redirect `www` to the apex while preserving path/query, and redirect the production `pages.dev` host to the canonical domain where supported.
+- Enable Cloudflare Web Analytics only after a successful deployment and verify the resulting behavior remains aggregate-only.
+- Keep `https://hydarhafiz.com` out of resume outputs until the live-domain and launch gates pass. Then add one Website link to the canonical career source so the default and three targeted profiles resolve it consistently.
 
 ## Information architecture
 
@@ -49,11 +59,12 @@ Avoid terminal/hacker styling, generic AI neon imagery, excessive glassmorphism,
 - The public website exposes only the balanced resume artifact and omits the phone number.
 - An ignored private overlay supplies the phone number for the application CV.
 - Targeted Backend, Cloud, and Applied AI PDFs remain ignored application artifacts and are not normal portfolio navigation choices.
+- After live launch verification, the shared public Website link `https://hydarhafiz.com` is included in the default and all targeted profiles, followed by a production redeploy of the semantic resume page.
 - Public phone exposure remains a reversible future policy switch.
 
 ## Operations and quality
 
 - Pull requests receive isolated preview deployments.
-- Production deploys only from protected `main` after lint, type, build, test, and accessibility checks.
+- Production deploys only from protected `main` after the repository's Node/Astro checks, static build, public-boundary checks, resume validation, and accessibility/site validators pass.
 - No credentials or cloud secrets belong in Git.
-- Git and Cloudflare deployment history provide rollback.
+- Git and Cloudflare deployment history provide rollback; only successful production deployments are valid rollback targets.
