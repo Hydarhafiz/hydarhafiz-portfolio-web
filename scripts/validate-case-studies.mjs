@@ -50,6 +50,7 @@ for (const { route, title, status, adjacent } of routes) {
   assert(html.includes(`case-study--${route}`), `${route}: missing project page accent scope`);
   assert(html.includes("Adjacent work"), `${route}: missing adjacent-work navigation`);
   assert(html.includes(adjacent), `${route}: missing adjacent flagship work link`);
+  assert(!html.includes('href="/airis"'), `${route}: adjacent work must not link to the AIRIS supporting contribution route`);
   assert(html.includes('href="/#work"'), `${route}: missing Featured work recovery link`);
   if (route === "anotheredenai") {
     assert(html.includes('href="https://github.com/Hydarhafiz/AnotherEdenAI"'), "anotheredenai: missing public repository link");

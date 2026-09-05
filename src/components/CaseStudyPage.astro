@@ -107,7 +107,7 @@ const adjacentLabel = (hierarchy: string) => {
       </div>
       <a class="button button--secondary" href="/#work">All Featured work <span aria-hidden="true">↗</span></a>
       <div class="case-study__adjacent-grid">
-        {adjacent.map((item) => (
+        {adjacent.filter((item) => item.data.hierarchy !== "supporting").map((item) => (
           <a class="case-study__adjacent-card" href={`/${item.data.slug}`}>
             <span>{adjacentLabel(item.data.hierarchy)}</span>
             <strong>{item.data.title}</strong>
