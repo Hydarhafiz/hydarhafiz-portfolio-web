@@ -40,6 +40,9 @@ jobs:
       - name: Validate deployment contract
         run: npm run deployment:validate
 
+      - name: Validate canonical launch contract
+        run: npm run launch:validate
+
       - name: Validate built site foundation
         run: npm run site:validate
 

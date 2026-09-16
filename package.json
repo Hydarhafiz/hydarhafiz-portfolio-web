@@ -9,6 +9,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "deployment:validate": "node scripts/validate-deployment-contract.mjs",
+    "launch:validate": "node scripts/validate-launch-contract.mjs",
+    "launch:live": "node scripts/validate-launch-contract.mjs --live",
     "site:validate": "node scripts/validate-site-foundation.mjs",
     "homepage:validate": "node scripts/validate-homepage.mjs",
     "case-studies:validate": "node scripts/validate-case-studies.mjs",
