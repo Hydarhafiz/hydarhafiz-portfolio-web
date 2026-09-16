@@ -86,7 +86,7 @@ After the live-domain and launch checks pass, the canonical resume source and al
 ### Feature 6D — Post-live resume domain update and LinkedIn announcement draft
 
 - Type: build / documentation
-- Status: planned
+- Status: complete — verified 2026-09-16 by Hydar's review of the four generated resume profiles and the customized LinkedIn launch draft.
 - Outcome: align the four resume profiles and recruiter-facing launch message with the verified live portfolio URL.
 - Scope: add the canonical Website link to the shared resume source; regenerate and validate the balanced public PDF plus Backend, Cloud, and Applied AI variants; rebuild the semantic resume page; reconcile recruiter-profile guidance/README wording; and draft a customized LinkedIn post for manual review.
 - Non-goals: adding the phone to public outputs, exposing targeted PDFs, adding a public profile selector, publishing to LinkedIn automatically, or changing career claims merely because the site launched.
@@ -115,8 +115,8 @@ After the live-domain and launch checks pass, the canonical resume source and al
 - [x] Direct `main` pushes, Node 22 CI checks, and Cloudflare Pages production deployment operate together with no PR or reviewer dependency.
 - [x] The live site serves the approved route set over HTTPS with canonical apex metadata, consistent redirects, aggregate analytics, and a verified rollback path.
 - [x] Final disclosure, accessibility, responsive, theme, SEO, link, print, and public-boundary checks pass against the live release.
-- [ ] After live verification, the default, Backend, Cloud, and Applied AI resume outputs include `https://hydarhafiz.com`; the tracked default remains balanced and phone-free, and targeted variants remain private.
-- [ ] Hydar reviews the customized LinkedIn announcement and publishes it manually only if he chooses.
-- [ ] Each completed feature has one focused detailed commit containing its durable code/tests/docs, with temporary outputs and `.sdd/` state purged.
+- [x] After live verification, the default, Backend, Cloud, and Applied AI resume outputs include `https://hydarhafiz.com`; the tracked default remains balanced and phone-free, and targeted variants remain private.
+- [x] Hydar reviews the customized LinkedIn announcement and publishes it manually only if he chooses.
+- [x] Each completed feature has one focused detailed commit containing its durable code/tests/docs, with temporary outputs and `.sdd/` state purged.
 
 Milestone 6 was explicitly activated by Hydar on 2026-09-05. Domain acquisition and Cloudflare onboarding are the first human-dependent checkpoint; no purchase, transfer, DNS mutation, account connection, analytics activation, or external profile publication is authorized by this planning task alone.

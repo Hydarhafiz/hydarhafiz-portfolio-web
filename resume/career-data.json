@@ -15,6 +15,11 @@
         "label": "GitHub",
         "display": "github.com/Hydarhafiz",
         "url": "https://github.com/Hydarhafiz"
+      },
+      {
+        "label": "Website",
+        "display": "hydarhafiz.com",
+        "url": "https://hydarhafiz.com"
       }
     ]
   },

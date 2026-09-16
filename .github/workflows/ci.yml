@@ -66,6 +66,9 @@ jobs:
       - name: Validate recruiter-profile package
         run: npm run profile:self-test
 
+      - name: Validate LinkedIn launch draft
+        run: npm run linkedin:validate
+
       - name: Test public-boundary rules
         run: bash scripts/check-public-boundary.sh --self-test
 

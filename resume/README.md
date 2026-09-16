@@ -1,6 +1,6 @@
 # Resume generation
 
-The resume is generated from the canonical evidence in `career-data.json`, the shared selector in `resolve-profile.mjs`, and `resume.css`. Four profiles reuse the same employment, project, education, and certification facts while changing only headline, summary, capability selection/order, and evidence order. The renderer embeds the pinned Source Sans 3 files locally so PDF typography is deterministic and does not depend on a machine's installed fonts or a remote font service.
+The resume is generated from the canonical evidence in `career-data.json`, the shared selector in `resolve-profile.mjs`, and `resume.css`. Four profiles reuse the same employment, project, education, certification, and public Website link facts while changing only headline, summary, capability selection/order, and evidence order. The renderer embeds the pinned Source Sans 3 files locally so PDF typography is deterministic and does not depend on a machine's installed fonts or a remote font service.
 
 ## Balanced public resume
 

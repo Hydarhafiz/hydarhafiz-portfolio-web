@@ -150,9 +150,17 @@ if (contactPolicy === "application") {
 
 const annotations = await page.getAnnotations();
 const urls = annotations.map((annotation) => annotation.url || annotation.unsafeUrl).filter(Boolean);
-for (const fragment of ["mailto:", "linkedin.com/in/", "github.com/Hydarhafiz"]) {
-  if (!urls.some((url) => url.includes(fragment))) {
-    throw new Error(`Expected PDF link is missing: ${fragment}`);
+const normalizeLink = (url) => {
+  if (!url.startsWith("http")) return url;
+  const parsedUrl = new URL(url);
+  return parsedUrl.pathname === "/" ? parsedUrl.origin : parsedUrl.toString();
+};
+for (const expectedUrl of [
+  `mailto:${careerData.basics.email}`,
+  ...careerData.basics.links.map((link) => link.url),
+]) {
+  if (!urls.some((url) => normalizeLink(url) === normalizeLink(expectedUrl))) {
+    throw new Error(`Expected PDF link is missing: ${expectedUrl}`);
   }
 }
 

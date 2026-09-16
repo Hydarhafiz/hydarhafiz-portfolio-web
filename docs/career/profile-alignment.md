@@ -10,6 +10,7 @@ This is the approved source for updating Hydar Hafiz bin Hydzelan's recruiter-fa
 - Location: Bangi, Selangor, Malaysia
 - Mobility: Open to relocation across Malaysia
 - Availability: Available November 2026; available to interview while completing the current contract
+- Portfolio: https://hydarhafiz.com
 - Primary market: Malaysia, especially Kuala Lumpur and Selangor
 - Positioning hierarchy: Backend foundation, substantial Cloud/DevOps delivery ownership, and an emerging Applied AI specialization
 
@@ -139,8 +140,8 @@ I am improving the evaluation, reliability and cost controls in [AnotherEdenAI](
 ### Repository presentation
 
 - Pin AnotherEdenAI first because it is the strongest public backend/applied-AI evidence.
-- Pin the portfolio repository after it is public and contains the implemented site; do not imply that the planned site or `hydarhafiz.com` is already live.
-- Add the portfolio URL to GitHub and LinkedIn only after the domain resolves to the deployed site.
+- Pin the portfolio repository now that it is public and contains the implemented site; describe only the current implementation.
+- Link the live portfolio from GitHub and LinkedIn as `https://hydarhafiz.com`.
 - Use clear repository descriptions, topics, setup instructions and screenshots only when each artifact accurately reflects the current implementation.
 
 ## AnotherEdenAI public-description contract
@@ -178,6 +179,7 @@ Acceptable claims include implemented components visible in the public repositor
 - [ ] Add AnotherEdenAI as an actively developed project and link its public repository.
 - [ ] Verify all three certifications using the supplied credential URLs.
 - [ ] Configure Malaysia-first open-to-work roles, locations, workplace types and November 2026 availability.
+- [ ] Add `https://hydarhafiz.com` as the public portfolio website.
 - [ ] Keep the phone number off the public profile.
 
 ### GitHub
@@ -187,7 +189,7 @@ Acceptable claims include implemented components visible in the public repositor
 - [ ] Add the approved AnotherEdenAI repository description and relevant factual topics.
 - [ ] Pin AnotherEdenAI; pin the portfolio only after its public implementation exists.
 - [ ] Keep secrets, internal employer material and the private application CV out of every public repository.
-- [ ] Add `hydarhafiz.com` only after the domain is purchased, configured and live.
+- [ ] Add `https://hydarhafiz.com` as the portfolio website and confirm it resolves to the live site.
 
 ### Final consistency check
 
@@ -198,7 +200,7 @@ Acceptable claims include implemented components visible in the public repositor
 - [ ] Use `Available November 2026`; do not suggest immediate employment availability.
 - [ ] Remove stale student positioning, unsupported percentages, performance claims and overbroad ownership language.
 - [ ] Confirm the public profiles expose email, LinkedIn/GitHub links and no phone number.
-- [ ] Recheck profile wording when the AMIC contract ends or the portfolio domain becomes live.
+- [ ] Recheck profile wording when the AMIC contract ends; keep the live portfolio URL in public website fields.
 
 ## Recruiter reply note
 
