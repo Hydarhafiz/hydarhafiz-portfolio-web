@@ -36,7 +36,7 @@ The existing architecture is still suitable: `resume/career-data.json` stores sh
 
 ### Feature 7A — Backend resume content and rendering
 
-- Type/status: build; planned
+- Type/status: build; complete
 - Outcome: produce a one-page Backend Software Engineer application resume that prioritizes evidenced backend/data/calculation work and removes unsupported deployment or impact language.
 - Registry inputs: `docs/career/README.md`; `claim-policy.md`; `SAFAPAC.md` (`SAF-OWN-01`, `SAF-SCOPE-01`, `SAF-CALC-01`, `SAF-DEFAULT-01`, `SAF-PERF-01`, and `CUR-SAF-*`); `AIRIS.md` (`AIR-ROLE-01` only as supporting experience unless another allowed claim earns space); `AnotherEdenAI.md` (`AE-ARCH-01`, `AE-EVAL-01`, `AE-SEARCH-01`); `job-market-findings.md`; and the current private Backend PDF as wording/layout input only.
 - Scope: curate shared backend evidence items and the `backend` profile selection/order; refine the shared renderer or print CSS only where the Backend artifact proves a rendering need; add profile-aware validation for claim qualifiers and forbidden wording; render the ignored Backend PDF.
@@ -52,6 +52,7 @@ The existing architecture is still suitable: `resume/career-data.json` stores sh
 - Claim-safety check: create a temporary bullet-to-registry mapping during execution, fail the validator on `deployed beta`, `productionized`, unqualified production/staging operation, unsupported user/team counts, or unqualified local metrics, then purge the mapping unless a small reusable machine-readable contract is needed by the validator.
 - Human checkpoint: only if retaining `Owned backend, database, and AWS delivery` under `SAF-OWN-01`. Repository evidence cannot prove the assignment boundary; ask Hydar to confirm that exact bounded responsibility. If not confirmed, use a contribution-led fallback and continue.
 - Route/commit: `builder-executor -> tdd-loop`; one Backend-resume feature commit containing source, durable validation, and milestone status. The ignored PDF is manually reviewed but never staged.
+- Completion evidence (2026-09-16): Backend rendering, all-profile resume validation, profile self-test, four-profile resolver assertion, touched-script syntax checks, `git diff --check`, ordered extracted-text comparison, and local one-page readability review passed. The Backend profile uses contribution-led SAFAPAC wording and historical/local qualifiers; the `SAF-OWN-01` ownership checkpoint was not triggered.
 
 ### Feature 7B — Cloud/DevOps resume content and rendering
 

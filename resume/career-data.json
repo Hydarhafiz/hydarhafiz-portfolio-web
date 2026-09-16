@@ -99,6 +99,31 @@
           "text": "Own the backend, database and AWS delivery for SAFAPAC, a deployed-beta sustainable aviation fuel analysis platform developed by AMIC with Airbus; substantially rebuilt and productionized an inherited early-stage implementation."
         },
         {
+          "id": "safapac-backend-claim-safe",
+          "text": "Built and evolved Python/FastAPI and PostgreSQL backend components for SAFAPAC, a sustainable aviation fuel analysis platform developed by AMIC with Airbus, with a focus on calculation contracts, validation, testability and documentation.",
+          "registryIds": ["SAF-SCOPE-01", "SAF-CALC-01"]
+        },
+        {
+          "id": "safapac-calculation-contracts",
+          "text": "Introduced versioned calculation/default contracts and independent reference-case validation in the audited repository, covering 42 formula IDs and 70 focused contract tests.",
+          "registryIds": ["SAF-CALC-01"],
+          "claimMarkers": ["42 formula IDs", "70 focused contract tests"],
+          "requiredQualifiers": ["audited repository"]
+        },
+        {
+          "id": "safapac-runtime-benchmark",
+          "text": "Reduced p95 default retrieval latency by 89% in a controlled local PostgreSQL benchmark.",
+          "registryIds": ["SAF-PERF-01"],
+          "claimMarkers": ["89%"],
+          "requiredQualifiers": ["controlled local PostgreSQL benchmark"]
+        },
+        {
+          "id": "safapac-delivery-controls",
+          "text": "Defined containerized AWS delivery controls through Terraform, Docker, GitHub Actions, OIDC, SSM and container scanning in the audited repository.",
+          "registryIds": ["SAF-OPS-02"],
+          "requiredQualifiers": ["audited repository"]
+        },
+        {
           "id": "safapac-collaboration",
           "text": "Collaborated with five TEA-SAF researchers and one frontend developer to restructure FastAPI/PostgreSQL schemas and calculation workflows, strengthening formula traceability, validation, testability and documentation for an Airbus internal pilot group."
         },
@@ -113,6 +138,11 @@
         {
           "id": "airis-reliability",
           "text": "For AIRIS, designed AI workload and concurrency tests, analyzed bottlenecks, and authored optimization recommendations for senior developer/project manager review; also supported stakeholder training."
+        },
+        {
+          "id": "airis-recommendations",
+          "text": "Designed AI workload and concurrency tests, analyzed bottlenecks, and authored optimization recommendations for senior review.",
+          "registryIds": ["AIR-ROLE-01"]
         }
       ]
     },
@@ -152,6 +182,18 @@
         {
           "id": "anotheredenai-evaluation",
           "text": "Developed automated workflow coverage and an opt-in AI evaluation harness for factuality, roster adherence, tactical synergy and schema compliance."
+        },
+        {
+          "id": "anotheredenai-backend-architecture",
+          "text": "In a historical project snapshot, designed a FastAPI/Neo4j recommendation pipeline where deterministic code owns legality and bounded candidate generation while the LLM is constrained to ranking, refinement and explanation.",
+          "registryIds": ["AE-ARCH-01"],
+          "requiredQualifiers": ["historical project snapshot"]
+        },
+        {
+          "id": "anotheredenai-backend-controls",
+          "text": "In a historical project snapshot, designed structured candidate validation, bounded correction, usage guards and deterministic fallback to constrain LLM refinement.",
+          "registryIds": ["AE-GUARD-01"],
+          "requiredQualifiers": ["historical project snapshot"]
         }
       ]
     }
@@ -199,7 +241,7 @@
     },
     "backend": {
       "title": "Backend Software Engineer",
-      "summary": "Backend software engineer with hands-on ownership of Python/FastAPI services, PostgreSQL schemas, REST APIs, calculation workflows, validation and testing. Experienced productionizing early-stage systems and carrying backend changes through containerized CI/CD and AWS operations.",
+      "summary": "Backend software engineer with hands-on experience building Python/FastAPI services, PostgreSQL schemas, REST APIs, versioned calculation contracts, validation and testing. Brings a traceability-first approach to data workflows, containerized delivery and reliable applied-AI systems.",
       "capabilities": {
         "backend": ["python", "fastapi", "postgresql", "sql", "rest-apis", "async-python", "pytest", "pydantic"],
         "cloud": ["aws", "terraform", "docker", "github-actions", "cicd"],
@@ -207,11 +249,11 @@
         "supporting": ["typescript", "angular", "ionic", "nodejs", "mongodb", "git"]
       },
       "experienceBullets": {
-        "amic": ["safapac-backend", "safapac-collaboration", "safapac-cloud", "airis-reliability"],
-        "petronas": ["petronas-team", "petronas-delivery"]
+        "amic": ["safapac-backend-claim-safe", "safapac-calculation-contracts", "safapac-runtime-benchmark", "safapac-delivery-controls", "airis-recommendations"],
+        "petronas": ["petronas-delivery"]
       },
       "projectBullets": {
-        "anotheredenai": ["anotheredenai-architecture", "anotheredenai-controls"]
+        "anotheredenai": ["anotheredenai-backend-architecture", "anotheredenai-backend-controls"]
       }
     },
     "cloud": {
