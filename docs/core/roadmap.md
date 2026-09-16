@@ -8,7 +8,7 @@ Create an internationally readable, Malaysia-first job-search package that posit
 
 - Public umbrella identity: Software Engineer — Backend, Cloud & Applied AI.
 - Target roles: Backend Software Engineer, Cloud & DevOps Engineer, and Applied AI Engineer.
-- T-shaped hierarchy: Backend is the strongest foundation; Cloud/DevOps reflects substantial production-delivery ownership; Applied AI is a strong emerging specialization.
+- T-shaped hierarchy: Backend is the strongest foundation; Cloud/DevOps reflects substantial evidence-backed infrastructure and delivery contribution; Applied AI is a strong emerging specialization.
 - Primary market: Malaysia, especially Kuala Lumpur and Selangor; secondary market: Singapore and realistic international remote roles.
 - Public claims must be defensible, source-grounded, and inside the approved disclosure boundary.
 - The public repository must never contain confidential source material or private application-contact data.
@@ -35,13 +35,15 @@ Implemented the approved Astro/TypeScript/MDX portfolio with its shared accessib
 
 Established the approved `Software Engineer — Backend, Cloud & Applied AI` umbrella identity across one canonical career model, the portfolio, case studies, metadata, and recruiter guidance. Produced one balanced public resume and targeted Backend, Cloud, and Applied AI application profiles from shared facts, strengthened verified Terraform/OIDC/SSM cloud evidence, preserved AIRIS as a supporting recommendation/reporting contribution, and passed one-page ATS, privacy, disclosure, site, and manual review gates.
 
-### 6. Deployment and launch — active
+### 6. Deployment and launch — completed on 2026-09-16
 
-Activated on 2026-09-05. Acquire or transfer/control `hydarhafiz.com`, onboard its DNS safely to Cloudflare, connect the GitHub repository to Cloudflare Pages with optional non-production previews and direct `main` production deploys, verify Node 22 CI and Pages deployments, enable aggregate analytics, and complete live disclosure, accessibility, responsive, SEO, redirect, HTTPS, and rollback checks.
+Launched `https://hydarhafiz.com` through Cloudflare DNS and Pages with direct-`main` production delivery, Node 22 CI, canonical redirects/HTTPS, aggregate analytics, rollback guidance, live accessibility/responsive/disclosure checks, and the canonical domain in all resume profiles. The tracked public PDF remained phone-free, targeted variants remained ignored, and the launch announcement stayed manual.
 
-After the site is verified live, add `https://hydarhafiz.com` to the canonical source for the balanced/default, Backend, Cloud, and Applied AI resume outputs. Regenerate and validate the tracked phone-free public PDF plus the ignored targeted variants, redeploy the semantic resume page, and prepare a customized LinkedIn post for Hydar's review and manual publication.
+### 7. Evidence-aligned resumes and portfolio — active
 
-The executable contract is maintained in `docs/core/milestone.md` with the sequence: domain acquisition/onboarding, CI/Pages/direct production path, canonical live launch/analytics/rollback, then post-live resume and announcement updates.
+Use the completed `docs/career/` registry to refresh the Backend, Cloud/DevOps, and Applied-AI application resumes; rewrite the SAFAPAC, AIRIS, and AnotherEdenAI case studies within their evidence and attribution boundaries; reconcile the homepage and balanced public resume; and finish with an independent ATS, public-claim, accessibility, responsiveness, and content-consistency audit.
+
+The active executable contract is in `docs/core/milestone.md`. It keeps one fresh chat and one focused commit per feature, preserves the shared career-data/renderer architecture, and converts any desired stronger wording into an evidence-gap checkpoint rather than inference.
 
 ## Completed standalone research
 
@@ -49,7 +51,7 @@ On 2026-09-16, the career evidence registry was audited and committed as a stand
 
 ## Deferred scope
 
-- Dedicated About, Skills, Experience, AIRIS, Blog, Writing, or Notes routes
+- Dedicated About, Skills, Experience, Blog, Writing, or Notes routes beyond the active supporting AIRIS case study
 - Contact form or application backend
 - Public phone number
 - CMS
