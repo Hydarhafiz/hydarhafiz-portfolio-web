@@ -27,7 +27,8 @@ After the live-domain and launch checks pass, the canonical resume source and al
 ### Feature 6A — Domain acquisition and Cloudflare DNS onboarding
 
 - Type: configuration / operational migration
-- Status: planned
+- Status: complete
+- Verified 2026-09-16: Exabytes reports the domain Active with a verified registrant email, five-year expiry term, and auto-renew enabled; Cloudflare is authoritative, DNSSEC is off with no Exabytes DS records, and the Pages custom domain is live.
 - Outcome: establish verified ownership and authoritative DNS control for `hydarhafiz.com` before the first production deployment.
 - Scope: beginner-safe domain registration or transfer guidance; Cloudflare account/domain onboarding; DNS-record inventory and preservation; nameserver delegation; DNSSEC checks; domain status verification; and a concise operator runbook recording the safe order of actions.
 - Non-goals: buying a domain automatically, storing payment details or authorization codes, transferring a domain when nameserver delegation is sufficient, changing unrelated DNS records, or publishing the site before the zone is ready.
