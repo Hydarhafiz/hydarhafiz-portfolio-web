@@ -29,6 +29,10 @@ assert(
 assert(packageLock.lockfileVersion === 3, "package-lock.json: npm lockfile version must remain 3");
 assert(astroConfig.includes('output: "static"'), "astro.config.mjs: deployment must remain static");
 assert(workflow.includes('CI: "true"'), ".github/workflows/ci.yml: CI runtime flag must be explicit");
+assert(workflow.includes("runs-on: ubuntu-24.04"), ".github/workflows/ci.yml: runner image must be pinned for browser compatibility");
+assert(workflow.includes("CHROMIUM_PATH: /usr/bin/google-chrome"), ".github/workflows/ci.yml: CI browser path must be explicit");
+assert(resumeRenderer.includes("process.env.CHROMIUM_PATH"), "scripts/render-resume.mjs: CI browser path override is missing");
+assert(resumeRenderer.includes("timeout: chromiumTimeoutMs"), "scripts/render-resume.mjs: Chromium render timeout is missing");
 assert(
   /if \(process\.env\.CI === "true"\)[\s\S]*?chromiumArguments\.unshift\("--no-sandbox"\)/.test(resumeRenderer),
   "scripts/render-resume.mjs: Chromium no-sandbox fallback must be CI-only",

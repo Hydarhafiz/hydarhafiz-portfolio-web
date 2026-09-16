@@ -12,7 +12,7 @@ permissions:
 jobs:
   validate:
     name: Validate (Node 22)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
     env:
       CI: "true"
@@ -54,6 +54,8 @@ jobs:
 
       - name: Validate public resume
         run: npm run resume:check
+        env:
+          CHROMIUM_PATH: /usr/bin/google-chrome
 
       - name: Validate semantic resume page
         run: npm run resume:page:validate

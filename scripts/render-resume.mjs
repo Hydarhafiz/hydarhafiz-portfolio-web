@@ -147,10 +147,11 @@ function renderHtml(data, phone, css) {
 function findChromium(explicitPath) {
   const candidates = [
     explicitPath,
+    process.env.CHROMIUM_PATH,
+    "/usr/bin/google-chrome",
     "/snap/bin/chromium",
     "/usr/bin/chromium",
     "/usr/bin/chromium-browser",
-    "/usr/bin/google-chrome",
   ].filter(Boolean);
 
   const chromium = candidates.find((candidate) => existsSync(candidate));
@@ -205,6 +206,9 @@ const chromiumArguments = [
   "--headless",
   "--disable-gpu",
   "--disable-dev-shm-usage",
+  "--disable-background-networking",
+  "--disable-extensions",
+  "--no-first-run",
   "--no-pdf-header-footer",
   `--user-data-dir=${join(temporaryDirectory, "chromium-profile")}`,
   `--print-to-pdf=${outputPath}`,
@@ -215,6 +219,8 @@ if (process.env.CI === "true") {
   // GitHub-hosted Ubuntu runners disable the user namespaces Chromium uses for its sandbox.
   chromiumArguments.unshift("--no-sandbox");
 }
+
+const chromiumTimeoutMs = process.env.CI === "true" ? 60_000 : 120_000;
 
 try {
   const html = renderHtml(careerData, phone, css);
@@ -230,11 +236,12 @@ try {
   const result = spawnSync(
     chromium,
     chromiumArguments,
-    { encoding: "utf8" },
+    { encoding: "utf8", killSignal: "SIGKILL", timeout: chromiumTimeoutMs },
   );
 
-  if (result.status !== 0 || !existsSync(outputPath)) {
-    throw new Error(`Chromium PDF rendering failed: ${result.stderr || result.stdout}`);
+  if (result.error || result.status !== 0 || !existsSync(outputPath)) {
+    const details = result.error?.message || result.stderr || result.stdout || "no diagnostic output";
+    throw new Error(`Chromium PDF rendering failed: ${details}`);
   }
 
   console.log(`Rendered ${profile}/${contactPolicy} resume: ${outputPath}`);
