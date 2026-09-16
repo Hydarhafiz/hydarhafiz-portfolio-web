@@ -47,7 +47,7 @@ After the live-domain and launch checks pass, the canonical resume source and al
 ### Feature 6B — CI, Cloudflare Pages integration, and protected production path
 
 - Type: build / configuration
-- Status: planned
+- Status: in progress — repository implementation complete; GitHub/Cloudflare manual checkpoint pending
 - Outcome: make every proposed release buildable, previewable, and merge-gated before it can reach production.
 - Scope: a Node 22 CI workflow using the existing lockfile and public-safe validators; Cloudflare Pages Git integration for `Hydarhafiz/hydarhafiz-portfolio-web`; `npm run build` to `dist`; PR previews for non-production branches; production deployment from `main`; and GitHub protection settings matching the solo-release policy.
 - Non-goals: a second deployment provider, Direct Upload, a Cloudflare API-token workflow, a new formatter/linter dependency, a merge queue, mandatory reviewer approval, or changes to the application beyond deployment/build requirements.

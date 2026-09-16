@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
+    "deployment:validate": "node scripts/validate-deployment-contract.mjs",
     "site:validate": "node scripts/validate-site-foundation.mjs",
     "homepage:validate": "node scripts/validate-homepage.mjs",
     "case-studies:validate": "node scripts/validate-case-studies.mjs",

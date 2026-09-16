@@ -1,0 +1,69 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate (Node 22)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Check Astro types and content
+        run: ASTRO_TELEMETRY_DISABLED=1 npm run check
+
+      - name: Build static site
+        run: ASTRO_TELEMETRY_DISABLED=1 npm run build
+
+      - name: Validate deployment contract
+        run: npm run deployment:validate
+
+      - name: Validate built site foundation
+        run: npm run site:validate
+
+      - name: Validate homepage
+        run: npm run homepage:validate
+
+      - name: Validate case studies
+        run: npm run case-studies:validate
+
+      - name: Validate project visuals
+        run: npm run visuals:validate
+
+      - name: Validate public resume
+        run: npm run resume:check
+
+      - name: Validate semantic resume page
+        run: npm run resume:page:validate
+
+      - name: Validate recruiter-profile package
+        run: npm run profile:self-test
+
+      - name: Test public-boundary rules
+        run: bash scripts/check-public-boundary.sh --self-test
+
+      - name: Check tracked public paths
+        run: bash scripts/check-public-boundary.sh
+
+      - name: Check whitespace errors
+        run: git diff --check
