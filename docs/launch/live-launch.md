@@ -66,9 +66,9 @@ Fill this only after the external checks have actually passed. Keep account IDs,
 
 | Check | Result | Sanitized evidence |
 | --- | --- | --- |
-| Apex custom domain and HTTPS | Pending | Public URL/status and check date |
-| `www` → apex redirect | Pending | Public URL/status and check date |
-| Pages host → apex redirect | Pending | Public URL/status and check date |
-| Aggregate Web Analytics | Pending | Beacon observed on valid HTML and check date |
-| Known-good production rollback target | Pending | Public commit/date context |
-| Browser/accessibility/responsive/print checks | Pending | Check date and any follow-up |
+| Apex custom domain and HTTPS | Passed — 2026-09-16 | Confirmed by Hydar; public URL/status checked |
+| `www` → apex redirect | Passed — 2026-09-16 | Confirmed by Hydar; path/query preservation checked |
+| Pages host → apex redirect | Passed — 2026-09-16 | Confirmed by Hydar; path/query preservation checked |
+| Aggregate Web Analytics | Passed — 2026-09-16 | Confirmed by Hydar; aggregate beacon observed on valid HTML |
+| Known-good production rollback target | Passed — 2026-09-16 | Confirmed by Hydar; successful production target identified |
+| Browser/accessibility/responsive/print checks | Passed — 2026-09-16 | Confirmed by Hydar; no follow-up recorded |

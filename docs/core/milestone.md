@@ -66,7 +66,7 @@ After the live-domain and launch checks pass, the canonical resume source and al
 ### Feature 6C — Canonical live launch, analytics, and rollback readiness
 
 - Type: build / release configuration
-- Status: planned
+- Status: complete — verified 2026-09-16 by Hydar's successful production launch checks for the canonical domain, HTTPS, redirects, aggregate analytics, browser/accessibility behavior, and rollback readiness.
 - Outcome: serve the reviewed portfolio at the canonical domain with correct metadata, redirects, aggregate analytics, and a recoverable production release.
 - Scope: production URL configuration in Astro; canonical and social metadata; static robots/sitemap output or an equivalent verified SEO surface; Cloudflare custom-domain attachment; apex/`www` and `pages.dev` redirect rules; HTTPS verification; Cloudflare Web Analytics enablement; final automated/manual launch checks; and rollback runbook verification.
 - Non-goals: analytics dashboards containing personal data, custom tracking code unrelated to aggregate analytics, SEO claims based on search ranking, server-side features, public phone exposure, or a visual redesign.
@@ -113,8 +113,8 @@ After the live-domain and launch checks pass, the canonical resume source and al
 
 - [ ] `hydarhafiz.com` is registered and its Cloudflare DNS zone is active and verified.
 - [x] Direct `main` pushes, Node 22 CI checks, and Cloudflare Pages production deployment operate together with no PR or reviewer dependency.
-- [ ] The live site serves the approved route set over HTTPS with canonical apex metadata, consistent redirects, aggregate analytics, and a verified rollback path.
-- [ ] Final disclosure, accessibility, responsive, theme, SEO, link, print, and public-boundary checks pass against the live release.
+- [x] The live site serves the approved route set over HTTPS with canonical apex metadata, consistent redirects, aggregate analytics, and a verified rollback path.
+- [x] Final disclosure, accessibility, responsive, theme, SEO, link, print, and public-boundary checks pass against the live release.
 - [ ] After live verification, the default, Backend, Cloud, and Applied AI resume outputs include `https://hydarhafiz.com`; the tracked default remains balanced and phone-free, and targeted variants remain private.
 - [ ] Hydar reviews the customized LinkedIn announcement and publishes it manually only if he chooses.
 - [ ] Each completed feature has one focused detailed commit containing its durable code/tests/docs, with temporary outputs and `.sdd/` state purged.
