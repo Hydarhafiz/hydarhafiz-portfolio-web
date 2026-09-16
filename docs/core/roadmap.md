@@ -43,6 +43,10 @@ After the site is verified live, add `https://hydarhafiz.com` to the canonical s
 
 The executable contract is maintained in `docs/core/milestone.md` with the sequence: domain acquisition/onboarding, CI/Pages/direct production path, canonical live launch/analytics/rollback, then post-live resume and announcement updates.
 
+## Completed standalone research
+
+On 2026-09-16, the career evidence registry was audited and committed as a standalone research feature. It preserves qualified claim boundaries and source identities for later work but does not approve or begin a resume/portfolio redesign.
+
 ## Deferred scope
 
 - Dedicated About, Skills, Experience, AIRIS, Blog, Writing, or Notes routes

@@ -109,6 +109,16 @@ After the live-domain and launch checks pass, the canonical resume source and al
 - Required live checks include DNS nameserver resolution, HTTPS certificate and status checks, canonical/alternate-host redirects, all launch routes, PDF download/searchability, metadata, accessibility/responsive/theme behavior, analytics presence, and rollback-target availability.
 - Keep durable capability validators, the balanced public PDF, canonical launch docs, and any independently required release evidence. Purge `.sdd/`, targeted PDFs, private contact data, screenshots, rendered comparisons, extraction logs, dashboard exports, DNS/auth/payment details, and failed-attempt output when their role ends.
 
+## Completed standalone research record
+
+### Career evidence registry — completed 2026-09-16
+
+- Type: research / evidence remediation
+- Outcome: audited and committed the durable `docs/career/` registry from local historical sources, current resume/portfolio wording, private-resume identities, and a live-public-repository availability check.
+- Boundary: this record does not rewrite a resume or portfolio page, change application code, deploy, publish, or admit a follow-on career-refresh milestone.
+- Evidence: every registry claim records its source class, state, permitted wording, prohibited wording, attribution limit, conflict/gap, and audit date. Raw sources and private inputs remain ignored.
+- Residual checkpoints: reproducible SAFAPAC default-count/deployment evidence; SAFAPAC responsibility/operations attribution; AIRIS implementation/impact causality; and an AnotherEdenAI C2 precision-review decision or fresh reproducible audit.
+
 ## Milestone exit gate
 
 - [ ] `hydarhafiz.com` is registered and its Cloudflare DNS zone is active and verified.
