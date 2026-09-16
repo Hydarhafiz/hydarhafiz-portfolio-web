@@ -15,6 +15,7 @@ const packageJson = JSON.parse(await readRepositoryFile("package.json"));
 const packageLock = JSON.parse(await readRepositoryFile("package-lock.json"));
 const astroConfig = await readRepositoryFile("astro.config.mjs");
 const workflow = await readRepositoryFile(".github/workflows/ci.yml");
+const resumeRenderer = await readRepositoryFile("scripts/render-resume.mjs");
 const pagesRunbook = await readRepositoryFile("docs/launch/pages-deployment.md");
 const branchPolicy = await readRepositoryFile("docs/launch/branch-protection.md");
 
@@ -27,6 +28,11 @@ assert(
 );
 assert(packageLock.lockfileVersion === 3, "package-lock.json: npm lockfile version must remain 3");
 assert(astroConfig.includes('output: "static"'), "astro.config.mjs: deployment must remain static");
+assert(workflow.includes('CI: "true"'), ".github/workflows/ci.yml: CI runtime flag must be explicit");
+assert(
+  /if \(process\.env\.CI === "true"\)[\s\S]*?chromiumArguments\.unshift\("--no-sandbox"\)/.test(resumeRenderer),
+  "scripts/render-resume.mjs: Chromium no-sandbox fallback must be CI-only",
+);
 
 for (const requirement of [
   "name: CI",

@@ -201,6 +201,20 @@ const chromium = findChromium(readArgument("--chromium"));
 mkdirSync(join(root, ".private"), { recursive: true });
 const temporaryDirectory = mkdtempSync(join(root, ".private/render-"));
 const htmlPath = join(temporaryDirectory, `${profile}-${contactPolicy}-resume.html`);
+const chromiumArguments = [
+  "--headless",
+  "--disable-gpu",
+  "--disable-dev-shm-usage",
+  "--no-pdf-header-footer",
+  `--user-data-dir=${join(temporaryDirectory, "chromium-profile")}`,
+  `--print-to-pdf=${outputPath}`,
+  pathToFileURL(htmlPath).href,
+];
+
+if (process.env.CI === "true") {
+  // GitHub-hosted Ubuntu runners disable the user namespaces Chromium uses for its sandbox.
+  chromiumArguments.unshift("--no-sandbox");
+}
 
 try {
   const html = renderHtml(careerData, phone, css);
@@ -215,15 +229,7 @@ try {
   mkdirSync(dirname(outputPath), { recursive: true });
   const result = spawnSync(
     chromium,
-    [
-      "--headless",
-      "--disable-gpu",
-      "--disable-dev-shm-usage",
-      "--no-pdf-header-footer",
-      `--user-data-dir=${join(temporaryDirectory, "chromium-profile")}`,
-      `--print-to-pdf=${outputPath}`,
-      pathToFileURL(htmlPath).href,
-    ],
+    chromiumArguments,
     { encoding: "utf8" },
   );
 
