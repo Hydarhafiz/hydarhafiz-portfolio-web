@@ -2,11 +2,11 @@
 
 - Status: active
 - Activated: 2026-09-05
-- Approved scope: acquire and connect `hydarhafiz.com`, launch the Astro portfolio through Cloudflare Pages with a protected production path, complete live-site checks, and add the live domain to the balanced and targeted resume outputs after launch
+- Approved scope: acquire and connect `hydarhafiz.com`, launch the Astro portfolio through Cloudflare Pages with a direct-main production path, complete live-site checks, and add the live domain to the balanced and targeted resume outputs after launch
 
 ## Outcome
 
-Publish the existing recruiter-facing portfolio at `https://hydarhafiz.com` through a controlled Cloudflare Pages release path. Pull requests must receive a Cloudflare preview and pass the repository's CI checks before Hydar merges them into protected `main`; Hydar remains the sole release approver. The live site must use one canonical apex domain, HTTPS, aggregate privacy-conscious analytics, and a documented rollback path.
+Publish the existing recruiter-facing portfolio at `https://hydarhafiz.com` through a controlled Cloudflare Pages release path. Hydar is the sole developer and directly pushes approved releases to `main`; each push runs repository CI and starts the Pages production deployment. Non-production previews are optional and no pull request or reviewer approval is required. The live site must use one canonical apex domain, HTTPS, aggregate privacy-conscious analytics, and a documented rollback path.
 
 After the live-domain and launch checks pass, the canonical resume source and all four generated profiles (`default`, `backend`, `cloud`, and `ai`) must include `https://hydarhafiz.com`. The tracked public PDF remains balanced and phone-free; targeted application PDFs remain local and ignored. A customized LinkedIn announcement is drafted after launch for Hydar's review and manual publication.
 
@@ -17,7 +17,7 @@ After the live-domain and launch checks pass, the canonical resume source and al
 - Domain acquisition is the first operational gate. Prefer registering through Cloudflare Registrar when the desired `.com` is available and the account setup is acceptable; otherwise register with a reputable registrar, add the zone to Cloudflare, and update the registrar's nameservers. A registrar transfer to Cloudflare is optional and is not required for Pages hosting.
 - Preserve any existing DNS records before changing nameservers. Handle DNSSEC deliberately: disable stale registrar DS/DNSSEC state before delegation changes, then re-enable it through the active provider only after the zone is healthy.
 - Connect the GitHub repository through Cloudflare Pages Git integration. Do not use Direct Upload or store a deployment token in the repository.
-- Protect `main` by requiring pull requests, successful site CI, and successful Cloudflare deployment checks; disallow direct force-push/deletion. Do not require an additional reviewer approval because this is a solo repository.
+- Use direct pushes to `main` for the solo release path. Do not require pull requests, reviewer approvals, a merge queue, or pre-merge status checks. Keep force pushes and branch deletion disabled if GitHub rules are used, provided ordinary pushes remain available. Treat successful site CI and the Pages production deployment as post-push release checks.
 - Use Cloudflare Web Analytics for aggregate usage and performance only. Do not add a contact form, behavioral profiling, private analytics data, or a public phone number.
 - Add the domain to resume outputs only after the site is live and all launch checks pass. The public default PDF is the only tracked regenerated PDF; Backend, Cloud, and Applied AI variants use the existing ignored private-contact workflow and are never linked from the site.
 - Do not publish LinkedIn content automatically, modify the separate AnotherEdenAI repository, or broaden the portfolio's career claims during launch.
@@ -44,23 +44,23 @@ After the live-domain and launch checks pass, the canonical resume source and al
 - Human checkpoint: Hydar must perform or approve the domain purchase/transfer, DNS changes, and Cloudflare account authorization. Do not proceed to Pages integration until the zone is active.
 - Commit boundary: one focused feature commit for any durable runbook/validation changes owned by this feature; external account state is verified manually and is not represented by secrets in Git.
 
-### Feature 6B — CI, Cloudflare Pages integration, and protected production path
+### Feature 6B — CI, Cloudflare Pages integration, and direct production path
 
 - Type: build / configuration
-- Status: in progress — repository implementation complete; GitHub/Cloudflare manual checkpoint pending
-- Outcome: make every proposed release buildable, previewable, and merge-gated before it can reach production.
-- Scope: a Node 22 CI workflow using the existing lockfile and public-safe validators; Cloudflare Pages Git integration for `Hydarhafiz/hydarhafiz-portfolio-web`; `npm run build` to `dist`; PR previews for non-production branches; production deployment from `main`; and GitHub protection settings matching the solo-release policy.
-- Non-goals: a second deployment provider, Direct Upload, a Cloudflare API-token workflow, a new formatter/linter dependency, a merge queue, mandatory reviewer approval, or changes to the application beyond deployment/build requirements.
+- Status: complete — verified 2026-09-16 by successful Node 22 CI and Cloudflare Pages production deployment from `main`
+- Outcome: make every approved direct-to-main release buildable, deployable, and verifiable in the solo repository.
+- Scope: a Node 22 CI workflow using the existing lockfile and public-safe validators; Cloudflare Pages Git integration for `Hydarhafiz/hydarhafiz-portfolio-web`; `npm run build` to `dist`; optional previews for non-production branches; production deployment from `main`; and a direct-main release policy with no PR or reviewer dependency.
+- Non-goals: a second deployment provider, Direct Upload, a Cloudflare API-token workflow, a new formatter/linter dependency, a merge queue, mandatory reviewer approval, a mandatory pull-request workflow, or changes to the application beyond deployment/build requirements.
 - Entry gate: 6A passes; the GitHub repository and Cloudflare account are accessible to Hydar; current local checks remain green.
-- Exit gate: a test PR produces a Cloudflare preview and CI status; a controlled `main` deployment reaches the Pages project; protected-branch settings require PR + checks and prevent direct destructive pushes; no secret is committed.
+- Exit gate: Node 22 CI passes; a controlled direct `main` push reaches the Pages project and its production deployment succeeds; the direct-main release policy is documented; optional preview configuration does not block release; and no secret is committed.
 - Acceptance:
   - 6B-01: CI installs from `package-lock.json` on Node 22 and runs `astro check`, the static build, public-boundary validation, resume/public-site validators, and `git diff --check` or their centralized equivalents without reading `.private` or other private evidence.
-  - 6B-02: Cloudflare Pages is connected to the GitHub repository with production branch `main`, build command `npm run build`, output directory `dist`, and preview deployments enabled for pull requests/non-production branches.
-  - 6B-03: `main` requires a pull request and successful named CI/Cloudflare checks, disallows force-push and deletion, and does not require a second reviewer.
-  - 6B-04: A preview and production deployment expose the expected static route set without relying on a runtime server or undocumented environment secret.
-- Durable evidence: CI workflow, deployment setup runbook, branch-policy record, and durable validators; deployment IDs and ephemeral logs are not committed unless a later release record requires them.
+  - 6B-02: Cloudflare Pages is connected to the GitHub repository with production branch `main`, build command `npm run build`, output directory `dist`, automatic production deployment enabled, and optional previews for non-production branches.
+  - 6B-03: Hydar can push directly to `main` without a pull request, reviewer approval, or merge queue; CI and the Pages production deployment pass as post-push release checks, while optional force-push/deletion restrictions do not block ordinary pushes.
+  - 6B-04: The successful `main` production deployment exposes the expected static route set without relying on a runtime server or undocumented environment secret; preview validation remains optional.
+- Durable evidence: CI workflow, deployment setup runbook, direct-main policy record, deployment contract validator, successful Node 22 CI result, and sanitized successful Pages deployment note; deployment IDs and ephemeral logs are not committed unless a later release record requires them.
 - Route: `builder-executor -> tdd-loop`.
-- Human checkpoint: Hydar must authorize the GitHub/Cloudflare connection and manually configure branch protection. The agent must not accept or request credentials in chat or inspect credential files.
+- Human checkpoint: Hydar authorizes the GitHub/Cloudflare connection and confirms the successful direct `main` deployment. No PR-protection configuration is required. The agent must not accept or request credentials in chat or inspect credential files.
 - Commit boundary: one focused feature commit containing the CI/build configuration, validators, runbook updates, and milestone status for this feature.
 
 ### Feature 6C — Canonical live launch, analytics, and rollback readiness
@@ -112,7 +112,7 @@ After the live-domain and launch checks pass, the canonical resume source and al
 ## Milestone exit gate
 
 - [ ] `hydarhafiz.com` is registered and its Cloudflare DNS zone is active and verified.
-- [ ] GitHub PR previews, CI checks, Cloudflare Pages production deployment, and protected `main` operate together with no mandatory reviewer dependency.
+- [x] Direct `main` pushes, Node 22 CI checks, and Cloudflare Pages production deployment operate together with no PR or reviewer dependency.
 - [ ] The live site serves the approved route set over HTTPS with canonical apex metadata, consistent redirects, aggregate analytics, and a verified rollback path.
 - [ ] Final disclosure, accessibility, responsive, theme, SEO, link, print, and public-boundary checks pass against the live release.
 - [ ] After live verification, the default, Backend, Cloud, and Applied AI resume outputs include `https://hydarhafiz.com`; the tracked default remains balanced and phone-free, and targeted variants remain private.

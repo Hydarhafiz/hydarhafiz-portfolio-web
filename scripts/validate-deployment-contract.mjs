@@ -85,7 +85,9 @@ for (const requirement of [
   "`npm run build`",
   "`dist`",
   "`NODE_VERSION`",
-  "pull request",
+  "direct push",
+  "automatic production deployments",
+  "non-production branches",
   "Direct Upload",
   "Cloudflare API token",
 ]) {
@@ -93,13 +95,14 @@ for (const requirement of [
 }
 
 for (const requirement of [
-  "Require a pull request before merging",
+  "Direct `main` release policy",
+  "Direct pushes to `main` | Allowed for Hydar",
+  "Require a pull request before merging | Off",
+  "Force pushes | Off",
+  "Branch deletion | Off",
   "CI / Validate (Node 22)",
   "Cloudflare Pages",
   "0",
-  "force pushes",
-  "deletions",
-  "enforce",
 ]) {
   assert(branchPolicy.includes(requirement), `docs/launch/branch-protection.md: missing ${requirement}`);
 }
@@ -144,5 +147,5 @@ if (failures.length > 0) {
   console.error(failures.join("\n"));
   process.exitCode = 1;
 } else {
-  console.log("Validated deployment contract: Node 22 lockfile install, public-safe CI, static routes, Pages settings, and protected-main policy.");
+  console.log("Validated deployment contract: Node 22 lockfile install, public-safe CI, static routes, Pages settings, and direct-main policy.");
 }

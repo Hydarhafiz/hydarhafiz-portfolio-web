@@ -44,7 +44,7 @@ Private local references include the earlier CV, AMIC project documentation and 
 ## Milestone 6 launch authority and source notes
 
 - On 2026-09-05, Hydar authorized Milestone 6 and explicitly approved adding `https://hydarhafiz.com` to the default, Backend, Cloud, and Applied AI resume outputs only after the site is live and launch checks pass.
-- On 2026-09-05, Hydar approved a solo protected-branch policy: pull requests and passing CI/Cloudflare checks are required for `main`, but an additional reviewer approval is not required.
+- On 2026-09-16, Hydar revised the solo release policy to allow direct pushes to `main`. Pull requests, reviewer approval, merge queues, and pre-merge status gates are not required; Node 22 CI and the Cloudflare Pages production deployment remain the post-push release checks.
 - As of 2026-09-05, `hydarhafiz.com` was not yet registered. Domain purchase or transfer/control and Cloudflare DNS onboarding are therefore the first human-dependent gate.
 - Cloudflare's current Pages Git integration supports connected GitHub repositories, PR preview URLs, branch deployment controls, and deployment status checks. Production branch and preview behavior must be confirmed in the Pages dashboard after connection.
 - Cloudflare's current custom-domain guidance requires an apex domain to be a Cloudflare zone with nameserver control. Manually creating only a CNAME without associating the custom domain in Pages is not an accepted setup.
@@ -52,7 +52,7 @@ Private local references include the earlier CV, AMIC project documentation and 
 - Cloudflare Registrar can register available domains with Cloudflare nameservers automatically. A domain bought elsewhere can use Cloudflare DNS without moving the registrar; a registrar transfer is optional and has separate age, lock, verification, and authorization-code constraints.
 - Cloudflare Pages provides one-click Web Analytics enablement and injects its beacon on a subsequent valid HTML deployment. Launch verification must confirm only the approved aggregate analytics behavior.
 - Cloudflare Pages can roll back to any successful production deployment; preview deployments are not valid rollback targets. The launch checklist must record a known successful production target without storing credentials.
-- GitHub protected branches support required pull requests and status checks, as well as force-push/deletion restrictions. The planned solo policy intentionally omits mandatory reviewer approval while retaining the required checks.
+- GitHub rulesets can still restrict force-push and branch deletion without requiring a pull-request workflow. Those optional safeguards must not block Hydar's ordinary direct pushes to `main`.
 
 ## Known gaps and conservative policy
 

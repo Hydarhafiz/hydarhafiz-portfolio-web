@@ -37,11 +37,11 @@ Established the approved `Software Engineer — Backend, Cloud & Applied AI` umb
 
 ### 6. Deployment and launch — active
 
-Activated on 2026-09-05. Acquire or transfer/control `hydarhafiz.com`, onboard its DNS safely to Cloudflare, connect the GitHub repository to Cloudflare Pages with PR previews and `main` production deploys, protect `main` with required PR + CI/Cloudflare checks but no mandatory reviewer, enable aggregate analytics, and complete live disclosure, accessibility, responsive, SEO, redirect, HTTPS, and rollback checks.
+Activated on 2026-09-05. Acquire or transfer/control `hydarhafiz.com`, onboard its DNS safely to Cloudflare, connect the GitHub repository to Cloudflare Pages with optional non-production previews and direct `main` production deploys, verify Node 22 CI and Pages deployments, enable aggregate analytics, and complete live disclosure, accessibility, responsive, SEO, redirect, HTTPS, and rollback checks.
 
 After the site is verified live, add `https://hydarhafiz.com` to the canonical source for the balanced/default, Backend, Cloud, and Applied AI resume outputs. Regenerate and validate the tracked phone-free public PDF plus the ignored targeted variants, redeploy the semantic resume page, and prepare a customized LinkedIn post for Hydar's review and manual publication.
 
-The executable contract is maintained in `docs/core/milestone.md` with the sequence: domain acquisition/onboarding, CI/Pages/protected production path, canonical live launch/analytics/rollback, then post-live resume and announcement updates.
+The executable contract is maintained in `docs/core/milestone.md` with the sequence: domain acquisition/onboarding, CI/Pages/direct production path, canonical live launch/analytics/rollback, then post-live resume and announcement updates.
 
 ## Deferred scope
 
