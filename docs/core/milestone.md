@@ -1,210 +1,386 @@
-# Active milestone 7: Evidence-aligned resumes and portfolio
+# Active milestone 7: Human-approved portfolio resynchronization
 
 - Status: active
-- Activated: 2026-09-16
+- Activated: 2026-09-18
 - Predecessor: Milestone 6 deployment and launch, completed 2026-09-16
-- Approved authority: current repository behavior, this milestone, and the committed `docs/career/` registry, with `docs/career/claim-policy.md` governing every public claim
+- Replaces: the stale `Evidence-aligned resumes and portfolio` Milestone 7 dated 2026-09-16
+- Execution model: one fresh chat and one focused commit per feature
 
 ## Outcome
 
-Replace the currently consistent but partly over-claimed career package with three genuinely targeted, one-page application resumes and a recruiter-readable portfolio whose SAFAPAC, AIRIS, and AnotherEdenAI narratives are traceable to the audited career registry.
+Resynchronize `hydarhafiz.com` with the three completed September 2026 application resumes and the human-approved portfolio content contract recorded below.
 
-The Backend resume should lead with Python/FastAPI/PostgreSQL and calculation-contract work; the Cloud resume with evidence-backed infrastructure and delivery controls; and the Applied-AI resume with bounded AI architecture, evaluation discipline, and AIRIS investigation work. The public homepage and balanced resume remain one coherent `Software Engineer — Backend, Cloud & Applied AI` presentation rather than exposing a public profile selector.
+The finished site presents one coherent identity—**Backend Engineer building production cloud and AI systems**—with Backend as the foundation and Cloud/DevOps plus Applied AI as evidence-backed differentiators. It provides a deep SAFAPAC flagship, major AIRIS and AnotherEdenAI case studies, a compact SAF Sky Quest deployment case study, updated professional experience, and one balanced public resume.
 
-## Why this milestone is next
+This milestone is an implementation contract. The career narrative, approved facts, metrics, attribution, maturity, and disclosure decisions are inputs, not questions for implementation roles to reopen.
 
-The launch milestone is complete and the current build is healthy, but the 2026-09-16 evidence audit changed the claim boundary after the present resume and site copy were written. Current source and rendered output still describe SAFAPAC as `deployed beta`, `productionized`, and an operated staging/production estate even though `CUR-SAF-01` prohibits deployment/production wording without a sanitized release record and `CUR-SAF-02` leaves live operations conditional. Existing validators assert some of that stale wording, so passing checks currently prove internal consistency rather than registry compliance.
+## Why the previous Milestone 7 is obsolete
 
-The existing architecture is still suitable: `resume/career-data.json` stores shared facts, profile configurations select and order them, the website consumes only the balanced profile, and project narratives live in typed MDX. The milestone therefore refreshes evidence and validation in place instead of creating separate data stores, resume templates, or portfolio sites.
+The previous milestone was built around an older career registry and routed parts of the portfolio through claim re-auditing. It also included Features 7A–7C for producing three targeted resumes. Those resumes are now complete, and the later human review approved stronger, more current public narratives for SAFAPAC, AIRIS, AnotherEdenAI, and SAF Sky Quest.
 
-## Shared boundaries
+Continuing the old sequence would duplicate finished work and allow older wording restrictions to override later human-approved content. This replacement therefore removes resume-generation work, makes the approved content contract the career-content authority, and routes ordinary implementation through `builder-executor -> tdd-loop`.
 
-- Treat `docs/career/{README,claim-policy,SAFAPAC,AIRIS,AnotherEdenAI,job-market-findings}.md` as read-only claim authority during product features. Change one of those sources only through a separately approved evidence-audit feature with stronger evidence. Presentation companions such as `profile-alignment.md` and the launch draft may be reconciled in 7G, but they cannot authorize a claim.
-- Do not introduce or strengthen a quantitative result, business impact, implementation attribution, production claim, completion claim, or scale claim beyond the registry's allowed channel and wording boundary.
-- A desired stronger statement becomes an explicit evidence-gap checkpoint. Until resolved, omit it or use the weakest registry-authorized fallback; do not block unrelated safe content.
-- Preserve temporal and environment qualifiers such as `historical`, `audited snapshot`, `controlled local benchmark`, `tested environment`, `estimate`, and `target/design` wherever the registry requires them.
-- Keep SAFAPAC employer/team boundaries, AIRIS recommendation-versus-implementation ownership, and AnotherEdenAI active-development/evaluation boundaries explicit.
-- Keep private resumes, the contact overlay, historical source archives, render intermediates, and raw audit material ignored and untracked. Never copy confidential source text, formulas, internal identifiers, screenshots, credentials, or the phone number into public files.
-- Reuse the shared career model and renderer. Add shared evidence facts with stable IDs, then let each profile select/order its own subset. Do not fork the resume into independent content files or templates.
-- The tracked default PDF and `/resume` page remain balanced and phone-free. Backend, Cloud, and Applied-AI PDFs remain ignored application artifacts and are not linked from the public site.
-- Preserve the approved umbrella identity and target-role hierarchy: Backend is the foundation; Cloud/DevOps is a substantial evidence-backed path; Applied AI is an emerging specialization. Do not imply senior, platform/SRE, traditional MLOps, or production-AI maturity without new evidence.
-- Each feature runs in one fresh chat, owns exactly one focused feature commit, and stops after its completion. The next feature starts from repository evidence in another fresh chat; no chat silently advances into the next feature.
-- Each feature handoff must repeat its allowed paths from this milestone. Any write outside them requires a milestone decision rather than incidental scope expansion.
-- Temporary audits, rendered HTML, screenshots, extracted PDF text, and comparison output are local/generated. Promote only durable validators, approved public content, the balanced PDF, and canonical documentation; purge the rest before each feature commit.
+## Authority and interpretation
+
+### Sole career-content authority
+
+For Milestone 7 public positioning, facts, metrics, attribution, project maturity, narrative emphasis, hierarchy, disclosure decisions, and allowed wording, **this milestone is the sole career-content authority**.
+
+The latest completed Backend, Cloud/DevOps, and Applied-AI application resumes are implementation baselines for the balanced public resume. Sanitized project evidence may supply implementation detail. Current repository behavior remains authoritative for technical behavior. None of those sources may override, weaken, reinterpret, or remove a career-content decision locked in this milestone.
+
+The existing `docs/career/` registry, older content/disclosure documents, existing public pages, and existing validators are migration inputs or supporting history only. They have no approval authority during Milestone 7. A stale statement does not regain authority because it is already implemented or tested.
+
+For technical behavior unrelated to career content, current repository behavior remains authoritative unless this milestone explicitly changes it.
+
+### Career-content authority boundary
+
+Career claims, metrics, attribution, project status, hierarchy, and narrative supplied in this milestone are human-approved product content. Implementation roles must preserve their meaning and must not independently audit, downgrade, reinterpret, or remove them. Escalate only when implementation reveals an actual contradiction that makes the approved content impossible to represent accurately, or when a genuine privacy, security, schema, or public-boundary risk appears.
+
+`contract-auditor` is not part of the normal route for deciding whether an approved career achievement is valid, weakening a metric, comparing approved copy against the old career registry, or deciding that a human-approved claim should be removed.
+
+### Copy flexibility
+
+The approved meaning, numbers, qualifiers, attribution, and maturity boundaries are locked. Minor editing for grammar, responsive layout, accessibility, and avoidance of repetition is allowed only when it preserves those elements. Material rewording or a new claim requires Hydar's approval.
+
+## Site-wide content contract
+
+### Positioning
+
+- Primary identity: **Backend Engineer**.
+- Hero: **Backend Engineer building production cloud and AI systems.**
+- Supporting narrative: Python/FastAPI backends, AWS delivery systems, and reliability-focused AI applications spanning API/data design, infrastructure automation, performance engineering, and constrained LLM workflows.
+- Differentiators: **Cloud & DevOps** and **Applied AI**.
+- Public resume headline: **Backend Engineer | Cloud & Applied AI**.
+- Do not present Hydar as three unrelated engineers or imply senior, SRE/platform, traditional MLOps, or production-AI maturity.
+- Remove `open to relocation across Malaysia`, `opportunities across Malaysia`, and equivalent copy. Current location targeting is Kuala Lumpur/Selangor.
+
+### Public project hierarchy
+
+1. **SAFAPAC** — flagship professional backend/cloud case study.
+2. **AIRIS** — major applied-AI engineering case study.
+3. **AnotherEdenAI** — major personal reliability-focused AI case study.
+4. **SAF Sky Quest** — compact supporting cloud-deployment case study.
+5. **PETRONAS Digital internship** — professional-experience depth, not a flagship case study.
+
+### Homepage evidence
+
+Every metric must remain attached to its project and denominator/context:
+
+- **33,047 governed defaults** — SAFAPAC, across 12 processes, 22 feedstocks, and 217 countries.
+- **50 ms p95** — SAFAPAC 33-point sensitivity workflow, across 10 staging acceptance cycles.
+- **96.1% less local RAG context** — AIRIS controlled 6-scenario/10-turn experiment, with 10/10 citation checks passed.
+- **367/367 legal-kit coverage** — AnotherEdenAI canonical character forms/styles at the accepted portfolio evidence snapshot.
+
+Do not render these as context-free giant numbers.
+
+### Site-wide factual corrections
+
+- AnotherEdenAI project start date is **January 2026**, not December 2025.
+- SAFAPAC maturity is **AWS-hosted internal pilot**, not a worldwide production platform.
+- The three targeted PDFs remain private application assets and are not linked from the public site.
+- The public site exposes one balanced, phone-free resume.
+
+### Private resume baselines
+
+Feature 7F must inspect and use these latest private application PDFs from `.private/`:
+
+- `.private/Hydar Hafiz Hydzelan - Backend engineer(5).pdf`
+- `.private/Hydar Hafiz Hydzelan - Cloud engineer(3).pdf`
+- `.private/Hydar Hafiz Hydzelan - Applied AI engineer(3).pdf`
+
+These three PDFs define the balanced public resume's approved content pool and visual-design system. They are not separate career authorities and cannot override this milestone where the milestone adds a qualifier, narrows attribution, or records a newer project status.
+
+The implementation must not substitute older targeted PDFs merely because their filenames or renderer integration already exist. If the three named files are missing from `.private/`, Feature 7F stops at an input checkpoint and asks Hydar to provide or identify their exact current equivalents. It must not reconstruct them from the old career registry.
+
+## Project content locks
+
+### SAFAPAC
+
+Public title direction: **SAFAPAC — Backend & AWS Engineering for Sustainable Aviation Fuel Analysis**.
+
+The page must establish:
+
+- SAFAPAC is an internal techno-economic-analysis platform for Sustainable Aviation Fuel research.
+- Hydar took substantial ownership of the FastAPI/PostgreSQL backend and AWS delivery, evolving an incomplete local prototype into an AWS-hosted internal pilot supporting **6 TEA researchers and 5 Airbus staff**.
+- His responsibility covers Backend, Database, Calculation Integration, Superadmin APIs, and AWS/DevOps. It does not claim frontend ownership, SAF methodology authorship, whole-product sole ownership, or that the system was built entirely alone.
+
+Required narrative sections:
+
+1. **Starting problem** — incomplete local application, specialist calculation workflow, evolving expert methodology, large selector-dependent defaults, and the need for repeatable AWS delivery.
+2. **Turning methodology into executable contracts** — collaboration with LCA/carbon specialists on total CO2 emissions, carbon intensity, and carbon-conversion efficiency; collaboration with TEA/business specialists on cash flow, NPV, IRR, and payback; expert-provided input/output expectations converted into independent regression contracts rather than using current application output as the oracle.
+3. **A boundary deliberately not automated** — newer methodology material contained process/reference data that was not yet incorporated into the approved default workbook/application mapping. Hydar retained the approved v1.1 dataset instead of inventing process-feedstock-country relationships and used the Superadmin direction to let domain experts add future values explicitly.
+4. **Default governance** — **33,047 defaults across 12 processes, 22 feedstocks, and 217 countries**; governed draft, publish, and rollback workflows; approved backend handoff to the frontend developer.
+5. **Current Superadmin status** — core backend APIs are complete and meeting-approved; frontend handoff is complete and frontend implementation is in progress; stale/experimental API cleanup and direct add/modify/delete support for the active default set remain.
+6. **Sensitivity redesign** — replace 33 full calculation-engine executions with reusable prepared inputs and targeted NPV projections; verified result is **50 ms p95 across 10 staging acceptance cycles**. Do not invent an old runtime or percentage speedup.
+7. **AWS delivery** — explain lean pilot choices and their reasons, including Terraform, VPC, EC2, private RDS, S3/CloudFront, Cognito, Docker, Nginx, GitHub Actions, OIDC, and SSM. It is acceptable to state the approved operating-cost fact: **$51.27/month average from March–August 2026 across 20 billed AWS services**.
+8. **Reliability story: TLS** — an expired certificate disrupted expert access; Hydar restored HTTPS and automated renewal. Say renewal occurs automatically, not that it waits until after expiry.
+9. **Deployment safety and cost control** — Terraform-managed staging validates releases, infrastructure changes, and rollback behavior; the implemented **six-hour automatic staging shutdown** reduces forgotten temporary-resource cost.
+10. **Current state** — AWS-hosted internal pilot; core Superadmin backend approved and handed to frontend; remaining backend work limited to cleanup/refactoring and active-default CRUD.
+
+Prohibited SAFAPAC content:
+
+- proprietary formulas, expected numeric fixtures, raw expert documents, internal identifiers, account/resource details, secrets, internal user data, or client-sensitive configuration;
+- `Eliminated Excel`, `Superadmin fully completed`, or `domain experts now manage everything independently` before that workflow is actually complete and used;
+- invented performance improvement, old p95, production throughput, worldwide adoption, or sole-product ownership.
+
+### AIRIS
+
+Public title direction: **AIRIS — Evaluating and Optimizing Enterprise RAG Workloads**.
+
+The page must establish that Hydar worked on applied-AI engineering experiments: measuring retrieval/LLM behavior, reducing unnecessary context, and tracing concurrency bottlenecks rather than changing the system based on intuition.
+
+Required evidence and narrative:
+
+- Controlled context experiment: **6 scenarios, 10 turns, 541k to 20.9k local-context tokens, 96.1% reduction, and 10/10 citation checks passed**.
+- Preserve the distinction that passing the experiment's citation checks does not prove universal answer-quality improvement.
+- Concurrency diagnosis: vector-search latency increased from **4.8 seconds at 10 concurrent users to 51.0 seconds at 50 users**; at 50 users, vector search represented **76.9% of request time**.
+- Explain the subsystem decomposition and note outbound-LLM behavior as another optimization area without claiming unmeasured production impact.
+- Outcome and attribution: findings and remediation options were reviewed with the senior engineer, accepted as engineering recommendations, and several were subsequently incorporated into his implementation.
+
+Do not imply that Hydar implemented every resulting optimization, supported a production concurrency level, or achieved a measured production latency/cost improvement.
+
+### AnotherEdenAI
+
+Public title direction: **AnotherEdenAI — A Roster-Aware GraphRAG Team Recommender with Deterministic Guardrails**.
+
+The page must explain the reliability problem in recruiter-readable language: deterministic software retrieves facts, constructs candidate teams, and checks legality/feasibility; the LLM is restricted to ranking, refinement, and explanation.
+
+Core principle: **The model may reason about legal candidates; it may not redefine what is legal.**
+
+Required evidence and narrative:
+
+- Architecture flow: user question and roster -> graph retrieval -> deterministic candidate generation -> legality/feasibility checks -> bounded analyzer call -> validation/correction -> deterministic fallback -> explanation.
+- **367/367 canonical character forms/styles** with complete legal-kit data for the accepted snapshot.
+- **31 evaluation cases**, including infeasible cases that make **zero analyzer calls**.
+- Held-out extraction evaluation: recall changed from **76.1% to 93.5%**, while precision changed from **66.0% to 37.1%**.
+- Explain that the higher recall was not presented alone as an accuracy win; the precision regression kept the change at a human-review checkpoint.
+- Project status remains **Active development**.
+
+Do not publish internal development labels such as `C1.1` or `C2`. Recruiters should see the plain-language progress summary, coverage/evaluation counts, and paired recall/precision percentages. Do not invent an overall project-completion percentage.
+
+Do not claim 93.5% accuracy, eliminated hallucinations, guaranteed optimal/winning teams, guaranteed recommendations, zero-error AI, or production readiness.
+
+### SAF Sky Quest
+
+Public title direction: **SAF Sky Quest — Rapid AWS Deployment for an Airbus Education Event**.
+
+This is a compact supporting case study, not a flagship software-development claim.
+
+Required context and narrative:
+
+- Thailand educational activation, **15–25 August 2026**.
+- Gamified quiz introducing primary- and secondary-school audiences to Sustainable Aviation Fuel and common recyclable/biofuel feedstock concepts.
+- Participants scoring at least **8/10** were eligible for event rewards.
+- The frontend application was developed by another developer. Hydar owned rapid hosting and event infrastructure: receive the finished app -> deploy to AWS Lightsail -> configure custom domain and Caddy HTTPS -> operate during the activation -> export runtime data -> decommission infrastructure.
+- Use exactly **29 registration records captured** or **29 runtime registration records captured**.
+
+Do not call the records 29 students, 29 schools, or 29 unique users.
+
+### PETRONAS Digital experience
+
+Keep PETRONAS in the Experience section rather than adding another flagship route. The summary should state that Hydar contributed within a five-person team to a MEAN/Ionic booking prototype for staff and intern onboarding, worked on Angular floor/desk views, and paired on mobile booking, QR check-in, Android deployment, and development documentation.
+
+## Shared implementation boundaries
+
+- Reuse the existing Astro/TypeScript/MDX site, shared case-study shell, career data, profile resolver, and PDF renderer. Do not create separate portfolio variants, duplicate resume models, or unrelated templates.
+- Preserve a phone-free public site and balanced public PDF. Keep private contact overlays and targeted resumes ignored and untracked.
+- Keep all visuals original, sanitized, accessible, and useful without exposing professional source artifacts.
+- Every metric must keep its denominator, environment, and attribution context.
+- Use `I built` only for Hydar's implementation; `I worked with` for expert collaboration; and explicit teammate/senior-engineer attribution where implementation ownership belongs elsewhere.
+- Do not publish raw methodology, proprietary formula detail, reference fixtures, raw event records, internal screenshots, internal URLs, credentials, AWS identifiers, source archives, or confidential implementation detail.
+- Existing stale validators must be updated when they enforce obsolete wording. Passing an old validator is not a reason to preserve stale content.
+- Temporary audit notes, screenshots, extracted PDF text, generated HTML, and render intermediates must be promoted into durable tests or purged before each feature commit.
+- This milestone does not authorize external account edits, social posts, GitHub pushes, Cloudflare deployment, or publication. Those remain separate actions.
 
 ## Feature sequence
 
-### Feature 7A — Backend resume content and rendering
+### Feature 7A — Content authority and shared presentation foundation
 
-- Type/status: build; complete
-- Outcome: produce a one-page Backend Software Engineer application resume that prioritizes evidenced backend/data/calculation work and removes unsupported deployment or impact language.
-- Registry inputs: `docs/career/README.md`; `claim-policy.md`; `SAFAPAC.md` (`SAF-OWN-01`, `SAF-SCOPE-01`, `SAF-CALC-01`, `SAF-DEFAULT-01`, `SAF-PERF-01`, and `CUR-SAF-*`); `AIRIS.md` (`AIR-ROLE-01` only as supporting experience unless another allowed claim earns space); `AnotherEdenAI.md` (`AE-ARCH-01`, `AE-EVAL-01`, `AE-SEARCH-01`); `job-market-findings.md`; and the current private Backend PDF as wording/layout input only.
-- Scope: curate shared backend evidence items and the `backend` profile selection/order; refine the shared renderer or print CSS only where the Backend artifact proves a rendering need; add profile-aware validation for claim qualifiers and forbidden wording; render the ignored Backend PDF.
-- Non-goals: rewriting the Cloud or Applied-AI profile, regenerating the tracked balanced PDF, changing case studies, adding unverified counts, or redesigning the resume template.
-- Allowed paths: `resume/career-data.json`, `resume/resolve-profile.mjs`, `resume/resolve-profile.d.mts`, `resume/resume.css`, `scripts/render-resume.mjs`, `scripts/validate-resume.mjs`, `package.json` only if an existing resume command must be composed, `.private/Hydar_Hafiz_Resume_Backend.pdf` as an ignored output, and `docs/core/milestone.md`.
+- Type/status: approved content/documentation refactor; planned first
+- Outcome: replace stale Milestone 7 authority across canonical portfolio documentation and establish the shared content/model foundation needed by the four case studies, homepage, and public resume.
+- Scope:
+  - reconcile the roadmap, architecture, planning sources, public-content boundary, framework-neutral content contract, and relevant UX/UI specification with this milestone;
+  - make this milestone the explicit authority for career meaning while retaining the old registry only as supporting history;
+  - encode the approved project hierarchy, site-wide positioning, dates, location boundary, maturity labels, public/private resume policy, and disclosure rules;
+  - extend existing content/navigation schema only where needed for a major AIRIS route and supporting SAF Sky Quest route;
+  - establish or update durable validators for global forbidden wording and context-preserving metrics without implementing every page's final copy.
+- Non-goals: regenerating the three targeted resumes, rewriting all case-study pages, visual redesign, or re-auditing approved career claims.
+- Entry gate: this milestone is approved and the current repository/docs state has been inspected.
 - Acceptance:
-  - `7A-01`: the title, summary, capabilities, and evidence order clearly target Python/FastAPI/PostgreSQL backend roles without implying seniority or general product ownership.
-  - `7A-02`: SAFAPAC wording describes contribution, contracts, validation, and testability within the registry boundary; `deployed`, `productionized`, live operations, customer impact, and unsupported collaboration counts are absent.
-  - `7A-03`: every included number or outcome is mapped to a registry ID and retains required snapshot/local/test qualifiers; conditional metrics are omitted unless their upgrade evidence is accepted first. Any retained AnotherEdenAI architecture statement uses historical-snapshot wording unless its public source revision is freshly checked.
-  - `7A-04`: the ignored application PDF is one readable A4 page with ordered searchable text, correct metadata and links, natural Backend keywords, and the private phone only through the existing contact overlay.
-  - `7A-05`: changes to shared source or rendering do not alter the selected content of the Cloud, AI, or default profiles except for removal of a registry-prohibited shared statement; all affected profiles still resolve and validate structurally.
-- Verification: `npm run resume:render:backend`; `npm run resume:validate:backend`; `npm run profile:self-test`; a resolver snapshot/assertion covering all four profiles; `node --check` for touched scripts; `git diff --check`; and a local extracted-text comparison against the approved Backend selection.
-- Claim-safety check: create a temporary bullet-to-registry mapping during execution, fail the validator on `deployed beta`, `productionized`, unqualified production/staging operation, unsupported user/team counts, or unqualified local metrics, then purge the mapping unless a small reusable machine-readable contract is needed by the validator.
-- Human checkpoint: only if retaining `Owned backend, database, and AWS delivery` under `SAF-OWN-01`. Repository evidence cannot prove the assignment boundary; ask Hydar to confirm that exact bounded responsibility. If not confirmed, use a contribution-led fallback and continue.
-- Route/commit: `builder-executor -> tdd-loop`; one Backend-resume feature commit containing source, durable validation, and milestone status. The ignored PDF is manually reviewed but never staged.
-- Completion evidence (2026-09-16): Backend rendering, all-profile resume validation, profile self-test, four-profile resolver assertion, touched-script syntax checks, `git diff --check`, ordered extracted-text comparison, and local one-page readability review passed. The Backend profile uses contribution-led SAFAPAC wording and historical/local qualifiers; the `SAF-OWN-01` ownership checkpoint was not triggered.
+  - no canonical planning document still calls the old career registry the highest career-content authority;
+  - the public hierarchy, hero, location boundary, January 2026 AnotherEdenAI date, maturity labels, and resume visibility policy are represented consistently;
+  - shared schema/navigation changes preserve existing routes and support the planned AIRIS and SAF Sky Quest entries;
+  - validators do not reject content solely because it is stronger than the stale registry when it is explicitly approved here;
+  - no public page is left broken while later case-study features remain pending.
+- Durable evidence: updated canonical docs, any required typed schema/config changes, focused validator tests, and one completed-feature commit.
+- Route: `builder-executor -> tdd-loop`.
 
-### Feature 7B — Cloud/DevOps resume content and rendering
+### Feature 7B — SAFAPAC flagship case study
 
-- Type/status: build; planned after 7A
-- Outcome: produce a one-page Cloud & DevOps Engineer application resume centered on evidenced AWS/IaC/delivery controls without presenting repository-defined infrastructure as a proven live production estate.
-- Registry inputs: `docs/career/README.md`; `claim-policy.md`; `SAFAPAC.md` (`SAF-OWN-01`, `SAF-OPS-01`, `SAF-OPS-02`, `SAF-CALC-01`, `CUR-SAF-01`, `CUR-SAF-02`, `CUR-SAF-03`); and `job-market-findings.md` for targeting diagnosis, not as proof of operational experience.
-- Scope: curate cloud evidence items and the `cloud` selection/order; emphasize Terraform, Docker, GitHub Actions, OIDC, SSM, Linux/Nginx, security/release controls, and application-to-infrastructure understanding only at the evidence level the registry permits; render and validate the ignored Cloud PDF.
-- Non-goals: claiming successful production deployment, uptime, incident reduction, cost savings, Kubernetes, broad SRE/platform ownership, or inventing troubleshooting/backup/recovery incidents because job descriptions value them.
-- Allowed paths: `resume/career-data.json`, `resume/resolve-profile.mjs`, `resume/resolve-profile.d.mts`, `resume/resume.css`, `scripts/render-resume.mjs`, `scripts/validate-resume.mjs`, `package.json` only for existing resume command composition, `.private/Hydar_Hafiz_Resume_Cloud.pdf` as an ignored output, and `docs/core/milestone.md`.
+- Type/status: build/content migration; planned after 7A
+- Outcome: replace the stale deployment-led SAFAPAC page with the approved backend, domain-contract, default-governance, performance, AWS, and reliability narrative.
+- Scope: implement every required SAFAPAC section and current-status boundary; update sanitized visuals, metadata, captions, and page-level validation; retain the existing route and shared case-study shell.
+- Non-goals: proprietary formulas/fixtures, raw evidence, frontend ownership, invented performance comparison, completed-Superadmin wording, or visual redesign outside the page's needs.
+- Entry gate: Feature 7A authority/schema work is complete; the existing SAFAPAC route and reusable components are healthy.
 - Acceptance:
-  - `7B-01`: the title, summary, capability order, and first experience bullets make the Cloud/IaC delivery story scannable without obscuring the Backend foundation.
-  - `7B-02`: architecture estimates are labelled as design/estimate; repository controls are described as defined or verified in the audited archive; no wording implies applied production infrastructure or an operated live estate without upgraded evidence.
-  - `7B-03`: no unsupported Kubernetes, SRE, observability, incident, backup/recovery, scale, savings, or production-performance claim is added to close a market gap.
-  - `7B-04`: the ignored PDF meets the same one-page, searchable, link, metadata, contact, and natural-keyword contract as 7A, with no cramped or clipped cloud capability block.
-  - `7B-05`: shared changes leave the other three profile resolutions structurally valid and claim-safe.
-- Verification: `npm run resume:render:cloud`; `npm run resume:validate:cloud`; all-profile resolver assertions; `npm run profile:self-test`; `node --check` for touched scripts; `git diff --check`; and local extracted-text/layout review.
-- Claim-safety check: validator coverage must distinguish `designed/defined/configured` from `deployed/operated/achieved`, reject unqualified `staging and production`, and reject cost/capacity language without `estimated` or `target/design` as required.
-- Human checkpoint: only if Hydar wants live-operation, successful-deployment, or production-environment wording. Require a sanitized deployment/release or operational record plus bounded responsibility confirmation; otherwise retain the archive/design fallback and continue.
-- Route/commit: `builder-executor -> tdd-loop`; one Cloud-resume feature commit. The targeted PDF remains ignored.
+  - the page makes Hydar's bounded ownership and collaboration with specialists immediately clear;
+  - all approved SAFAPAC counts, operating-cost facts, p95 result, TLS story, staging purpose, six-hour shutdown, and current Superadmin status appear with their required context;
+  - the methodology-to-contract and do-not-invent-domain-data decisions are understandable without publishing protected domain content;
+  - prohibited completion, sole-ownership, worldwide-production, confidentiality, and invented-speedup wording is absent;
+  - the page is responsive, accessible, theme-safe, and passes project/public-boundary validation.
+- Durable evidence: updated SAFAPAC content/visual contracts and public implementation, negative validator coverage for prohibited variants, and one completed-feature commit.
+- Route: `builder-executor -> tdd-loop`.
 
-### Feature 7C — Applied-AI resume content and rendering
+### Feature 7C — AIRIS major applied-AI case study
 
-- Type/status: build; planned after 7B
-- Outcome: produce a one-page Applied AI Engineer application resume that leads with deterministic/LLM boundaries, evaluation discipline, and AI workload investigation rather than unsupported model-quality or production-AI claims.
-- Registry inputs: `docs/career/README.md`; `claim-policy.md`; all claims in `AIRIS.md`, especially `AIR-LOAD-01..03`, `AIR-TOKEN-01`, `AIR-ATTR-01`, and `AIR-ROLE-01`; all claims in `AnotherEdenAI.md`, especially `AE-ARCH-01`, `AE-EVAL-01`, `AE-SEARCH-01`, `AE-GUARD-01`, `AE-TEST-01`, and the `AE-EVAL-02` trade-off; plus current private AI PDF wording.
-- Scope: curate AI evidence items and the `ai` selection/order; preserve AIRIS recommendation/implementation attribution; use current AnotherEdenAI implementation language only after a source check at an identified public revision, otherwise use registry-authorized historical-snapshot wording; render and validate the ignored AI PDF.
-- Non-goals: `93.5% accuracy`, hallucination elimination, optimal/guaranteed recommendations, measured cost savings, all-tests-pass wording, production readiness, or accepted C2 quality.
-- Allowed paths: `resume/career-data.json`, `resume/resolve-profile.mjs`, `resume/resolve-profile.d.mts`, `resume/resume.css`, `scripts/render-resume.mjs`, `scripts/validate-resume.mjs`, `docs/core/planning-sources.md` only for an identified fresh public-source revision or an unresolved availability gap, `package.json` only for existing resume command composition, `.private/Hydar_Hafiz_Resume_AI.pdf` as an ignored output, and `docs/core/milestone.md`.
+- Type/status: build/content migration; planned after 7B
+- Outcome: promote AIRIS from a compact supporting contribution to a major case-study route centered on controlled RAG experiments, bottleneck isolation, and accurate recommendation/implementation attribution.
+- Scope: create or complete the AIRIS route using the shared shell; implement the approved context experiment, concurrency diagnosis, outcome, visuals, homepage-ready summary, navigation, metadata, sitemap, and validation.
+- Non-goals: claiming Hydar implemented every recommendation, claiming production improvement or supported concurrency, publishing private architecture/configuration, or adding unrelated AI claims.
+- Entry gate: shared route/schema foundation is complete and SAFAPAC establishes the intended professional-case-study quality bar.
 - Acceptance:
-  - `7C-01`: the summary and first evidence items communicate reliable applied-AI engineering through structured retrieval, deterministic legality/search, bounded analyzer authority, validation, fallback, and evaluation.
-  - `7C-02`: AIRIS bullets state testing, diagnosis, reporting, and recommendations for senior review; they never imply Hydar implemented later changes or produced a measured production improvement.
-  - `7C-03`: every AnotherEdenAI implementation claim is tied either to a fresh identified source revision or an explicit audited-snapshot qualifier; any evaluation metric includes its denominator and adverse trade-off where required.
-  - `7C-04`: the ignored PDF satisfies the one-page ATS/render/contact contract and uses natural Applied-AI keywords without keyword stuffing or unsupported MLOps terminology.
-  - `7C-05`: shared changes leave Backend, Cloud, and default profile resolution claim-safe.
-- Verification: fresh read-only source/revision check when available; `npm run resume:render:ai`; `npm run resume:validate:ai`; all-profile resolver assertions; `npm run profile:self-test`; `node --check`; `git diff --check`; and local extracted-text/layout review.
-- Claim-safety check: validator coverage rejects causal implementation language for AIRIS and rejects `accuracy`, `production-ready`, `hallucination-free`, guaranteed outcomes, unqualified live counts, token savings, or all-555-tests-pass wording. It must distinguish configured bounds from achieved outcomes.
-- Human checkpoint: none by default. If stronger C2 or current-live behavior wording is desired, create an evidence-gap checkpoint; C2 acceptance additionally requires the registry's human precision/review-timing decision. The default feature omits that stronger claim and continues.
-- Route/commit: `builder-executor -> tdd-loop`; one Applied-AI-resume feature commit. The targeted PDF remains ignored.
+  - the 541k-to-20.9k token result, 96.1% reduction, 6-scenario/10-turn scope, and 10/10 citation checks remain inseparable;
+  - the 4.8-second, 51.0-second, and 76.9% bottleneck figures retain their concurrency/request-time context;
+  - citation checks are not presented as universal answer quality;
+  - the accepted-recommendation and later-implementation wording attributes subsequent code to the senior engineer;
+  - route, navigation, sitemap, responsive/accessibility, theme, and public-boundary checks pass.
+- Durable evidence: AIRIS content/visual contracts and route, project-specific negative claim tests, sitemap/navigation coverage, and one completed-feature commit.
+- Route: `builder-executor -> tdd-loop`.
 
-### Feature 7D — SAFAPAC portfolio case study
+### Feature 7D — AnotherEdenAI major personal case study
 
-- Type/status: build; planned after 7C
-- Outcome: replace the current deployment-led SAFAPAC page with a defensible historical professional case study about backend/data/calculation contracts and AWS pilot/delivery design.
-- Registry inputs: `docs/career/README.md`; `claim-policy.md`; all of `SAFAPAC.md`, with special enforcement of `CUR-SAF-01..04`; `docs/core/content-boundary.md`; and the current SAFAPAC MDX, framework-neutral narrative, disclosure record, and visuals as wording being audited rather than proof.
-- Scope: rewrite the SAFAPAC content and status; keep employer/team attribution and confidentiality boundaries; update its original visuals and validator expectations where their `beta delivered`, production, or live-operation semantics conflict with the registry; retain the existing route and shared case-study shell.
-- Non-goals: reproducing raw archive material, publishing formulas/defaults/internal topology, asserting deployment, adding conditional `30,000+` records, or using repository inventory counts without the registry's required identity upgrade.
-- Allowed paths: `src/content/case-studies/safapac.mdx`, `docs/content/case-studies/safapac.md`, `docs/content/disclosure/safapac.md`, `docs/content/visual-contracts/safapac.md`, `docs/core/content-boundary.md`, the SAFAPAC-specific sections of `docs/ux-ui/specification.md`, `src/pages/safapac.astro`, `src/components/CaseStudyPage.astro`, `src/components/SafapacTransition.astro`, `src/components/SafapacDelivery.astro`, `src/components/SafapacSectionHeading.astro`, `src/styles/global.css`, `scripts/validate-case-studies.mjs`, `scripts/validate-visuals.mjs`, `docs/core/planning-sources.md` only for an accepted evidence upgrade/gap, and `docs/core/milestone.md`.
+- Type/status: build/content migration; planned after 7C
+- Outcome: present AnotherEdenAI as an actively developed, reliability-focused GraphRAG system through recruiter-readable architecture and honest evaluation evidence.
+- Scope: implement the deterministic-versus-LLM authority boundary, pipeline, coverage/evaluation evidence, infeasible zero-call behavior, recall/precision trade-off, current public-repository link, sanitized visuals, metadata, and validation.
+- Non-goals: exposing internal milestone labels, changing the AnotherEdenAI repository, claiming overall completion percentage, 93.5% accuracy, accepted quality, reduced review effort, guaranteed outcomes, or production readiness.
+- Entry gate: shared content model is stable and the public AnotherEdenAI link/current implementation surface can be checked without reopening approved career meaning.
 - Acceptance:
-  - `7D-01`: page status, summary, narrative, visuals, captions, alt text, and metadata contain no `deployed beta`, `productionized`, `beta delivered`, operated-live-estate, or implied customer/adoption claim.
-  - `7D-02`: the story clearly separates self-attested responsibility, verified historical repository behavior, target/design architecture, local benchmarks, and unresolved live-operation evidence.
-  - `7D-03`: calculation/default-governance details appear only at the implementation state and channel authorized by the registry; conditional or identity-gated metrics are absent unless their checkpoint passes first.
-  - `7D-04`: the page remains recruiter-readable, navigable, responsive, keyboard accessible, theme-safe, and useful even when all unresolved metrics are omitted.
-  - `7D-05`: public output contains no proprietary formula, source excerpt, private identifier, copied diagram, internal URL, or private source path.
-- Verification: `ASTRO_TELEMETRY_DISABLED=1 npm run check`; build; `npm run case-studies:validate`; `npm run visuals:validate`; `npm run site:validate`; `bash scripts/check-public-boundary.sh`; a registry-ID claim scan; and `git diff --check`.
-- Claim-safety check: every material status, ownership, implementation, metric, and outcome sentence must cite a SAF registry ID in the temporary audit. The validator must make the current prohibited deployment/production wording fail.
-- Human checkpoint: bounded ownership wording under `SAF-OWN-01` requires Hydar's confirmation. Deployment/live-operation wording requires the registry's sanitized operational proof and is otherwise excluded. The feature proceeds with a historical/design narrative if neither upgrade is supplied.
-- Route/commit: `contract-auditor -> builder-executor -> tdd-loop`; one SAFAPAC case-study feature commit.
+  - the page explains the principle `the model may reason about legal candidates; it may not redefine what is legal` in plain language;
+  - 367/367 legal-kit coverage and 31 evaluation cases retain their exact meanings;
+  - recall 76.1% -> 93.5% and precision 66.0% -> 37.1% always appear together with the human-review consequence;
+  - no `C1.1`/`C2` labels or invented completion percentage appear in public copy;
+  - active-development maturity, responsive/accessibility, theme, links, and public-source boundaries pass validation.
+- Durable evidence: updated AnotherEdenAI content/visual contracts and page, negative AI-claim tests, and one completed-feature commit.
+- Route: `builder-executor -> tdd-loop`.
 
-### Feature 7E — AIRIS portfolio case study
+### Feature 7E — SAF Sky Quest supporting deployment case study
 
 - Type/status: build; planned after 7D
-- Outcome: add a dedicated but explicitly supporting AIRIS case-study route that demonstrates measurement quality, bottleneck isolation, controlled token experimentation, and recommendation handoff without implying implementation or production impact.
-- Registry inputs: `docs/career/README.md`; `claim-policy.md`; all of `AIRIS.md`; `docs/core/content-boundary.md`; and the existing AIRIS compact MDX/disclosure/visual sources.
-- Scope: create `/airis`; expand the approved supporting narrative using registry-authorized historical/local evidence; preserve the supporting hierarchy on the homepage and adjacent navigation; adapt the shared case-study shell and AIRIS visual as needed; add the route to static validation and sitemap surfaces.
-- Non-goals: promoting AIRIS above the two flagship projects, publishing private report/configuration detail, claiming supported production concurrency, fixes, cost savings, adoption, or recommendation implementation.
-- Allowed paths: `src/content/case-studies/airis.mdx`, `docs/content/case-studies/airis.md`, `docs/content/disclosure/airis.md`, `docs/content/visual-contracts/airis.md`, `docs/core/architecture.md`, the AIRIS route/hierarchy sections of `docs/ux-ui/specification.md`, `src/pages/airis.astro`, `src/pages/index.astro` only for the case-study link, `src/components/CaseStudyPage.astro`, `src/components/CaseStudyCard.astro`, `src/components/AirisLoadTesting.astro`, `src/styles/global.css`, `src/content.config.ts` only if supporting-route schema needs clarification, `public/sitemap.xml`, `scripts/validate-case-studies.mjs`, `scripts/validate-homepage.mjs`, `scripts/validate-site-foundation.mjs`, `scripts/validate-visuals.mjs`, and `docs/core/milestone.md`.
+- Outcome: add a compact case study proving rapid real-event cloud delivery, operation, data export, and decommissioning with accurate teammate attribution.
+- Scope: add the supporting route/content entry, event context, deployment lifecycle visual, project-card summary, metadata, navigation/sitemap handling, and validation.
+- Non-goals: claiming application/frontend implementation, interpreting Thai records, identifying participants, promoting the project above the three major case studies, or exposing runtime data.
+- Entry gate: shared supporting-project presentation is available and the event facts in this milestone are treated as approved.
 - Acceptance:
-  - `7E-01`: `/airis` is statically built and linked as a supporting contribution, while SAFAPAC and AnotherEdenAI remain the primary professional/personal case studies.
-  - `7E-02`: the page explains the three-workflow test scope, bottleneck analysis, and recommendation handoff; exact load/token metrics appear only with historical/tested/local denominators and registry-authorized wording.
-  - `7E-03`: the local RAG experiment, if used, retains `controlled local`, `6 scenarios/10 turns`, and `10/10 citation checks`; it is never translated into provider cost or production savings.
-  - `7E-04`: recommendation-versus-implementation ownership is explicit in prose, visual semantics, captions, and alt text; no connector or outcome implies a production fix.
-  - `7E-05`: the page passes the shared accessibility, responsive, theme, disclosure, and route/navigation contracts.
-- Verification: Astro check/build; `npm run site:validate`; `npm run homepage:validate`; `npm run case-studies:validate`; `npm run visuals:validate`; public-boundary scan; registry-ID claim scan; sitemap check; and `git diff --check`.
-- Claim-safety check: validate required environment/denominator qualifiers and reject `supported 50 users`, production latency/cost/reliability improvement, implementation causality, or disclosure of private service/configuration details.
-- Human checkpoint: none for the registry-authorized narrative. Any claim that a recommendation was implemented or improved production becomes a separate evidence gap requiring a causal PR/commit/issue/review record; omit it and continue.
-- Route/commit: `builder-executor -> tdd-loop`; one AIRIS case-study feature commit.
+  - the event is dated 15–25 August 2026 and described as a Thailand Airbus educational activation;
+  - quiz purpose and 8/10 reward threshold are clear without overstating event impact;
+  - frontend ownership belongs to the teammate and Hydar's Lightsail/domain/Caddy/operations/export/decommission responsibility is explicit;
+  - the count is only `29 registration records captured` or an exact approved equivalent;
+  - the page is visibly supporting, accessible, responsive, theme-safe, and included in applicable link/sitemap validators.
+- Durable evidence: public-safe SAF Sky Quest content/visual contract, route/card, count-attribution tests, and one completed-feature commit.
+- Route: `builder-executor -> tdd-loop`.
 
-### Feature 7F — AnotherEdenAI portfolio case study
+### Feature 7F — Homepage, experience, and balanced public resume synchronization
 
-- Type/status: build; planned after 7E
-- Outcome: deepen the active-development case study with audited architecture, deterministic legality/search evidence, guardrails, and the honest C2 recall/precision gate.
-- Registry inputs: `docs/career/README.md`; `claim-policy.md`; all of `AnotherEdenAI.md`; `docs/core/content-boundary.md`; current AnotherEdenAI MDX/framework-neutral/disclosure/visual sources; and a fresh public-repository source identity when available.
-- Scope: recheck the public project at an identified revision; reconcile current implementation wording; add only registry-authorized historical/evaluation facts with their qualifiers; make the C2 adverse trade-off and unresolved review gate legible; update diagrams and validators where needed.
-- Non-goals: changing the AnotherEdenAI repository, completing its C2 review, claiming production readiness/live deployment, presenting 93.5% as accuracy, claiming reduced review effort, or publishing current graph totals without a fresh accepted replay.
-- Allowed paths: `src/content/case-studies/anotheredenai.mdx`, `docs/content/case-studies/anotheredenai.md`, `docs/content/disclosure/anotheredenai.md`, `docs/content/visual-contracts/anotheredenai.md`, `src/pages/anotheredenai.astro`, `src/components/CaseStudyPage.astro`, `src/components/AnotherEdenAIPipeline.astro`, `src/components/AnotherEdenAIGuardrails.astro`, `src/components/AnotherEdenAISectionHeading.astro`, `src/styles/global.css`, `scripts/validate-case-studies.mjs`, `scripts/validate-visuals.mjs`, `docs/core/planning-sources.md` for the checked revision/gap, and `docs/core/milestone.md`.
+- Type/status: cross-page build/content synchronization; planned after 7E
+- Outcome: make the homepage, project cards, About/Experience content, semantic resume, tracked balanced PDF, metadata, and recruiter-facing guidance tell the same approved story.
+- Scope:
+  - implement the approved hero, supporting paragraph, engineering pillars, four contextual evidence cards, and project order;
+  - add the compact SAF Sky Quest card and keep PETRONAS in Experience;
+  - update the About narrative around Backend as the foundation and Cloud/Applied AI as extensions;
+  - remove Malaysia-wide relocation language and correct AnotherEdenAI to January 2026;
+  - inspect the three exact latest PDFs named under `Private resume baselines` and record a source-to-public mapping for selected summary, skill, experience, project, education, and certification content;
+  - resolve one balanced public resume headed `Backend Engineer | Cloud & Applied AI`, covering SAFAPAC, AIRIS, AnotherEdenAI, SAF Sky Quest where space permits, and PETRONAS without exposing targeted variants or phone data;
+  - reproduce the three resumes' shared visual system in the public PDF: one A4 page; monochrome single-column composition; classic serif typography; large uppercase name and role; compact contact and link rows; uppercase bold section headings with thin horizontal rules; right-aligned dates; concise indented bullets; and selective bold emphasis for technologies, ownership, and measured evidence;
+  - preserve the shared public header content from the three PDFs: name, balanced role title, email, Bangi/Selangor, `Available November 2026`, LinkedIn, GitHub, and `hydarhafiz.com`, while omitting the private phone number;
+  - preserve their shared section sequence: `Summary` -> `Technical Skills` -> `Professional Experience` -> `Personal Project` -> `Education & Certifications`;
+  - adapt the semantic `/resume` route responsively while preserving the PDF's content order, typographic hierarchy, emphasis, and restrained monochrome character;
+  - regenerate the tracked public PDF and synchronize titles, dates, statuses, links, metadata, README, and committed recruiter guidance.
+- Non-goals: changing private targeted PDFs, exposing a profile selector, adding unrelated routes, redesigning the whole site, or publishing externally.
+- Entry gate: all four case-study features are complete; their final summaries/statuses are available; and the three named latest PDFs exist in `.private/` and have been inspected for both text and visual structure.
 - Acceptance:
-  - `7F-01`: every current implementation statement is reproduced at a named public revision or recast as historical-snapshot evidence; the page remains labelled `actively developed`.
-  - `7F-02`: deterministic legality, bounded search, constrained analyzer authority, structured validation, and fallback are explained as architecture/guardrails rather than guaranteed outcomes.
-  - `7F-03`: if shown, `367/367`, `31 cases`, bounded-search values, test inventory, or graph/catalog counts retain their exact registry meanings and temporal/collection/pass qualifications.
-  - `7F-04`: the C2 section presents recall and precision together, names the held-out denominator, and states that the precision regression triggered a review checkpoint; it does not imply accepted quality or reduced labor.
-  - `7F-05`: public content and visuals remain responsive, accessible, source-safe, and free of unsupported maturity, factuality, quality, cost, and gameplay-success claims.
-- Verification: fresh source/revision audit or explicit unavailable-source fallback; Astro check/build; case-study, visual, site, and public-boundary validators; registry-ID claim scan; link check to the public repository; and `git diff --check`.
-- Claim-safety check: validator scenarios must reject `production-grade`, `93.5% accuracy`, hallucination elimination, guaranteed legal/optimal/winning teams, all-555-tests-pass, current live graph counts, and token/cost reduction claims.
-- Human checkpoint: none for presenting the unresolved C2 trade-off. Only a proposal to call C2 accepted or claim review improvement requires the registry-defined human review/timing checkpoint; absent that decision, keep the no-go state and continue.
-- Route/commit: `contract-auditor -> builder-executor -> tdd-loop`; one AnotherEdenAI case-study feature commit.
+  - homepage evidence appears before biography-heavy content and every metric keeps its project context;
+  - hierarchy is SAFAPAC -> AIRIS -> AnotherEdenAI -> SAF Sky Quest, with PETRONAS in Experience;
+  - every public-resume statement is traceable either to selected content in one or more of the three named PDFs or to a more precise/newer requirement in this milestone; no `docs/career/` registry entry is used as content authority;
+  - the balanced selection reflects all three target directions without concatenating all three resumes or creating an overcrowded two-page artifact;
+  - the public `/resume` and PDF are one balanced, phone-free profile and remain one readable searchable A4 page;
+  - the public header contains the approved non-phone contact/location/availability/link fields and no private application-only contact data;
+  - the PDF visibly follows the approved private-resume design contract: serif typography, monochrome single column, matching section order, ruled uppercase headings, aligned dates, bullet rhythm, and intentional bold evidence hierarchy;
+  - the responsive `/resume` page preserves the same information architecture and emphasis without forcing print-only dimensions on narrow screens;
+  - public copy consistently uses January 2026, KL/Selangor targeting, approved maturity labels, correct ownership, and working case-study/contact/repository links;
+  - targeted PDFs remain private/unlinked and shared resume generation remains structurally valid.
+- Durable evidence: updated homepage/experience/resume sources, the source-to-public resume mapping, regenerated public PDF, extracted-text comparison, visual comparison against all three named private PDFs, cross-surface consistency tests, and one completed-feature commit.
+- Route: `builder-executor -> tdd-loop`.
 
-### Feature 7G — Homepage, balanced resume, and cross-page positioning
+### Feature 7G — Final technical, content, and disclosure QA
 
-- Type/status: build/documentation; planned after 7F
-- Outcome: reconcile the homepage, project cards, semantic resume, tracked balanced PDF, metadata, and recruiter-facing guidance around the completed targeted resumes and case studies.
-- Registry inputs: every file in `docs/career/`, with project-specific wording governed by the three evidence files and global wording governed by `claim-policy.md`; `job-market-findings.md` informs hierarchy only and does not authorize claims.
-- Scope: select the balanced profile from the shared evidence items produced in 7A-7C; regenerate the public phone-free PDF; revise homepage/about/project positioning and links; align site metadata and the semantic resume; reconcile committed LinkedIn/GitHub guidance and the old launch draft so neither remains an `approved` source of prohibited wording. No external profile is changed or post published.
-- Non-goals: public resume selectors, separate portfolio variants, external account edits, a visual redesign, new routes beyond the approved AIRIS route, or new claims.
-- Allowed paths: `resume/career-data.json`, `resume/resolve-profile.mjs`, `resume/resolve-profile.d.mts`, `resume/resume.css`, `public/resume/hydar-hafiz-bin-hydzelan-resume.pdf`, `src/pages/index.astro`, `src/pages/resume.astro`, `src/components/ResumePage.astro`, `src/components/ExperienceList.astro`, `src/components/SkillExpertise.astro`, `src/components/CaseStudyCard.astro`, `src/components/SiteHeader.astro`, `src/components/SiteFooter.astro`, `src/layouts/SiteLayout.astro`, `src/styles/global.css`, `docs/career/profile-alignment.md`, `docs/career/linkedin-announcement-draft.md`, `README.md`, `scripts/validate-homepage.mjs`, `scripts/validate-resume-page.mjs`, `scripts/validate-resume.mjs`, `scripts/validate-profile-alignment.mjs`, `scripts/validate-linkedin-launch.mjs`, a new `scripts/validate-career-claims.mjs` if cross-surface assertions cannot fit cleanly in the existing validators, and `docs/core/milestone.md`.
+- Type/status: verification-only/evidence remediation; planned last
+- Outcome: prove that the approved content was implemented faithfully and that all public pages/artifacts remain technically sound, recruiter-readable, accessible, responsive, and private-data safe.
+- Scope: independent cross-surface content comparison; site/build/link/metadata/sitemap checks; ATS/PDF inspection; keyboard, headings, landmarks, focus, contrast, reflow, themes, reduced motion, and print checks; privacy/disclosure scan; remediation only for failures against this milestone; milestone/roadmap closure.
+- Non-goals: new positioning, new claims, stronger metrics, career re-audit, new visual direction, external deployment, or unrelated cleanup.
+- Entry gate: Features 7A–7F each have one focused commit and no unresolved implementation blocker.
 - Acceptance:
-  - `7G-01`: the homepage and balanced resume lead with Backend while giving Cloud/DevOps and Applied AI distinct evidence-backed paths under the approved umbrella identity.
-  - `7G-02`: SAFAPAC, AIRIS, and AnotherEdenAI summaries/statuses match their completed case studies and registry boundaries; all three case studies are reachable with the intended flagship/supporting hierarchy.
-  - `7G-03`: the default profile uses only shared approved facts, remains balanced rather than becoming a fourth targeted resume, and produces a one-page searchable phone-free PDF plus matching `/resume` page.
-  - `7G-04`: recruiter-facing guidance and the launch draft are either reconciled to the new claim-safe copy or clearly marked superseded; no file remains authoritative for registry-prohibited deployment/production language.
-  - `7G-05`: titles, dates, availability, links, certification facts, maturity labels, ownership boundaries, and public-contact policy are consistent across homepage, resume page/PDF, case-study cards, footer/header, metadata, README, and committed guidance.
-- Verification: render/validate the default resume; validate all four resolved profiles; Astro check/build; homepage, resume-page, profile, LinkedIn-copy, case-study, site, visual, and public-boundary validators; metadata/link checks; `git diff --check`; and local public-PDF text/layout review.
-- Claim-safety check: build a durable validator contract that compares shared public claims and prohibited phrase/context rules across source JSON, generated PDF text, built pages, README, and recruiter guidance. Phrase matching supplements, but does not replace, a registry-ID review of material claims.
-- Human checkpoint: none for content authority. Defer subjective final visual/PDF approval to 7H so this feature does not duplicate the required manual checkpoint.
-- Route/commit: `builder-executor -> tdd-loop`; one cross-page positioning feature commit containing the regenerated tracked balanced PDF.
-
-### Feature 7H — Final ATS, public-claim, attribution, accessibility, responsiveness, and consistency audit
-
-- Type/status: verification-only / evidence remediation; planned last
-- Outcome: prove that all milestone outputs are technically sound, recruiter-usable, and registry-safe, repair only discovered contract/evidence gaps, then close the milestone.
-- Registry inputs: all of `docs/career/`; all completed feature commits; current generated PDFs/pages; `docs/core/architecture.md`; `content-boundary.md`; and the validators/tests that claim completion.
-- Scope: independent claim trace across source, selectors, PDFs, MDX, built pages, visuals, metadata, guidance, and validators; ATS extraction and one-page review for all four profiles; public/private boundary review; attribution and temporal-qualifier review; keyboard/semantics/contrast/reflow/theme/reduced-motion/print checks; cross-route content consistency; durable regression remediation; milestone/roadmap completion update.
-- Non-goals: new positioning, new content themes, stronger claims, visual redesign, deployment/account changes, external profile publication, or unrelated cleanup.
-- Allowed paths: `resume/{career-data.json,resolve-profile.mjs,resolve-profile.d.mts,resume.css}`, `public/resume/hydar-hafiz-bin-hydzelan-resume.pdf`, `.private/Hydar_Hafiz_Resume_{Backend,Cloud,AI}.pdf` and `.private/render-*` as ignored/generated outputs only, `src/pages/{index,resume,safapac,airis,anotheredenai,404}.astro`, `src/content/case-studies/{safapac,airis,anotheredenai}.mdx`, `src/components/{AirisLoadTesting,AnotherEdenAIGuardrails,AnotherEdenAIPipeline,AnotherEdenAISectionHeading,CaseStudyCard,CaseStudyPage,ExperienceList,ResumePage,SafapacDelivery,SafapacSectionHeading,SafapacTransition,SiteFooter,SiteHeader,SkillExpertise,VisualFigure}.astro`, `src/layouts/SiteLayout.astro`, `src/styles/global.css`, `docs/content/case-studies/{safapac,airis,anotheredenai}.md`, `docs/content/disclosure/{safapac,airis,anotheredenai}.md`, `docs/content/visual-contracts/{shared,safapac,airis,anotheredenai}.md`, `docs/career/{profile-alignment,linkedin-announcement-draft}.md`, `docs/core/{architecture,content-boundary,milestone,roadmap,planning-sources}.md`, the AIRIS/SAFAPAC sections of `docs/ux-ui/specification.md`, `README.md`, `public/sitemap.xml`, `scripts/{render-resume,validate-resume,validate-resume-page,validate-homepage,validate-case-studies,validate-visuals,validate-site-foundation,validate-profile-alignment,validate-linkedin-launch,validate-career-claims}.mjs`, `scripts/check-public-boundary.sh`, and `package.json`, only when needed to repair an audit failure. Core registry claim files remain read-only unless a separately approved evidence audit is opened.
-- Acceptance:
-  - `7H-01`: default, Backend, Cloud, and Applied-AI PDFs are each one A4 page, searchable, logically ordered, accurately titled, naturally keyworded, link-valid, unclipped at normal review scale, and compliant with public/application contact policy.
-  - `7H-02`: every material public quantitative/result/impact/attribution/production/completion/scale claim has an allowed registry ID, channel, state, denominator, qualifier, and attribution boundary; zero conditional/prohibited claim leaks remain.
-  - `7H-03`: repository checks cover negative claim scenarios as well as required copy, and self-tests prove the validators fail on representative prohibited SAFAPAC, AIRIS, and AnotherEdenAI wording.
-  - `7H-04`: homepage, `/resume`, `/safapac`, `/airis`, `/anotheredenai`, 404, navigation, metadata, sitemap, and PDF download remain usable with keyboard navigation, visible focus, semantic headings/landmarks, accessible names/text alternatives, light/dark themes, reduced motion, 320px reflow, 400% zoom, and print/PDF behavior.
-  - `7H-05`: public-boundary checks prove no private contact/source/archive material is tracked or emitted; ignored targeted PDFs and temporary audit/render artifacts are purged or retained only in their approved ignored location.
-  - `7H-06`: dates, titles, status/maturity labels, availability, links, project hierarchy, and ownership wording agree across every public and recruiter-facing surface.
-  - `7H-07`: the milestone and roadmap accurately record completion, durable checks, manual evidence, and residual evidence gaps without claiming those gaps were resolved.
-- Verification: `npm run resume:check:all`; all resolver/validator self-tests; `ASTRO_TELEMETRY_DISABLED=1 npm run check`; build; every site/homepage/case-study/visual/resume/profile/public-boundary validator; `git diff --check`; targeted searches for registry-prohibited language; PDF extraction/link/metadata inspection; and a clean/known worktree audit. Live-site verification occurs only after the eventual committed release reaches Cloudflare and is not needed to truthfully complete repository implementation.
-- Claim-safety check: `contract-auditor` traces registry IDs to all material copy and tests, records gaps without upgrading them, and confirms validator assertions no longer encode prohibited old claims.
-- Human checkpoint: Hydar reviews the four PDFs at normal scale and manually checks representative desktop/mobile pages at 320px and 400% zoom, keyboard focus/order, light/dark themes, reduced motion, and print/download behavior. Repository automation cannot prove subjective readability or browser rendering. Any failure is repaired inside 7H and rechecked before completion.
-- Route/commit: `contract-auditor -> tdd-loop`; one final audit/remediation feature commit including durable validators, the tracked balanced PDF if regenerated, milestone/roadmap completion, and promote-or-purge cleanup.
+  - every required section, metric, denominator, attribution, project status, date, and hierarchy decision in this milestone is represented on the intended surface;
+  - no old validator, `docs/career/` file, or historical content document silently restores stale registry restrictions or previous public wording;
+  - homepage, `/resume`, `/safapac`, `/airis`, `/anotheredenai`, `/saf-sky-quest` (or the approved final slug), 404, navigation, metadata, sitemap, and PDF download work in the static build;
+  - automated negative tests reject representative overclaims for all four projects;
+  - the public PDF is one A4 page, searchable, logically ordered, correctly linked, unclipped, phone-free, and visually consistent with the three named private-resume baselines;
+  - pages pass keyboard use, semantic structure, visible focus, accessible names/text alternatives, light/dark themes, reduced motion, 320px reflow, 400% zoom, and print behavior;
+  - no private contact data, source archive, formula/fixture, internal URL, identifier, credential, screenshot, or event record is tracked or emitted;
+  - temporary audit/render artifacts are purged or remain only in approved ignored locations;
+  - milestone and roadmap accurately record completion and any genuinely unresolved implementation limitation without downgrading approved content.
+- Durable evidence: passing durable validators and self-tests, final public PDF, manual-review record, milestone/roadmap completion update, and one final feature commit.
+- Route: `tdd-loop`. Escalate to `builder-executor -> tdd-loop` only for a material implementation repair discovered by QA.
 
 ## Ordering and fresh-chat handoff
 
-Run `7A -> 7B -> 7C -> 7D -> 7E -> 7F -> 7G -> 7H`. Resume features establish safe shared evidence items before the balanced profile consumes them. Case-study features then establish the long-form source for project summaries. Cross-page positioning runs only after both groups are stable, and the final audit remains independent of the implementation chats.
+Run:
 
-For every new feature chat use:
+`7A -> 7B -> 7C -> 7D -> 7E -> 7F -> 7G`
 
-`Use $sdd-router to execute Feature 7X from docs/core/milestone.md. Reconstruct the ignored handoff, stay inside its allowed paths, and stop after the one feature commit and any required human checkpoint.`
+Each feature starts in a fresh chat, produces exactly one focused commit, updates its status/evidence in this milestone, and stops. Do not continue automatically into the next feature.
+
+Use this handoff prompt:
+
+`Use $sdd-router to execute Feature 7X from docs/core/milestone.md. Treat the milestone's human-approved career content as authority, reconstruct the ignored handoff, use the recorded route, complete one focused feature commit, and stop.`
+
+If a feature reveals a true milestone-wide contradiction, stop and route back to `architect-planner`. Do not silently use `contract-auditor` or old career files to resolve it.
+
+## Verification baseline
+
+Feature-specific checks may add narrower commands. The final baseline must include the repository's current equivalents of:
+
+- `npm run resume:check:all`
+- `ASTRO_TELEMETRY_DISABLED=1 npm run check`
+- `npm run build`
+- site, homepage, resume-page, case-study, visual, profile, and sitemap validators
+- `bash scripts/check-public-boundary.sh`
+- validator self-tests for prohibited wording/contexts
+- `git diff --check`
+- local PDF text, metadata, link, page-count, and layout inspection
+
+If a named stale command no longer exists, use the current repository-equivalent check and record the substitution; do not recreate obsolete tooling merely to satisfy the command name.
+
+## Human checkpoint
+
+Before Feature 7G closes:
+
+- Hydar reviews the balanced public PDF at normal scale.
+- Hydar reviews representative desktop/mobile pages, including 320px layout and 400% zoom.
+- Hydar checks keyboard focus/order, light/dark themes, reduced motion, print/download behavior, and whether the content still means what he approved.
+
+This checkpoint is for readability, browser behavior, and faithful implementation. It is not a new career-content audit.
 
 ## Milestone exit gate
 
-- [ ] All eight features have one focused commit and no active `.sdd/` handoff remains.
-- [ ] Three targeted application resumes and the balanced public resume pass their ATS/render/contact contracts.
-- [ ] SAFAPAC, AIRIS, and AnotherEdenAI have recruiter-readable, registry-traceable case studies with correct hierarchy and no prohibited claims.
-- [ ] Homepage, semantic resume, project cards, metadata, README, and committed recruiter guidance agree on positioning, dates, statuses, ownership, and links.
-- [ ] Automated negative tests reject the prior SAFAPAC deployment/production wording, AIRIS causal-impact wording, and AnotherEdenAI maturity/accuracy wording.
-- [ ] Accessibility, responsiveness, theme, reduced-motion, print, public-boundary, and manual readability checks pass.
-- [ ] Residual evidence gaps remain explicit; no gap is converted into a stronger claim by prose alone.
+- [ ] Features 7A–7G each have one focused commit and no active `.sdd/` handoff remains.
+- [ ] Canonical docs recognize this milestone as the sole Milestone 7 career-content authority; `docs/career/` and other stale sources are supporting history only.
+- [ ] SAFAPAC, AIRIS, AnotherEdenAI, and SAF Sky Quest implement the approved hierarchy, narrative, evidence, attribution, and maturity boundaries.
+- [ ] AnotherEdenAI public copy uses plain-language progress and paired evaluation percentages, not internal `C1.1`/`C2` labels or an invented overall completion percentage.
+- [ ] Homepage, Experience/About, semantic resume, balanced PDF, metadata, README, and project cards are mutually consistent.
+- [ ] The balanced public resume is traceable to the three named latest private PDFs plus milestone-authorized refinements, follows their shared content hierarchy and visual design, and passes ATS/render/link/contact checks; targeted variants remain private and unchanged.
+- [ ] Automated negative tests reject prohibited completion, causality, confidentiality, AI-accuracy, record-identity, and denominator-stripping variants.
+- [ ] Accessibility, responsiveness, theme, reduced-motion, print, link, sitemap, static-build, and public-boundary checks pass.
+- [ ] Human review confirms readability and faithful meaning.
+- [ ] Milestone and roadmap record completion without reopening approved career content.
 
-Hydar approved and activated this milestone on 2026-09-16. Each feature begins only in its own fresh chat and stays within its recorded boundary. Milestone approval does not authorize external publication, deployment/account changes, or edits to another repository.
+Approval of this milestone authorizes repository-local planning, implementation, validation, and focused commits within its feature contracts. It does not authorize external publication, deployment, account changes, social posts, or edits to another repository.

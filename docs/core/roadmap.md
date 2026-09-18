@@ -39,19 +39,21 @@ Established the approved `Software Engineer — Backend, Cloud & Applied AI` umb
 
 Launched `https://hydarhafiz.com` through Cloudflare DNS and Pages with direct-`main` production delivery, Node 22 CI, canonical redirects/HTTPS, aggregate analytics, rollback guidance, live accessibility/responsive/disclosure checks, and the canonical domain in all resume profiles. The tracked public PDF remained phone-free, targeted variants remained ignored, and the launch announcement stayed manual.
 
-### 7. Evidence-aligned resumes and portfolio — active
+### 7. Human-approved portfolio resynchronization — active
 
-Use the completed `docs/career/` registry to refresh the Backend, Cloud/DevOps, and Applied-AI application resumes; rewrite the SAFAPAC, AIRIS, and AnotherEdenAI case studies within their evidence and attribution boundaries; reconcile the homepage and balanced public resume; and finish with an independent ATS, public-claim, accessibility, responsiveness, and content-consistency audit.
+Resynchronize the public portfolio with the human-approved career narrative in `docs/core/milestone.md`: rebuild SAFAPAC as the flagship professional backend/cloud case study; promote AIRIS and AnotherEdenAI into major applied-AI case studies; add SAF Sky Quest as a compact supporting deployment story; then align the homepage, experience content, and balanced public resume before final technical and disclosure QA.
 
-The active executable contract is in `docs/core/milestone.md`. It keeps one fresh chat and one focused commit per feature, preserves the shared career-data/renderer architecture, and converts any desired stronger wording into an evidence-gap checkpoint rather than inference.
+`docs/core/milestone.md` is the sole career-content authority for Milestone 7. The older `docs/career/` registry, existing pages, validators, and historical content documents are migration inputs or supporting history only and cannot approve, weaken, reinterpret, or remove milestone-approved content.
+
+The public resume must use the latest private Backend, Cloud/DevOps, and Applied-AI PDFs identified in the milestone as its content and visual-design baseline. It remains one balanced, phone-free public resume rather than exposing the three targeted variants. The milestone keeps one fresh chat and one focused commit per feature while preserving the shared career-data/resolver/renderer architecture.
 
 ## Completed standalone research
 
-On 2026-09-16, the career evidence registry was audited and committed as a standalone research feature. It preserves qualified claim boundaries and source identities for later work but does not approve or begin a resume/portfolio redesign.
+On 2026-09-16, the career evidence registry was audited and committed as a standalone research feature. It remains historical supporting research and has no career-content authority in Milestone 7; only `docs/core/milestone.md` approves the active portfolio narrative.
 
 ## Deferred scope
 
-- Dedicated About, Skills, Experience, Blog, Writing, or Notes routes beyond the active supporting AIRIS case study
+- Dedicated About, Skills, Experience, Blog, Writing, or Notes routes beyond the routes approved by the active milestone
 - Contact form or application backend
 - Public phone number
 - CMS
