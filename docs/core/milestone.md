@@ -24,6 +24,8 @@ Continuing the old sequence would duplicate finished work and allow older wordin
 
 ### Sole career-content authority
 
+`docs/content/portfolio-content-contract.md` is the sole career-content authority for Milestone 7. This milestone is the sole executable implementation contract. It controls sequencing, scope, acceptance criteria, validation, and feature boundaries, but it must preserve the meaning of the approved content contract.
+
 For Milestone 7 public positioning, facts, metrics, attribution, project maturity, narrative emphasis, hierarchy, disclosure decisions, and allowed wording, **this milestone is the sole career-content authority**.
 
 The latest completed Backend, Cloud/DevOps, and Applied-AI application resumes are implementation baselines for the balanced public resume. Sanitized project evidence may supply implementation detail. Current repository behavior remains authoritative for technical behavior. None of those sources may override, weaken, reinterpret, or remove a career-content decision locked in this milestone.

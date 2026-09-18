@@ -44,7 +44,7 @@ Launched `https://hydarhafiz.com` through Cloudflare DNS and Pages with direct-`
 
 Resynchronize the public portfolio with the human-approved career narrative in `docs/core/milestone.md`: rebuild SAFAPAC as the flagship professional backend/cloud case study; promote AIRIS and AnotherEdenAI into major applied-AI case studies; add SAF Sky Quest as a compact supporting deployment story; then align the homepage, experience content, and balanced public resume before final technical and disclosure QA. The shared model records this hierarchy and its planned routes before later features fill each page's final copy.
 
-`docs/core/milestone.md` is the sole career-content authority for Milestone 7. The older `docs/career/` registry, existing pages, validators, and historical content documents are migration inputs or supporting history only and cannot approve, weaken, reinterpret, or remove milestone-approved content.
+The human-approved career-content authority for Milestone 7 is `docs/content/portfolio-content-contract.md`. The executable feature plan is `docs/core/milestone.md`. The milestone implements the content contract and may not reinterpret, weaken, or remove its approved claims. The older `docs/career/` registry is historical supporting material only.
 
 The public resume must use the latest private Backend, Cloud/DevOps, and Applied-AI PDFs identified in the milestone as its content and visual-design baseline. It remains one balanced, phone-free public resume rather than exposing the three targeted variants. The milestone keeps one fresh chat and one focused commit per feature while preserving the shared career-data/resolver/renderer architecture.
 
