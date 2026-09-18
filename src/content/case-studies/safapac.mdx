@@ -1,6 +1,6 @@
 ---
 slug: safapac
-title: SAFAPAC
+title: SAFAPAC — Backend & AWS Engineering for Sustainable Aviation Fuel Analysis
 kind: case-study
 hierarchy: primary-professional
 navigation:
@@ -9,36 +9,35 @@ navigation:
   surface: flagship
   label: Flagship professional case study
   link_state: active
-status: deployed beta / internal validation
+status: AWS-hosted internal pilot
 period: November 2025 – October 2026
 context: Aerospace Malaysia Innovation Centre in collaboration with Airbus
-summary: Rebuilding FastAPI/PostgreSQL backend and calculation workflows while owning Terraform-managed AWS staging/production delivery and containerized CI/CD.
-role: Backend Software Developer (Contract)
+summary: Backend and AWS delivery for an internal Sustainable Aviation Fuel techno-economic-analysis pilot, with governed defaults, executable calculation contracts, and lean release controls.
+role: Backend Software Developer (Contract) — backend, database, calculation integration, Superadmin APIs, and AWS/DevOps
 capabilities:
   - name: Python, FastAPI, PostgreSQL, and SQL
-    evidence: Backend and database delivery, schema work, and calculation workflow ownership within the assigned scope.
-  - name: Validation, testability, and documentation
-    evidence: Strengthened traceability and validation around calculation workflows and their researcher-facing use.
-  - name: Terraform, Docker, GitHub Actions, and AWS
-    evidence: Reproducible staging and production infrastructure, OIDC-authenticated delivery, SSM execution, container publishing, and AWS operations across the approved service categories.
+    evidence: Substantial ownership of the backend, database, calculation integration, and researcher-facing workflow contracts within the assigned scope.
+  - name: Governed defaults and calculation contracts
+    evidence: Converted specialist expectations into independent regression contracts and supported draft, publish, and rollback workflows for governed defaults.
+  - name: Terraform, Docker, GitHub Actions, OIDC, and SSM
+    evidence: Built repeatable AWS delivery and staging controls for the internal pilot using the approved service and tooling boundary.
 disclosure:
   review_state: approved
   allowed_claims:
-    - deployed beta / internal validation status
-    - inherited early-boilerplate starting point and assigned-scope rebuild
-    - personal backend, database, calculation-traceability, validation, testability, documentation, and AWS delivery work
-    - collaboration with five TEA-SAF domain researchers and one frontend developer
-    - separate five-person Airbus internal pilot context
-    - generalized improvements to traceability, validation, testability, and release reliability
+    - AWS-hosted internal pilot for Sustainable Aviation Fuel techno-economic analysis
+    - substantial personal ownership of the FastAPI/PostgreSQL backend and AWS delivery
+    - Backend, Database, Calculation Integration, Superadmin APIs, and AWS/DevOps scope
+    - collaboration with LCA/carbon specialists, TEA/business specialists, TEA researchers, a frontend developer, and Airbus staff
+    - governed defaults, independent regression contracts, sensitivity workflow, TLS recovery, staging controls, and approved operating-cost fact
   excluded_claims:
-    - sole authorship of the whole product
-    - exact rollout size, user count, or geographic deployment claim
-    - proprietary formulas, defaults, business logic, or calculation values
-    - internal screenshots, copied diagrams, customer/stakeholder data, or internal identifiers
-    - detailed security configuration, credentials, internal URLs, costs, or unapproved performance results
-  maturity_boundary: Keep SAFAPAC described as a deployed beta/internal-validation platform.
+    - frontend ownership or SAF methodology authorship
+    - whole-product sole ownership or a system built entirely alone
+    - proprietary formulas, expected numeric fixtures, raw expert documents, internal identifiers, secrets, internal user data, or client-sensitive configuration
+    - worldwide production, production throughput, invented speedup, or unsupported maturity
+    - Superadmin fully completed or domain experts independently managing everything before that workflow is complete and used
+  maturity_boundary: Keep SAFAPAC described as an AWS-hosted internal pilot.
 sources:
-  - approved career and recruiter-profile contract
+  - human-approved Milestone 7 portfolio content contract
   - approved professional-project disclosure boundary
   - sanitized AMIC evidence category
   - AMIC public website as contextual source
@@ -46,36 +45,61 @@ sources:
 
 ## Summary
 
-SAFAPAC is a deployed beta/internal-validation sustainable aviation fuel analysis platform developed by the Aerospace Malaysia Innovation Centre in collaboration with Airbus. Hydar's contribution was to take over an early boilerplate implementation and substantially rebuild and productionize the assigned backend, database, calculation-traceability, validation, and AWS delivery scope.
+SAFAPAC is an internal techno-economic-analysis platform for Sustainable Aviation Fuel research. I took substantial ownership of the FastAPI/PostgreSQL backend and AWS delivery, helping evolve an incomplete local application into an AWS-hosted internal pilot supporting **6 TEA researchers and 5 Airbus staff**.
 
-## Context
+## Starting problem
 
-The platform supports techno-economic analysis workflows for sustainable aviation fuel pathways. It combines researcher-facing calculation workflows with a web application and cloud delivery surface. Hydar worked with five TEA-SAF domain researchers and one frontend developer. A separate five-person Airbus internal pilot group provides the approved validation context for the beta.
-
-## Problem
-
-The inherited application needed a stronger foundation for traceable calculations, defensible input and output handling, repeatable validation, and dependable delivery. The engineering challenge was not to claim a new product built alone, but to make the assigned backend and operational scope more coherent and easier for domain and frontend collaborators to work with.
+The starting point was an incomplete local application supporting a specialist calculation workflow. The methodology was still evolving, selector-dependent defaults were large, and the team needed a repeatable way to deliver the assigned application scope to AWS. The engineering problem was therefore both a backend/data problem and a release-reliability problem, not a claim of sole product ownership.
 
 ## Role and approach
 
-Hydar owned the assigned backend, database, and AWS delivery work. He restructured the FastAPI/PostgreSQL schema and calculation workflows, strengthened formula traceability and validation, and improved testability and documentation around the parts he maintained. He also automated Terraform-managed staging and production infrastructure using Docker, GHCR, and GitHub Actions, with OIDC authentication to AWS and SSM-based deployment execution across the approved AWS service categories, Linux, Nginx, and HTTPS.
+I took substantial ownership of the FastAPI/PostgreSQL backend, database, calculation integration, Superadmin APIs, and AWS/DevOps delivery. I worked with domain specialists and a frontend developer to make the assigned workflow easier to validate, hand over, and operate. The frontend remained the frontend developer's responsibility, and the Sustainable Aviation Fuel methodology remained the domain specialists' responsibility.
+
+## Turning methodology into executable contracts
+
+I worked with LCA/carbon specialists on expectations around total CO2 emissions, carbon intensity, and carbon-conversion efficiency. I also worked with TEA/business specialists on cash flow, NPV, IRR, and payback. Their input and output expectations became independent regression contracts so the checks did not simply treat current application output as the oracle.
+
+## A boundary deliberately not automated
+
+Newer methodology material included process/reference data that was not yet incorporated into the approved default workbook and application mapping. I retained the approved v1.1 dataset rather than inventing process-feedstock-country relationships. The Superadmin direction leaves future values to be added explicitly by domain experts when those relationships are approved, instead of silently deriving or publishing unsupported defaults.
+
+## Default governance
+
+The governed default set contains **33,047 governed defaults across 12 processes, 22 feedstocks, and 217 countries**. The backend supports draft, publish, and rollback workflows, and the approved backend handoff to the frontend developer keeps default governance separate from the client-side presentation.
+
+## Current Superadmin status
+
+The core Superadmin backend APIs are complete and meeting-approved. The frontend handoff is complete and frontend implementation is in progress. Remaining backend work is limited to stale or experimental API cleanup and direct add, modify, and delete support for the active default set.
+
+## Sensitivity redesign
+
+I redesigned the 33-point sensitivity workflow to replace **33 full calculation-engine executions** with reusable prepared inputs and targeted NPV projections. The verified result is **50 ms p95 across 10 staging acceptance cycles**. This reports the accepted workflow result without adding a comparison baseline.
 
 ## Engineering decisions
 
-- Keep calculation behavior behind a clear service boundary so callers can use a consistent workflow and trace without duplicating formula logic.
-- Treat validation and provenance as part of the calculation contract, not as an afterthought in the interface.
-- Separate database/default resolution from the calculation boundary so the assigned workflows remain easier to test and document.
-- Use Terraform and repeatable container/CI delivery paths to keep staging and production reproducible and reduce configuration drift.
-- Use GitHub OIDC authentication instead of long-lived AWS credentials, with SSM providing the deployment-execution boundary.
+- Keep calculation behavior behind explicit service and regression boundaries so specialist expectations can be checked independently from current application output.
+- Keep the approved v1.1 defaults separate from newer, not-yet-mapped process/reference material rather than inventing relationships.
+- Use Terraform-managed staging and repeatable container/CI delivery so releases, infrastructure changes, and rollback behavior can be checked before the internal pilot receives them.
+- Keep the operating model lean and proportionate to an AWS-hosted internal pilot.
 
-## Collaboration and boundaries
+## AWS delivery
 
-The work crossed backend, data, domain, frontend, and delivery concerns, but Hydar's public ownership claim is limited to his assigned scope. Domain researchers supplied the TEA context and validation collaboration; the frontend developer owned the corresponding client-side work. The Airbus pilot group is validation context, not a claim of broad public rollout.
+The delivery boundary uses Terraform, a VPC, EC2, private RDS, S3/CloudFront, Cognito, Docker, Nginx, GitHub Actions, OIDC, and SSM. Terraform keeps the infrastructure repeatable and helps reduce configuration drift; private RDS keeps application data behind the delivery boundary; S3/CloudFront serves the web layer; Cognito covers authentication; Docker packages the application; Nginx handles the HTTPS edge; and GitHub Actions provides OIDC authentication with SSM-based deployment execution for a short-lived, repeatable release path.
 
-## Outcome
+The approved operating-cost fact is **$51.27/month average from March–August 2026 across 20 billed AWS services**. It is presented as the internal pilot's recorded infrastructure cost, not as a general cost promise for another deployment.
 
-The assigned SAFAPAC scope was substantially rebuilt and productionized for a deployed beta/internal-validation context. The public-safe outcome is improved calculation traceability, validation, testability, documentation, and release reliability within Hydar's contribution boundary.
+## TLS reliability
+
+An expired TLS certificate disrupted expert access during deployment. I restored HTTPS and automated certificate renewal so renewal now occurs automatically rather than depending on manual intervention after an expiry.
+
+## Deployment safety and cost control
+
+Terraform-managed staging validates application releases, infrastructure changes, and rollback behavior before the internal pilot receives a change. Because staging is primarily needed around release work, I implemented a **six-hour automatic staging shutdown** to reduce the risk of forgotten temporary resources generating unnecessary AWS cost.
+
+## Current state
+
+**Current status — September 2026:** SAFAPAC is an AWS-hosted internal pilot. The core Superadmin backend is approved and handed over to frontend development. Remaining backend work is limited to cleanup/refactoring and direct active-default CRUD.
 
 ## Limitations
 
-This case study does not publish proprietary formulas, default data, internal architecture detail, exact rollout size or geography, customer data, costs, or unapproved performance measurements. It does not claim that Hydar built the whole product alone or that the beta represents general production maturity.
+This public case study does not publish proprietary formulas, expected numeric fixtures, raw expert documents, internal identifiers, secrets, internal user data, client-sensitive configuration, or copied professional artifacts. It does not claim frontend ownership, SAF methodology authorship, whole-product sole ownership, broad adoption, or unsupported production maturity. The public narrative stays at the approved AWS-hosted internal-pilot boundary.

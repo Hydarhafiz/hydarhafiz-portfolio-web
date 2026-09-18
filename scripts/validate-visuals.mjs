@@ -57,10 +57,12 @@ assert(safapacText.includes("What I rebuilt at SAFAPAC"), "SAFAPAC: transformati
 assert(safapac.includes("visual-figure--safapac"), "SAFAPAC: visual is missing its project accent scope");
 assert(!safapacText.includes("Hydar's backend"), "SAFAPAC: delivery path should not overstate FastAPI as the complete contribution");
 assert(!safapacText.includes("Beta delivery"), "SAFAPAC: delivery visual should not repeat the beta status as an isolated tag");
-assert(safapacText.includes("Hydar's assigned engineering scope moved SAFAPAC from inherited code toward a deployable beta under internal validation."), "SAFAPAC: transition caption does not match the approved visual contract");
+assert(!safapacText.includes("Internal validation"), "SAFAPAC: stale internal-validation wording remains in the visual");
+assert(safapacText.includes("Hydar's assigned engineering scope moved SAFAPAC from an incomplete local application toward an AWS-hosted internal pilot."), "SAFAPAC: transition caption does not match the approved visual contract");
 assert(safapacText.includes("Hydar's scope"), "SAFAPAC: dominant engineering scope is missing");
-assert(safapacText.includes("Beta delivered"), "SAFAPAC: beta outcome anchor is missing");
-assert(safapacText.includes("High-level web-to-data delivery within Hydar's SAFAPAC backend, database, and AWS scope."), "SAFAPAC: delivery caption does not match the approved visual contract");
+assert(safapacText.includes("Pilot delivery"), "SAFAPAC: pilot outcome anchor is missing");
+assert(safapacText.includes("AWS-hosted internal pilot"), "SAFAPAC: internal-pilot outcome is missing");
+assert(safapacText.includes("High-level web-to-data delivery within Hydar's SAFAPAC backend, database, and AWS delivery scope."), "SAFAPAC: delivery caption does not match the approved visual contract");
 assert(safapacText.includes("Supports"), "SAFAPAC: supporting platform layer is missing");
 
 const anotherEdenAI = await readFile(path.join(distRoot, "anotheredenai", "index.html"), "utf8");

@@ -57,8 +57,52 @@ for (const { route, title, adjacent } of routes) {
     assert(!html.toLowerCase().includes("completed evaluation"), "anotheredenai: unsupported completed-evaluation claim is present");
   }
   if (route === "safapac") {
+    const requiredSafapac = [
+      "backend &amp; aws engineering for sustainable aviation fuel analysis",
+      "aws-hosted internal pilot",
+      "6 tea researchers",
+      "5 airbus staff",
+      "total co2 emissions",
+      "carbon intensity",
+      "carbon-conversion efficiency",
+      "cash flow",
+      "npv",
+      "irr",
+      "payback",
+      "independent regression contracts",
+      "approved v1.1 dataset",
+      "process-feedstock-country relationships",
+      "33,047 governed defaults across 12 processes, 22 feedstocks, and 217 countries",
+      "draft, publish, and rollback workflows",
+      "core superadmin backend apis are complete and meeting-approved",
+      "frontend implementation is in progress",
+      "direct add, modify, and delete support",
+      "33 full calculation-engine executions",
+      "reusable prepared inputs",
+      "targeted npv projections",
+      "50 ms p95 across 10 staging acceptance cycles",
+      "$51.27/month average from march–august 2026 across 20 billed aws services",
+      "expired tls certificate",
+      "automated certificate renewal",
+      "six-hour automatic staging shutdown",
+    ];
+    for (const phrase of requiredSafapac) {
+      assert(html.toLowerCase().includes(phrase), `safapac: missing approved narrative evidence: ${phrase}`);
+    }
     for (const phrase of ["Terraform-managed", "OIDC authentication", "SSM-based deployment execution", "reduce configuration drift"]) {
       assert(html.toLowerCase().includes(phrase.toLowerCase()), `safapac: missing approved cloud-delivery evidence: ${phrase}`);
+    }
+    for (const prohibited of [
+      "deployed beta",
+      "internal validation",
+      "productionized",
+      "superadmin fully completed",
+      "domain experts independently managing everything",
+      "worldwide adoption",
+      "built the whole product alone",
+      "percentage speedup",
+    ]) {
+      assert(!html.toLowerCase().includes(prohibited), `safapac: prohibited or stale claim is present: ${prohibited}`);
     }
     for (const unsupported of ["Kubernetes", "EKS", "ECS", "Helm", "ArgoCD", "Prometheus", "Grafana"]) {
       assert(!html.toLowerCase().includes(unsupported.toLowerCase()), `safapac: unsupported infrastructure claim is present: ${unsupported}`);

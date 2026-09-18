@@ -220,7 +220,7 @@ Keep PETRONAS in the Experience section rather than adding another flagship rout
 
 ### Feature 7B — SAFAPAC flagship case study
 
-- Type/status: build/content migration; planned after 7A
+- Type/status: build/content migration; completed 2026-09-18
 - Outcome: replace the stale deployment-led SAFAPAC page with the approved backend, domain-contract, default-governance, performance, AWS, and reliability narrative.
 - Scope: implement every required SAFAPAC section and current-status boundary; update sanitized visuals, metadata, captions, and page-level validation; retain the existing route and shared case-study shell.
 - Non-goals: proprietary formulas/fixtures, raw evidence, frontend ownership, invented performance comparison, completed-Superadmin wording, or visual redesign outside the page's needs.
@@ -232,6 +232,7 @@ Keep PETRONAS in the Experience section rather than adding another flagship rout
   - prohibited completion, sole-ownership, worldwide-production, confidentiality, and invented-speedup wording is absent;
   - the page is responsive, accessible, theme-safe, and passes project/public-boundary validation.
 - Durable evidence: updated SAFAPAC content/visual contracts and public implementation, negative validator coverage for prohibited variants, and one completed-feature commit.
+- Completion evidence: `npm run check`, `npm run build`, `npm run content:validate`, `npm run content:validate -- --self-test`, `npm run site:validate`, `npm run homepage:validate`, `npm run case-studies:validate`, `npm run visuals:validate`, `npm run resume:page:validate`, `npm run resume:validate`, `npm run profile:validate`, `npm run profile:self-test`, `bash scripts/check-public-boundary.sh --self-test`, `bash scripts/check-public-boundary.sh`, and `git diff --check` passed. No manual checkpoint was required because the existing shared shell and visual system were reused without a visual redesign; later Milestone 7G remains the human readability and faithful-meaning review.
 - Route: `builder-executor -> tdd-loop`.
 
 ### Feature 7C — AIRIS major applied-AI case study
