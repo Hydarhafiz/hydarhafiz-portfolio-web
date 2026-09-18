@@ -19,6 +19,11 @@ const routes = [
     route: "anotheredenai",
     title: "AnotherEdenAI",
     adjacent: "SAFAPAC"
+  },
+  {
+    route: "saf-sky-quest",
+    title: "SAF Sky Quest",
+    adjacent: "SAFAPAC"
   }
 ];
 const failures = [];
@@ -186,11 +191,34 @@ for (const { route, title, adjacent } of routes) {
       assert(!normalizedHtml.includes(prohibited), `airis: prohibited or overclaiming wording is present: ${prohibited}`);
     }
   }
+  if (route === "saf-sky-quest") {
+    const normalizedVisibleText = visibleText(html).toLowerCase().replaceAll("’", "'");
+    for (const phrase of [
+      "15–25 august 2026",
+      "airbus educational activation in thailand",
+      "primary- and secondary-school audiences",
+      "at least 8/10",
+      "frontend application was developed by another developer",
+      "aws lightsail",
+      "custom domain and caddy https",
+      "operated the service during the activation",
+      "exported runtime data",
+      "decommissioned the event infrastructure",
+      "29 registration records captured",
+    ]) {
+      assert(normalizedVisibleText.includes(phrase.toLowerCase()), `saf-sky-quest: missing approved deployment evidence: ${phrase}`);
+    }
+    for (const prohibited of ["29 students", "29 schools", "29 unique users", "frontend application developed by hydar", "built the frontend"]) {
+      assert(!normalizedVisibleText.includes(prohibited), `saf-sky-quest: prohibited ownership or count interpretation is present: ${prohibited}`);
+    }
+  }
   const expectedVisuals = route === "safapac"
     ? ["safapac-transition", "safapac-delivery"]
     : route === "airis"
       ? ["airis-context-experiment", "airis-concurrency-diagnosis", "airis-load-testing"]
-      : ["anotheredenai-pipeline", "anotheredenai-guardrails"];
+      : route === "anotheredenai"
+        ? ["anotheredenai-pipeline", "anotheredenai-guardrails"]
+        : ["saf-sky-quest-lifecycle"];
   for (const visualId of expectedVisuals) {
     assert(html.includes(`id="${visualId}"`), `${route}: missing visual ${visualId}`);
   }
@@ -202,8 +230,12 @@ for (const { route, title, adjacent } of routes) {
     assert(html.indexOf('id="concurrency-and-bottleneck-diagnosis"') < html.indexOf('id="airis-concurrency-diagnosis"'), "airis: diagnosis visual is not integrated after Concurrency and bottleneck diagnosis");
     assert(html.indexOf('id="engineering-outcome-and-attribution"') < html.indexOf('id="airis-load-testing"'), "airis: handoff visual is not integrated after Engineering outcome and attribution");
   } else {
-    assert(html.indexOf('id="pipeline"') < html.indexOf('id="anotheredenai-pipeline"'), "anotheredenai: architecture visual is not integrated after Pipeline");
-    assert(html.indexOf('id="reliability-boundary"') < html.indexOf('id="anotheredenai-guardrails"'), "anotheredenai: safeguards visual is not integrated after Reliability boundary");
+    if (route === "anotheredenai") {
+      assert(html.indexOf('id="pipeline"') < html.indexOf('id="anotheredenai-pipeline"'), "anotheredenai: architecture visual is not integrated after Pipeline");
+      assert(html.indexOf('id="reliability-boundary"') < html.indexOf('id="anotheredenai-guardrails"'), "anotheredenai: safeguards visual is not integrated after Reliability boundary");
+    } else {
+      assert(html.indexOf('id="delivery-lifecycle"') < html.indexOf('id="saf-sky-quest-lifecycle"'), "saf-sky-quest: lifecycle visual is not integrated after Delivery lifecycle");
+    }
   }
   assert(!html.toLowerCase().includes("whatsapp"), `${route}: must not expose a phone/WhatsApp contact`);
 }

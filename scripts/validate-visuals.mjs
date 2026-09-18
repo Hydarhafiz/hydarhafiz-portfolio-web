@@ -8,7 +8,8 @@ const stylesheet = await readFile(path.join(repositoryRoot, "src/styles/global.c
 const visualSpecs = [
   ["safapac", ["safapac-transition", "safapac-delivery"]],
   ["airis", ["airis-context-experiment", "airis-concurrency-diagnosis", "airis-load-testing"]],
-  ["anotheredenai", ["anotheredenai-pipeline", "anotheredenai-guardrails"]]
+  ["anotheredenai", ["anotheredenai-pipeline", "anotheredenai-guardrails"]],
+  ["saf-sky-quest", ["saf-sky-quest-lifecycle"]]
 ];
 const failures = [];
 
@@ -93,6 +94,21 @@ assert(anotherEdenAIText.includes("Four bounded checks around AnotherEdenAI's AI
 assert(anotherEdenAIText.includes("How AnotherEdenAI validates recommendations"), "AnotherEdenAI: safeguards title does not match the approved visual contract");
 assert(anotherEdenAIText.includes("Legality rules"), "AnotherEdenAI: legality safeguard is missing");
 assert(anotherEdenAIText.includes("Fallback path"), "AnotherEdenAI: fallback safeguard is missing");
+
+const safSkyQuest = await readFile(path.join(distRoot, "saf-sky-quest", "index.html"), "utf8");
+const safSkyQuestText = normalizeHtmlText(safSkyQuest);
+assert(safSkyQuest.includes("visual-figure--saf-sky-quest"), "SAF Sky Quest: visual is missing its supporting-project accent scope");
+assert(safSkyQuestText.includes("From finished app to event closeout"), "SAF Sky Quest: lifecycle title does not match the approved visual contract");
+assert(safSkyQuestText.includes("Hydar's rapid hosting and event-infrastructure lifecycle for the SAF Sky Quest activation."), "SAF Sky Quest: lifecycle caption is missing approved ownership context");
+assert(safSkyQuestText.includes("Frontend application"), "SAF Sky Quest: frontend attribution is missing from the lifecycle visual");
+assert(safSkyQuestText.includes("Cloud delivery + event operations"), "SAF Sky Quest: Hydar's delivery scope is missing from the lifecycle visual");
+assert(safSkyQuestText.includes("Receive finished app"), "SAF Sky Quest: receive step is missing");
+assert(safSkyQuestText.includes("AWS Lightsail"), "SAF Sky Quest: Lightsail step is missing");
+assert(safSkyQuestText.includes("Custom domain + Caddy HTTPS"), "SAF Sky Quest: domain/HTTPS step is missing");
+assert(safSkyQuestText.includes("Export runtime data"), "SAF Sky Quest: export step is missing");
+assert(safSkyQuestText.includes("Decommission"), "SAF Sky Quest: decommission step is missing");
+assert(!safSkyQuestText.includes("29 students"), "SAF Sky Quest: visual must not interpret records as students");
+assert(!safSkyQuestText.includes("29 unique users"), "SAF Sky Quest: visual must not interpret records as unique users");
 
 for (const [route, html] of [["homepage", homepage], ["safapac", safapac], ["airis", airis], ["anotheredenai", anotherEdenAI]]) {
   assert(!html.toLowerCase().includes("whatsapp"), `${route}: visual presentation must not expose a phone/WhatsApp contact`);

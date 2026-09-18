@@ -271,7 +271,7 @@ Keep PETRONAS in the Experience section rather than adding another flagship rout
 
 ### Feature 7E — SAF Sky Quest supporting deployment case study
 
-- Type/status: build; planned after 7D
+- Type/status: build; completed 2026-09-18
 - Outcome: add a compact case study proving rapid real-event cloud delivery, operation, data export, and decommissioning with accurate teammate attribution.
 - Scope: add the supporting route/content entry, event context, deployment lifecycle visual, project-card summary, metadata, navigation/sitemap handling, and validation.
 - Non-goals: claiming application/frontend implementation, interpreting Thai records, identifying participants, promoting the project above the three major case studies, or exposing runtime data.
@@ -282,7 +282,8 @@ Keep PETRONAS in the Experience section rather than adding another flagship rout
   - frontend ownership belongs to the teammate and Hydar's Lightsail/domain/Caddy/operations/export/decommission responsibility is explicit;
   - the count is only `29 registration records captured` or an exact approved equivalent;
   - the page is visibly supporting, accessible, responsive, theme-safe, and included in applicable link/sitemap validators.
-- Durable evidence: public-safe SAF Sky Quest content/visual contract, route/card, count-attribution tests, and one completed-feature commit.
+- Durable evidence: public-safe SAF Sky Quest content, disclosure, and visual contracts; supporting route and summary metadata; lifecycle visual; count/attribution tests; sitemap and static-route coverage; and one completed-feature commit.
+- Completion evidence: `npm run check`, `npm run build`, `npm run content:validate`, `npm run content:validate -- --self-test`, `npm run site:validate`, `npm run homepage:validate`, `npm run case-studies:validate`, `npm run case-studies:validate -- --self-test`, `npm run visuals:validate`, `npm run launch:validate`, `npm run resume:page:validate`, `npm run resume:validate`, `npm run profile:validate`, `npm run profile:self-test`, `bash scripts/check-public-boundary.sh --self-test`, `bash scripts/check-public-boundary.sh`, and `git diff --check` passed. No manual checkpoint was required; homepage card and balanced-resume synchronization remain Feature 7F scope.
 - Route: `builder-executor -> tdd-loop`.
 
 ### Feature 7F — Homepage, experience, and balanced public resume synchronization

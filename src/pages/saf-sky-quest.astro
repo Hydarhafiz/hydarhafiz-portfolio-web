@@ -1,0 +1,22 @@
+---
+import { getCollection, render } from "astro:content";
+import CaseStudyPage from "../components/CaseStudyPage.astro";
+import SafSkyQuestSectionHeading from "../components/SafSkyQuestSectionHeading.astro";
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const entries = await getCollection("caseStudies");
+const entry = entries.find((candidate) => candidate.data.slug === "saf-sky-quest");
+
+if (!entry) {
+  throw new Error("Missing approved SAF Sky Quest case-study content.");
+}
+
+const { Content, headings } = await render(entry);
+const adjacent = entries.filter((candidate) => candidate.data.slug !== entry.data.slug);
+---
+
+<SiteLayout title={`${entry.data.title} — Hydar Hafiz`} description={entry.data.summary}>
+  <CaseStudyPage entry={entry} headings={headings} adjacent={adjacent}>
+    <Content components={{ h2: SafSkyQuestSectionHeading }} />
+  </CaseStudyPage>
+</SiteLayout>

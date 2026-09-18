@@ -1,0 +1,51 @@
+---
+import VisualFigure from "./VisualFigure.astro";
+---
+
+<VisualFigure
+  id="saf-sky-quest-lifecycle"
+  label="Deployment lifecycle · supporting case study"
+  title="From finished app to event closeout"
+  tone="saf-sky-quest"
+  altText="A three-stage SAF Sky Quest deployment lifecycle groups six steps: receive the finished frontend application and deploy it to AWS Lightsail; configure a custom domain and Caddy HTTPS and operate during the Thailand activation; export runtime data and decommission the infrastructure. The frontend was developed by another developer; Hydar owned cloud delivery and event operations."
+  caption="Hydar's rapid hosting and event-infrastructure lifecycle for the SAF Sky Quest activation."
+>
+  <div slot="graphic" class="visual-art visual-art--saf-sky-quest" aria-hidden="true">
+    <div class="v4d-sky-quest">
+      <article class="v4d-sky-quest__stage">
+        <span class="v4d-airis-stage__number">01</span>
+        <p class="v4d-label">Handoff &amp; deploy</p>
+        <strong>Receive finished app</strong>
+        <span>AWS Lightsail</span>
+      </article>
+
+      <span class="v4d-sky-quest__arrow" aria-hidden="true">→</span>
+
+      <article class="v4d-sky-quest__stage v4d-sky-quest__stage--focus">
+        <span class="v4d-airis-stage__number">02</span>
+        <p class="v4d-label">Activation</p>
+        <strong>Custom domain + Caddy HTTPS</strong>
+        <span>Operate event</span>
+      </article>
+
+      <span class="v4d-sky-quest__arrow" aria-hidden="true">→</span>
+
+      <article class="v4d-sky-quest__stage v4d-sky-quest__stage--result">
+        <span class="v4d-airis-stage__number">03</span>
+        <p class="v4d-label">Closeout</p>
+        <strong>Export runtime data</strong>
+        <span>Decommission</span>
+      </article>
+    </div>
+
+    <div class="v4d-sky-quest__ownership">
+      <span>Frontend application · another developer</span>
+      <span>Cloud delivery + event operations · Hydar</span>
+    </div>
+  </div>
+  <ol slot="fallback" class="visual-figure__fallback-list">
+    <li>Hydar received the finished frontend application from another developer and deployed it to AWS Lightsail.</li>
+    <li>He configured the custom domain and Caddy HTTPS and operated the service during the Thailand activation.</li>
+    <li>He exported runtime data and decommissioned the event infrastructure after the activation.</li>
+  </ol>
+</VisualFigure>

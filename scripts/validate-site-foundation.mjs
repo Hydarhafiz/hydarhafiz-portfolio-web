@@ -10,6 +10,7 @@ const routes = [
   ["/safapac", path.join("safapac", "index.html")],
   ["/airis", path.join("airis", "index.html")],
   ["/anotheredenai", path.join("anotheredenai", "index.html")],
+  ["/saf-sky-quest", path.join("saf-sky-quest", "index.html")],
   ["/resume", path.join("resume", "index.html")],
   ["/404", "404.html"]
 ];

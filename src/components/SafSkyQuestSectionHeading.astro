@@ -1,0 +1,18 @@
+---
+import SafSkyQuestLifecycle from "./SafSkyQuestLifecycle.astro";
+
+interface Props {
+  id?: string;
+  [key: string]: unknown;
+}
+
+const { id, ...attributes } = Astro.props;
+const inlineVisual = id === "delivery-lifecycle";
+---
+
+<h2 id={id} {...attributes}><slot /></h2>
+{inlineVisual && (
+  <div class="case-study__inline-visual">
+    <SafSkyQuestLifecycle />
+  </div>
+)}
