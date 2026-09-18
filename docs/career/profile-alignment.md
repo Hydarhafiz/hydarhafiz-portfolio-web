@@ -5,14 +5,14 @@ This is the approved source for updating Hydar Hafiz bin Hydzelan's recruiter-fa
 ## Shared positioning
 
 - Public name: Hydar Hafiz bin Hydzelan
-- Public identity: Software Engineer — Backend, Cloud & Applied AI
+- Public identity: Backend Engineer | Cloud & Applied AI
 - Target roles: Backend Software Engineer, Cloud & DevOps Engineer, and Applied AI Engineer
 - Location: Bangi, Selangor, Malaysia
-- Mobility: Open to relocation across Malaysia
+- Location focus: Kuala Lumpur / Selangor
 - Availability: Available November 2026; available to interview while completing the current contract
 - Portfolio: https://hydarhafiz.com
 - Primary market: Malaysia, especially Kuala Lumpur and Selangor
-- Positioning hierarchy: Backend foundation, substantial Cloud/DevOps delivery ownership, and an emerging Applied AI specialization
+- Positioning hierarchy: Backend foundation, Cloud & DevOps and Applied AI as evidence-backed differentiators
 
 ## LinkedIn
 
@@ -20,22 +20,22 @@ This is the approved source for updating Hydar Hafiz bin Hydzelan's recruiter-fa
 
 <!-- linkedin-headline -->
 ```text
-Software Engineer | Backend, Cloud & Applied AI | Python, FastAPI, AWS, Neo4j | AWS Certified ML Engineer – Associate
+Backend Engineer | Cloud & Applied AI | Python, FastAPI, AWS, Neo4j | AWS Certified ML Engineer – Associate
 ```
 
 ### About
 
 <!-- linkedin-about -->
 ```text
-I am a software engineer based in Bangi, Selangor, with a backend foundation in Python, FastAPI and PostgreSQL, hands-on AWS and delivery ownership, and an emerging specialization in reliable applied-AI systems.
+I am a Backend Engineer based in Bangi, Selangor, building Python/FastAPI backends, Terraform-managed AWS delivery, and reliability-focused applied-AI systems.
 
-At Aerospace Malaysia Innovation Centre (AMIC), I own the backend, database and AWS delivery scope for SAFAPAC, a deployed beta sustainable aviation fuel analysis platform developed by AMIC in collaboration with Airbus. I took over an early boilerplate implementation and substantially rebuilt and productionized my assigned scope while collaborating with five TEA-SAF domain researchers and one frontend developer. I automate staging and production infrastructure with Terraform, Docker, GHCR and GitHub Actions, using OIDC authentication to AWS and SSM deployment execution. The beta has been reviewed by a separate five-person Airbus internal pilot group.
+At Aerospace Malaysia Innovation Centre (AMIC), I own the backend, database and AWS delivery scope for SAFAPAC, an AWS-hosted internal pilot developed with Airbus. I helped move an incomplete local prototype toward an internal pilot supporting 6 TEA researchers and 5 Airbus staff while collaborating with one frontend developer. I automate Terraform-managed AWS delivery with Docker, GitHub Actions, OIDC and SSM.
 
-I also contributed to AIRIS through AI workload and concurrency testing, bottleneck diagnosis, and a report with optimization recommendations for senior developer/project manager review. I supported stakeholder training, while final decisions and implementation remained outside my supporting contribution.
+I also contributed to AIRIS through AI workload and concurrency testing, bottleneck diagnosis, and optimization recommendations for senior review. The work keeps measurement separate from claims of universal answer-quality or production improvement.
 
 Outside work, I am actively developing AnotherEdenAI, an AI-assisted recommendation system that combines typed Neo4j retrieval and deterministic candidate generation with constrained LLM refinement, structured validation, bounded correction, degraded fallback, token/output controls and an opt-in evaluation harness.
 
-I hold AWS Certified Machine Learning Engineer – Associate, AWS Certified Cloud Practitioner and Microsoft Certified: Azure AI Fundamentals credentials. I am open to Backend Software Engineer, Cloud & DevOps Engineer and Applied AI Engineer opportunities across Malaysia, especially Kuala Lumpur and Selangor, and can start from November 2026.
+I hold AWS Certified Machine Learning Engineer – Associate, AWS Certified Cloud Practitioner and Microsoft Certified: Azure AI Fundamentals credentials. I am focused on Backend Software Engineer, Cloud & DevOps Engineer and Applied AI Engineer opportunities in Kuala Lumpur and Selangor from November 2026.
 ```
 
 ### AMIC experience
@@ -44,14 +44,12 @@ Use the LinkedIn title `Backend Software Developer (Contract)` and dates `Novemb
 
 <!-- linkedin-amic -->
 ```text
-Backend Software Developer (Contract) · November 2025 – Present
-Contract ending October 2026
+Backend Software Developer (Contract) · November 2025 – October 2026
 
-• Own backend, database and AWS delivery for SAFAPAC, a deployed beta sustainable aviation fuel analysis platform developed by AMIC in collaboration with Airbus; took over an early boilerplate implementation and substantially rebuilt and productionized the assigned scope.
-• Collaborate with five TEA-SAF domain researchers and one frontend developer to restructure FastAPI/PostgreSQL schema and calculation workflows, improving formula traceability, validation, testability and documentation for a five-person Airbus internal pilot group.
-• Automate Terraform-managed AWS staging and production delivery using Docker, GHCR and GitHub Actions, with OIDC authentication and SSM execution to keep environments reproducible and reduce configuration drift.
-• Operate the supporting VPC, EC2/RDS, S3/CloudFront, Cognito, Linux, Nginx and HTTPS estate alongside application delivery.
-• For AIRIS, designed AI workload and concurrency tests, diagnosed bottlenecks, and authored optimization recommendations for senior developer/project manager review; also supported stakeholder training.
+• Built and evolved SAFAPAC's Python/FastAPI and PostgreSQL backend and AWS delivery, moving an incomplete local prototype toward an AWS-hosted internal pilot supporting 6 TEA researchers and 5 Airbus staff.
+• Governed 33,047 defaults across 12 processes, 22 feedstocks and 217 countries with draft, publish and rollback workflows; refactored the 33-point sensitivity workflow to prepared inputs and targeted NPV projections at 50 ms p95 across 10 staging acceptance cycles.
+• Automated Terraform-managed AWS delivery with Docker, GitHub Actions, OIDC and SSM, and contributed to AIRIS through AI workload testing, bottleneck diagnosis and optimization recommendations for senior review.
+• Hosted SAF Sky Quest on AWS Lightsail with Caddy HTTPS for a Thailand activation, with 29 registration records captured, runtime-data export and infrastructure decommissioning; the frontend was developed by another developer.
 ```
 
 ### PETRONAS Digital experience
@@ -68,7 +66,7 @@ Web & Mobile Development Intern · January 2024 – August 2024
 
 ### AnotherEdenAI project
 
-Use dates `December 2025 – Present`, link to `https://github.com/Hydarhafiz/AnotherEdenAI`, and mark it as actively developed.
+Use dates `January 2026 – Present`, link to `https://github.com/Hydarhafiz/AnotherEdenAI`, and mark it as Active development.
 
 <!-- linkedin-anotheredenai -->
 ```text
@@ -88,7 +86,7 @@ Enter these under Licenses & Certifications and use the supplied verification UR
 ### Open-to-work settings
 
 - Target titles: Backend Software Engineer, Cloud & DevOps Engineer, DevOps Engineer, Applied AI Engineer, AI Engineer, Python Developer and Software Engineer.
-- Locations: Kuala Lumpur, Selangor and Malaysia-wide roles; include remote roles based in Malaysia.
+- Locations: Kuala Lumpur and Selangor; include remote roles based in Malaysia.
 - Workplace types: hybrid, remote and on-site, in that preference order.
 - Start date: November 2026.
 - Keep interview scheduling details, driving licence and car ownership for recruiter conversations or application forms rather than the public profile.
@@ -99,7 +97,7 @@ Enter these under Licenses & Certifications and use the supplied verification UR
 
 <!-- github-bio -->
 ```text
-Software Engineer building reliable backend, AWS cloud and applied-AI systems. Based in Malaysia; available from Nov 2026.
+Backend Engineer building production cloud and AI systems. Based in Bangi, Selangor; available from Nov 2026.
 ```
 
 ### Profile README
@@ -110,15 +108,15 @@ Use this in a public `Hydarhafiz/Hydarhafiz` profile repository.
 ```text
 # Hydar Hafiz bin Hydzelan
 
-Software Engineer — Backend, Cloud & Applied AI.
+Backend Engineer | Cloud & Applied AI.
 
-I am based in Bangi, Selangor, Malaysia, open to relocation across Malaysia, and available from November 2026.
+I am based in Bangi, Selangor, focused on Kuala Lumpur and Selangor opportunities, and available from November 2026.
 
 ## What I work on
 
-- **SAFAPAC at AMIC:** backend, PostgreSQL, Terraform-managed AWS staging/production delivery and containerized CI/CD for a deployed beta sustainable aviation fuel analysis platform developed by AMIC in collaboration with Airbus.
+- **SAFAPAC at AMIC:** backend, PostgreSQL and Terraform-managed AWS delivery for an AWS-hosted internal pilot supporting 6 TEA researchers and 5 Airbus staff.
 - **AnotherEdenAI:** an actively developed AI-assisted lineup recommendation system using typed Neo4j retrieval, deterministic candidate generation, constrained LLM refinement, structured validation, evaluation and fallback paths.
-- **AIRIS at AMIC:** supporting contribution through AI workload/concurrency testing, bottleneck diagnosis, reporting and optimization recommendations for senior developer/project manager review, plus stakeholder training.
+- **AIRIS at AMIC:** applied-AI experiments through context testing, concurrency diagnosis, reporting and optimization recommendations for senior review.
 
 ## Capabilities backed by project work
 
@@ -129,7 +127,7 @@ I am based in Bangi, Selangor, Malaysia, open to relocation across Malaysia, and
 
 ## Current focus
 
-I am improving the evaluation, reliability and cost controls in [AnotherEdenAI](https://github.com/Hydarhafiz/AnotherEdenAI) while preparing for Backend, Cloud/DevOps and Applied AI opportunities in Malaysia.
+I am improving the evaluation, reliability and cost controls in [AnotherEdenAI](https://github.com/Hydarhafiz/AnotherEdenAI) while preparing for Backend, Cloud/DevOps and Applied AI opportunities in Kuala Lumpur and Selangor.
 
 ## Contact
 
@@ -172,13 +170,13 @@ Acceptable claims include implemented components visible in the public repositor
 
 ### LinkedIn
 
-- [ ] Use the full public name and approved headline.
+- [ ] Use the full public name and approved `Backend Engineer | Cloud & Applied AI` headline.
 - [ ] Set Bangi, Selangor, Malaysia as the current location.
 - [ ] Replace the About section with the approved copy.
 - [ ] Align AMIC and PETRONAS Digital titles, dates and descriptions.
 - [ ] Add AnotherEdenAI as an actively developed project and link its public repository.
 - [ ] Verify all three certifications using the supplied credential URLs.
-- [ ] Configure Malaysia-first open-to-work roles, locations, workplace types and November 2026 availability.
+- [ ] Configure Kuala Lumpur/Selangor open-to-work roles, workplace types and November 2026 availability.
 - [ ] Add `https://hydarhafiz.com` as the public portfolio website.
 - [ ] Keep the phone number off the public profile.
 
@@ -193,10 +191,10 @@ Acceptable claims include implemented components visible in the public repositor
 
 ### Final consistency check
 
-- [ ] Use `Software Engineer — Backend, Cloud & Applied AI` as the public umbrella identity.
+- [ ] Use `Backend Engineer | Cloud & Applied AI` as the public umbrella identity.
 - [ ] Keep Backend as the strongest foundation, with Cloud/DevOps ownership and Applied AI specialization presented as evidence-backed target paths rather than senior-level claims.
 - [ ] Keep AMIC dates at November 2025 – October 2026 and PETRONAS Digital dates at January 2024 – August 2024.
-- [ ] Keep AnotherEdenAI at December 2025 – Present and label it active development.
+- [ ] Keep AnotherEdenAI at January 2026 – Present and label it Active development.
 - [ ] Use `Available November 2026`; do not suggest immediate employment availability.
 - [ ] Remove stale student positioning, unsupported percentages, performance claims and overbroad ownership language.
 - [ ] Confirm the public profiles expose email, LinkedIn/GitHub links and no phone number.

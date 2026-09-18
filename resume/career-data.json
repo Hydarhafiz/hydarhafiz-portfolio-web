@@ -2,6 +2,7 @@
   "basics": {
     "name": "Hydar Hafiz bin Hydzelan",
     "location": "Bangi, Selangor, Malaysia",
+    "resumeLocation": "Bangi, Selangor",
     "mobility": "Kuala Lumpur / Selangor",
     "availability": "Available November 2026",
     "email": "shogunix.chan@gmail.com",
@@ -225,6 +226,22 @@
           "id": "airis-recommendations",
           "text": "Designed AI workload and concurrency tests, analyzed bottlenecks, and authored optimization recommendations for senior review.",
           "registryIds": ["AIR-ROLE-01"]
+        },
+        {
+          "id": "balanced-safapac",
+          "text": "Built and evolved **SAFAPAC's Python/FastAPI and PostgreSQL backend and AWS delivery**, moving an incomplete local prototype toward an AWS-hosted internal pilot supporting **6 TEA researchers and 5 Airbus staff**."
+        },
+        {
+          "id": "balanced-governance-performance",
+          "text": "Governed **33,047 defaults across 12 processes, 22 feedstocks and 217 countries** with draft, publish and rollback workflows; refactored a **33-point sensitivity workflow** to prepared inputs and targeted NPV projections at **50 ms p95 across 10 staging acceptance cycles**."
+        },
+        {
+          "id": "balanced-airis",
+          "text": "For **AIRIS**, designed a **6-scenario/10-turn controlled experiment** on RAG workloads that achieved **96.1% less local RAG context**, from **541k to 20.9k local-context tokens**, with **10/10 citation checks passed**; then load-tested vector-search and outbound-LLM bottlenecks for senior review."
+        },
+        {
+          "id": "balanced-cloud-quest",
+          "text": "Automated **Terraform-managed AWS delivery** with Docker, GitHub Actions, OIDC and SSM; also hosted **SAF Sky Quest** on Lightsail with Caddy HTTPS, with **29 registration records captured**, runtime-data export and infrastructure decommissioning."
         }
       ]
     },
@@ -241,6 +258,10 @@
         {
           "id": "petronas-delivery",
           "text": "Built Angular data views and paired on Ionic booking, QR check-in, validation, Android deployment and development documentation."
+        },
+        {
+          "id": "petronas-balanced",
+          "text": "Worked on Angular floor/desk views and paired on Ionic booking, QR check-in, Android deployment and development documentation within the five-person team."
         }
       ]
     }
@@ -276,6 +297,14 @@
           "text": "In a historical project snapshot, designed structured candidate validation, bounded correction, usage guards and deterministic fallback to constrain LLM refinement.",
           "registryIds": ["AE-GUARD-01"],
           "requiredQualifiers": ["historical project snapshot"]
+        },
+        {
+          "id": "anotheredenai-balanced-architecture",
+          "text": "Building a **FastAPI/Neo4j roster-aware recommender** for a live-service JRPG, combining graph retrieval and **deterministic candidate generation** before bounded LLM ranking, refinement and explanation."
+        },
+        {
+          "id": "anotheredenai-balanced-evidence",
+          "text": "Verified deterministic feasibility across **31 evaluation cases**, including infeasible cases making zero analyzer calls, with **367/367 legal-kit coverage** for canonical character forms/styles in the accepted portfolio evidence snapshot."
         }
       ]
     }
@@ -305,20 +334,20 @@
   ],
   "profiles": {
     "default": {
-      "title": "Software Engineer — Backend, Cloud & Applied AI",
-      "summary": "Software engineer with hands-on experience building Python/FastAPI backends, automating Terraform-managed AWS delivery and CI/CD, and developing reliable applied-AI systems with graph retrieval and structured validation. Experienced productionizing early-stage systems for stronger traceability, testability and reliability. AWS Certified Machine Learning Engineer – Associate.",
+      "title": "Backend Engineer | Cloud & Applied AI",
+      "summary": "Backend engineer building Python/FastAPI backends, Terraform-managed AWS delivery, and reliability-focused applied-AI systems with graph retrieval and structured validation. Brings a traceability-first approach to API/data design, infrastructure automation, performance testing, and constrained LLM workflows.",
       "capabilities": {
-        "backend": ["python", "fastapi", "rest-apis", "postgresql", "sql", "async-python", "pytest"],
-        "cloud": ["aws", "terraform", "docker", "github-actions", "oidc", "ssm", "ec2-rds", "s3-cloudfront", "nginx", "cicd"],
-        "ai": ["neo4j", "graphrag", "langgraph", "llm-integration", "retrieval-systems", "structured-validation", "ai-evaluation", "token-cost-controls"],
-        "supporting": ["typescript", "angular", "ionic", "locust", "git"]
+        "backend": ["python", "fastapi", "rest-apis", "postgresql", "sql", "pydantic"],
+        "cloud": ["aws", "terraform", "docker", "github-actions", "oidc", "ssm", "linux", "nginx", "cicd"],
+        "ai": ["neo4j", "graphrag", "langgraph", "llm-integration", "retrieval-systems", "structured-validation", "ai-evaluation"],
+        "supporting": ["typescript", "angular", "ionic", "nodejs", "git"]
       },
       "experienceBullets": {
-        "amic": ["safapac-backend", "safapac-collaboration", "safapac-cloud", "airis-reliability"],
-        "petronas": ["petronas-team", "petronas-delivery"]
+        "amic": ["balanced-safapac", "balanced-governance-performance", "balanced-airis", "balanced-cloud-quest"],
+        "petronas": ["petronas-balanced"]
       },
       "projectBullets": {
-        "anotheredenai": ["anotheredenai-architecture", "anotheredenai-controls"]
+        "anotheredenai": ["anotheredenai-balanced-architecture", "anotheredenai-balanced-evidence"]
       }
     },
     "backend": {

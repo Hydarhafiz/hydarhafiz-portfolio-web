@@ -11,6 +11,13 @@ interface Props {
 }
 
 const { entries } = Astro.props;
+
+const formatRichText = (value: string) => value
+  .replaceAll("&", "&amp;")
+  .replaceAll("<", "&lt;")
+  .replaceAll(">", "&gt;")
+  .replaceAll('"', "&quot;")
+  .replaceAll(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 ---
 
 <div class="experience-list">
@@ -24,7 +31,7 @@ const { entries } = Astro.props;
         <p class="experience-entry__dates">{entry.dates}</p>
       </div>
       <ul>
-        {entry.bullets.map((bullet) => <li>{bullet}</li>)}
+        {entry.bullets.map((bullet) => <li set:html={formatRichText(bullet)} />)}
       </ul>
     </article>
   ))}

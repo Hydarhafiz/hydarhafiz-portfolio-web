@@ -26,6 +26,26 @@ if (failures.length === 0) {
   assert(html.includes("Backend Engineer building production cloud and AI systems."), "Homepage: missing approved primary engineering identity");
   assert(html.includes("Engineering focus"), "Homepage: missing engineering-focus label");
   assert(html.includes("Portrait of Hydar Hafiz bin Hydzelan"), "Homepage: missing accessible profile portrait");
+  assert(html.includes("Measured work, kept in context."), "Homepage: missing contextual evidence heading");
+  assert(html.indexOf("Measured work, kept in context.") < html.indexOf('id="about"'), "Homepage: evidence must precede biography-heavy content");
+  for (const phrase of [
+    "33,047 governed defaults",
+    "12 processes",
+    "22 feedstocks",
+    "217 countries",
+    "50 ms p95",
+    "33-point sensitivity workflow",
+    "10 staging acceptance cycles",
+    "96.1% less local RAG context",
+    "6-scenario/10-turn controlled experiment",
+    "541k to 20.9k local-context tokens",
+    "10/10 citation checks passed",
+    "367/367 legal-kit coverage",
+    "canonical character forms/styles",
+    "accepted portfolio evidence snapshot",
+  ]) {
+    assert(html.includes(phrase), `Homepage: contextual evidence is missing ${phrase}`);
+  }
   assert(html.includes("About me"), "Homepage: missing About me section");
   assert(html.includes('section id="about" class="home-section home-section--tinted"'), "Homepage: About me must use the alternating tinted band");
   assert(html.includes("Featured work"), "Homepage: missing Featured work heading");
@@ -42,13 +62,15 @@ if (failures.length === 0) {
   assert(html.includes("Primary professional case study"), "Homepage: missing SAFAPAC hierarchy label");
   assert(html.includes("Major applied-AI case study"), "Homepage: missing AIRIS major-case-study hierarchy label");
   assert(html.includes("Primary personal case study"), "Homepage: missing AnotherEdenAI hierarchy label");
+  assert(html.includes("Supporting cloud-deployment case study"), "Homepage: missing SAF Sky Quest hierarchy label");
   assert(html.includes("SAFAPAC"), "Homepage: missing SAFAPAC content");
   assert(html.includes("AnotherEdenAI"), "Homepage: missing AnotherEdenAI content");
   assert(html.includes('href="/airis"'), "Homepage: missing AIRIS case-study route link");
   assert(html.includes('href="https://github.com/Hydarhafiz/AnotherEdenAI"'), "Homepage: missing direct AnotherEdenAI GitHub link");
   assert(html.includes("AIRIS"), "Homepage: missing AIRIS content");
+  assert(html.includes('href="/saf-sky-quest"'), "Homepage: missing SAF Sky Quest case-study route link");
   assert(html.includes("Terraform-managed AWS delivery"), "Homepage: missing approved Terraform/AWS positioning");
-  assert(html.includes("optimization recommendations for senior developer/project manager review"), "Homepage: AIRIS recommendation and review boundary is missing");
+  assert(html.includes("optimization recommendations for senior review"), "Homepage: AIRIS recommendation and review boundary is missing");
   assert(html.indexOf('home-introduction__portrait') < html.indexOf('home-introduction__actions'), "Homepage: portrait should precede hero actions in mobile reading order");
   assert(html.includes("Applied-AI engineering experiments measuring retrieval and LLM behavior"), "Homepage: missing AIRIS approved summary");
   assert(html.includes("Aerospace Malaysia Innovation Centre"), "Homepage: missing AMIC experience");

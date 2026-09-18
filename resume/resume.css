@@ -1,12 +1,12 @@
 @page {
   size: A4;
-  margin: 9.5mm 11mm 9mm;
+  margin: 9.5mm 11mm 8.5mm;
 }
 
 :root {
   color-scheme: light;
-  font-family: "Source Sans 3", "Helvetica Neue", Arial, sans-serif;
-  color: #17212b;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #171717;
   background: #ffffff;
   font-synthesis: none;
   font-variant-ligatures: none;
@@ -25,13 +25,13 @@ body {
 }
 
 body {
-  font-size: 10.2pt;
-  line-height: 1.36;
+  font-size: 9.6pt;
+  line-height: 1.25;
 }
 
 header {
-  border-bottom: 1.4pt solid #16657a;
-  padding-bottom: 2.4mm;
+  border-bottom: 1.15pt solid #171717;
+  padding-bottom: 1.7mm;
 }
 
 h1,
@@ -43,25 +43,26 @@ ul {
 }
 
 h1 {
-  margin-bottom: 0.8mm;
-  color: #102d3a;
+  margin-bottom: 0.65mm;
   font-size: 22pt;
-  line-height: 1;
-  letter-spacing: -0.35pt;
+  line-height: 0.98;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
 
 .headline {
-  margin-bottom: 1.2mm;
-  color: #16657a;
-  font-size: 11pt;
+  margin-bottom: 1mm;
+  font-size: 10.8pt;
   font-weight: 700;
+  line-height: 1.05;
+  text-transform: uppercase;
 }
 
 .meta,
 .contact {
-  margin-bottom: 0.8mm;
-  color: #344955;
-  font-size: 9pt;
+  margin-bottom: 0.55mm;
+  font-size: 8.7pt;
+  line-height: 1.18;
 }
 
 .contact {
@@ -69,21 +70,22 @@ h1 {
 }
 
 .separator {
-  margin: 0 1.2mm;
-  color: #7a8a91;
+  margin: 0 1.25mm;
 }
 
 a {
-  color: #115d73;
-  text-decoration: none;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 0.35pt;
+  text-underline-offset: 1pt;
 }
 
 main {
-  padding-top: 2mm;
+  padding-top: 1.7mm;
 }
 
 section {
-  margin-top: 2.5mm;
+  margin-top: 1.85mm;
 }
 
 section:first-child {
@@ -91,24 +93,41 @@ section:first-child {
 }
 
 h2 {
-  margin-bottom: 1.15mm;
-  border-bottom: 0.55pt solid #9cb9c2;
-  color: #123e4f;
-  font-size: 11pt;
-  line-height: 1.15;
-  letter-spacing: 0.55pt;
+  margin-bottom: 0.7mm;
+  border-bottom: 0.5pt solid #171717;
+  font-size: 10.2pt;
+  line-height: 1.12;
+  letter-spacing: 0.055em;
   text-transform: uppercase;
 }
 
 h3 {
-  margin-bottom: 0.7mm;
-  font-size: 10.7pt;
+  margin-bottom: 0.35mm;
+  font-size: 9.55pt;
+  line-height: 1.14;
+}
+
+strong {
+  font-weight: 700;
+}
+
+.summary {
+  margin-bottom: 0;
+  line-height: 1.24;
+}
+
+.capability {
+  margin-bottom: 0.25mm;
   line-height: 1.2;
+}
+
+.capability:last-child {
+  margin-bottom: 0;
 }
 
 .entry {
   break-inside: avoid;
-  margin-bottom: 1.9mm;
+  margin-bottom: 1.15mm;
 }
 
 .entry:last-child {
@@ -128,89 +147,69 @@ h3 {
 
 .dates {
   flex: 0 0 auto;
-  color: #50636c;
-  font-size: 9pt;
-  font-weight: 600;
+  font-size: 8.7pt;
   white-space: nowrap;
 }
 
 .context {
-  margin-bottom: 0.6mm;
-  color: #50636c;
-  font-size: 9pt;
-}
-
-.summary {
-  margin-bottom: 0;
-}
-
-.capability {
-  margin-bottom: 0.55mm;
-}
-
-.capability:last-child {
-  margin-bottom: 0;
-}
-
-.capability strong {
-  color: #123e4f;
+  margin-bottom: 0.25mm;
+  font-size: 8.6pt;
 }
 
 ul {
   margin-bottom: 0;
-  padding-left: 4.2mm;
+  padding-left: 4.1mm;
 }
 
 li {
-  margin-bottom: 0.75mm;
-  padding-left: 0.4mm;
+  margin-bottom: 0.35mm;
+  padding-left: 0.25mm;
+  line-height: 1.22;
 }
 
 li:last-child {
   margin-bottom: 0;
 }
 
-.education,
-.certification {
-  break-inside: avoid;
+.education p {
+  margin-bottom: 0.3mm;
 }
 
-.education p,
-.certification p {
-  margin-bottom: 0.55mm;
-}
-
-.education p:last-child,
-.certification p:last-child {
+.education p:last-child {
   margin-bottom: 0;
 }
 
 .certification-list {
+  margin-top: 0.45mm;
   list-style: none;
   padding-left: 0;
 }
 
 .certification-list li {
-  margin-bottom: 0.5mm;
+  margin-bottom: 0.25mm;
   padding-left: 0;
+}
+
+.certification-date {
+  white-space: nowrap;
 }
 
 @media print {
   a {
-    color: inherit;
+    text-decoration: none;
   }
 }
 
 @media screen {
   html {
-    background: #e7ecef;
+    background: #e9e9e9;
   }
 
   body {
     width: 210mm;
     min-height: 297mm;
     margin: 0 auto;
-    padding: 9.5mm 11mm 9mm;
-    box-shadow: 0 0 8mm rgb(21 48 60 / 14%);
+    padding: 9.5mm 11mm 8.5mm;
+    box-shadow: 0 0 8mm rgb(0 0 0 / 14%);
   }
 }

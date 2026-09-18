@@ -27,30 +27,12 @@ function escapeHtml(value) {
     .replaceAll("'", "&#039;");
 }
 
-function link(url, label, ariaLabel = label) {
-  return `<a href="${escapeHtml(url)}" aria-label="${escapeHtml(ariaLabel)}">${escapeHtml(label)}</a>`;
+function renderRichText(value) {
+  return escapeHtml(value).replaceAll(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 }
 
-function loadResumeFonts() {
-  const fontDirectory = join(root, "node_modules/@fontsource/source-sans-3/files");
-  const faces = [
-    [400, "source-sans-3-latin-400-normal.woff2"],
-    [600, "source-sans-3-latin-600-normal.woff2"],
-    [700, "source-sans-3-latin-700-normal.woff2"],
-  ];
-
-  return faces
-    .map(([weight, filename]) => {
-      const encodedFont = readFileSync(join(fontDirectory, filename)).toString("base64");
-      return `@font-face {
-        font-family: "Source Sans 3";
-        font-style: normal;
-        font-weight: ${weight};
-        font-display: block;
-        src: url("data:font/woff2;base64,${encodedFont}") format("woff2");
-      }`;
-    })
-    .join("\n");
+function link(url, label, ariaLabel = label) {
+  return `<a href="${escapeHtml(url)}" aria-label="${escapeHtml(ariaLabel)}">${escapeHtml(label)}</a>`;
 }
 
 function renderEntry(entry) {
@@ -68,7 +50,7 @@ function renderEntry(entry) {
         <span class="dates">${escapeHtml(entry.dates)}</span>
       </div>
       ${projectLink}
-      <ul>${entry.bullets.map((bullet) => `<li>${escapeHtml(bullet)}</li>`).join("")}</ul>
+      <ul>${entry.bullets.map((bullet) => `<li>${renderRichText(bullet)}</li>`).join("")}</ul>
     </article>`;
 }
 
@@ -78,6 +60,7 @@ function renderHtml(data, phone, css) {
     ...(phone ? [link(`tel:${phone.replaceAll(" ", "")}`, phone, "Call Hydar")] : []),
     ...data.basics.links.map((item) => link(item.url, item.display, item.label)),
   ];
+  const resumeLocation = data.basics.resumeLocation ?? data.basics.location;
 
   return `<!doctype html>
 <html lang="en">
@@ -93,20 +76,20 @@ function renderHtml(data, phone, css) {
     <header>
       <h1>${escapeHtml(data.basics.name)}</h1>
       <p class="headline">${escapeHtml(data.basics.title)}</p>
-      <p class="meta">${escapeHtml(data.basics.location)}<span class="separator">•</span>${escapeHtml(data.basics.mobility)}<span class="separator">•</span>${escapeHtml(data.basics.availability)}</p>
-      <p class="contact">${contactItems.join('<span class="separator">•</span>')}</p>
+      <p class="meta">${escapeHtml(resumeLocation)}<span class="separator">|</span>${escapeHtml(data.basics.availability)}</p>
+      <p class="contact">${contactItems.join('<span class="separator">|</span>')}</p>
     </header>
     <main>
       <section aria-labelledby="summary-heading">
-        <h2 id="summary-heading">Professional Summary</h2>
-        <p class="summary">${escapeHtml(data.summary)}</p>
+        <h2 id="summary-heading">Summary</h2>
+        <p class="summary">${renderRichText(data.summary)}</p>
       </section>
-      <section aria-labelledby="capabilities-heading">
-        <h2 id="capabilities-heading">Technical Capabilities</h2>
+      <section aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Technical Skills</h2>
         ${data.capabilities
           .map(
             (capability) =>
-              `<p class="capability"><strong>${escapeHtml(capability.category)}:</strong> ${escapeHtml(capability.items.join(" · "))}</p>`,
+              `<p class="capability"><strong>${escapeHtml(capability.category)}:</strong> ${capability.items.map(escapeHtml).join(" · ")}</p>`,
           )
           .join("")}
       </section>
@@ -114,12 +97,12 @@ function renderHtml(data, phone, css) {
         <h2 id="experience-heading">Professional Experience</h2>
         ${data.experience.map(renderEntry).join("")}
       </section>
-      <section aria-labelledby="projects-heading">
-        <h2 id="projects-heading">Selected Project</h2>
+      <section aria-labelledby="project-heading">
+        <h2 id="project-heading">Personal Project</h2>
         ${data.projects.map(renderEntry).join("")}
       </section>
-      <section aria-labelledby="education-heading">
-        <h2 id="education-heading">Education</h2>
+      <section aria-labelledby="credentials-heading">
+        <h2 id="credentials-heading">Education &amp; Certifications</h2>
         <div class="education">
           <div class="entry-heading">
             <h3>${escapeHtml(data.education.qualification)} — ${escapeHtml(data.education.institution)}</h3>
@@ -127,14 +110,11 @@ function renderHtml(data, phone, css) {
           </div>
           <p>${escapeHtml(data.education.detail)}</p>
         </div>
-      </section>
-      <section aria-labelledby="certifications-heading">
-        <h2 id="certifications-heading">Certifications</h2>
         <ul class="certification-list">
           ${data.certifications
             .map(
               (certification) =>
-                `<li>${link(certification.url, certification.name, `Verify ${certification.name}`)} — ${escapeHtml(certification.issued)}</li>`,
+                `<li>${link(certification.url, certification.name, `Verify ${certification.name}`)} <span class="certification-date">(${escapeHtml(certification.issued)})</span></li>`,
             )
             .join("")}
         </ul>
@@ -172,7 +152,7 @@ if (!new Set(["public", "application"]).has(contactPolicy)) {
 
 const careerSource = JSON.parse(readFileSync(join(root, "resume/career-data.json"), "utf8"));
 const careerData = resolveCareerProfile(careerSource, profile);
-const css = `${loadResumeFonts()}\n${readFileSync(join(root, "resume/resume.css"), "utf8")}`;
+const css = readFileSync(join(root, "resume/resume.css"), "utf8");
 let phone = null;
 
 if (contactPolicy === "application") {
@@ -216,7 +196,6 @@ const chromiumArguments = [
 ];
 
 if (process.env.CI === "true") {
-  // GitHub-hosted Ubuntu runners disable the user namespaces Chromium uses for its sandbox.
   chromiumArguments.unshift("--no-sandbox");
 }
 

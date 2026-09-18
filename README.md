@@ -1,6 +1,6 @@
 # Hydar Hafiz portfolio
 
-Source for the public portfolio and resume of Hydar Hafiz bin Hydzelan, a software engineer focused on Backend, Cloud and Applied AI systems.
+Source for the public portfolio and resume of Hydar Hafiz bin Hydzelan, a Backend Engineer building production cloud and AI systems.
 
 The Astro portfolio implementation, T-shaped career positioning, canonical live launch, and post-live resume update are complete. The site is available at [hydarhafiz.com](https://hydarhafiz.com). External recruiter-profile edits and LinkedIn publication remain manual.
 
@@ -20,10 +20,10 @@ The repository boundary is enforced by defensive ignore rules and `scripts/check
 
 ## Public experience
 
-- Recruiter-scannable homepage with experience, capabilities, credentials, resume, and contact links
+- Recruiter-scannable homepage with contextual evidence, experience, capabilities, credentials, resume, and contact links
 - Detailed SAFAPAC and AnotherEdenAI case studies
 - Major AIRIS applied-AI case study and compact SAF Sky Quest deployment case study
 - Public resume without a phone number
 - Responsive, accessible light and dark themes
 
-Run `npm run check` and `npm run build` for the application, and use the documented commands under `resume/` for balanced or targeted resume generation.
+Run `npm run check` and `npm run build` for the application. The balanced public resume is a phone-free, one-page A4 PDF headed `Backend Engineer | Cloud & Applied AI`; use the documented commands under `resume/` for balanced or targeted resume generation.

@@ -288,7 +288,7 @@ Keep PETRONAS in the Experience section rather than adding another flagship rout
 
 ### Feature 7F — Homepage, experience, and balanced public resume synchronization
 
-- Type/status: cross-page build/content synchronization; planned after 7E
+- Type/status: cross-page build/content synchronization; completed 2026-09-18
 - Outcome: make the homepage, project cards, About/Experience content, semantic resume, tracked balanced PDF, metadata, and recruiter-facing guidance tell the same approved story.
 - Scope:
   - implement the approved hero, supporting paragraph, engineering pillars, four contextual evidence cards, and project order;
@@ -316,6 +316,7 @@ Keep PETRONAS in the Experience section rather than adding another flagship rout
   - public copy consistently uses January 2026, KL/Selangor targeting, approved maturity labels, correct ownership, and working case-study/contact/repository links;
   - targeted PDFs remain private/unlinked and shared resume generation remains structurally valid.
 - Durable evidence: updated homepage/experience/resume sources, the source-to-public resume mapping, regenerated public PDF, extracted-text comparison, visual comparison against all three named private PDFs, cross-surface consistency tests, and one completed-feature commit.
+- Completion evidence: `npm run check`, `npm run build`, `npm run content:validate`, `npm run content:validate -- --self-test`, `npm run site:validate`, `npm run homepage:validate`, `npm run case-studies:validate -- --self-test`, `npm run visuals:validate`, `npm run launch:validate`, `npm run resume:page:validate`, `npm run resume:validate`, `npm run profile:validate`, `npm run profile:self-test`, `bash scripts/check-public-boundary.sh --self-test`, `bash scripts/check-public-boundary.sh`, and `git diff --check` passed. The three private PDFs and generated public PDF were rendered and visually compared; no browser manual checkpoint was required because the existing shared site shell was retained, with broader readability and browser review remaining Feature 7G scope.
 - Route: `builder-executor -> tdd-loop`.
 
 ### Feature 7G — Final technical, content, and disclosure QA

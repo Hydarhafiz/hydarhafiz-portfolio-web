@@ -21,6 +21,13 @@ if (!relativePdfPath || !listCareerProfiles().includes(profile) || !new Set(["pu
 
 const careerSource = JSON.parse(readFileSync(resolve(root, "resume/career-data.json"), "utf8"));
 const careerData = resolveCareerProfile(careerSource, profile);
+const plainText = (value) => value.replaceAll(/\*\*(.+?)\*\*/g, "$1");
+const normalizeText = (value) => value
+  .toLowerCase()
+  .replaceAll(/\s+/g, " ")
+  .replaceAll(/\s+([,.;:])/g, "$1")
+  .replaceAll(/-\s+/g, "-")
+  .trim();
 const pdfPath = resolve(root, relativePdfPath);
 
 function validateAllProfileResolutions(source) {
@@ -49,7 +56,7 @@ function validateAllProfileResolutions(source) {
 const resolvedProfiles = validateAllProfileResolutions(careerSource);
 
 function validateProfileClaimContract(source, profileId, extractedText) {
-  const normalizedExtractedText = extractedText.toLowerCase();
+  const normalizedExtractedText = normalizeText(extractedText);
   for (const metric of source.portfolioContract?.metrics ?? []) {
     if (!normalizedExtractedText.includes(metric.value.toLowerCase())) continue;
     const requiredContext = [metric.project, ...(metric.requiredContext ?? [])];
@@ -96,26 +103,26 @@ if (document.numPages !== 1) {
 const page = await document.getPage(1);
 const textContent = await page.getTextContent();
 const text = textContent.items.map((item) => item.str).join(" ").replaceAll(/\s+/g, " ").trim();
-const normalizedText = text.toLowerCase();
+const normalizedText = normalizeText(text);
 
 validateProfileClaimContract(careerSource, profile, text);
 
 const requiredPhrases = [
   careerData.basics.name,
   careerData.basics.title,
-  careerData.basics.location,
+  careerData.basics.resumeLocation ?? careerData.basics.location,
   careerData.basics.availability,
   careerData.summary,
   ...careerData.capabilities.flatMap((group) => [group.category, ...group.items]),
-  ...careerData.experience.flatMap((entry) => [entry.role, entry.organization, entry.dates, ...entry.bullets]),
-  ...careerData.projects.flatMap((project) => [project.name, project.context, project.dates, ...project.bullets]),
+  ...careerData.experience.flatMap((entry) => [entry.role, entry.organization, entry.dates, ...entry.bullets.map(plainText)]),
+  ...careerData.projects.flatMap((project) => [project.name, project.context, project.dates, ...project.bullets.map(plainText)]),
   careerData.education.institution,
   careerData.education.qualification,
   ...careerData.certifications.map((certification) => certification.name),
 ];
 
 for (const phrase of requiredPhrases) {
-  if (!normalizedText.includes(phrase.toLowerCase())) {
+  if (!normalizedText.includes(normalizeText(plainText(phrase)))) {
     throw new Error(`Required resume phrase is missing: ${phrase}`);
   }
 }
@@ -151,12 +158,11 @@ for (const keyword of keywordRequirements[profile]) {
 }
 
 const headingOrder = [
-  "professional summary",
-  "technical capabilities",
+  "summary",
+  "technical skills",
   "professional experience",
-  "selected project",
-  "education",
-  "certifications",
+  "personal project",
+  "education & certifications",
 ];
 let previousIndex = -1;
 for (const heading of headingOrder) {
