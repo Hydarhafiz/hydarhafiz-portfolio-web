@@ -1,0 +1,50 @@
+---
+import VisualFigure from "./VisualFigure.astro";
+---
+
+<VisualFigure
+  id="airis-context-experiment"
+  label="AIRIS · Controlled experiment"
+  title="Reduce context, retain checks"
+  tone="airis"
+  altText="A three-stage AIRIS controlled experiment shows six scenarios and ten turns, local context reduced from 541k to 20.9k tokens by 96.1%, and 10/10 citation checks passed. Citation checks do not prove universal answer quality."
+  caption="Controlled AIRIS experiment: 96.1% less local context across six scenarios and ten turns, with 10/10 citation checks passed."
+>
+  <div slot="graphic" class="visual-art visual-art--airis" aria-hidden="true">
+    <div class="v4d-airis-context">
+      <article class="v4d-airis-anchor">
+        <span class="v4d-airis-stage__number">01</span>
+        <p class="v4d-label">Experiment</p>
+        <strong>6 scenarios · 10 turns</strong>
+      </article>
+
+      <span class="v4d-airis-path__arrow" aria-hidden="true">→</span>
+
+      <article class="v4d-airis-anchor v4d-airis-anchor--focus">
+        <span class="v4d-airis-stage__number">02</span>
+        <p class="v4d-label">Local context</p>
+        <div class="v4d-airis-context__metrics">
+          <strong>541k</strong>
+          <span aria-hidden="true">→</span>
+          <strong>20.9k</strong>
+        </div>
+        <p class="v4d-airis-context__detail">tokens · 96.1% reduction</p>
+      </article>
+
+      <span class="v4d-airis-path__arrow" aria-hidden="true">→</span>
+
+      <article class="v4d-airis-anchor v4d-airis-anchor--result">
+        <span class="v4d-airis-stage__number">03</span>
+        <p class="v4d-label">Citation checks</p>
+        <strong>10/10 passed</strong>
+      </article>
+    </div>
+
+    <p class="v4d-boundary-note">Citation checks do not prove universal answer quality.</p>
+  </div>
+  <ol slot="fallback" class="visual-figure__fallback-list">
+    <li>The controlled experiment covered 6 scenarios and 10 turns.</li>
+    <li>Local context fell from 541k to 20.9k tokens, a 96.1% reduction.</li>
+    <li>All 10 citation checks passed; that result does not prove universal answer quality.</li>
+  </ol>
+</VisualFigure>

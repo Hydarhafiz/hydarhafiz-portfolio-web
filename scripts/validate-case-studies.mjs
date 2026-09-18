@@ -11,6 +11,11 @@ const routes = [
     adjacent: "AnotherEdenAI"
   },
   {
+    route: "airis",
+    title: "AIRIS",
+    adjacent: "SAFAPAC"
+  },
+  {
     route: "anotheredenai",
     title: "AnotherEdenAI",
     adjacent: "SAFAPAC"
@@ -33,6 +38,7 @@ for (const { route, title, adjacent } of routes) {
   }
 
   const html = await readFile(filePath, "utf8");
+  const normalizedHtml = html.toLowerCase().replaceAll("’", "'");
   const h1Count = (html.match(/<h1\b/g) ?? []).length;
 
   assert(h1Count === 1, `${route}: expected one page-level h1, found ${h1Count}`);
@@ -108,15 +114,51 @@ for (const { route, title, adjacent } of routes) {
       assert(!html.toLowerCase().includes(unsupported.toLowerCase()), `safapac: unsupported infrastructure claim is present: ${unsupported}`);
     }
   }
+  if (route === "airis") {
+    const requiredAiris = [
+      "Applied-AI engineering experiments",
+      "6-scenario/10-turn controlled experiment",
+      "541k to 20.9k local-context tokens",
+      "96.1% reduction",
+      "10/10 citation checks passed",
+      "citation checks does not prove that answer quality universally improved",
+      "4.8 seconds at 10 concurrent users",
+      "51.0 seconds at 50 concurrent users",
+      "76.9% of request time",
+      "outbound-LLM behavior",
+      "recommendations were reviewed and accepted",
+      "several were subsequently incorporated into the senior engineer's implementation",
+    ];
+    for (const phrase of requiredAiris) {
+      assert(normalizedHtml.includes(phrase.toLowerCase()), `airis: missing approved narrative evidence: ${phrase}`);
+    }
+    for (const prohibited of [
+      "implemented every recommendation",
+      "implemented all recommendations",
+      "we support 50 concurrent users",
+      "we achieved universal answer-quality improvement",
+      "production-ready",
+      "overall architecture owner",
+      "10/10 citation checks proved answer quality",
+    ]) {
+      assert(!normalizedHtml.includes(prohibited), `airis: prohibited or overclaiming wording is present: ${prohibited}`);
+    }
+  }
   const expectedVisuals = route === "safapac"
     ? ["safapac-transition", "safapac-delivery"]
-    : ["anotheredenai-pipeline", "anotheredenai-guardrails"];
+    : route === "airis"
+      ? ["airis-context-experiment", "airis-concurrency-diagnosis", "airis-load-testing"]
+      : ["anotheredenai-pipeline", "anotheredenai-guardrails"];
   for (const visualId of expectedVisuals) {
     assert(html.includes(`id="${visualId}"`), `${route}: missing visual ${visualId}`);
   }
   if (route === "safapac") {
     assert(html.indexOf('id="role-and-approach"') < html.indexOf('id="safapac-transition"'), "safapac: transformation visual is not integrated after Role and approach");
     assert(html.indexOf('id="engineering-decisions"') < html.indexOf('id="safapac-delivery"'), "safapac: delivery visual is not integrated after Engineering decisions");
+  } else if (route === "airis") {
+    assert(html.indexOf('id="controlled-context-experiment"') < html.indexOf('id="airis-context-experiment"'), "airis: context visual is not integrated after Controlled context experiment");
+    assert(html.indexOf('id="concurrency-and-bottleneck-diagnosis"') < html.indexOf('id="airis-concurrency-diagnosis"'), "airis: diagnosis visual is not integrated after Concurrency and bottleneck diagnosis");
+    assert(html.indexOf('id="engineering-outcome-and-attribution"') < html.indexOf('id="airis-load-testing"'), "airis: handoff visual is not integrated after Engineering outcome and attribution");
   } else {
     assert(html.indexOf('id="pipeline"') < html.indexOf('id="anotheredenai-pipeline"'), "anotheredenai: architecture visual is not integrated after Pipeline");
     assert(html.indexOf('id="reliability-boundary"') < html.indexOf('id="anotheredenai-guardrails"'), "anotheredenai: safeguards visual is not integrated after Reliability boundary");
@@ -128,5 +170,5 @@ if (failures.length > 0) {
   console.error(failures.join("\n"));
   process.exitCode = 1;
 } else {
-  console.log("Validated flagship case studies: typed content, concise scope/status presentation, contents navigation, adjacent work, and public-contact boundary.");
+  console.log("Validated case studies: typed content, concise scope/status presentation, contents navigation, adjacent work, and public-contact boundary.");
 }

@@ -20,6 +20,7 @@ const readBuiltFile = (relativePath) => readFile(path.join(distRoot, relativePat
 const staticRoutes = [
   ["/", "index.html"],
   ["/safapac", path.join("safapac", "index.html")],
+  ["/airis", path.join("airis", "index.html")],
   ["/anotheredenai", path.join("anotheredenai", "index.html")],
   ["/resume", path.join("resume", "index.html")],
   ["/404", "404.html"]
@@ -103,7 +104,7 @@ const assertLiveResponse = async (url, expectedStatus = 200) => {
 };
 
 const validateLiveContract = async () => {
-  const livePages = ["/", "/safapac", "/anotheredenai", "/resume"];
+  const livePages = ["/", "/safapac", "/airis", "/anotheredenai", "/resume"];
   for (const route of livePages) {
     const response = await assertLiveResponse(`${canonicalOrigin}${route}`);
     const html = await response.text();

@@ -40,18 +40,17 @@ if (failures.length === 0) {
   assert(html.indexOf('id="about"') < html.indexOf('id="work"'), "Homepage: About me must precede Featured work");
   assert(html.includes('id="work"'), "Homepage: missing selected-work landmark");
   assert(html.includes("Primary professional case study"), "Homepage: missing SAFAPAC hierarchy label");
+  assert(html.includes("Major applied-AI case study"), "Homepage: missing AIRIS major-case-study hierarchy label");
   assert(html.includes("Primary personal case study"), "Homepage: missing AnotherEdenAI hierarchy label");
-  assert(html.includes("Supporting contribution"), "Homepage: missing AIRIS supporting label");
   assert(html.includes("SAFAPAC"), "Homepage: missing SAFAPAC content");
   assert(html.includes("AnotherEdenAI"), "Homepage: missing AnotherEdenAI content");
+  assert(html.includes('href="/airis"'), "Homepage: missing AIRIS case-study route link");
   assert(html.includes('href="https://github.com/Hydarhafiz/AnotherEdenAI"'), "Homepage: missing direct AnotherEdenAI GitHub link");
   assert(html.includes("AIRIS"), "Homepage: missing AIRIS content");
   assert(html.includes("Terraform-managed AWS delivery"), "Homepage: missing approved Terraform/AWS positioning");
   assert(html.includes("optimization recommendations for senior developer/project manager review"), "Homepage: AIRIS recommendation and review boundary is missing");
   assert(html.indexOf('home-introduction__portrait') < html.indexOf('home-introduction__actions'), "Homepage: portrait should precede hero actions in mobile reading order");
-  assert(html.includes('id="airis-load-testing"'), "Homepage: missing AIRIS visual");
-  assert(html.includes('class="supporting-card__visual"'), "Homepage: AIRIS visual is not integrated into its contribution card");
-  assert(html.includes("Supporting contribution: controlled testing, bottleneck diagnosis, and an accepted engineering handoff. No resulting production improvement is claimed."), "Homepage: missing AIRIS visual caption");
+  assert(html.includes("Applied-AI engineering experiments measuring retrieval and LLM behavior"), "Homepage: missing AIRIS approved summary");
   assert(html.includes("Aerospace Malaysia Innovation Centre"), "Homepage: missing AMIC experience");
   assert(html.includes("PETRONAS Digital Sdn Bhd"), "Homepage: missing PETRONAS experience");
   for (const heading of ["Backend", "Cloud &amp; DevOps", "Applied AI", "Supporting Technologies"]) {

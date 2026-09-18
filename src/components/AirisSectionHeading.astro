@@ -1,0 +1,36 @@
+---
+import AirisConcurrencyDiagnosis from "./AirisConcurrencyDiagnosis.astro";
+import AirisContextExperiment from "./AirisContextExperiment.astro";
+import AirisLoadTesting from "./AirisLoadTesting.astro";
+
+interface Props {
+  id?: string;
+  [key: string]: unknown;
+}
+
+const { id, ...attributes } = Astro.props;
+const visual = id === "controlled-context-experiment"
+  ? "context"
+  : id === "concurrency-and-bottleneck-diagnosis"
+    ? "concurrency"
+    : id === "engineering-outcome-and-attribution"
+      ? "outcome"
+      : undefined;
+---
+
+<h2 id={id} {...attributes}><slot /></h2>
+{visual === "context" && (
+  <div class="case-study__inline-visual">
+    <AirisContextExperiment />
+  </div>
+)}
+{visual === "concurrency" && (
+  <div class="case-study__inline-visual">
+    <AirisConcurrencyDiagnosis />
+  </div>
+)}
+{visual === "outcome" && (
+  <div class="case-study__inline-visual">
+    <AirisLoadTesting />
+  </div>
+)}

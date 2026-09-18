@@ -2,7 +2,6 @@
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
 import { siGit, siGithub, siPydantic } from "simple-icons";
-import AirisLoadTesting from "../components/AirisLoadTesting.astro";
 import CaseStudyCard from "../components/CaseStudyCard.astro";
 import CredentialList from "../components/CredentialList.astro";
 import ExperienceList from "../components/ExperienceList.astro";
@@ -120,6 +119,13 @@ const airis = findCaseStudy("airis");
           featured
         />
         <CaseStudyCard
+          entry={airis}
+          href="/airis"
+          hierarchyLabel="Major applied-AI case study"
+          tone="professional"
+          featured
+        />
+        <CaseStudyCard
           entry={anotherEdenAI}
           href="/anotheredenai"
           hierarchyLabel="Primary personal case study"
@@ -129,19 +135,6 @@ const airis = findCaseStudy("airis");
           featured
         />
       </div>
-      <article class="supporting-card">
-        <div class="supporting-card__intro">
-          <div>
-            <p class="supporting-card__label">Supporting contribution</p>
-            <h3>{airis.data.title}</h3>
-          </div>
-          <p>{airis.data.summary}</p>
-          <p class="supporting-card__meta">{airis.data.context} · {airis.data.period} · {airis.data.status}</p>
-        </div>
-        <div class="supporting-card__visual">
-          <AirisLoadTesting />
-        </div>
-      </article>
     </section>
 
     <section id="experience" class="home-section home-section--tinted" aria-labelledby="experience-title">

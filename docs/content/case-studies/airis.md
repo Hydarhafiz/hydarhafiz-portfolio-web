@@ -1,67 +1,27 @@
----
-slug: airis
-title: AIRIS
-kind: supporting-contribution
-hierarchy: supporting
-status: supporting contribution
-period: November 2025 – October 2026
-context: Aerospace Malaysia Innovation Centre
-summary: Testing AI workloads under concurrent demand, analyzing bottlenecks, and translating findings into optimization recommendations for senior engineering review.
-role: Backend Software Developer (Contract) — supporting contribution
-capabilities:
-  - name: AI workload and concurrency testing
-    evidence: Designed workload/concurrency tests to observe behavior under parallel demand.
-  - name: Bottleneck diagnosis and optimization research
-    evidence: Investigated observed bottlenecks and researched optimization directions without claiming implementation ownership.
-  - name: Engineering reporting and stakeholder training
-    evidence: Authored a testing and optimization report with recommendations for senior developer/project manager review and supported stakeholder training.
-disclosure:
-  review_state: approved
-  allowed_claims:
-    - supporting contribution within AIRIS at AMIC
-    - AI workload and concurrency testing
-    - bottleneck diagnosis and optimization research
-    - testing and optimization report with recommendations for senior developer/project manager review
-    - stakeholder training support
-  excluded_claims:
-    - ownership of the overall AIRIS architecture
-    - final optimization decisions or project-management authority
-    - implementation of optimization recommendations
-    - resulting production improvements or performance gains
-    - exact load, latency, throughput, error, cost, or token measurements
-    - internal service names, ports, endpoints, model/configuration details, dashboards, or report figures
-    - private data, credentials, copied visuals, or customer/stakeholder information
-  maturity_boundary: Keep AIRIS framed as a compact supporting contribution.
-sources:
-  - approved career and recruiter-profile contract
-  - approved professional-project disclosure boundary
-  - sanitized AMIC evidence category
----
+# AIRIS — Evaluating and Optimizing Enterprise RAG Workloads
 
-## Summary
+This is the durable content contract for the major AIRIS applied-AI case study. It keeps the public page inside the approved experiment, bottleneck-diagnosis, attribution, and disclosure boundary.
 
-AIRIS is an AI-assisted policy-document analysis project at the Aerospace Malaysia Innovation Centre. Hydar's role was a compact supporting contribution focused on workload and concurrency testing, bottleneck diagnosis, optimization research, reporting recommendations for senior developer/project manager review, and stakeholder training.
+## Approved content boundary
 
-## Context
+| Claim area | Public treatment | Authority class | Excluded detail |
+| --- | --- | --- | --- |
+| Positioning | Present AIRIS as a major applied-AI engineering case study while keeping the contribution boundary explicit. | Human-approved Milestone 7 content contract | Overall architecture ownership or broad product ownership. |
+| Context experiment | Publish the 6-scenario/10-turn scope, 541k-to-20.9k local-context result, 96.1% reduction, and 10/10 citation checks together. | Human-approved Milestone 7 content contract | A universal answer-quality or accuracy claim. |
+| Diagnosis | Publish the observed 4.8-second, 51.0-second, and 76.9% subsystem figures with their concurrency/request-time context. | Human-approved Milestone 7 content contract | Supported production concurrency or resulting production improvement. |
+| Handoff | State that recommendations were reviewed and accepted by the senior engineer and several were subsequently incorporated into his implementation. | Human-approved Milestone 7 content contract | Claiming Hydar implemented every recommendation or owned final decisions. |
+| Training | Describe stakeholder training support. | Approved professional-project disclosure boundary | Stakeholder identities, customer data, internal material, or unapproved impact measures. |
 
-AI-assisted analysis workflows combine retrieval, model calls, and application services. Their behavior under concurrent demand can be difficult to understand from a single successful request, so the contribution focused on making workload behavior observable enough to support engineering discussion.
+## Public narrative boundary
 
-## Contribution
+AIRIS is an enterprise RAG workload at the Aerospace Malaysia Innovation Centre. Hydar's contribution is framed as applied-AI engineering experiments: controlled context testing, concurrency diagnosis, evidence-backed recommendations, and stakeholder training. The later implementation attribution belongs to the senior engineer.
 
-Hydar designed AI workload and concurrency tests, investigated bottlenecks, and researched optimization directions. He documented the findings and recommendations for review with the senior developer/project manager and supported stakeholder training around the work; final decisions and implementation remained with the senior developer/project manager.
+The page may publish the approved experiment and diagnosis measurements only with their scope and denominator/context. It must not claim ownership of the overall architecture, final optimization decisions, every implementation, universal answer-quality improvement, supported production concurrency, or resulting production improvements. It must omit private documents/data, internal service or endpoint details, model/configuration details, dashboards, report figures, credentials, and copied visuals.
 
-## Engineering approach
+## Required evidence
 
-- Define representative workload scenarios without exposing private documents or stakeholder data.
-- Exercise the workflow under controlled concurrent demand and observe the resulting behavior.
-- Separate observed symptoms from bottleneck hypotheses so the handoff does not overstate causality.
-- Record optimization research as evidence-backed recommendations, leaving final decisions and implementation ownership with the senior developer/project manager.
-- Use stakeholder training to make the testing findings understandable beyond the immediate investigation.
+The controlled context section must keep **6 scenarios**, **10 turns**, **541k to 20.9k local-context tokens**, **96.1% reduction**, and **10/10 citation checks passed** in one inseparable result. The page must state that citation checks do not prove universal answer quality.
 
-## Outcome
+The bottleneck section must keep **4.8 seconds at 10 concurrent users**, **51.0 seconds at 50 concurrent users**, and **76.9% of request time at 50 users** together. It may identify outbound-LLM behavior as another optimization area without claiming measured production impact.
 
-The contribution produced a clearer testing and optimization report for engineering review and helped stakeholders understand the investigation. It demonstrates performance-oriented analysis and communication without claiming final decision authority, implementation of the recommendations, or a measured production improvement.
-
-## Boundaries and limitations
-
-AIRIS is not a flagship case study and does not claim ownership of the overall architecture, optimization decisions, or implementation. This public version omits exact load-test values, latency/throughput/error results, model and service configuration, internal endpoints and ports, dashboards, report figures, costs, token details, private data, and any resulting production-performance claim.
+The outcome section must state that the findings and remediation options were reviewed and accepted by the senior engineer and that several recommendations were subsequently incorporated into his implementation. It must not transfer that implementation ownership to Hydar.

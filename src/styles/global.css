@@ -1802,6 +1802,13 @@ main {
   --project-accent-hover: var(--project-accent-anotheredenai-hover);
 }
 
+.case-study--airis {
+  --project-accent: var(--project-accent-airis);
+  --project-accent-soft: var(--project-accent-airis-soft);
+  --project-accent-border: var(--project-accent-airis-border);
+  --project-accent-hover: var(--project-accent-airis-hover);
+}
+
 .case-study__hero {
   border-bottom: 1px solid var(--border);
   background: var(--surface-muted);
@@ -2606,6 +2613,70 @@ main {
   gap: clamp(0.55rem, 1.5vw, 1rem);
 }
 
+.v4d-airis-context {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) auto minmax(0, 1.35fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  gap: clamp(0.55rem, 1.5vw, 1rem);
+}
+
+.v4d-airis-concurrency {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(0.55rem, 1.5vw, 1rem);
+}
+
+.v4d-airis-anchor {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.65rem 0.15rem 0.65rem 0.15rem;
+  background: var(--surface);
+}
+
+.v4d-airis-anchor--focus {
+  border-color: var(--visual-accent);
+  background: var(--visual-soft);
+}
+
+.v4d-airis-anchor--result {
+  border-bottom: 0.3rem solid var(--visual-accent);
+}
+
+.v4d-airis-anchor strong {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--text);
+  font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+}
+
+.v4d-airis-context__metrics {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.5rem;
+}
+
+.v4d-airis-context__metrics strong {
+  margin-top: 0;
+}
+
+.v4d-airis-context__metrics span {
+  color: var(--visual-accent);
+  font-size: 1.2rem;
+}
+
+.v4d-airis-context__detail {
+  margin: 0.65rem 0 0;
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
 .v4d-airis-stage {
   min-width: 0;
   min-height: 7.5rem;
@@ -2664,7 +2735,9 @@ main {
 @media (max-width: 52rem) {
   .v4d-transform,
   .v4d-delivery__path,
-  .v4d-airis-path {
+  .v4d-airis-path,
+  .v4d-airis-context,
+  .v4d-airis-concurrency {
     grid-template-columns: 1fr;
   }
 
@@ -2911,6 +2984,7 @@ main {
   .v4d-transform,
   .v4d-delivery__path,
   .v4d-airis-path,
+  .v4d-airis-context,
   .architecture-inputs,
   .v4d-safeguard-grid,
   .visual-art--anotheredenai-pipeline {
@@ -2922,7 +2996,8 @@ main {
   .architecture-input,
   .architecture-engine,
   .v4d-safeguard,
-  .v4d-airis-stage {
+  .v4d-airis-stage,
+  .v4d-airis-anchor {
     width: 100%;
     max-width: 32rem;
     min-height: 0;

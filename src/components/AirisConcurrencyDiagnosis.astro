@@ -1,0 +1,44 @@
+---
+import VisualFigure from "./VisualFigure.astro";
+---
+
+<VisualFigure
+  id="airis-concurrency-diagnosis"
+  label="AIRIS · Bottleneck diagnosis"
+  title="Vector search dominated request time"
+  tone="airis"
+  altText="A three-anchor AIRIS diagnosis shows vector-search latency at 4.8 seconds with 10 concurrent users, 51.0 seconds with 50 concurrent users, and vector search at 76.9% of request time at 50 users. Outbound-LLM behavior surfaced as another optimization area."
+  caption="Subsystem decomposition isolated vector search as the dominant observed request-time component at the higher tested concurrency."
+>
+  <div slot="graphic" class="visual-art visual-art--airis" aria-hidden="true">
+    <div class="v4d-airis-concurrency">
+      <article class="v4d-airis-anchor">
+        <span class="v4d-airis-stage__number">01</span>
+        <p class="v4d-label">10 users</p>
+        <strong>4.8 seconds</strong>
+        <p class="v4d-airis-context__detail">vector-search latency</p>
+      </article>
+
+      <article class="v4d-airis-anchor v4d-airis-anchor--focus">
+        <span class="v4d-airis-stage__number">02</span>
+        <p class="v4d-label">50 users</p>
+        <strong>51.0 seconds</strong>
+        <p class="v4d-airis-context__detail">vector-search latency</p>
+      </article>
+
+      <article class="v4d-airis-anchor v4d-airis-anchor--result">
+        <span class="v4d-airis-stage__number">03</span>
+        <p class="v4d-label">At 50 users</p>
+        <strong>76.9%</strong>
+        <p class="v4d-airis-context__detail">of request time</p>
+      </article>
+    </div>
+
+    <p class="v4d-boundary-note">Outbound-LLM behavior surfaced as another optimization area; no production improvement is claimed.</p>
+  </div>
+  <ol slot="fallback" class="visual-figure__fallback-list">
+    <li>Vector-search latency was 4.8 seconds at 10 concurrent users.</li>
+    <li>Vector-search latency was 51.0 seconds at 50 concurrent users.</li>
+    <li>At 50 users, vector search represented 76.9% of request time; outbound-LLM behavior was another optimization area.</li>
+  </ol>
+</VisualFigure>

@@ -237,7 +237,7 @@ Keep PETRONAS in the Experience section rather than adding another flagship rout
 
 ### Feature 7C — AIRIS major applied-AI case study
 
-- Type/status: build/content migration; planned after 7B
+- Type/status: build/content migration; completed 2026-09-18
 - Outcome: promote AIRIS from a compact supporting contribution to a major case-study route centered on controlled RAG experiments, bottleneck isolation, and accurate recommendation/implementation attribution.
 - Scope: create or complete the AIRIS route using the shared shell; implement the approved context experiment, concurrency diagnosis, outcome, visuals, homepage-ready summary, navigation, metadata, sitemap, and validation.
 - Non-goals: claiming Hydar implemented every recommendation, claiming production improvement or supported concurrency, publishing private architecture/configuration, or adding unrelated AI claims.
@@ -248,7 +248,8 @@ Keep PETRONAS in the Experience section rather than adding another flagship rout
   - citation checks are not presented as universal answer quality;
   - the accepted-recommendation and later-implementation wording attributes subsequent code to the senior engineer;
   - route, navigation, sitemap, responsive/accessibility, theme, and public-boundary checks pass.
-- Durable evidence: AIRIS content/visual contracts and route, project-specific negative claim tests, sitemap/navigation coverage, and one completed-feature commit.
+- Durable evidence: updated AIRIS content, disclosure, and visual contracts; the major case-study route and accessible evidence visuals; homepage hierarchy/card integration; sitemap and metadata coverage; project-specific positive/negative claim tests; and one completed-feature commit.
+- Completion evidence: `npm run check`, `npm run build`, `npm run content:validate`, `npm run content:validate -- --self-test`, `npm run site:validate`, `npm run homepage:validate`, `npm run case-studies:validate`, `npm run visuals:validate`, `npm run launch:validate`, `npm run resume:page:validate`, `npm run resume:validate`, `npm run profile:validate`, `npm run profile:self-test`, `bash scripts/check-public-boundary.sh --self-test`, `bash scripts/check-public-boundary.sh`, and `git diff --check` passed. No manual checkpoint was required for this feature; final readability, browser behavior, and faithful-meaning review remain Feature 7G scope.
 - Route: `builder-executor -> tdd-loop`.
 
 ### Feature 7D — AnotherEdenAI major personal case study

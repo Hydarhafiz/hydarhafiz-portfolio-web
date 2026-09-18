@@ -8,6 +8,7 @@ const distRoot = path.join(repositoryRoot, "dist");
 const routes = [
   ["/", "index.html"],
   ["/safapac", path.join("safapac", "index.html")],
+  ["/airis", path.join("airis", "index.html")],
   ["/anotheredenai", path.join("anotheredenai", "index.html")],
   ["/resume", path.join("resume", "index.html")],
   ["/404", "404.html"]

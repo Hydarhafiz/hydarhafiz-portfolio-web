@@ -1,52 +1,57 @@
 # AIRIS visual contract
 
-Status: approved for the Feature 4D visual rebuild.
+Status: approved for Milestone 7 Feature 7C.
 
-AIRIS is a compact supporting contribution, not a flagship case study. The visual should show what Hydar contributed and what the work produced without presenting ownership of the overall AIRIS architecture or claiming a resulting production improvement. Apply the [shared Feature 4D diagram rules](./shared.md).
+AIRIS is the major applied-AI case study. The visuals should show the controlled experiment, bottleneck diagnosis, and accepted engineering handoff without presenting ownership of the overall AIRIS architecture or claiming a resulting production improvement. Apply the [shared diagram rules](./shared.md).
 
-## `airis-load-testing`
+## `airis-context-experiment`
 
-- Type: compact three-stage contribution path.
-- Recruiter takeaway: Hydar tested a workload, investigated bottlenecks, and handed findings to engineering with accepted follow-on outcomes.
-- Title: `From workload testing to engineering handoff`
-- Main story: `Test workload → Diagnose bottlenecks → Handoff findings`.
+- Type: three-anchor evidence path.
+- Recruiter takeaway: A controlled RAG experiment reduced supplied context while retaining the defined citation checks.
+- Title: `Reduce context, retain checks`.
+- Main story: `Experiment scope → Local-context reduction → Citation checks`.
 
-### Visible content
+Visible content:
 
 | Stage | Label | Supporting phrase | Treatment |
 | --- | --- | --- | --- |
-| 1 | `Test workload` | `Controlled testing` | Entry stage |
-| 2 | `Diagnose bottlenecks` | `Optimization research` | Slightly dominant middle stage |
-| 3 | `Handoff findings` | None | Final stage with outcome tags |
-| Outcomes | `Senior-engineer accepted` · `Stakeholder training` | None | Tags attached to stage 3 |
+| 1 | `Experiment` | `6 scenarios · 10 turns` | Entry stage |
+| 2 | `Local context` | `541k → 20.9k tokens` and `96.1% reduction` | Dominant middle stage |
+| 3 | `Citation checks` | `10/10 passed` | Final stage |
 
-Disclosure note: `No resulting production improvement is claimed.`
+The quiet boundary note says: `Citation checks do not prove universal answer quality.` On compact screens, stack the stages vertically without horizontal scrolling.
 
-### Low-fidelity content mockup
+Accessibility text: `A three-stage AIRIS controlled experiment shows six scenarios and ten turns, local context reduced from 541k to 20.9k tokens by 96.1%, and 10/10 citation checks passed. Citation checks do not prove universal answer quality.`
 
-```text
-HYDAR'S AIRIS CONTRIBUTION
+Caption: `Controlled AIRIS experiment: 96.1% less local context across six scenarios and ten turns, with 10/10 citation checks passed.`
 
-[ 01 TEST WORKLOAD ]  ──→  [ 02 DIAGNOSE BOTTLENECKS ]  ──→  [ 03 HANDOFF FINDINGS ]
-    Controlled testing          Optimization research          • Senior-engineer accepted
-                                                               • Stakeholder training
+Placement: render directly after the controlled context experiment narrative on `/airis`.
 
-                     No resulting production improvement is claimed.
-```
+## `airis-concurrency-diagnosis`
 
-Use one solid stepped path. Outcomes attach to the handoff stage and are not additional stages. Do not draw a connector from diagnosis or research to a production improvement. On compact screens, stack the stages vertically and keep the two outcome tags with stage 3.
+- Type: three-anchor observed bottleneck comparison.
+- Recruiter takeaway: Subsystem decomposition showed vector search dominating request time at the higher tested concurrency.
+- Title: `Vector search dominated request time`.
+- Main story: `10 users → 50 users → Request-time share`.
 
-Placement: render directly inside the AIRIS supporting-contribution narrative on the homepage, immediately after its summary and metadata.
+Visible anchors:
 
-### Accessibility and disclosure
+- `10 concurrent users` · `4.8 seconds vector-search latency`;
+- `50 concurrent users` · `51.0 seconds vector-search latency`;
+- `At 50 users` · `76.9% of request time`.
 
-- Alt text: `A compact three-stage AIRIS contribution path shows controlled workload testing, bottleneck diagnosis with optimization research, and an engineering handoff with senior-engineer acceptance and stakeholder training as outcomes. No resulting production improvement is claimed.`
-- Caption: `Supporting contribution: controlled testing, bottleneck diagnosis, and an accepted engineering handoff. No resulting production improvement is claimed.`
-- The collapsed text alternative lists the three stages, then the two handoff outcomes, then the disclosure boundary.
-- Do not show exact workload or concurrency values, latency, throughput or error measurements, service names, ports, endpoints, model names, prompts, configuration, infrastructure topology, dashboards, private reports, stakeholder data, copied diagrams, or implemented-recommendation claims.
+The quiet boundary note states that outbound-LLM behavior surfaced as another optimization area and that the figures do not claim supported production concurrency or a resulting production improvement. Render after the concurrency diagnosis narrative.
+
+## `airis-load-testing`
+
+- Type: compact three-stage engineering handoff path.
+- Recruiter takeaway: Hydar tested, diagnosed, and handed accepted recommendations to the senior engineer, with later implementation attribution preserved.
+- Title: `From diagnosis to recommendation`.
+- Main story: `Test workload → Diagnose bottlenecks → Handoff recommendations`.
+- Outcomes: `Recommendations accepted` · `Stakeholder training`.
+- Boundary note: `Several recommendations were later incorporated into the senior engineer's implementation; no production improvement is claimed.`
+- Render after the engineering outcome and attribution narrative.
 
 ## Contract boundary
 
-This is a newly redrawn, recruiter-facing summary of testing, bottleneck diagnosis, optimization research, engineering handoff, senior-engineer acceptance, and stakeholder training. It remains explicitly a supporting contribution, and the no-production-improvement boundary must remain legible but visually quiet.
-
-Hydar approved the revised title, labels, shared rules, and mockup before implementation resumed.
+These are newly redrawn, recruiter-facing summaries of approved AIRIS evidence. They must preserve measurement context, distinguish citation checks from universal answer quality, and keep later implementation attributed to the senior engineer. No visual may imply production improvement, supported production concurrency, or overall architecture ownership.

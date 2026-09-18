@@ -21,12 +21,17 @@ const tone = data.hierarchy === "primary-personal" ? "personal" : "professional"
 const project = data.slug;
 const hierarchyLabel = data.hierarchy === "primary-personal"
   ? "Primary personal case study"
-  : "Primary professional case study";
+  : data.hierarchy === "primary-applied-ai"
+    ? "Major applied-AI case study"
+    : data.hierarchy === "supporting"
+      ? "Supporting contribution"
+      : "Flagship professional case study";
 const status = data.status.charAt(0).toUpperCase() + data.status.slice(1);
 const contentHeadings = headings.filter((heading) => heading.depth === 2);
 
 const adjacentLabel = (hierarchy: string) => {
   if (hierarchy === "primary-personal") return "Primary personal case study";
+  if (hierarchy === "primary-applied-ai") return "Major applied-AI case study";
   if (hierarchy === "primary-professional") return "Primary professional case study";
   return "Supporting contribution";
 };
