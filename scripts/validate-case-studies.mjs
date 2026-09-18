@@ -27,6 +27,32 @@ const assert = (condition, message) => {
   if (!condition) failures.push(message);
 };
 
+const unsupportedAnotherEdenClaims = [
+  "93.5% accuracy",
+  "guaranteed optimal",
+  "guaranteed winning",
+  "guaranteed recommendations",
+  "eliminated hallucinations",
+  "zero-error ai",
+  "production-ready",
+  "production ready",
+  "overall completion percentage",
+];
+
+const hasUnsupportedAnotherEdenClaim = (text) => {
+  const normalized = text.toLowerCase();
+  return unsupportedAnotherEdenClaims.some((phrase) => normalized.includes(phrase))
+    || /\bc1\.1\b/i.test(text)
+    || /\bc2\b/i.test(text);
+};
+
+const visibleText = (html) => html
+  .replace(/<script[\s\S]*?<\/script>/gi, " ")
+  .replace(/<style[\s\S]*?<\/style>/gi, " ")
+  .replace(/<[^>]+>/g, " ")
+  .replace(/\s+/g, " ")
+  .trim();
+
 for (const { route, title, adjacent } of routes) {
   const filePath = path.join(distRoot, route, "index.html");
 
@@ -56,11 +82,27 @@ for (const { route, title, adjacent } of routes) {
   assert(html.includes('href="/#work"'), `${route}: missing Featured work recovery link`);
   if (route === "anotheredenai") {
     assert(html.includes('href="https://github.com/Hydarhafiz/AnotherEdenAI"'), "anotheredenai: missing public repository link");
-    for (const phrase of ["typed graph retrieval", "deterministic candidate generation", "constrained LLM refinement", "structured validation", "degraded backend fallback", "opt-in evaluation harness"]) {
-      assert(html.toLowerCase().includes(phrase.toLowerCase()), `anotheredenai: missing recruiter-readable AI evidence: ${phrase}`);
+    const normalizedVisibleText = visibleText(html).toLowerCase().replaceAll("’", "'");
+    for (const phrase of [
+      "typed graph retrieval",
+      "deterministic candidate generation",
+      "constrained LLM refinement",
+      "structured validation",
+      "degraded backend fallback",
+      "opt-in evaluation harness",
+      "the model may reason about legal candidates; it may not redefine what is legal",
+      "367/367 canonical character forms/styles",
+      "31 evaluation cases",
+      "zero analyzer calls",
+      "recall from 76.1% to 93.5%",
+      "precision changed from 66.0% to 37.1%",
+      "human-review checkpoint",
+    ]) {
+      assert(normalizedVisibleText.includes(phrase.toLowerCase()), `anotheredenai: missing recruiter-readable AI evidence: ${phrase}`);
     }
     assert(!html.toLowerCase().includes("production-grade"), "anotheredenai: unsupported production-grade claim is present");
     assert(!html.toLowerCase().includes("completed evaluation"), "anotheredenai: unsupported completed-evaluation claim is present");
+    assert(!hasUnsupportedAnotherEdenClaim(visibleText(html)), "anotheredenai: unsupported AI claim or internal milestone label is present");
   }
   if (route === "safapac") {
     const requiredSafapac = [
@@ -164,6 +206,14 @@ for (const { route, title, adjacent } of routes) {
     assert(html.indexOf('id="reliability-boundary"') < html.indexOf('id="anotheredenai-guardrails"'), "anotheredenai: safeguards visual is not integrated after Reliability boundary");
   }
   assert(!html.toLowerCase().includes("whatsapp"), `${route}: must not expose a phone/WhatsApp contact`);
+}
+
+if (process.argv.includes("--self-test")) {
+  assert(!hasUnsupportedAnotherEdenClaim("A deterministic candidate pipeline with paired recall and precision evidence."), "anotheredenai self-test rejected safe copy.");
+  for (const sample of ["93.5% accuracy", "guaranteed winning teams", "C1.1"]) {
+    assert(hasUnsupportedAnotherEdenClaim(sample), `anotheredenai self-test did not reject: ${sample}`);
+  }
+  console.log("AnotherEdenAI validator self-test passed: prohibited accuracy, outcome, and internal-label claims detected.");
 }
 
 if (failures.length > 0) {

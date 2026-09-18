@@ -1,6 +1,6 @@
 ---
 slug: anotheredenai
-title: AnotherEdenAI
+title: AnotherEdenAI — A Roster-Aware GraphRAG Team Recommender with Deterministic Guardrails
 kind: case-study
 hierarchy: primary-personal
 navigation:
@@ -12,17 +12,17 @@ navigation:
 status: actively developed
 period: January 2026 – Present
 context: Personal project
-summary: Building a graph-backed AI system that generates deterministic candidates before constrained LLM refinement, structured validation, correction, and fallback.
+summary: An actively developed GraphRAG team recommender that keeps roster legality and candidate construction deterministic before bounded LLM refinement.
 role: Personal project owner and developer
 capabilities:
-  - name: FastAPI and Python
-    evidence: Web request handling, typed retrieval services, workflow nodes, and the public backend implementation.
-  - name: Neo4j retrieval and deterministic candidates
-    evidence: Typed graph reads, backend role/build scoring, and legal candidate generation before model analysis.
-  - name: Constrained LLM refinement and evaluation
-    evidence: Provider-neutral analyzer adapters, bounded correction, token/output controls, usage capture, and an opt-in evaluation harness.
-  - name: Pydantic validation, fallback, and SSE delivery
-    evidence: Typed request/output contracts, graph-backed legality checks, degraded backend fallback, and the FastAPI/HTMX streaming bridge.
+  - name: Typed graph retrieval and legal candidates
+    evidence: Neo4j-backed facts, deterministic candidate generation, and legality/feasibility checks before model analysis.
+  - name: Constrained LLM refinement
+    evidence: LangGraph orchestration, provider-neutral analyzer adapters, bounded correction, token/output controls, and usage capture.
+  - name: Validation and explicit fallback
+    evidence: Typed output contracts, graph-backed legality checks, degraded backend fallback, and FastAPI/HTMX/SSE delivery.
+  - name: Coverage and evaluation evidence
+    evidence: 367/367 canonical character forms/styles with complete legal-kit data and 31 evaluation cases, including infeasible zero-call cases.
 disclosure:
   review_state: approved
   allowed_claims:
@@ -48,27 +48,38 @@ sources:
 
 ## Summary
 
-AnotherEdenAI is an actively developed AI-assisted lineup recommendation system for the JRPG Another Eden. It combines typed Neo4j retrieval and deterministic candidate generation with constrained LLM refinement, structured validation, correction, degraded fallback, and a streaming web path.
+AnotherEdenAI is an actively developed GraphRAG team recommender for the JRPG Another Eden. It explores how to use an LLM for recommendations without allowing it to become the authority for roster legality, mechanics, or candidate construction.
 
 ## Context
 
-The project is a personal engineering lab for graph-backed recommendation workflows. The public repository brings source data through an ETL boundary into Neo4j, then uses a web request and roster context to drive recommendation retrieval and analysis. The current work is as much about the reliability boundaries around AI output as it is about the recommendation itself.
+The project is a personal engineering lab for graph-backed recommendation workflows. The public repository brings source data through an ETL boundary into Neo4j, then combines a user's question and roster with deterministic candidate construction and bounded model refinement. The current work is as much about the reliability boundaries around AI output as it is about the recommendation itself.
 
 ## Problem
 
-A natural-language recommendation system needs to connect a player's roster to structured game facts without allowing unconstrained model output to become the final answer. The project establishes roster, boss, build, and legality constraints in typed retrieval and deterministic candidate generation before an LLM refines explanations and rankings.
+A natural-language recommendation system needs to connect a player's roster to structured game facts without allowing unconstrained model output to become the final answer. The project establishes roster, boss, build, mechanics, legality, and feasibility constraints in software before an LLM refines explanations and rankings.
 
 ## Pipeline
+
+The core principle is simple: **the model may reason about legal candidates; it may not redefine what is legal.** The public implementation follows this flow:
+
+`User question and roster → graph retrieval → deterministic candidate generation → legality and feasibility checks → bounded analyzer call → validation and correction → deterministic fallback → explanation`
 
 The public implementation has several explicit boundaries:
 
 1. ETL models and loaders transform selected source data into an idempotent Neo4j graph.
-2. A typed production retrieval service resolves canonical boss, roster, skill, equipment, and mechanics facts without placing user prose in graph queries.
+2. Typed graph retrieval resolves canonical boss, roster, skill, equipment, and mechanics facts without placing user prose in graph queries.
 3. Deterministic backend logic derives role scores, build packages, and legal lineup candidates before model analysis.
-4. LangGraph passes the candidate bundle to a provider-neutral analyzer for constrained selection and explanation.
-5. Structured validation freezes valid candidates, permits bounded correction of invalid fragments, and retains backend candidates when analyzer refinement is unavailable.
-6. Pydantic formatting and graph-backed legality checks reject malformed, unsupported, or illegal output before rendering.
-7. FastAPI and HTMX/SSE stream workflow progress and return the typed result or a classified failure path.
+4. Legality and feasibility checks reject impossible candidates before an analyzer call; infeasible cases make zero analyzer calls.
+5. LangGraph passes the candidate bundle to a provider-neutral analyzer through a bounded call for constrained selection and explanation.
+6. Structured validation freezes valid candidates and permits bounded correction of invalid fragments.
+7. A deterministic fallback retains backend candidates or returns a classified failure when analyzer refinement is unavailable.
+8. FastAPI and HTMX/SSE stream workflow progress and return the typed result or failure path.
+
+## Coverage and deterministic feasibility
+
+The accepted portfolio evidence snapshot contains **367/367 canonical character forms/styles** with complete legal-kit data. This is coverage of the reviewed data boundary, not a claim that the project is complete or ready for production.
+
+The feasibility evaluation contains **31 evaluation cases**. Infeasible cases make **zero analyzer calls**, keeping the model away from requests that software has already established cannot produce a legal or feasible team. This is an engineering control, not a claim that an AI successfully answered 31 questions.
 
 ## Engineering decisions
 
@@ -80,12 +91,18 @@ The public implementation has several explicit boundaries:
 
 ## Reliability boundary
 
-The public repository separates typed retrieval, deterministic candidate generation, constrained analysis, and final legality validation. Valid candidates are preserved across a bounded correction round, provider failure activates a labelled degraded backend fallback, and the formatter rejects malformed, illegal, or fact-mismatched output. Token/output limits, usage capture, and prompt-size guards constrain cost exposure without claiming measured savings.
+The public repository separates typed retrieval, deterministic candidate generation, feasibility checks, constrained analysis, and final legality validation. Valid candidates are preserved across a bounded correction round, provider failure activates a labelled degraded backend fallback, and the formatter rejects malformed, illegal, or fact-mismatched output. Token/output limits, usage capture, and prompt-size guards constrain cost exposure without claiming measured savings.
+
+## Held-out extraction evaluation
+
+On held-out evidence, one extraction change increased recall from **76.1% to 93.5%**, while precision changed from **66.0% to 37.1%**. One extraction change substantially increased recall on held-out evidence, but precision fell at the same time. Rather than reporting 93.5% recall alone as an accuracy improvement, I kept the change at a **human-review checkpoint** because the additional coverage came with substantially more false positives.
+
+These paired percentages describe a trade-off under review; **93.5% is not accuracy**, and the result does not establish a final quality decision or any measured change in review effort.
 
 ## Current status
 
-The repository contains implemented ETL, typed graph retrieval, deterministic candidate generation, analyzer adapters, validation, fallback, streaming, automated tests, and an opt-in evaluation harness. The project remains actively developed; evaluation results, recommendation-quality gates, graph quality, cost controls, and deployment decisions are not complete.
+The repository contains implemented ETL, typed graph retrieval, deterministic candidate generation, analyzer adapters, validation, fallback, streaming, automated tests, and an opt-in evaluation harness. The project remains actively developed; evaluation gates, recommendation-quality decisions, graph quality, cost controls, and deployment decisions remain open.
 
 ## Limitations
 
-This case study does not claim production readiness, an evaluation that is already complete, proven recommendation quality, a live deployment, guaranteed factuality, or measured cost/performance improvement. The public repository's current opening uses stronger maturity language than this portfolio allows; this narrative follows the approved active-development boundary.
+This case study does not claim production readiness, proven recommendation quality, a live deployment, guaranteed factuality, guaranteed outcomes, or measured cost/performance improvement. It also does not claim that the recall increase is accuracy, that the evaluation has been accepted as final quality, or that review effort has been reduced. The public repository's current opening uses stronger maturity language than this portfolio allows; this narrative follows the approved active-development boundary.

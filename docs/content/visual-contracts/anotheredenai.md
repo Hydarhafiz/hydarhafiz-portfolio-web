@@ -1,22 +1,22 @@
 # AnotherEdenAI visual contracts
 
-Status: approved for the Feature 4D visual rebuild.
+Status: approved for the Feature 7D case-study implementation.
 
-AnotherEdenAI is the primary personal case study and must remain labelled actively developed. The visuals should communicate the system shape and its reliability boundaries without presenting evaluation, production maturity, or recommendation-quality claims. Apply the [shared Feature 4D diagram rules](./shared.md).
+AnotherEdenAI is the primary personal case study and must remain labelled actively developed. The visuals should communicate the system shape and its reliability boundaries without presenting evaluation, production maturity, or recommendation-quality claims. Apply the [shared diagram rules](./shared.md).
 
 ## `anotheredenai-pipeline`
 
 - Type: primary three-layer architecture visual.
 - Recruiter takeaway: user input and graph-backed knowledge feed one recommendation engine with typed boundaries.
 - Title: `How AnotherEdenAI generates a recommendation`
-- Main story: `User input + Knowledge base → Recommendation engine`.
+- Main story: `User input + Knowledge base → legal and feasible candidates → bounded recommendation engine`.
 
 ### Visible content
 
 | Layer | Label | Short content | Treatment |
 | --- | --- | --- | --- |
 | Top | `User input` | `Query + roster` | Quiet entry layer |
-| Middle | `Recommendation engine` | `Prepare candidates` · `Analyze with LangGraph` · `Validate or fall back` | Largest, strongest accent |
+| Middle | `Recommendation engine` | `Generate legal candidates` · `Check legality + feasibility` · `Bounded LangGraph analysis` · `Validate, correct, or fall back` | Largest, strongest accent |
 | Bottom | `Knowledge base` | `Source data → ETL → Neo4j` | Supporting foundation |
 | Interface | `FastAPI` on the request connector · `HTMX / SSE` for progress and result | None | Delivery/interface labels, not pipeline stages |
 
@@ -34,9 +34,10 @@ HOW ANOTHEREDENAI IS STRUCTURED
                              ▼              ▼
                  ┌────────────────────────────────┐
                  │ RECOMMENDATION ENGINE           │
-                 │ Prepare candidates              │
-                 │ Analyze with LangGraph          │
-                 │ Validate or fall back           │
+                 │ Generate legal candidates       │
+                 │ Check legality + feasibility    │
+                 │ Bounded LangGraph analysis      │
+                 │ Validate, correct, or fall back │
                  └────────────────────────────────┘
 
                  interface: HTMX / SSE · progress + result
@@ -95,8 +96,12 @@ Placement: render immediately after the `Reliability boundary` heading, beside t
 - The collapsed text alternative lists the four independent safeguards and the result/failure boundary without inventing a sequence.
 - Do not show guaranteed factuality, success rates, production maturity, live deployment, model or provider credentials, raw prompts, private logs, or measured cost/performance outcomes.
 
+## Feature 7D content boundary
+
+The page copy must pair the architecture with the approved evidence: 367/367 canonical character forms/styles, 31 evaluation cases with zero analyzer calls for infeasible cases, and recall moving from 76.1% to 93.5% while precision moves from 66.0% to 37.1%. The paired percentages remain at a human-review checkpoint and are never presented as 93.5% accuracy.
+
 ## Contract boundary
 
 Both figures are newly redrawn from the current public repository and approved active-development boundary. FastAPI, HTMX/SSE, LangGraph, typed validation, fallback, ETL, and Neo4j describe the public project shape; they do not establish production readiness or evaluated recommendation quality.
 
-Hydar approved the revised titles, labels, shared rules, and mockups for both AnotherEdenAI visuals before implementation resumed.
+Hydar approved the revised titles, labels, shared rules, and mockups for both AnotherEdenAI visuals before Feature 7D implementation resumed. The visuals remain sanitized, original, and public-source-grounded.

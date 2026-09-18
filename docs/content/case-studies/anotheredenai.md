@@ -1,22 +1,22 @@
 ---
 slug: anotheredenai
-title: AnotherEdenAI
+title: AnotherEdenAI — A Roster-Aware GraphRAG Team Recommender with Deterministic Guardrails
 kind: case-study
 hierarchy: primary-personal
 status: actively developed
-period: December 2025 – Present
+period: January 2026 – Present
 context: Personal project
-summary: Building a graph-backed AI system that generates deterministic candidates before constrained LLM refinement, structured validation, correction, and fallback.
+summary: An actively developed GraphRAG team recommender that keeps roster legality and candidate construction deterministic before bounded LLM refinement.
 role: Personal project owner and developer
 capabilities:
-  - name: FastAPI and Python
-    evidence: Web request handling, typed retrieval services, workflow nodes, and the public backend implementation.
-  - name: Neo4j retrieval and deterministic candidates
-    evidence: Typed graph reads, backend role/build scoring, and legal candidate generation before model analysis.
-  - name: Constrained LLM refinement and evaluation
-    evidence: Provider-neutral analyzer adapters, bounded correction, token/output controls, usage capture, and an opt-in evaluation harness.
-  - name: Pydantic validation, fallback, and SSE delivery
-    evidence: Typed request/output contracts, graph-backed legality checks, degraded backend fallback, and the FastAPI/HTMX streaming bridge.
+  - name: Typed graph retrieval and legal candidates
+    evidence: Neo4j-backed facts, deterministic candidate generation, and legality/feasibility checks before model analysis.
+  - name: Bounded LLM refinement
+    evidence: LangGraph orchestration, provider-neutral analyzer adapters, bounded correction, token/output controls, and usage capture.
+  - name: Validation and explicit fallback
+    evidence: Typed output contracts, graph-backed legality checks, degraded backend fallback, and FastAPI/HTMX/SSE delivery.
+  - name: Coverage and evaluation evidence
+    evidence: 367/367 canonical character forms/styles with complete legal-kit data and 31 evaluation cases, including infeasible zero-call cases.
 disclosure:
   review_state: approved
   allowed_claims:
@@ -38,48 +38,39 @@ sources:
   - https://github.com/Hydarhafiz/AnotherEdenAI/blob/main/src/workflow/state.py
   - https://github.com/Hydarhafiz/AnotherEdenAI/blob/main/src/workflow/nodes/format.py
   - https://github.com/Hydarhafiz/AnotherEdenAI/blob/main/src/web/streaming.py
+  - docs/core/milestone.md Feature 7D and its human-approved content contract
 ---
 
 ## Summary
 
-AnotherEdenAI is an actively developed AI-assisted lineup recommendation system for the JRPG Another Eden. It combines typed Neo4j retrieval and deterministic candidate generation with constrained LLM refinement, structured validation, correction, degraded fallback, and a streaming web path.
+AnotherEdenAI is an actively developed GraphRAG team recommender for the JRPG Another Eden. It explores how to use an LLM for recommendations without allowing it to become the authority for roster legality, mechanics, or candidate construction.
 
-## Context
+## Problem and principle
 
-The project is a personal engineering lab for graph-backed recommendation workflows. The public repository brings source data through an ETL boundary into Neo4j, then uses a web request and roster context to drive recommendation retrieval and analysis. The current work is as much about the reliability boundaries around AI output as it is about the recommendation itself.
+A natural-language recommendation system needs to connect a player's roster to structured game facts without allowing unconstrained model output to become the final answer. **The model may reason about legal candidates; it may not redefine what is legal.**
 
-## Problem
+## Architecture
 
-A natural-language recommendation system needs to connect a player's roster to structured game facts without allowing unconstrained model output to become the final answer. The project establishes roster, boss, build, and legality constraints in typed retrieval and deterministic candidate generation before an LLM refines explanations and rankings.
+The public implementation follows this flow:
 
-## Pipeline
+`User question and roster → graph retrieval → deterministic candidate generation → legality and feasibility checks → bounded analyzer call → validation and correction → deterministic fallback → explanation`
 
-The public implementation has several explicit boundaries:
+ETL transforms selected source data into an idempotent Neo4j graph. Typed retrieval resolves canonical game facts without placing user prose in graph queries. Deterministic backend logic derives role scores, build packages, and legal lineup candidates before a bounded LangGraph analyzer call. Structured validation permits bounded correction, while a deterministic fallback retains backend candidates or returns a classified failure when provider refinement is unavailable. FastAPI and HTMX/SSE stream progress and the typed result.
 
-1. ETL models and loaders transform selected source data into an idempotent Neo4j graph.
-2. A typed production retrieval service resolves canonical boss, roster, skill, equipment, and mechanics facts without placing user prose in graph queries.
-3. Deterministic backend logic derives role scores, build packages, and legal lineup candidates before model analysis.
-4. LangGraph passes the candidate bundle to a provider-neutral analyzer for constrained selection and explanation.
-5. Structured validation freezes valid candidates, permits bounded correction of invalid fragments, and retains backend candidates when analyzer refinement is unavailable.
-6. Pydantic formatting and graph-backed legality checks reject malformed, unsupported, or illegal output before rendering.
-7. FastAPI and HTMX/SSE stream workflow progress and return the typed result or a classified failure path.
+## Coverage and deterministic feasibility
 
-## Engineering decisions
-
-- Use typed graph retrieval so characters, skills, traits, equipment, bosses, and mechanics remain structured instead of being flattened into one prompt.
-- Generate and validate legal candidates in backend code before the LLM selects or explains a recommendation.
-- Keep analyzer calls bounded through output limits, payload caps, usage tracking, and correction of only invalid fragments.
-- Return labelled degraded backend candidates when provider refinement fails rather than retrying indefinitely or inventing alternatives.
-- Keep provider configuration behind shared adapters so model experiments do not rewrite workflow logic.
+The accepted portfolio evidence snapshot contains **367/367 canonical character forms/styles** with complete legal-kit data. The feasibility evaluation contains **31 evaluation cases**; infeasible cases make **zero analyzer calls**. This is an engineering control, not a claim that an AI successfully answered 31 questions.
 
 ## Reliability boundary
 
-The public repository separates typed retrieval, deterministic candidate generation, constrained analysis, and final legality validation. Valid candidates are preserved across a bounded correction round, provider failure activates a labelled degraded backend fallback, and the formatter rejects malformed, illegal, or fact-mismatched output. Token/output limits, usage capture, and prompt-size guards constrain cost exposure without claiming measured savings.
+Typed retrieval, deterministic candidate generation, legality and feasibility checks, bounded analysis, final legality validation, and explicit fallback keep the model inside a constrained role. Token/output limits, usage capture, and prompt-size guards constrain cost exposure without claiming measured savings.
 
-## Current status
+## Held-out extraction evaluation
 
-The repository contains implemented ETL, typed graph retrieval, deterministic candidate generation, analyzer adapters, validation, fallback, streaming, automated tests, and an opt-in evaluation harness. The project remains actively developed; evaluation results, recommendation-quality gates, graph quality, cost controls, and deployment decisions are not complete.
+On held-out evidence, one extraction change increased recall from **76.1% to 93.5%**, while precision changed from **66.0% to 37.1%**. The recall increase came with substantially more false positives, so I kept the change at a **human-review checkpoint** rather than presenting 93.5% recall alone as an accuracy improvement.
 
-## Limitations
+## Current status and limitations
 
-This case study does not claim production readiness, an evaluation that is already complete, proven recommendation quality, a live deployment, guaranteed factuality, or measured cost/performance improvement. The public repository's current opening uses stronger maturity language than this portfolio allows; this narrative follows the approved active-development boundary.
+The public repository contains implemented ETL, typed graph retrieval, deterministic candidate generation, analyzer adapters, validation, fallback, streaming, automated tests, and an opt-in evaluation harness. The project remains actively developed; evaluation gates, recommendation-quality decisions, graph quality, cost controls, and deployment decisions remain open.
+
+This case study does not claim production readiness, proven recommendation quality, a live deployment, guaranteed outcomes, measured cost/performance improvement, 93.5% accuracy, accepted final quality, or reduced human-review effort.

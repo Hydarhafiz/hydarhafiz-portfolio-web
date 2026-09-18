@@ -85,7 +85,10 @@ assert(anotherEdenAIText.includes("Recommendation engine"), "AnotherEdenAI: reco
 assert(anotherEdenAIText.includes("Knowledge base"), "AnotherEdenAI: knowledge base is missing");
 assert(anotherEdenAIText.includes("User input"), "AnotherEdenAI: user input layer is missing");
 assert(anotherEdenAIText.includes("Source data → ETL → Neo4j"), "AnotherEdenAI: knowledge path is missing");
-assert(anotherEdenAIText.includes("Validate or fall back"), "AnotherEdenAI: recommendation boundary is missing");
+assert(anotherEdenAIText.includes("Generate legal candidates"), "AnotherEdenAI: deterministic candidate generation is missing");
+assert(anotherEdenAIText.includes("Check legality + feasibility"), "AnotherEdenAI: legality/feasibility boundary is missing");
+assert(anotherEdenAIText.includes("Bounded LangGraph analysis"), "AnotherEdenAI: bounded analyzer boundary is missing");
+assert(anotherEdenAIText.includes("Validate, correct, or fall back"), "AnotherEdenAI: recommendation boundary is missing");
 assert(anotherEdenAIText.includes("Four bounded checks around AnotherEdenAI's AI-assisted recommendation output."), "AnotherEdenAI: guardrails caption does not match the approved visual contract");
 assert(anotherEdenAIText.includes("How AnotherEdenAI validates recommendations"), "AnotherEdenAI: safeguards title does not match the approved visual contract");
 assert(anotherEdenAIText.includes("Legality rules"), "AnotherEdenAI: legality safeguard is missing");

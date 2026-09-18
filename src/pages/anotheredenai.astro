@@ -15,7 +15,7 @@ const { Content, headings } = await render(entry);
 const adjacent = entries.filter((candidate) => candidate.data.slug !== entry.data.slug);
 ---
 
-<SiteLayout title="AnotherEdenAI — Hydar Hafiz" description={entry.data.summary}>
+<SiteLayout title={`${entry.data.title} — Hydar Hafiz`} description={entry.data.summary}>
   <CaseStudyPage
     entry={entry}
     headings={headings}

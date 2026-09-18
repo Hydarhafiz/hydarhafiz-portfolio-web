@@ -42,9 +42,10 @@ import VisualFigure from "./VisualFigure.astro";
     <section class="architecture-engine">
       <p class="visual-art__eyebrow">Recommendation engine</p>
       <div class="engine-capabilities">
-        <span>Prepare candidates</span>
-        <span>Analyze with LangGraph</span>
-        <span>Validate or fall back</span>
+        <span>Generate legal candidates</span>
+        <span>Check legality + feasibility</span>
+        <span>Bounded LangGraph analysis</span>
+        <span>Validate, correct, or fall back</span>
       </div>
       <p class="architecture-interface-note">HTMX / SSE · progress + result</p>
     </section>
@@ -52,6 +53,6 @@ import VisualFigure from "./VisualFigure.astro";
   <ol slot="fallback" class="visual-figure__fallback-list">
     <li>User input includes a query and roster and is delivered through FastAPI and HTMX/SSE.</li>
     <li>Knowledge comes from source data processed through ETL into Neo4j and supplies graph context.</li>
-    <li>The recommendation engine prepares candidates, coordinates LangGraph analysis, and validates typed output or follows a fallback path; the project remains actively developed.</li>
+    <li>The recommendation engine generates legal candidates, checks feasibility before a bounded LangGraph analysis, and validates, corrects, or follows a deterministic fallback path; the project remains actively developed.</li>
   </ol>
 </VisualFigure>

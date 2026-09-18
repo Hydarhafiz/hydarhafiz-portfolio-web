@@ -254,7 +254,7 @@ Keep PETRONAS in the Experience section rather than adding another flagship rout
 
 ### Feature 7D — AnotherEdenAI major personal case study
 
-- Type/status: build/content migration; planned after 7C
+- Type/status: build/content migration; completed 2026-09-18
 - Outcome: present AnotherEdenAI as an actively developed, reliability-focused GraphRAG system through recruiter-readable architecture and honest evaluation evidence.
 - Scope: implement the deterministic-versus-LLM authority boundary, pipeline, coverage/evaluation evidence, infeasible zero-call behavior, recall/precision trade-off, current public-repository link, sanitized visuals, metadata, and validation.
 - Non-goals: exposing internal milestone labels, changing the AnotherEdenAI repository, claiming overall completion percentage, 93.5% accuracy, accepted quality, reduced review effort, guaranteed outcomes, or production readiness.
@@ -266,6 +266,7 @@ Keep PETRONAS in the Experience section rather than adding another flagship rout
   - no `C1.1`/`C2` labels or invented completion percentage appear in public copy;
   - active-development maturity, responsive/accessibility, theme, links, and public-source boundaries pass validation.
 - Durable evidence: updated AnotherEdenAI content/visual contracts and page, negative AI-claim tests, and one completed-feature commit.
+- Completion evidence: `npm run check`, `npm run build`, `npm run content:validate`, `npm run content:validate -- --self-test`, `npm run site:validate`, `npm run homepage:validate`, `npm run case-studies:validate`, `npm run case-studies:validate -- --self-test`, `npm run visuals:validate`, `npm run launch:validate`, `npm run resume:page:validate`, `npm run resume:validate`, `npm run profile:validate`, `npm run profile:self-test`, `bash scripts/check-public-boundary.sh --self-test`, `bash scripts/check-public-boundary.sh`, and `git diff --check` passed. No manual checkpoint was required; final readability, browser behavior, and faithful-meaning review remain Feature 7G scope.
 - Route: `builder-executor -> tdd-loop`.
 
 ### Feature 7E — SAF Sky Quest supporting deployment case study
