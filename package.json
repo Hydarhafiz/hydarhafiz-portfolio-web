@@ -13,6 +13,7 @@
     "launch:live": "node scripts/validate-launch-contract.mjs --live",
     "linkedin:validate": "node scripts/validate-linkedin-launch.mjs",
     "site:validate": "node scripts/validate-site-foundation.mjs",
+    "content:validate": "node scripts/validate-content-contract.mjs",
     "homepage:validate": "node scripts/validate-homepage.mjs",
     "case-studies:validate": "node scripts/validate-case-studies.mjs",
     "visuals:validate": "node scripts/validate-visuals.mjs",

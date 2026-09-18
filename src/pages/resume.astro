@@ -8,8 +8,8 @@ const careerData = resolveCareerProfile(careerSource, "default");
 ---
 
 <SiteLayout
-  title="Hydar Hafiz — Software Engineer Resume"
+  title="Hydar Hafiz — Backend Engineer Resume"
   description="Public resume for Hydar Hafiz bin Hydzelan, a software engineer focused on Backend, Cloud and Applied AI."
 >
-  <ResumePage data={careerData} />
+  <ResumePage data={careerData} publicHeadline={careerSource.portfolioContract.identity.publicResumeHeadline} />
 </SiteLayout>

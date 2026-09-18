@@ -23,7 +23,7 @@ if (failures.length === 0) {
 
   assert(h1Count === 1, `Homepage: expected one page-level h1, found ${h1Count}`);
   assert(html.includes("Hi, I'm Hydar"), "Homepage: missing requested hero introduction");
-  assert(html.includes("Software Engineer — Backend, Cloud &amp; Applied AI"), "Homepage: missing umbrella engineering identity");
+  assert(html.includes("Backend Engineer building production cloud and AI systems."), "Homepage: missing approved primary engineering identity");
   assert(html.includes("Engineering focus"), "Homepage: missing engineering-focus label");
   assert(html.includes("Portrait of Hydar Hafiz bin Hydzelan"), "Homepage: missing accessible profile portrait");
   assert(html.includes("About me"), "Homepage: missing About me section");
@@ -48,7 +48,6 @@ if (failures.length === 0) {
   assert(html.includes("AIRIS"), "Homepage: missing AIRIS content");
   assert(html.includes("Terraform-managed AWS delivery"), "Homepage: missing approved Terraform/AWS positioning");
   assert(html.includes("optimization recommendations for senior developer/project manager review"), "Homepage: AIRIS recommendation and review boundary is missing");
-  assert(!html.includes('href="/airis"'), "Homepage: AIRIS must remain a supporting contribution without a dedicated route");
   assert(html.indexOf('home-introduction__portrait') < html.indexOf('home-introduction__actions'), "Homepage: portrait should precede hero actions in mobile reading order");
   assert(html.includes('id="airis-load-testing"'), "Homepage: missing AIRIS visual");
   assert(html.includes('class="supporting-card__visual"'), "Homepage: AIRIS visual is not integrated into its contribution card");

@@ -2,7 +2,7 @@
   "basics": {
     "name": "Hydar Hafiz bin Hydzelan",
     "location": "Bangi, Selangor, Malaysia",
-    "mobility": "Open to relocation across Malaysia",
+    "mobility": "Kuala Lumpur / Selangor",
     "availability": "Available November 2026",
     "email": "shogunix.chan@gmail.com",
     "links": [
@@ -21,6 +21,88 @@
         "display": "hydarhafiz.com",
         "url": "https://hydarhafiz.com"
       }
+    ]
+  },
+  "portfolioContract": {
+    "authority": "docs/core/milestone.md",
+    "identity": {
+      "primary": "Backend Engineer",
+      "hero": "Backend Engineer building production cloud and AI systems.",
+      "supportingNarrative": "Python/FastAPI backends, AWS delivery systems, and reliability-focused AI applications spanning API/data design, infrastructure automation, performance engineering, and constrained LLM workflows.",
+      "differentiators": ["Cloud & DevOps", "Applied AI"],
+      "publicResumeHeadline": "Backend Engineer | Cloud & Applied AI",
+      "locationTargeting": "Kuala Lumpur / Selangor"
+    },
+    "projectOrder": [
+      {
+        "id": "safapac",
+        "label": "SAFAPAC",
+        "surface": "flagship professional case study",
+        "route": "/safapac",
+        "maturity": "AWS-hosted internal pilot"
+      },
+      {
+        "id": "airis",
+        "label": "AIRIS",
+        "surface": "major applied-AI case study",
+        "route": "/airis",
+        "maturity": "Applied-AI engineering experiments"
+      },
+      {
+        "id": "anotheredenai",
+        "label": "AnotherEdenAI",
+        "surface": "major personal case study",
+        "route": "/anotheredenai",
+        "maturity": "Active development",
+        "startDate": "January 2026"
+      },
+      {
+        "id": "saf-sky-quest",
+        "label": "SAF Sky Quest",
+        "surface": "supporting cloud-deployment case study",
+        "route": "/saf-sky-quest",
+        "maturity": "Supporting case study"
+      }
+    ],
+    "experienceOrder": ["SAFAPAC", "AIRIS", "PETRONAS Digital internship"],
+    "publicResume": {
+      "route": "/resume",
+      "profile": "one balanced public profile",
+      "phoneFree": true,
+      "targetedProfilesPrivate": true,
+      "allowedContactFields": ["email", "location", "availability", "LinkedIn", "GitHub", "website"],
+      "sectionOrder": ["Summary", "Technical Skills", "Professional Experience", "Personal Project", "Education & Certifications"]
+    },
+    "metrics": [
+      {
+        "id": "safapac-governed-defaults",
+        "project": "SAFAPAC",
+        "value": "33,047 governed defaults",
+        "requiredContext": ["12 processes", "22 feedstocks", "217 countries"]
+      },
+      {
+        "id": "safapac-sensitivity",
+        "project": "SAFAPAC",
+        "value": "50 ms p95",
+        "requiredContext": ["33-point sensitivity workflow", "10 staging acceptance cycles"]
+      },
+      {
+        "id": "airis-context",
+        "project": "AIRIS",
+        "value": "96.1% less local RAG context",
+        "requiredContext": ["6-scenario/10-turn controlled experiment", "541k to 20.9k local-context tokens", "10/10 citation checks passed"]
+      },
+      {
+        "id": "anotheredenai-coverage",
+        "project": "AnotherEdenAI",
+        "value": "367/367 legal-kit coverage",
+        "requiredContext": ["canonical character forms/styles", "accepted portfolio evidence snapshot"]
+      }
+    ],
+    "forbiddenPublicWording": [
+      "open to relocation across Malaysia",
+      "opportunities across Malaysia",
+      "December 2025 – Present"
     ]
   },
   "capabilityGroups": [

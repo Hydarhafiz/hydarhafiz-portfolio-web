@@ -21,7 +21,7 @@ Use sources in this order:
 
 Lower layers can identify what to investigate. They cannot silently override a higher layer or upgrade an unsupported claim.
 
-The active software milestone remains governed by `docs/core/milestone.md`. The career registry governs public career wording; `.sdd/` remains reconstructable execution cache and must never be the only home of a durable claim decision.
+The active software milestone remains governed by `docs/core/milestone.md`. During Milestone 7, that milestone is the sole authority for public career meaning and wording; this registry is supporting historical research and evidence context only. `.sdd/` remains reconstructable execution cache and must never be the only home of a durable claim decision.
 
 ## Registry map
 

@@ -14,6 +14,14 @@ const disclosure = z.object({
   maturity_boundary: z.string()
 });
 
+const navigation = z.object({
+  route: z.string().regex(/^\/[a-z0-9]+(?:-[a-z0-9]+)*$/),
+  order: z.number().int().positive(),
+  surface: z.enum(["flagship", "major-case-study", "supporting"]),
+  label: z.string(),
+  link_state: z.enum(["active", "planned"])
+});
+
 const caseStudies = defineCollection({
   loader: glob({
     pattern: "**/*.{md,mdx}",
@@ -23,7 +31,8 @@ const caseStudies = defineCollection({
     slug: z.string(),
     title: z.string(),
     kind: z.enum(["case-study", "supporting-contribution"]),
-    hierarchy: z.enum(["primary-professional", "primary-personal", "supporting"]),
+    hierarchy: z.enum(["primary-professional", "primary-applied-ai", "primary-personal", "supporting"]),
+    navigation: navigation.optional(),
     status: z.string(),
     period: z.string(),
     context: z.string(),

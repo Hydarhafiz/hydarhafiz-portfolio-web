@@ -2,11 +2,12 @@
 
 ## Program outcome
 
-Create an internationally readable, Malaysia-first job-search package that positions Hydar Hafiz bin Hydzelan as a `Software Engineer — Backend, Cloud & Applied AI`. Backend remains the strongest foundation, while Cloud/DevOps and Applied AI are evidence-backed target paths within one coherent T-shaped engineering identity.
+Create an internationally readable, Malaysia-first job-search package that positions Hydar Hafiz bin Hydzelan as a `Backend Engineer building production cloud and AI systems.` Backend remains the foundation, while Cloud & DevOps and Applied AI are evidence-backed differentiators within one coherent identity.
 
 ## Durable boundaries
 
-- Public umbrella identity: Software Engineer — Backend, Cloud & Applied AI.
+- Public primary identity: Backend Engineer.
+- Approved public resume headline: Backend Engineer | Cloud & Applied AI.
 - Target roles: Backend Software Engineer, Cloud & DevOps Engineer, and Applied AI Engineer.
 - T-shaped hierarchy: Backend is the strongest foundation; Cloud/DevOps reflects substantial evidence-backed infrastructure and delivery contribution; Applied AI is a strong emerging specialization.
 - Primary market: Malaysia, especially Kuala Lumpur and Selangor; secondary market: Singapore and realistic international remote roles.
@@ -21,7 +22,7 @@ Completed on 2026-09-01. Established a public-safe repository, generated approve
 
 ### 2. Case-study content — completed on 2026-09-01
 
-Produced disclosure-reviewed SAFAPAC and AnotherEdenAI flagship narratives, a compact AIRIS contribution, and original sanitized visual contracts. The framework-neutral content is reusable for the later Astro/MDX implementation.
+Produced the initial disclosure-reviewed SAFAPAC and AnotherEdenAI narratives, an initial AIRIS contribution, and original sanitized visual contracts. Milestone 7 supersedes that earlier hierarchy and wording where its human-approved contract is more current.
 
 ### 3. UX/UI specification — completed on 2026-09-01
 
@@ -33,7 +34,7 @@ Implemented the approved Astro/TypeScript/MDX portfolio with its shared accessib
 
 ### 5. T-shaped career positioning — completed on 2026-09-05
 
-Established the approved `Software Engineer — Backend, Cloud & Applied AI` umbrella identity across one canonical career model, the portfolio, case studies, metadata, and recruiter guidance. Produced one balanced public resume and targeted Backend, Cloud, and Applied AI application profiles from shared facts, strengthened verified Terraform/OIDC/SSM cloud evidence, preserved AIRIS as a supporting recommendation/reporting contribution, and passed one-page ATS, privacy, disclosure, site, and manual review gates.
+Established the earlier shared career model and profile outputs. Milestone 7 supersedes its public positioning where the active milestone records a newer human-approved contract.
 
 ### 6. Deployment and launch — completed on 2026-09-16
 
@@ -41,7 +42,7 @@ Launched `https://hydarhafiz.com` through Cloudflare DNS and Pages with direct-`
 
 ### 7. Human-approved portfolio resynchronization — active
 
-Resynchronize the public portfolio with the human-approved career narrative in `docs/core/milestone.md`: rebuild SAFAPAC as the flagship professional backend/cloud case study; promote AIRIS and AnotherEdenAI into major applied-AI case studies; add SAF Sky Quest as a compact supporting deployment story; then align the homepage, experience content, and balanced public resume before final technical and disclosure QA.
+Resynchronize the public portfolio with the human-approved career narrative in `docs/core/milestone.md`: rebuild SAFAPAC as the flagship professional backend/cloud case study; promote AIRIS and AnotherEdenAI into major applied-AI case studies; add SAF Sky Quest as a compact supporting deployment story; then align the homepage, experience content, and balanced public resume before final technical and disclosure QA. The shared model records this hierarchy and its planned routes before later features fill each page's final copy.
 
 `docs/core/milestone.md` is the sole career-content authority for Milestone 7. The older `docs/career/` registry, existing pages, validators, and historical content documents are migration inputs or supporting history only and cannot approve, weaken, reinterpret, or remove milestone-approved content.
 

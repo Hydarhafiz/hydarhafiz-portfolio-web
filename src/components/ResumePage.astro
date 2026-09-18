@@ -57,9 +57,10 @@ interface CareerData {
 
 interface Props {
   data: CareerData;
+  publicHeadline: string;
 }
 
-const { data } = Astro.props;
+const { data, publicHeadline } = Astro.props;
 const pdfHref = "/resume/hydar-hafiz-bin-hydzelan-resume.pdf";
 const selectedProject = data.projects[0];
 ---
@@ -69,7 +70,7 @@ const selectedProject = data.projects[0];
     <div class="resume-page__identity">
       <p class="eyebrow">Public resume</p>
       <h1>{data.basics.name}</h1>
-      <p class="resume-page__role">{data.basics.title}</p>
+      <p class="resume-page__role">{publicHeadline}</p>
     </div>
 
     <div class="resume-page__actions" aria-label="Resume actions">

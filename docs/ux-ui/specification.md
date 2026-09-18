@@ -1,12 +1,12 @@
 # Hydar Hafiz portfolio UX/UI specification
 
-Status: Milestone 3 approved-scope working specification
+Status: Milestone 7 synchronized implementation specification
 
 Date: 2026-09-01
 
 ## 1. Product brief
 
-This is a recruiter-readable portfolio for Hydar Hafiz bin Hydzelan, positioned as a `Software Engineer — Backend, Cloud & Applied AI` based in Bangi, Selangor, Malaysia. The public experience should present one T-shaped engineering identity: Backend as the strongest foundation, Cloud/DevOps as substantial delivery ownership, and Applied AI as an emerging specialization.
+This is a recruiter-readable portfolio for Hydar Hafiz bin Hydzelan, positioned as a `Backend Engineer building production cloud and AI systems.` based in Bangi, Selangor, Malaysia, with current targeting in Kuala Lumpur and Selangor. The public experience should present Backend as the foundation, with Cloud & DevOps and Applied AI as evidence-backed differentiators.
 
 Primary user goals:
 
@@ -28,17 +28,18 @@ Design success means that hierarchy, status, contribution boundaries, and limita
 The implementation team must treat these sources as the content authority, in order:
 
 1. Current repository behavior and verified public/generated artifacts.
-2. `resume/career-data.json` and `docs/career/profile-alignment.md` for approved career facts and public wording.
-3. `docs/core/architecture.md`, `docs/core/content-boundary.md`, `docs/core/planning-sources.md`, and `docs/core/roadmap.md`.
-4. The approved Milestone 2 content, disclosure, and visual contracts under `docs/content/`.
+2. `docs/core/milestone.md` for Milestone 7 career meaning, hierarchy, metrics, attribution, maturity, disclosure, and allowed wording.
+3. Current technical model/configuration and the synchronized canonical docs under `docs/core/`, `docs/content/`, and `docs/ux-ui/`.
+4. The older `docs/career/` registry and historical content/disclosure documents as supporting migration inputs only.
 
 The following are fixed product constraints:
 
-- SAFAPAC is the primary professional case study.
-- AnotherEdenAI is the primary personal case study and must be labelled `actively developed`.
-- AIRIS is a compact supporting contribution; it must not become a fourth flagship or a dedicated route.
-- SAFAPAC retains `deployed beta / internal validation` wording and Hydar's assigned backend, database, calculation-traceability, validation, testability, documentation, and AWS delivery boundary.
-- AIRIS retains workload/concurrency testing, bottleneck diagnosis, reporting, optimization recommendations for senior developer/project manager review, and stakeholder training wording without architecture ownership, final-decision authority, recommendation implementation, or production-improvement claims.
+- The ordered project hierarchy is SAFAPAC, AIRIS, AnotherEdenAI, then SAF Sky Quest; PETRONAS remains experience content.
+- SAFAPAC is the flagship professional case study and must use the `AWS-hosted internal pilot` maturity boundary.
+- AIRIS is a major applied-AI case study and must preserve the approved experiment scope, evidence context, and senior-engineer implementation attribution.
+- AnotherEdenAI is a major personal case study, starts in January 2026, and must be labelled `Active development`.
+- SAF Sky Quest is a compact supporting deployment case study with explicit teammate/frontend attribution and 29 registration records captured.
+- The shared public resume is one balanced `Backend Engineer | Cloud & Applied AI` profile and is phone-free.
 - No phone number is shown anywhere in the public site.
 - No confidential employer material, copied diagrams, private screenshots, internal URLs, credentials, customer/stakeholder data, proprietary formulas, exact private metrics, or unapproved performance/evaluation claims are presented.
 
@@ -256,7 +257,7 @@ Purpose: establish positioning, evidence hierarchy, and clear next actions in on
 #### Order and content
 
 1. **Hero / positioning**
-   - Eyebrow: `Software Engineer · Backend, Cloud & Applied AI`.
+   - Eyebrow: `Backend Engineer · Cloud & Applied AI`.
    - H1: a concise backend/reliability/applied-AI positioning statement sourced from the approved profile and resume language.
    - Supporting copy: Python, FastAPI, PostgreSQL, AWS, and applied-AI systems; keep the sentence factual and compact.
    - Metadata: `Bangi, Selangor, Malaysia` and `Available November 2026`.
@@ -266,10 +267,11 @@ Purpose: establish positioning, evidence hierarchy, and clear next actions in on
 
 2. **Selected work**
    - Section intro explains that these are selected engineering contributions.
-   - SAFAPAC appears first as the largest featured card, marked `Primary professional case study` and `Deployed beta / internal validation`.
-   - AnotherEdenAI appears second as a flagship card, marked `Primary personal case study` and `Actively developed`.
+   - SAFAPAC appears first as the largest featured card, marked `Flagship professional case study` and `AWS-hosted internal pilot`.
+   - AIRIS follows as a major applied-AI case study, with its experiment and implementation-attribution boundary visible.
+   - AnotherEdenAI follows as a major personal case study, marked `Active development`.
+   - SAF Sky Quest remains a compact supporting deployment card.
    - Each card shows summary, role/context, period, 2–4 evidence-bearing capability labels, and a `Read case study` link.
-   - AIRIS appears as a compact supporting row/card marked `Supporting contribution`, with no visual weight equal to the flagships and no route link required.
 
 3. **Experience**
    - AMIC first, with the approved Backend Software Developer (Contract) dates and a concise version of the SAFAPAC/AIRIS contribution boundary.
@@ -304,7 +306,7 @@ Purpose: show the primary professional case study with a clear personal contribu
 
 - Breadcrumb: `Home / Selected work / SAFAPAC`.
 - Hierarchy label: `Primary professional case study`.
-- Status: `Deployed beta / internal validation`.
+- Status: `AWS-hosted internal pilot`.
 - H1: `SAFAPAC`.
 - Summary: use the approved one-sentence summary.
 - Metadata: `November 2025 – October 2026`, `Aerospace Malaysia Innovation Centre in collaboration with Airbus`, and `Backend Software Developer (Contract)`.
@@ -319,14 +321,14 @@ Purpose: show the primary professional case study with a clear personal contribu
 5. Collaboration boundary: five TEA-SAF domain researchers, one frontend developer, and a separate five-person Airbus internal pilot group as validation context.
 6. `safapac-transition` visual.
 7. `safapac-delivery` visual.
-8. Outcome: traceability, validation, testability, documentation, and release reliability in the deployed beta/internal-validation context.
+8. Outcome: governed defaults, targeted sensitivity performance, AWS delivery, TLS recovery, staging safety, and the current internal-pilot boundary.
 9. Limitations: no proprietary formulas/defaults, rollout size/geography, private artifacts, costs, or unapproved measurements.
 
 The page may use a desktop table-of-contents rail keyed to these sections. On small screens it becomes an inline, keyboard-operable contents disclosure or an ordered list before the narrative.
 
 #### Visual treatment
 
-Use a blue-teal ordered transformation motif. The transition timeline is the primary visual: inherited scope, backend/data restructuring, calculation boundary and validation, containerized CI/delivery and AWS operations, then deployed beta/internal validation. Responsibility lanes must be labelled in text and not imply Hydar owned collaborators' work.
+Use a blue-teal ordered transformation motif. The transition timeline is the primary visual: inherited scope, backend/data restructuring, calculation boundary and validation, containerized CI/delivery and AWS operations, then the AWS-hosted internal pilot. Responsibility lanes must be labelled in text and not imply Hydar owned collaborators' work.
 
 The delivery figure is a separate high-level relationship diagram connecting analyst-facing web application, HTTPS/Nginx edge, FastAPI backend, PostgreSQL data, container/CI delivery, and approved AWS service categories. It must not show formulas, internal endpoints, account/region identifiers, network topology, secrets, customer data, detailed security configuration, or copied cloud diagrams.
 
@@ -343,7 +345,7 @@ Purpose: show the primary personal case study as an active engineering project w
 - Status: `Actively developed` must be visible in the eyebrow, badge, and/or first metadata group.
 - H1: `AnotherEdenAI`.
 - Summary: use the approved source-grounded summary.
-- Metadata: `December 2025 – Present`, `Personal project`, and a public repository link.
+- Metadata: `January 2026 – Present`, `Personal project`, and a public repository link.
 - A short note should state that evaluation, recommendation reliability, graph quality, cost control, and deployment decisions remain active work.
 
 #### Narrative order
@@ -372,7 +374,7 @@ Purpose: provide a semantic, readable web resume and a direct download of the ap
 
 #### Order and content
 
-1. Page header with full name, `Software Engineer — Backend, Cloud & Applied AI`, Bangi/Selangor/Malaysia, and contact links.
+1. Page header with full name, `Backend Engineer | Cloud & Applied AI`, Bangi/Selangor/Malaysia, current Kuala Lumpur/Selangor targeting, and contact links.
 2. `Download public resume (PDF)` as the primary action; identify it as a PDF download and keep it adjacent to the web version.
 3. Summary matching the public resume/career data.
 4. Experience: AMIC then PETRONAS Digital with approved titles, dates, and public-safe bullets.
@@ -404,7 +406,7 @@ Use three behavior states. Exact breakpoint values may be tuned in implementatio
 | --- | --- | --- |
 | Wide | 1024px and above | Full header navigation; generous two-column hero/metadata options; two-column selected-work grid; case-study content plus optional sticky contents rail; horizontal diagrams when they remain legible. |
 | Standard | 641–1023px | Header may retain navigation until space is constrained; hero and cards can stack; contents rail becomes a normal block; diagrams use fewer columns and larger labels rather than shrinking below legibility. |
-| Compact | 640px and below | Single-column flow; menu disclosure; stacked metadata; full-width CTAs where helpful; vertical or stepped diagrams; no horizontal page overflow; AIRIS remains visibly compact. |
+| Compact | 640px and below | Single-column flow; menu disclosure; stacked metadata; full-width CTAs where helpful; vertical or stepped diagrams; no horizontal page overflow; AIRIS remains legible without collapsing its evidence context. |
 
 Common rules:
 
@@ -559,11 +561,11 @@ Deployment, Cloudflare Pages, domain, analytics, and LinkedIn launch checks are 
 The following is the single implementation-ready prompt to use if an external UI generator is engaged later. It is deliberately constrained to this approved specification:
 
 ```text
-Design a static, recruiter-readable portfolio for Hydar Hafiz bin Hydzelan, positioned as a Software Engineer — Backend, Cloud & Applied AI in Bangi, Selangor, Malaysia. Keep Backend as the strongest foundation while making Cloud/DevOps ownership and Applied AI specialization visible through evidence. Use the attached UX/UI specification and approved framework-neutral content contracts as the only product source of truth.
+Design a static, recruiter-readable portfolio for Hydar Hafiz bin Hydzelan, positioned as a Backend Engineer building production cloud and AI systems in Bangi, Selangor, Malaysia, with current targeting in Kuala Lumpur and Selangor. Keep Backend as the foundation while making Cloud & DevOps and Applied AI visible through evidence. Use the attached UX/UI specification and approved framework-neutral content contracts as the only product source of truth.
 
-Create the launch experience for exactly these routes: /, /safapac, /anotheredenai, /resume, and an accessible 404 fallback. Use a calm technical-editorial direction: light-first off-white/charcoal foundation, restrained blue-teal accents, strong Source Sans 3 typography, generous whitespace, ruled sections, short readable prose measure, and original explanatory diagrams. The page must feel authored and precise, not like a dashboard or generic corporate landing page.
+Create the experience for these approved routes: /, /safapac, /airis, /anotheredenai, /saf-sky-quest, /resume, and an accessible 404 fallback. Use a calm technical-editorial direction: light-first off-white/charcoal foundation, restrained blue-teal accents, strong Source Sans 3 typography, generous whitespace, ruled sections, short readable prose measure, and original explanatory diagrams. The page must feel authored and precise, not like a dashboard or generic corporate landing page.
 
-Preserve this hierarchy in every composition: SAFAPAC is the primary professional case study; AnotherEdenAI is the primary personal case study and must visibly say Actively developed; AIRIS is a compact supporting contribution and has no dedicated route. Preserve the exact approved maturity and ownership boundaries: SAFAPAC says Deployed beta / internal validation and describes Hydar's assigned backend, database, calculation-traceability, validation, testability, documentation, and AWS delivery scope; AIRIS remains a testing/diagnosis/research/handoff/training contribution without architecture ownership or claimed production improvement.
+Preserve this hierarchy in every composition: SAFAPAC is the flagship professional case study; AIRIS is the major applied-AI case study; AnotherEdenAI is the major personal case study and must visibly say Active development; SAF Sky Quest is a compact supporting deployment case study. Preserve the exact approved maturity and ownership boundaries from docs/core/milestone.md, including SAFAPAC's AWS-hosted internal pilot status, AIRIS's experiment context and implementation attribution, AnotherEdenAI's paired evaluation evidence, and SAF Sky Quest's teammate/frontend boundary.
 
 Specify and prototype responsive wide, standard, and compact states. Include a keyboard-operable mobile navigation, skip link, visible focus, semantic landmarks and heading order, text alternatives for every meaningful visual, non-color status labels, 320px reflow, 400% zoom support, light/dark theme behavior, and prefers-reduced-motion behavior. Make all links and controls understandable without hover, animation, or color. Keep the public resume phone-free and expose only email, LinkedIn, GitHub, and the public resume action.
 

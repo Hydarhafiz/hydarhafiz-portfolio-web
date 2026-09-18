@@ -22,7 +22,7 @@ The repository boundary is enforced by defensive ignore rules and `scripts/check
 
 - Recruiter-scannable homepage with experience, capabilities, credentials, resume, and contact links
 - Detailed SAFAPAC and AnotherEdenAI case studies
-- Compact AIRIS supporting contribution
+- Major AIRIS applied-AI case study and compact SAF Sky Quest deployment case study
 - Public resume without a phone number
 - Responsive, accessible light and dark themes
 

@@ -7,6 +7,7 @@ const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url))
 const resumePath = path.join(repositoryRoot, "dist", "resume", "index.html");
 const careerSource = JSON.parse(await readFile(path.join(repositoryRoot, "resume/career-data.json"), "utf8"));
 const careerData = resolveCareerProfile(careerSource, "default");
+const publicHeadline = careerSource.portfolioContract.identity.publicResumeHeadline;
 
 const failures = [];
 const assert = (condition, message) => {
@@ -41,7 +42,7 @@ if (failures.length === 0) {
 
   for (const phrase of [
     careerData.basics.name,
-    careerData.basics.title,
+    publicHeadline,
     careerData.basics.location,
     careerData.basics.availability,
     careerData.summary,

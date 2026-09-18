@@ -23,18 +23,18 @@
 
 ## Information architecture
 
-The first launch contains a homepage, SAFAPAC case study, AnotherEdenAI case study, semantic resume page/PDF, and accessible 404 page.
+Milestone 7 uses one homepage, four ordered project surfaces, a semantic resume page/PDF, and an accessible 404 page. The approved project order is SAFAPAC, AIRIS, AnotherEdenAI, then SAF Sky Quest; PETRONAS remains experience content rather than a flagship project.
 
 The homepage must expose:
 
-1. The `Software Engineer — Backend, Cloud & Applied AI` umbrella identity and primary calls to action, with Backend presented as the strongest foundation.
-2. SAFAPAC and AnotherEdenAI as flagship work.
+1. The `Backend Engineer building production cloud and AI systems.` identity and primary calls to action, with Backend presented as the foundation.
+2. SAFAPAC as the flagship professional case study, followed by major AIRIS and AnotherEdenAI case studies.
 3. AMIC and PETRONAS experience.
-4. A compact AIRIS supporting contribution.
+4. A compact SAF Sky Quest supporting deployment case study.
 5. A compact capability section grouped as Backend, Cloud & DevOps, Applied AI, and Supporting Technologies. Every technology must connect to project or experience evidence; no self-rated levels.
 6. Certifications and contact links.
 
-Dedicated About, Skills, Experience, AIRIS, Blog, Writing, and Notes routes are deferred. The MDX/content model must allow `/writing` or `/notes` later without restructuring the site.
+The shared MDX/content model reserves `/airis` and `/saf-sky-quest` without requiring their final page copy in the foundation feature. The MDX/content model must allow `/writing` or `/notes` later without restructuring the site.
 
 ## Visual direction
 
@@ -51,16 +51,20 @@ Avoid terminal/hacker styling, generic AI neon imagery, excessive glassmorphism,
 
 ## Resume generation
 
-- One canonical structured evidence model stores identity, official titles/dates, evidence-bearing experience/project bullets, capabilities, education, and certifications.
+- One canonical structured evidence model stores identity, official titles/dates, evidence-bearing experience/project bullets, capabilities, education, certifications, and the Milestone 7 portfolio contract.
 - Four profile configurations (`default`, `backend`, `cloud`, and `ai`) select and order shared facts while owning only their headline, summary emphasis, capability order, and evidence priority.
 - Profile emphasis and contact privacy are independent inputs. The tracked default profile is public and phone-free; ignored application outputs may use the private contact overlay.
 - The website and semantic resume consume the resolved default profile; all PDFs use the same resolver and semantic single-column HTML with dedicated print CSS.
 - Chromium produces deterministic, searchable PDFs.
-- The public website exposes only the balanced resume artifact and omits the phone number.
+- The public website exposes one balanced resume headed `Backend Engineer | Cloud & Applied AI` and omits the phone number.
 - An ignored private overlay supplies the phone number for the application CV.
 - Targeted Backend, Cloud, and Applied AI PDFs remain ignored application artifacts and are not normal portfolio navigation choices.
 - After live launch verification, the shared public Website link `https://hydarhafiz.com` is included in the default and all targeted profiles, followed by a production redeploy of the semantic resume page.
 - Public phone exposure remains a reversible future policy switch.
+
+## Milestone 7 content authority
+
+`docs/core/milestone.md` is the sole authority for Milestone 7 career meaning, hierarchy, metrics, attribution, maturity, disclosure, and allowed wording. The existing `docs/career/` registry, historical content contracts, current pages, and old validators are migration inputs only. Technical behavior remains governed by the current implementation and its tests.
 
 ## Operations and quality
 
