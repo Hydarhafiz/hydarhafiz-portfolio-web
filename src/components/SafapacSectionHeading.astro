@@ -1,5 +1,6 @@
 ---
 import SafapacDelivery from "./SafapacDelivery.astro";
+import SafapacAwsArchitecture from "./SafapacAwsArchitecture.astro";
 import SafapacTransition from "./SafapacTransition.astro";
 
 interface Props {
@@ -12,7 +13,9 @@ const inlineVisual = id === "role-and-approach"
   ? "transition"
   : id === "engineering-decisions"
     ? "delivery"
-    : undefined;
+    : id === "aws-delivery"
+      ? "aws-architecture"
+      : undefined;
 ---
 
 <h2 id={id} {...attributes}><slot /></h2>
@@ -24,5 +27,10 @@ const inlineVisual = id === "role-and-approach"
 {inlineVisual === "delivery" && (
   <div class="case-study__inline-visual">
     <SafapacDelivery />
+  </div>
+)}
+{inlineVisual === "aws-architecture" && (
+  <div class="case-study__inline-visual">
+    <SafapacAwsArchitecture />
   </div>
 )}

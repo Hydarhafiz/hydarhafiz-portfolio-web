@@ -112,12 +112,11 @@ Required narrative sections:
 2. **Turning methodology into executable contracts** — collaboration with LCA/carbon specialists on total CO2 emissions, carbon intensity, and carbon-conversion efficiency; collaboration with TEA/business specialists on cash flow, NPV, IRR, and payback; expert-provided input/output expectations converted into independent regression contracts rather than using current application output as the oracle.
 3. **A boundary deliberately not automated** — newer methodology material contained process/reference data that was not yet incorporated into the approved default workbook/application mapping. Hydar retained the approved v1.1 dataset instead of inventing process-feedstock-country relationships and used the Superadmin direction to let domain experts add future values explicitly.
 4. **Default governance** — **33,047 defaults across 12 processes, 22 feedstocks, and 217 countries**; governed draft, publish, and rollback workflows; approved backend handoff to the frontend developer.
-5. **Current Superadmin status** — core backend APIs are complete and meeting-approved; frontend handoff is complete and frontend implementation is in progress; stale/experimental API cleanup and direct add/modify/delete support for the active default set remain.
-6. **Sensitivity redesign** — replace 33 full calculation-engine executions with reusable prepared inputs and targeted NPV projections; verified result is **50 ms p95 across 10 staging acceptance cycles**. Do not invent an old runtime or percentage speedup.
-7. **AWS delivery** — explain lean pilot choices and their reasons, including Terraform, VPC, EC2, private RDS, S3/CloudFront, Cognito, Docker, Nginx, GitHub Actions, OIDC, and SSM. It is acceptable to state the approved operating-cost fact: **$51.27/month average from March–August 2026 across 20 billed AWS services**.
-8. **Reliability story: TLS** — an expired certificate disrupted expert access; Hydar restored HTTPS and automated renewal. Say renewal occurs automatically, not that it waits until after expiry.
-9. **Deployment safety and cost control** — Terraform-managed staging validates releases, infrastructure changes, and rollback behavior; the implemented **six-hour automatic staging shutdown** reduces forgotten temporary-resource cost.
-10. **Current state** — AWS-hosted internal pilot; core Superadmin backend approved and handed to frontend; remaining backend work limited to cleanup/refactoring and active-default CRUD.
+5. **Sensitivity redesign** — replace 33 full calculation-engine executions with reusable prepared inputs and targeted NPV projections; verified result is **50 ms p95 across 10 staging acceptance cycles**. Do not invent an old runtime or percentage speedup.
+6. **AWS delivery** — explain lean pilot choices and their reasons, including Terraform, VPC, EC2, private RDS, S3/CloudFront, Cognito, Docker, Nginx, GitHub Actions, OIDC, and SSM. It is acceptable to state the approved operating-cost fact: **$51.27/month average from March–August 2026 across 20 billed AWS services**.
+7. **Reliability story: TLS** — an expired certificate disrupted expert access; Hydar restored HTTPS and automated renewal. Say renewal occurs automatically, not that it waits until after expiry.
+8. **Deployment safety and cost control** — Terraform-managed staging validates releases, infrastructure changes, and rollback behavior; the implemented **six-hour automatic staging shutdown** reduces forgotten temporary-resource cost.
+9. **Current state** — AWS-hosted internal pilot; core Superadmin backend APIs complete and meeting-approved; frontend handoff complete with implementation in progress; remaining backend work limited to cleanup/refactoring and active-default CRUD.
 
 Prohibited SAFAPAC content:
 
@@ -321,7 +320,7 @@ Keep PETRONAS in the Experience section rather than adding another flagship rout
 
 ### Feature 7G — Final technical, content, and disclosure QA
 
-- Type/status: verification-only/evidence remediation; planned last
+- Type/status: verification-only/evidence remediation; completed 2026-09-18
 - Outcome: prove that the approved content was implemented faithfully and that all public pages/artifacts remain technically sound, recruiter-readable, accessible, responsive, and private-data safe.
 - Scope: independent cross-surface content comparison; site/build/link/metadata/sitemap checks; ATS/PDF inspection; keyboard, headings, landmarks, focus, contrast, reflow, themes, reduced motion, and print checks; privacy/disclosure scan; remediation only for failures against this milestone; milestone/roadmap closure.
 - Non-goals: new positioning, new claims, stronger metrics, career re-audit, new visual direction, external deployment, or unrelated cleanup.
@@ -336,7 +335,7 @@ Keep PETRONAS in the Experience section rather than adding another flagship rout
   - no private contact data, source archive, formula/fixture, internal URL, identifier, credential, screenshot, or event record is tracked or emitted;
   - temporary audit/render artifacts are purged or remain only in approved ignored locations;
   - milestone and roadmap accurately record completion and any genuinely unresolved implementation limitation without downgrading approved content.
-- Durable evidence: passing durable validators and self-tests, final public PDF, manual-review record, milestone/roadmap completion update, and one final feature commit.
+- Durable evidence: passing durable validators and self-tests, the approved manual-review checkpoint, corrected public pages and case-study evidence, this milestone update, and one final feature commit. The existing tracked public PDF remains unchanged and its validator still reports missing `33-point sensitivity workflow` context; this is outside Feature 7G's allowed correction scope and is recorded as a residual limitation.
 - Route: `tdd-loop`. Escalate to `builder-executor -> tdd-loop` only for a material implementation repair discovered by QA.
 
 ## Ordering and fresh-chat handoff

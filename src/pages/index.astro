@@ -73,25 +73,7 @@ const evidenceMetrics = careerSource.portfolioContract.metrics;
       </div>
     </section>
 
-    <section class="home-evidence" aria-labelledby="evidence-title">
-      <div class="container">
-        <div class="home-evidence__heading">
-          <p class="eyebrow">Selected evidence</p>
-          <h2 id="evidence-title">Measured work, kept in context.</h2>
-        </div>
-        <div class="home-evidence__grid">
-          {evidenceMetrics.map((metric) => (
-            <article class="home-evidence__card">
-              <p class="home-evidence__project">{metric.project}</p>
-              <h3>{metric.value}</h3>
-              <p>{metric.requiredContext.join(" · ")}</p>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="home-section home-section--tinted" aria-labelledby="about-title">
+    <section id="about" class="home-section home-section--light" aria-labelledby="about-title">
       <div class="container">
         <SectionHeading id="about-title" index="01" title="About me" />
       <div class="about-me">
@@ -124,104 +106,113 @@ const evidenceMetrics = careerSource.portfolioContract.metrics;
       </div>
     </section>
 
-    <section id="work" class="home-section container" aria-labelledby="work-title">
-      <SectionHeading
-        id="work-title"
-        index="02"
-        title="Featured work"
-      />
-      <div class="case-grid">
-        <CaseStudyCard
-          entry={safapac}
-          href="/safapac"
-          hierarchyLabel="Primary professional case study"
-          tone="professional"
-          featured
-        />
-        <CaseStudyCard
-          entry={airis}
-          href="/airis"
-          hierarchyLabel="Major applied-AI case study"
-          tone="professional"
-          featured
-        />
-        <CaseStudyCard
-          entry={anotherEdenAI}
-          href="/anotheredenai"
-          hierarchyLabel="Primary personal case study"
-          tone="personal"
-          externalHref="https://github.com/Hydarhafiz/AnotherEdenAI"
-          externalLabel="GitHub"
-          featured
-        />
-        <CaseStudyCard
-          entry={safSkyQuest}
-          href="/saf-sky-quest"
-          hierarchyLabel="Supporting cloud-deployment case study"
-          tone="supporting"
-        />
+    <section id="measured-work" class="home-section home-section--dark home-evidence" aria-labelledby="measured-work-title">
+      <div class="container">
+        <SectionHeading id="measured-work-title" index="02" title="Measured work" />
+        <div class="home-evidence__grid">
+          {evidenceMetrics.map((metric) => (
+            <article class="home-evidence__card">
+              <p class="home-evidence__project">{metric.project}</p>
+              <h3>{metric.value}</h3>
+              <p>{metric.requiredContext.join(" · ")}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
 
-    <section id="experience" class="home-section home-section--tinted" aria-labelledby="experience-title">
+    <section id="work" class="home-section home-section--light" aria-labelledby="work-title">
+      <div class="container">
+        <SectionHeading id="work-title" index="03" title="Featured work" />
+        <div class="case-grid">
+          <CaseStudyCard
+            entry={safapac}
+            href="/safapac"
+            hierarchyLabel="Primary professional case study"
+            tone="professional"
+            featured
+          />
+          <CaseStudyCard
+            entry={airis}
+            href="/airis"
+            hierarchyLabel="Major applied-AI case study"
+            tone="professional"
+            featured
+          />
+          <CaseStudyCard
+            entry={anotherEdenAI}
+            href="/anotheredenai"
+            hierarchyLabel="Primary personal case study"
+            tone="personal"
+            externalHref="https://github.com/Hydarhafiz/AnotherEdenAI"
+            externalLabel="GitHub"
+            featured
+          />
+          <CaseStudyCard
+            entry={safSkyQuest}
+            href="/saf-sky-quest"
+            hierarchyLabel="Supporting cloud-deployment case study"
+            tone="supporting"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section id="experience" class="home-section home-section--dark" aria-labelledby="experience-title">
       <div class="container">
         <SectionHeading
           id="experience-title"
-          index="03"
+          index="04"
           title="Work experience"
         />
         <ExperienceList entries={careerData.experience} />
       </div>
     </section>
 
-    <section id="skills" class="home-section container" aria-labelledby="skills-title">
-      <SectionHeading
-        id="skills-title"
-        index="04"
-        title="Skills & expertise"
-      />
-      <SkillExpertise groups={careerData.capabilities} />
+    <section id="skills" class="home-section home-section--light" aria-labelledby="skills-title">
+      <div class="container">
+        <SectionHeading id="skills-title" index="05" title="Skills & expertise" />
+        <SkillExpertise groups={careerData.capabilities} />
+      </div>
     </section>
 
-    <section id="credentials" class="home-section home-section--tinted" aria-labelledby="credentials-title">
+    <section id="credentials" class="home-section home-section--dark" aria-labelledby="credentials-title">
       <div class="container">
         <SectionHeading
           id="credentials-title"
-          index="05"
+          index="06"
           title="Credentials"
         />
         <CredentialList certifications={careerData.certifications} education={careerData.education} />
       </div>
     </section>
 
-    <section id="contact" class="home-section home-section--contact container" aria-labelledby="contact-title">
-      <SectionHeading
-        id="contact-title"
-        index="06"
-        title="Get in touch"
-      />
-      <nav class="contact-links" aria-label="Public contact links">
-        <a class="contact-link" href={`mailto:${careerData.basics.email}`}>
-          <span>Email</span>
-          <strong>{careerData.basics.email}</strong>
-        </a>
-        {careerData.basics.links.map((link) => (
-          <a
-            class="contact-link"
-            href={link.url}
-            target="_blank"
-            rel="noreferrer"
-            aria-label={`${link.label}: ${link.display} (opens in new tab)`}
-          >
-            <span>{link.label}</span>
-            <strong>{link.display}</strong>
+    <section id="contact" class="home-section home-section--light home-section--contact" aria-labelledby="contact-title">
+      <div class="container">
+        <SectionHeading id="contact-title" index="07" title="Get in touch" />
+        <nav class="contact-links" aria-label="Public contact links">
+          <a class="contact-link" href={`mailto:${careerData.basics.email}`}>
+            <span>Email</span>
+            <strong>{careerData.basics.email}</strong>
           </a>
-        ))}
-        <a class="contact-link" href="/resume">
-          <span>Public resume</span>
-          <strong>View resume page <span aria-hidden="true">↗</span></strong>
-        </a>
-      </nav>
+          {careerData.basics.links.map((link) => (
+            <a
+              class="contact-link"
+              href={link.url}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={`${link.label}: ${link.display} (opens in new tab)`}
+            >
+              <span>{link.label}</span>
+              <strong>{link.display}</strong>
+            </a>
+          ))}
+          <a class="contact-link" href="/resume">
+            <span>Public resume</span>
+            <strong>View resume page <span aria-hidden="true">↗</span></strong>
+          </a>
+        </nav>
+      </div>
     </section>
   </div>
 </SiteLayout>

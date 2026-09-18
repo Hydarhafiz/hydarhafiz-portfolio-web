@@ -535,11 +535,15 @@ main {
 }
 
 .home-section {
+  width: 100%;
   padding-block: clamp(4.5rem, 9vw, 8rem);
 }
 
-.home-section--tinted {
-  width: 100%;
+.home-section--light {
+  background: var(--canvas);
+}
+
+.home-section--dark {
   background: var(--surface-muted);
 }
 
@@ -1422,6 +1426,145 @@ main {
   color: var(--visual-accent);
   font-size: 0.78rem;
   font-weight: 800;
+}
+
+/* SAFAPAC AWS delivery architecture */
+.visual-art--safapac-aws {
+  display: grid;
+  gap: 0.85rem;
+  padding: clamp(0.25rem, 1vw, 0.75rem) 0;
+}
+
+.aws-delivery-group {
+  min-width: 0;
+  padding: clamp(0.9rem, 2vw, 1.25rem);
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.aws-delivery-group--staging {
+  border-top: 0.35rem solid var(--visual-accent);
+  background: var(--visual-soft);
+}
+
+.aws-delivery-group--runtime {
+  border-top: 0.35rem solid var(--text-muted);
+}
+
+.aws-delivery-group--deployment {
+  border-bottom: 0.35rem solid var(--visual-accent);
+  background: var(--surface-muted);
+}
+
+.aws-delivery-group__heading {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.aws-delivery-group__heading p,
+.aws-delivery-group__heading strong {
+  margin: 0;
+}
+
+.aws-delivery-group__heading strong {
+  color: var(--text);
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.aws-delivery-path {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1.1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  gap: clamp(0.45rem, 1.25vw, 0.85rem);
+  margin-top: 0.9rem;
+}
+
+.aws-delivery-path--runtime {
+  grid-template-columns: minmax(0, 0.8fr) auto minmax(0, 1fr) auto minmax(0, 1fr) auto minmax(0, 1.2fr);
+}
+
+.aws-delivery-path--deployment {
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 0.75fr) auto minmax(0, 1.1fr);
+}
+
+.aws-delivery-node {
+  display: grid;
+  min-width: 0;
+  align-content: start;
+  gap: 0.35rem;
+  padding: 0.8rem;
+  border-top: 0.2rem solid var(--border);
+  background: var(--surface);
+}
+
+.aws-delivery-node--focus {
+  border-color: var(--visual-accent);
+  border-top-width: 0.35rem;
+  background: var(--visual-soft);
+}
+
+.aws-delivery-node p,
+.aws-delivery-node strong {
+  margin: 0;
+}
+
+.aws-delivery-node strong {
+  color: var(--text);
+  font-size: clamp(0.9rem, 1.7vw, 1.15rem);
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.aws-delivery-path__arrow {
+  align-self: center;
+  color: var(--visual-accent);
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 300;
+  line-height: 1;
+}
+
+.aws-delivery-group__reason {
+  max-width: 70ch;
+  margin: 0.85rem 0 0;
+  padding-top: 0.65rem;
+  border-top: 1px dashed var(--border);
+  color: var(--text-muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.aws-delivery-support {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+  padding-top: 0.65rem;
+  border-top: 1px dashed var(--border);
+}
+
+.aws-delivery-support span {
+  padding: 0.35rem 0.55rem;
+  border: 1px dashed var(--border);
+  border-radius: 999px;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+@media (max-width: 52rem) {
+  .aws-delivery-path,
+  .aws-delivery-path--runtime,
+  .aws-delivery-path--deployment {
+    grid-template-columns: 1fr;
+  }
+
+  .aws-delivery-path__arrow {
+    justify-self: center;
+    transform: rotate(90deg);
+  }
 }
 
 /* AnotherEdenAI architecture */
@@ -3577,32 +3720,6 @@ main {
 /* Feature 7F balanced homepage evidence and public-resume presentation */
 .home-evidence {
   border-block: 1px solid var(--border);
-  background: var(--surface-muted);
-}
-
-.home-evidence > .container {
-  padding-block: clamp(2rem, 5vw, 3.5rem);
-}
-
-.home-evidence__heading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1.5rem;
-  margin-bottom: 1.25rem;
-}
-
-.home-evidence__heading .eyebrow {
-  margin: 0;
-  color: var(--accent);
-}
-
-.home-evidence__heading h2 {
-  max-width: 28ch;
-  margin: 0;
-  font-size: clamp(1.35rem, 2.8vw, 2.15rem);
-  letter-spacing: -0.04em;
-  line-height: 1.05;
 }
 
 .home-evidence__grid {
@@ -3646,7 +3763,7 @@ main {
 .resume-page {
   max-width: 72rem;
   color: var(--text);
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: inherit;
 }
 
 .resume-page__header {
@@ -3820,12 +3937,6 @@ main {
 }
 
 @media (max-width: 40rem) {
-  .home-evidence__heading,
-  .resume-page__toc {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
   .home-evidence__grid {
     grid-template-columns: 1fr;
   }

@@ -30,6 +30,7 @@ const caseStudies = defineCollection({
   schema: z.object({
     slug: z.string(),
     title: z.string(),
+    displayTitle: z.string().optional(),
     kind: z.enum(["case-study", "supporting-contribution"]),
     hierarchy: z.enum(["primary-professional", "primary-applied-ai", "primary-personal", "supporting"]),
     navigation: navigation.optional(),

@@ -26,8 +26,8 @@ if (failures.length === 0) {
   assert(html.includes("Backend Engineer building production cloud and AI systems."), "Homepage: missing approved primary engineering identity");
   assert(html.includes("Engineering focus"), "Homepage: missing engineering-focus label");
   assert(html.includes("Portrait of Hydar Hafiz bin Hydzelan"), "Homepage: missing accessible profile portrait");
-  assert(html.includes("Measured work, kept in context."), "Homepage: missing contextual evidence heading");
-  assert(html.indexOf("Measured work, kept in context.") < html.indexOf('id="about"'), "Homepage: evidence must precede biography-heavy content");
+  assert(html.includes("Measured work"), "Homepage: missing measured-work heading");
+  assert(html.indexOf('id="about"') < html.indexOf('id="measured-work"'), "Homepage: measured work must follow About me");
   for (const phrase of [
     "33,047 governed defaults",
     "12 processes",
@@ -47,17 +47,23 @@ if (failures.length === 0) {
     assert(html.includes(phrase), `Homepage: contextual evidence is missing ${phrase}`);
   }
   assert(html.includes("About me"), "Homepage: missing About me section");
-  assert(html.includes('section id="about" class="home-section home-section--tinted"'), "Homepage: About me must use the alternating tinted band");
+  assert(html.includes('section id="about" class="home-section home-section--light"'), "Homepage: About me must use the light section band");
+  assert(html.includes('section id="measured-work" class="home-section home-section--dark home-evidence"'), "Homepage: Measured work must use the dark section band");
   assert(html.includes("Featured work"), "Homepage: missing Featured work heading");
+  assert(html.includes('section id="work" class="home-section home-section--light"'), "Homepage: Featured work must use the light section band");
   assert(html.includes("Work experience"), "Homepage: missing Work experience heading");
+  assert(html.includes('section id="experience" class="home-section home-section--dark"'), "Homepage: Work experience must use the dark section band");
   assert(html.includes("Skills &amp; expertise"), "Homepage: missing Skills & expertise heading");
+  assert(html.includes('section id="skills" class="home-section home-section--light"'), "Homepage: Skills must use the light section band");
+  assert(html.includes('section id="credentials" class="home-section home-section--dark"'), "Homepage: Credentials must use the dark section band");
+  assert(html.includes('section id="contact" class="home-section home-section--light home-section--contact"'), "Homepage: Contact must use the light section band");
   assert(!html.includes("Systems with a visible engineering boundary."), "Homepage: obsolete work section description remains");
   assert(!html.includes("A primary professional case study, a primary personal project, and one compact supporting contribution."), "Homepage: obsolete work section intro remains");
   assert(!html.includes("Tools are useful when they clarify the work."), "Homepage: obsolete capabilities description remains");
   assert((html.match(/class="skill-card"/g) ?? []).length >= 20, "Homepage: expected individual skill/expertise cards");
   assert((html.match(/<svg/g) ?? []).length >= 10, "Homepage: expected bundled expertise logos");
   assert((html.match(/class="characteristic-card__logo"/g) ?? []).length === 3, "Homepage: expected one logo per characteristic card");
-  assert(html.indexOf('id="about"') < html.indexOf('id="work"'), "Homepage: About me must precede Featured work");
+  assert(html.indexOf('id="about"') < html.indexOf('id="measured-work"') && html.indexOf('id="measured-work"') < html.indexOf('id="work"'), "Homepage: section order must be About me -> Measured work -> Featured work");
   assert(html.includes('id="work"'), "Homepage: missing selected-work landmark");
   assert(html.includes("Primary professional case study"), "Homepage: missing SAFAPAC hierarchy label");
   assert(html.includes("Major applied-AI case study"), "Homepage: missing AIRIS major-case-study hierarchy label");
@@ -65,6 +71,9 @@ if (failures.length === 0) {
   assert(html.includes("Supporting cloud-deployment case study"), "Homepage: missing SAF Sky Quest hierarchy label");
   assert(html.includes("SAFAPAC"), "Homepage: missing SAFAPAC content");
   assert(html.includes("AnotherEdenAI"), "Homepage: missing AnotherEdenAI content");
+  for (const [route, title] of [["safapac", "SAFAPAC"], ["airis", "AIRIS"], ["anotheredenai", "AnotherEdenAI"], ["saf-sky-quest", "SAF Sky Quest"]]) {
+    assert(html.includes(`<h3><a href="/${route}">${title}</a></h3>`), `Homepage: ${title} must use its short display title`);
+  }
   assert(html.includes('href="/airis"'), "Homepage: missing AIRIS case-study route link");
   assert(html.includes('href="https://github.com/Hydarhafiz/AnotherEdenAI"'), "Homepage: missing direct AnotherEdenAI GitHub link");
   assert(html.includes("AIRIS"), "Homepage: missing AIRIS content");

@@ -1,6 +1,7 @@
 ---
 slug: safapac
 title: SAFAPAC — Backend & AWS Engineering for Sustainable Aviation Fuel Analysis
+displayTitle: SAFAPAC
 kind: case-study
 hierarchy: primary-professional
 navigation:
@@ -55,32 +56,33 @@ The starting point was an incomplete local application supporting a specialist c
 
 I took substantial ownership of the FastAPI/PostgreSQL backend, database, calculation integration, Superadmin APIs, and AWS/DevOps delivery. I worked with domain specialists and a frontend developer to make the assigned workflow easier to validate, hand over, and operate. The frontend remained the frontend developer's responsibility, and the Sustainable Aviation Fuel methodology remained the domain specialists' responsibility.
 
-## Turning methodology into executable contracts
+## Engineering decisions
+
+The following decisions kept the backend, data boundary, and release path understandable and proportionate to an AWS-hosted internal pilot.
+
+### Turning methodology into executable contracts
 
 I worked with LCA/carbon specialists on expectations around total CO2 emissions, carbon intensity, and carbon-conversion efficiency. I also worked with TEA/business specialists on cash flow, NPV, IRR, and payback. Their input and output expectations became independent regression contracts so the checks did not simply treat current application output as the oracle.
 
-## A boundary deliberately not automated
+### A boundary deliberately not automated
 
 Newer methodology material included process/reference data that was not yet incorporated into the approved default workbook and application mapping. I retained the approved v1.1 dataset rather than inventing process-feedstock-country relationships. The Superadmin direction leaves future values to be added explicitly by domain experts when those relationships are approved, instead of silently deriving or publishing unsupported defaults.
 
-## Default governance
+### Default governance
 
 The governed default set contains **33,047 governed defaults across 12 processes, 22 feedstocks, and 217 countries**. The backend supports draft, publish, and rollback workflows, and the approved backend handoff to the frontend developer keeps default governance separate from the client-side presentation.
 
-## Current Superadmin status
-
-The core Superadmin backend APIs are complete and meeting-approved. The frontend handoff is complete and frontend implementation is in progress. Remaining backend work is limited to stale or experimental API cleanup and direct add, modify, and delete support for the active default set.
-
-## Sensitivity redesign
+### Sensitivity redesign
 
 I redesigned the 33-point sensitivity workflow to replace **33 full calculation-engine executions** with reusable prepared inputs and targeted NPV projections. The verified result is **50 ms p95 across 10 staging acceptance cycles**. This reports the accepted workflow result without adding a comparison baseline.
 
-## Engineering decisions
+### TLS reliability
 
-- Keep calculation behavior behind explicit service and regression boundaries so specialist expectations can be checked independently from current application output.
-- Keep the approved v1.1 defaults separate from newer, not-yet-mapped process/reference material rather than inventing relationships.
-- Use Terraform-managed staging and repeatable container/CI delivery so releases, infrastructure changes, and rollback behavior can be checked before the internal pilot receives them.
-- Keep the operating model lean and proportionate to an AWS-hosted internal pilot.
+An expired TLS certificate disrupted expert access during deployment. I restored HTTPS and automated certificate renewal so renewal now occurs automatically rather than depending on manual intervention after an expiry.
+
+### Deployment safety and cost control
+
+Terraform-managed staging validates application releases, infrastructure changes, and rollback behavior before the internal pilot receives a change. Because staging is primarily needed around release work, I implemented a **six-hour automatic staging shutdown** to reduce the risk of forgotten temporary resources generating unnecessary AWS cost.
 
 ## AWS delivery
 
@@ -88,17 +90,9 @@ The delivery boundary uses Terraform, a VPC, EC2, private RDS, S3/CloudFront, Co
 
 The approved operating-cost fact is **$51.27/month average from March–August 2026 across 20 billed AWS services**. It is presented as the internal pilot's recorded infrastructure cost, not as a general cost promise for another deployment.
 
-## TLS reliability
-
-An expired TLS certificate disrupted expert access during deployment. I restored HTTPS and automated certificate renewal so renewal now occurs automatically rather than depending on manual intervention after an expiry.
-
-## Deployment safety and cost control
-
-Terraform-managed staging validates application releases, infrastructure changes, and rollback behavior before the internal pilot receives a change. Because staging is primarily needed around release work, I implemented a **six-hour automatic staging shutdown** to reduce the risk of forgotten temporary resources generating unnecessary AWS cost.
-
 ## Current state
 
-**Current status — September 2026:** SAFAPAC is an AWS-hosted internal pilot. The core Superadmin backend is approved and handed over to frontend development. Remaining backend work is limited to cleanup/refactoring and direct active-default CRUD.
+**Current status — September 2026:** SAFAPAC is an AWS-hosted internal pilot. The core Superadmin backend APIs are complete and meeting-approved, the frontend handoff is complete and frontend implementation is in progress, and remaining backend work is limited to cleanup/refactoring plus direct active-default CRUD.
 
 ## Limitations
 

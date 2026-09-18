@@ -22,6 +22,7 @@ const {
   externalLabel = "View on GitHub"
 } = Astro.props;
 const { data } = entry;
+const displayTitle = data.displayTitle ?? data.title;
 const status = data.status.charAt(0).toUpperCase() + data.status.slice(1);
 ---
 
@@ -32,9 +33,9 @@ const status = data.status.charAt(0).toUpperCase() + data.status.slice(1);
   </div>
   <div class="case-card__body">
     <p class="case-card__context">{data.context} · {data.period}</p>
-    <h3><a href={href}>{data.title}</a></h3>
+    <h3><a href={href}>{displayTitle}</a></h3>
     <p class="case-card__summary">{data.summary}</p>
-    <ul class="case-card__capabilities" aria-label={`${data.title} capabilities`}>
+    <ul class="case-card__capabilities" aria-label={`${displayTitle} capabilities`}>
       {data.capabilities.slice(0, 3).map((capability) => <li>{capability.name}</li>)}
     </ul>
   </div>
@@ -46,7 +47,7 @@ const status = data.status.charAt(0).toUpperCase() + data.status.slice(1);
         href={externalHref}
         target="_blank"
         rel="noreferrer"
-        aria-label={`${externalLabel}: ${data.title} (opens in new tab)`}
+        aria-label={`${externalLabel}: ${displayTitle} (opens in new tab)`}
       >
         {externalLabel} <span aria-hidden="true">↗</span>
       </a>

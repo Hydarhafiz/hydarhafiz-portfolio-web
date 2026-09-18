@@ -73,6 +73,7 @@ for (const { route, title, adjacent } of routes) {
   const h1Count = (html.match(/<h1\b/g) ?? []).length;
 
   assert(h1Count === 1, `${route}: expected one page-level h1, found ${h1Count}`);
+  assert(html.includes(`<h1 id="case-study-title">${title}</h1>`), `${route}: hero must use the short display title`);
   assert(html.includes(title), `${route}: missing case-study title`);
   assert(html.includes("Scope &amp; status"), `${route}: missing concise scope/status callout`);
   assert(html.includes("Project scope"), `${route}: missing project scope label`);
@@ -129,7 +130,7 @@ for (const { route, title, adjacent } of routes) {
       "draft, publish, and rollback workflows",
       "core superadmin backend apis are complete and meeting-approved",
       "frontend implementation is in progress",
-      "direct add, modify, and delete support",
+      "direct active-default crud",
       "33 full calculation-engine executions",
       "reusable prepared inputs",
       "targeted npv projections",
@@ -213,7 +214,7 @@ for (const { route, title, adjacent } of routes) {
     }
   }
   const expectedVisuals = route === "safapac"
-    ? ["safapac-transition", "safapac-delivery"]
+    ? ["safapac-transition", "safapac-delivery", "safapac-aws-architecture"]
     : route === "airis"
       ? ["airis-context-experiment", "airis-concurrency-diagnosis", "airis-load-testing"]
       : route === "anotheredenai"
@@ -225,6 +226,7 @@ for (const { route, title, adjacent } of routes) {
   if (route === "safapac") {
     assert(html.indexOf('id="role-and-approach"') < html.indexOf('id="safapac-transition"'), "safapac: transformation visual is not integrated after Role and approach");
     assert(html.indexOf('id="engineering-decisions"') < html.indexOf('id="safapac-delivery"'), "safapac: delivery visual is not integrated after Engineering decisions");
+    assert(html.indexOf('id="aws-delivery"') < html.indexOf('id="safapac-aws-architecture"'), "safapac: AWS architecture visual is not integrated after AWS delivery");
   } else if (route === "airis") {
     assert(html.indexOf('id="controlled-context-experiment"') < html.indexOf('id="airis-context-experiment"'), "airis: context visual is not integrated after Controlled context experiment");
     assert(html.indexOf('id="concurrency-and-bottleneck-diagnosis"') < html.indexOf('id="airis-concurrency-diagnosis"'), "airis: diagnosis visual is not integrated after Concurrency and bottleneck diagnosis");

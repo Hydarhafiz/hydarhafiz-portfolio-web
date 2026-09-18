@@ -23,6 +23,8 @@ Describe the incomplete local application, specialist calculation workflow, evol
 
 Describe collaboration with LCA/carbon specialists on total CO2 emissions, carbon intensity, and carbon-conversion efficiency, and with TEA/business specialists on cash flow, NPV, IRR, and payback. State that expert input/output expectations became independent regression contracts rather than using current application output as the oracle.
 
+These decision sections are rendered under one `Engineering decisions` chapter to keep the case study scannable while preserving each decision as a readable subsection.
+
 ### A boundary deliberately not automated
 
 Explain that newer methodology material contained process/reference data not yet incorporated into the approved default workbook/application mapping. Hydar retained the approved v1.1 dataset rather than inventing process-feedstock-country relationships and used Superadmin direction for explicit future values.
@@ -30,10 +32,6 @@ Explain that newer methodology material contained process/reference data not yet
 ### Default governance
 
 Use **33,047 governed defaults across 12 processes, 22 feedstocks, and 217 countries**, with draft, publish, and rollback workflows and an approved backend handoff to the frontend developer.
-
-### Current Superadmin status
-
-State that core backend APIs are complete and meeting-approved, the frontend handoff is complete and frontend implementation is in progress, and remaining backend work is stale/experimental API cleanup plus direct add/modify/delete support for the active default set.
 
 ### Sensitivity redesign
 
@@ -53,7 +51,7 @@ State that Terraform-managed staging validates releases, infrastructure changes,
 
 ### Current state
 
-Use the exact boundary: AWS-hosted internal pilot; core Superadmin backend approved and handed to frontend development; remaining backend work limited to cleanup/refactoring and direct active-default CRUD.
+Use the exact boundary in the current-state section: AWS-hosted internal pilot; core Superadmin backend APIs complete and meeting-approved; frontend handoff complete with implementation in progress; remaining backend work limited to cleanup/refactoring and direct active-default CRUD.
 
 ## Disclosure and attribution boundary
 
@@ -61,4 +59,4 @@ Hydar owns the assigned backend, database, calculation integration, Superadmin A
 
 ## Visual contracts
 
-Use the two newly redrawn figures in `docs/content/visual-contracts/safapac.md`: the transformation map after `Role and approach` and the high-level delivery path after `Engineering decisions`. Both must retain accessible alt text, captions, linear text alternatives, and the AWS-hosted internal-pilot boundary.
+Use the three newly redrawn figures in `docs/content/visual-contracts/safapac.md`: the transformation map after `Role and approach`, the high-level local delivery path after `Engineering decisions`, and the AWS architecture flow after `AWS delivery`. All must retain accessible alt text, captions, linear text alternatives, and the AWS-hosted internal-pilot boundary.

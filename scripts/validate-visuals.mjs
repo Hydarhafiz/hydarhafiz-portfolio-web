@@ -6,7 +6,7 @@ const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url))
 const distRoot = path.join(repositoryRoot, "dist");
 const stylesheet = await readFile(path.join(repositoryRoot, "src/styles/global.css"), "utf8");
 const visualSpecs = [
-  ["safapac", ["safapac-transition", "safapac-delivery"]],
+  ["safapac", ["safapac-transition", "safapac-delivery", "safapac-aws-architecture"]],
   ["airis", ["airis-context-experiment", "airis-concurrency-diagnosis", "airis-load-testing"]],
   ["anotheredenai", ["anotheredenai-pipeline", "anotheredenai-guardrails"]],
   ["saf-sky-quest", ["saf-sky-quest-lifecycle"]]
@@ -46,7 +46,7 @@ for (const [route, visualIds] of visualSpecs) {
 const homepage = await readFile(path.join(distRoot, "index.html"), "utf8");
 const homepageText = normalizeHtmlText(homepage);
 assert(homepageText.includes("Major applied-AI case study"), "Homepage: AIRIS major-case-study hierarchy is missing");
-assert(homepageText.includes("AIRIS — Evaluating and Optimizing Enterprise RAG Workloads"), "Homepage: AIRIS title is missing from the case card");
+assert(homepageText.includes("AIRIS"), "Homepage: AIRIS display title is missing from the case card");
 
 const airis = await readFile(path.join(distRoot, "airis", "index.html"), "utf8");
 const airisText = normalizeHtmlText(airis);
@@ -74,6 +74,13 @@ assert(safapacText.includes("Pilot delivery"), "SAFAPAC: pilot outcome anchor is
 assert(safapacText.includes("AWS-hosted internal pilot"), "SAFAPAC: internal-pilot outcome is missing");
 assert(safapacText.includes("High-level web-to-data delivery within Hydar's SAFAPAC backend, database, and AWS delivery scope."), "SAFAPAC: delivery caption does not match the approved visual contract");
 assert(safapacText.includes("Supports"), "SAFAPAC: supporting platform layer is missing");
+assert(safapacText.includes("From staging check to AWS pilot"), "SAFAPAC: AWS architecture visual title is missing");
+assert(safapacText.includes("Terraform-managed"), "SAFAPAC: AWS architecture staging gate is missing");
+assert(safapacText.includes("Release · infra · rollback"), "SAFAPAC: AWS architecture release checks are missing");
+assert(safapacText.includes("S3 + CloudFront"), "SAFAPAC: AWS architecture web layer is missing");
+assert(safapacText.includes("FastAPI / EC2"), "SAFAPAC: AWS architecture API/data path is missing");
+assert(safapacText.includes("GitHub Actions"), "SAFAPAC: AWS architecture deployment automation is missing");
+assert(safapacText.includes("six-hour automatic staging shutdown"), "SAFAPAC: AWS architecture cost-control reason is missing");
 
 const anotherEdenAI = await readFile(path.join(distRoot, "anotheredenai", "index.html"), "utf8");
 const anotherEdenAIText = normalizeHtmlText(anotherEdenAI);

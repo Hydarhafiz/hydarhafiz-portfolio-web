@@ -1,0 +1,100 @@
+---
+import VisualFigure from "./VisualFigure.astro";
+---
+
+<VisualFigure
+  id="safapac-aws-architecture"
+  label="03 · AWS delivery architecture"
+  title="From staging check to AWS pilot"
+  tone="safapac"
+  altText="A high-level SAFAPAC AWS delivery map separates a Terraform-managed staging gate from the pilot runtime and deployment paths. Staging checks application releases, infrastructure changes, and rollback behavior. The runtime path serves users through S3 and CloudFront, HTTPS and Nginx, FastAPI on EC2, and private RDS, with Cognito token verification. GitHub Actions uses OIDC and SSM to deliver Docker releases to EC2."
+  caption="A lean AWS shape separates staging checks, repeatable deployment, and the private data path for the internal pilot."
+>
+  <div slot="graphic" class="visual-art visual-art--safapac-aws" aria-hidden="true">
+    <section class="aws-delivery-group aws-delivery-group--staging">
+      <div class="aws-delivery-group__heading">
+        <p class="v4d-label">01 · Staging gate</p>
+        <strong>Prove the change before the pilot</strong>
+      </div>
+      <div class="aws-delivery-path">
+        <article class="aws-delivery-node">
+          <p class="v4d-label">Change</p>
+          <strong>Code or infrastructure</strong>
+        </article>
+        <span class="aws-delivery-path__arrow" aria-hidden="true">→</span>
+        <article class="aws-delivery-node aws-delivery-node--focus">
+          <p class="v4d-label">Terraform-managed</p>
+          <strong>Staging</strong>
+        </article>
+        <span class="aws-delivery-path__arrow" aria-hidden="true">→</span>
+        <article class="aws-delivery-node">
+          <p class="v4d-label">Checks</p>
+          <strong>Release · infra · rollback</strong>
+        </article>
+      </div>
+      <p class="aws-delivery-group__reason">Why: a small internal pilot gets a repeatable release gate without treating staging as permanent capacity.</p>
+    </section>
+
+    <section class="aws-delivery-group aws-delivery-group--runtime">
+      <div class="aws-delivery-group__heading">
+        <p class="v4d-label">02 · Pilot runtime</p>
+        <strong>Keep the web and data paths distinct</strong>
+      </div>
+      <div class="aws-delivery-path aws-delivery-path--runtime">
+        <article class="aws-delivery-node">
+          <p class="v4d-label">Users</p>
+          <strong>Browser</strong>
+        </article>
+        <span class="aws-delivery-path__arrow" aria-hidden="true">→</span>
+        <article class="aws-delivery-node">
+          <p class="v4d-label">Web layer</p>
+          <strong>S3 + CloudFront</strong>
+        </article>
+        <span class="aws-delivery-path__arrow" aria-hidden="true">→</span>
+        <article class="aws-delivery-node aws-delivery-node--focus">
+          <p class="v4d-label">API edge</p>
+          <strong>HTTPS / Nginx</strong>
+        </article>
+        <span class="aws-delivery-path__arrow" aria-hidden="true">→</span>
+        <article class="aws-delivery-node">
+          <p class="v4d-label">Data boundary</p>
+          <strong>FastAPI / EC2 → private RDS</strong>
+        </article>
+      </div>
+      <div class="aws-delivery-support">
+        <span>Cognito verifies tokens</span>
+        <span>VPC keeps the data path private</span>
+      </div>
+    </section>
+
+    <section class="aws-delivery-group aws-delivery-group--deployment">
+      <div class="aws-delivery-group__heading">
+        <p class="v4d-label">03 · Deployment path</p>
+        <strong>Repeat the release with bounded access</strong>
+      </div>
+      <div class="aws-delivery-path aws-delivery-path--deployment">
+        <article class="aws-delivery-node">
+          <p class="v4d-label">Automation</p>
+          <strong>GitHub Actions</strong>
+        </article>
+        <span class="aws-delivery-path__arrow" aria-hidden="true">→</span>
+        <article class="aws-delivery-node">
+          <p class="v4d-label">Federated access</p>
+          <strong>OIDC</strong>
+        </article>
+        <span class="aws-delivery-path__arrow" aria-hidden="true">→</span>
+        <article class="aws-delivery-node aws-delivery-node--focus">
+          <p class="v4d-label">Execution</p>
+          <strong>SSM → Docker / EC2</strong>
+        </article>
+      </div>
+      <p class="aws-delivery-group__reason">Why: the release path is repeatable, avoids long-lived deployment credentials, and the six-hour automatic staging shutdown limits forgotten temporary-resource cost.</p>
+    </section>
+  </div>
+  <ol slot="fallback" class="visual-figure__fallback-list">
+    <li>Terraform-managed staging checks application releases, infrastructure changes, and rollback behavior before the pilot receives a change.</li>
+    <li>The pilot runtime serves users through S3 and CloudFront, HTTPS and Nginx, FastAPI on EC2, and private RDS; Cognito verifies tokens and the VPC keeps the data path private.</li>
+    <li>GitHub Actions uses OIDC and SSM to deliver Docker releases to EC2 without publishing deployment credentials.</li>
+    <li>This shape keeps the AWS-hosted internal pilot lean, while the six-hour automatic staging shutdown reduces forgotten temporary-resource cost.</li>
+  </ol>
+</VisualFigure>
