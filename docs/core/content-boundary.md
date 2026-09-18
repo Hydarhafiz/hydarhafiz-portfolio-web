@@ -2,7 +2,7 @@
 
 ## Governing rule
 
-For Milestone 7 career content, implement the human-approved meaning, metrics, attribution, maturity, hierarchy, and disclosure decisions in `docs/core/milestone.md`. Current technical behavior remains authoritative for technical implementation. Do not use the older career registry or historical page wording to weaken, reinterpret, or remove an approved milestone decision.
+For Milestone 7 career content, implement the human-approved meaning, metrics, attribution, maturity, hierarchy, and disclosure decisions in `docs/content/portfolio-content-contract.md`, using `docs/core/milestone.md` as the executable implementation contract. Current technical behavior remains authoritative for technical implementation. Do not use the older career registry or historical page wording to weaken, reinterpret, or remove an approved contract decision.
 
 ## Professional projects
 

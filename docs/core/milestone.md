@@ -198,7 +198,7 @@ Keep PETRONAS in the Experience section rather than adding another flagship rout
 
 ### Feature 7A — Content authority and shared presentation foundation
 
-- Type/status: approved content/documentation refactor; completed 2026-09-18
+- Type/status: approved content/documentation refactor; completed 2026-09-18, with post-contract consistency repair completed 2026-09-18
 - Outcome: replace stale Milestone 7 authority across canonical portfolio documentation and establish the shared content/model foundation needed by the four case studies, homepage, and public resume.
 - Scope:
   - reconcile the roadmap, architecture, planning sources, public-content boundary, framework-neutral content contract, and relevant UX/UI specification with this milestone;
@@ -215,7 +215,7 @@ Keep PETRONAS in the Experience section rather than adding another flagship rout
   - validators do not reject content solely because it is stronger than the stale registry when it is explicitly approved here;
   - no public page is left broken while later case-study features remain pending.
 - Durable evidence: updated canonical docs, any required typed schema/config changes, focused validator tests, and one completed-feature commit.
-- Completion evidence: `npm run check`, `npm run build`, `npm run content:validate`, site/homepage/case-study/visual/resume-page/profile validators, validator self-tests, `bash scripts/check-public-boundary.sh`, and `git diff --check` passed. The tracked public PDF was validated but not regenerated; PDF synchronization remains Feature 7F scope.
+- Completion evidence: `npm run check`, `npm run build`, `npm run content:validate`, site/homepage/case-study/visual/resume-page/profile validators, validator self-tests, `bash scripts/check-public-boundary.sh`, and `git diff --check` passed. The post-contract repair also synchronized canonical authority references, the shared AnotherEdenAI period, validator coverage, and the balanced public PDF's matching period. Broader PDF synchronization remains Feature 7F scope.
 - Route: `builder-executor -> tdd-loop`.
 
 ### Feature 7B — SAFAPAC flagship case study

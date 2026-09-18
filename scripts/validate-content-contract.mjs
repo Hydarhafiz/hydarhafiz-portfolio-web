@@ -20,7 +20,10 @@ const expectedSurface = [
   "supporting cloud-deployment case study",
 ];
 
-assert(contract?.authority === "docs/core/milestone.md", "Portfolio contract must name milestone.md as its authority.");
+assert(
+  contract?.authority === "docs/content/portfolio-content-contract.md",
+  "Portfolio contract must name portfolio-content-contract.md as its authority.",
+);
 assert(contract?.identity?.primary === "Backend Engineer", "Portfolio contract must keep Backend Engineer as the primary identity.");
 assert(
   contract?.identity?.hero === "Backend Engineer building production cloud and AI systems.",
@@ -39,7 +42,14 @@ const projects = contract?.projectOrder ?? [];
 assert(JSON.stringify(projects.map((project) => project.id)) === JSON.stringify(expectedOrder), "Project hierarchy/order is not SAFAPAC -> AIRIS -> AnotherEdenAI -> SAF Sky Quest.");
 assert(JSON.stringify(projects.map((project) => project.route)) === JSON.stringify(expectedRoutes), "Project routes do not preserve the approved navigation foundation.");
 assert(JSON.stringify(projects.map((project) => project.surface)) === JSON.stringify(expectedSurface), "Project surfaces do not preserve the approved hierarchy.");
-assert(projects.find((project) => project.id === "anotheredenai")?.startDate === "January 2026", "AnotherEdenAI must start in January 2026.");
+const anotherEdenAIContract = projects.find((project) => project.id === "anotheredenai");
+assert(anotherEdenAIContract?.startDate === "January 2026", "AnotherEdenAI must start in January 2026.");
+
+const anotherEdenAIProject = source.projects?.find((project) => project.id === "anotheredenai");
+assert(
+  anotherEdenAIProject?.dates === "January 2026 – Present",
+  "Shared career data must carry the approved AnotherEdenAI period beginning in January 2026.",
+);
 
 const publicResume = contract?.publicResume;
 assert(publicResume?.route === "/resume", "Public resume route is missing from the portfolio contract.");

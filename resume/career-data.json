@@ -24,7 +24,7 @@
     ]
   },
   "portfolioContract": {
-    "authority": "docs/core/milestone.md",
+    "authority": "docs/content/portfolio-content-contract.md",
     "identity": {
       "primary": "Backend Engineer",
       "hero": "Backend Engineer building production cloud and AI systems.",
@@ -250,7 +250,7 @@
       "id": "anotheredenai",
       "name": "AnotherEdenAI",
       "context": "Personal project · Active development",
-      "dates": "Dec 2025 – Present",
+      "dates": "January 2026 – Present",
       "url": "https://github.com/Hydarhafiz/AnotherEdenAI",
       "bullets": [
         {

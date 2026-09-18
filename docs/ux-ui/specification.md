@@ -28,9 +28,10 @@ Design success means that hierarchy, status, contribution boundaries, and limita
 The implementation team must treat these sources as the content authority, in order:
 
 1. Current repository behavior and verified public/generated artifacts.
-2. `docs/core/milestone.md` for Milestone 7 career meaning, hierarchy, metrics, attribution, maturity, disclosure, and allowed wording.
-3. Current technical model/configuration and the synchronized canonical docs under `docs/core/`, `docs/content/`, and `docs/ux-ui/`.
-4. The older `docs/career/` registry and historical content/disclosure documents as supporting migration inputs only.
+2. `docs/content/portfolio-content-contract.md` for Milestone 7 career meaning, hierarchy, metrics, attribution, maturity, disclosure, and allowed wording.
+3. `docs/core/milestone.md` for executable feature scope, sequencing, acceptance, and validation.
+4. Current technical model/configuration and the synchronized canonical docs under `docs/core/`, `docs/content/`, and `docs/ux-ui/`.
+5. The older `docs/career/` registry and historical content/disclosure documents as supporting migration inputs only.
 
 The following are fixed product constraints:
 
@@ -128,14 +129,16 @@ Anchor accents may tint rules, small labels, and diagram nodes. Body text, statu
 /
 ├── selected work
 │   ├── /safapac
-│   └── /anotheredenai
+│   ├── /airis (planned major case study)
+│   ├── /anotheredenai
+│   └── /saf-sky-quest (planned supporting case study)
 ├── /resume
 └── 404 fallback
 ```
 
-There is no work index page at launch. The homepage is the recruiter entry point and links directly to the two flagship case studies. AIRIS is presented in the homepage work section and may be referenced in the homepage AMIC experience block—not as `/airis`.
+There is no work index page at launch. The homepage is the recruiter entry point and presents the ordered project hierarchy. The shared model reserves `/airis` and `/saf-sky-quest` before their later feature pages are implemented; planned routes must not be presented as active links prematurely.
 
-Reserved future concepts such as `/writing` or `/notes` may be accommodated by the content model, but they are not navigation items or routes in this milestone. About, Skills, Experience, AIRIS, Blog, Writing, and Notes routes remain deferred.
+Reserved future concepts such as `/writing` or `/notes` may be accommodated by the content model, but they are not navigation items or routes in this milestone. About, Skills, Experience, Blog, Writing, and Notes routes remain deferred; the approved planned `/airis` and `/saf-sky-quest` routes belong to later Milestone 7 features.
 
 ### 4.2 Global shell
 
@@ -156,10 +159,11 @@ The header must not imply that the domain is live before deployment. The portfol
 | --- | --- | --- |
 | 1 | T-shaped software-engineering positioning and primary CTA | Homepage hero and first action group. |
 | 2 | SAFAPAC | Largest selected-work treatment; primary professional label is visible before the title or immediately beside it. |
-| 3 | AnotherEdenAI | Equally deliberate flagship treatment, with `Actively developed` visible in the card and page header. |
-| 4 | AMIC/PETRONAS experience and capabilities | Scannable homepage sections, not separate routes. |
-| 5 | AIRIS | Compact supporting contribution subordinate to the flagships. |
-| 6 | Certifications, resume, and contact | Clear conversion/support sections near the lower homepage and in the footer. |
+| 3 | AIRIS | Major applied-AI case-study treatment with the experiment and implementation-attribution boundary visible. |
+| 4 | AnotherEdenAI | Major personal case-study treatment, with `Active development` visible in the card and page header. |
+| 5 | SAF Sky Quest | Compact supporting deployment treatment subordinate to the three major case studies. |
+| 6 | AMIC/PETRONAS experience and capabilities | Scannable homepage sections, not separate routes. |
+| 7 | Certifications, resume, and contact | Clear conversion/support sections near the lower homepage and in the footer. |
 
 ## 5. Shared component and content presentation contract
 
@@ -296,7 +300,7 @@ Purpose: establish positioning, evidence hierarchy, and clear next actions in on
 
 The hero is text-led and can use a quiet ruled index or small diagrammatic mark. It must not use a generic AI illustration. Selected work uses editorial cards with an accent rule and a small project motif; the two flagships remain recognizable without their accent color.
 
-On compact screens, the order is hero, primary CTA, SAFAPAC, AnotherEdenAI, AIRIS, experience, capabilities, credentials, contact. The first CTA and status labels must remain above the fold after normal browser chrome and must not be hidden in a carousel.
+On compact screens, the order is hero, primary CTA, SAFAPAC, AIRIS, AnotherEdenAI, SAF Sky Quest, experience, capabilities, credentials, contact. The first CTA and status labels must remain above the fold after normal browser chrome and must not be hidden in a carousel.
 
 ### 6.2 SAFAPAC `/safapac`
 
@@ -423,7 +427,7 @@ Common rules:
 | --- | --- | --- | --- |
 | `safapac-transition` | Horizontal stages with responsibility lanes and a clear start/end. | Stage groups can wrap into two rows while lanes remain labelled. | Vertical ordered timeline; each stage includes its lane/ownership note in text. |
 | `safapac-delivery` | High-level left-to-right application, edge, API, data, CI, and AWS relationships. | Two-row flow with readable labels and grouped AWS categories. | Ordered vertical flow with relationship verbs in the adjacent text; no service label is hidden. |
-| `anotheredenai-pipeline` | Source-to-web flow with graph and workflow boundaries. | Group ETL, graph, workflow, and web delivery into readable bands. | Vertical numbered stages with a text alternative; keep `actively developed` visible. |
+| `anotheredenai-pipeline` | Source-to-web flow with graph and workflow boundaries. | Group ETL, graph, workflow, and web delivery into readable bands. | Vertical numbered stages with a text alternative; keep `Active development` visible. |
 | `anotheredenai-guardrails` | Branching validation/correction/fallback flow with result/failure outcomes. | Branches stack or step down while retaining the two outcomes. | Linear sequence followed by an explicit `result or graceful failure` branch list. |
 | `airis-load-testing` | Compact single-row workload-to-handoff flow. | Wrapped stages with signal labels. | Vertical flow; keep the gap between research/handoff and any production result explicit. |
 
@@ -510,7 +514,7 @@ This section is the handoff for the later implementation milestone. It is guidan
 ### 11.1 Rendering and routes
 
 - Use Astro with strict TypeScript and static rendering by default, matching `docs/core/architecture.md`.
-- Implement the launch route set as `/`, `/safapac`, `/anotheredenai`, `/resume`, and a custom 404 page.
+- Implement the foundation route set as `/`, `/safapac`, `/anotheredenai`, `/resume`, and a custom 404 page; reserve the approved planned `/airis` and `/saf-sky-quest` routes for later feature pages.
 - Keep the shell, typography, tokens, and common interactions in reusable layout/components. Avoid route-specific copies of the same navigation, status, metadata, or figure behavior.
 - Use Git-maintained MDX/content collections for case studies. The collection schema should preserve the framework-neutral envelope: identity, summary, role, narrative IDs, capabilities/evidence, visual contracts, disclosure state, and sources.
 - Keep resume facts reconciled to `resume/career-data.json` and the approved public PDF. The implementation must not read or expose `.private` inputs.
@@ -527,7 +531,7 @@ This section is the handoff for the later implementation milestone. It is guidan
 - Recreate each approved visual from its contract as original SVG/Astro markup or a simple Mermaid flow where the relationship remains legible and accessible.
 - Use Mermaid only for genuinely simple flows. Use hand-authored SVG/Astro or a selective React component for the responsibility timeline, deployment architecture, graph/recommendation pipeline, and guarded branches when Mermaid output would be too rigid or inaccessible.
 - Give every figure a stable semantic ID matching the contract, visible caption, exact approved alt text, and a linear fallback.
-- Keep SAFAPAC and AIRIS diagrams newly redrawn and role-level. Keep AnotherEdenAI diagrams grounded in the public source structure and actively-developed wording.
+- Keep SAFAPAC and AIRIS diagrams newly redrawn and role-level. Keep AnotherEdenAI diagrams grounded in the public source structure and `Active development` wording.
 - Do not add screenshots, private reports, copied diagrams, proprietary formulas, internal identifiers, detailed cloud topology, model configuration, or invented metrics during visual implementation.
 
 ### 11.4 Suggested implementation sequence
@@ -537,10 +541,10 @@ The later builder/tdd workflow can split implementation into feature-level commi
 1. Site shell, typography/tokens, responsive primitives, theme control, navigation, and 404.
 2. MDX/content collection schema and homepage data presentation.
 3. Shared case-study template plus SAFAPAC and AnotherEdenAI routes.
-4. Original visual components and AIRIS compact presentation.
+4. Original visual components and the planned AIRIS/SAF Sky Quest route foundations.
 5. Semantic resume page/PDF integration, accessibility refinements, responsive checks, and final content-boundary verification.
 
-This sequence does not authorize implementation in Milestone 3. It only prevents the later milestone from coupling all page-specific markup together.
+This sequence does not authorize implementation by this specification alone. It only prevents the later milestone from coupling all page-specific markup together.
 
 ### 11.5 Later verification contract
 
@@ -565,7 +569,7 @@ Design a static, recruiter-readable portfolio for Hydar Hafiz bin Hydzelan, posi
 
 Create the experience for these approved routes: /, /safapac, /airis, /anotheredenai, /saf-sky-quest, /resume, and an accessible 404 fallback. Use a calm technical-editorial direction: light-first off-white/charcoal foundation, restrained blue-teal accents, strong Source Sans 3 typography, generous whitespace, ruled sections, short readable prose measure, and original explanatory diagrams. The page must feel authored and precise, not like a dashboard or generic corporate landing page.
 
-Preserve this hierarchy in every composition: SAFAPAC is the flagship professional case study; AIRIS is the major applied-AI case study; AnotherEdenAI is the major personal case study and must visibly say Active development; SAF Sky Quest is a compact supporting deployment case study. Preserve the exact approved maturity and ownership boundaries from docs/core/milestone.md, including SAFAPAC's AWS-hosted internal pilot status, AIRIS's experiment context and implementation attribution, AnotherEdenAI's paired evaluation evidence, and SAF Sky Quest's teammate/frontend boundary.
+Preserve this hierarchy in every composition: SAFAPAC is the flagship professional case study; AIRIS is the major applied-AI case study; AnotherEdenAI is the major personal case study and must visibly say Active development; SAF Sky Quest is a compact supporting deployment case study. Preserve the exact approved maturity and ownership boundaries from `docs/content/portfolio-content-contract.md`, implemented according to `docs/core/milestone.md`, including SAFAPAC's AWS-hosted internal pilot status, AIRIS's experiment context and implementation attribution, AnotherEdenAI's paired evaluation evidence, and SAF Sky Quest's teammate/frontend boundary.
 
 Specify and prototype responsive wide, standard, and compact states. Include a keyboard-operable mobile navigation, skip link, visible focus, semantic landmarks and heading order, text alternatives for every meaningful visual, non-color status labels, 320px reflow, 400% zoom support, light/dark theme behavior, and prefers-reduced-motion behavior. Make all links and controls understandable without hover, animation, or color. Keep the public resume phone-free and expose only email, LinkedIn, GitHub, and the public resume action.
 
@@ -577,16 +581,16 @@ Return a component-level design and content presentation plan suitable for later
 If an external UI generator is used, a preview is design input only; generated code is unimplemented and must return through the later `builder-executor -> tdd-loop` route. No generator output, prompt iteration, screenshot, render comparison, or temporary design artifact belongs in this repository's durable UX/UI contract unless it is deliberately promoted as a final, disclosure-reviewed product decision.
 
 
-## 13. Completion checklist for Milestone 3
+## 13. Completion checklist for the synchronized implementation specification
 
 - [x] Technical-editorial, light-first visual direction defined with restrained project anchors and explicit anti-patterns.
-- [x] Launch information architecture and page hierarchy defined for the homepage, SAFAPAC, AnotherEdenAI, resume, and 404 page.
+- [x] Launch information architecture and page hierarchy defined for the homepage, four ordered project surfaces, resume, and 404 page.
 - [x] Shared component hierarchy and framework-neutral content presentation mapped.
 - [x] Wide, standard, and compact responsive behavior defined, including all approved visual contracts.
 - [x] Semantic, keyboard, focus, contrast, zoom/reflow, reduced-motion, and visual-alternative requirements defined.
 - [x] Light/dark behavior and accessible theme control defined.
 - [x] Purposeful animation guidance and reduced-motion behavior defined.
-- [x] SAFAPAC, AnotherEdenAI, and AIRIS treatment preserves the approved hierarchy and disclosure boundaries.
+- [x] SAFAPAC, AIRIS, AnotherEdenAI, and SAF Sky Quest treatment preserves the approved hierarchy and disclosure boundaries.
 - [x] Astro/TypeScript/MDX handoff guidance defined without beginning implementation.
 
-Next human checkpoint: Hydar approves this UX/UI specification before Milestone 4 portfolio implementation begins.
+Final readability and faithful-meaning review remains the Milestone 7 human checkpoint before release completion.

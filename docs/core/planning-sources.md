@@ -8,7 +8,7 @@
 4. Sanitized conclusions drawn from private evidence, never the private files themselves.
 5. Public first-party documentation and public project repositories.
 
-For Milestone 7 career content, the active `docs/core/milestone.md` contract is the sole human-approved authority. The general order above still applies to technical behavior; it does not give an older career registry permission to weaken or reinterpret the active milestone.
+For Milestone 7 career content, `docs/content/portfolio-content-contract.md` is the sole human-approved authority and `docs/core/milestone.md` is the executable implementation contract. The general order above still applies to technical behavior; it does not give an older career registry permission to weaken or reinterpret the active contract.
 
 ## Approved private evidence classes
 
@@ -67,9 +67,9 @@ Private local references include the earlier CV, AMIC project documentation and 
 
 ## Milestone 7 authority and source notes
 
-- The active `docs/core/milestone.md` is the claim and positioning authority for the approved resume and portfolio refresh. The 2026-09-16 `docs/career/` registry is supporting historical research; current resume/site/profile wording is a migration input, not self-validating evidence.
+- The active `docs/content/portfolio-content-contract.md` is the claim and positioning authority for the approved resume and portfolio refresh, while `docs/core/milestone.md` defines executable scope and acceptance. The 2026-09-16 `docs/career/` registry is supporting historical research; current resume/site/profile wording is a migration input, not self-validating evidence.
 - The current Astro build, shared `resume/career-data.json` model, profile resolver, Chromium renderer, typed MDX collection, and capability validators are suitable for an in-place refresh; separate resume templates, data stores, or portfolio variants are not justified.
 - The latest private Backend, Cloud, and Applied-AI PDFs are implementation baselines for Feature 7F's balanced public resume while keeping contact data private and ignored. They cannot override a qualifier, attribution, maturity label, or disclosure decision in the active milestone.
 - The ignored project-source inventory and its sanitized metric audits were consulted only to understand feasibility and recorded evidence gaps. Raw private sources remain non-public and cannot override the committed registry.
-- SAFAPAC maturity, bounded responsibility, AIRIS recommendation-to-implementation attribution, and AnotherEdenAI evaluation status are defined by the active milestone for implementation. Historical evidence gaps remain supporting context and must not be used to reopen approved career meaning.
+- SAFAPAC maturity, bounded responsibility, AIRIS recommendation-to-implementation attribution, and AnotherEdenAI evaluation status are defined by the active portfolio content contract for implementation. Historical evidence gaps remain supporting context and must not be used to reopen approved career meaning.
 - AnotherEdenAI is actively developed. Any feature that describes current implementation must record the checked public revision at execution time or use historical-snapshot wording.

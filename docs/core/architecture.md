@@ -64,7 +64,7 @@ Avoid terminal/hacker styling, generic AI neon imagery, excessive glassmorphism,
 
 ## Milestone 7 content authority
 
-`docs/core/milestone.md` is the sole authority for Milestone 7 career meaning, hierarchy, metrics, attribution, maturity, disclosure, and allowed wording. The existing `docs/career/` registry, historical content contracts, current pages, and old validators are migration inputs only. Technical behavior remains governed by the current implementation and its tests.
+`docs/content/portfolio-content-contract.md` is the sole human-approved authority for Milestone 7 career meaning, hierarchy, metrics, attribution, maturity, disclosure, and allowed wording. `docs/core/milestone.md` is the executable implementation contract for sequencing, scope, acceptance, and validation. The existing `docs/career/` registry, historical content contracts, current pages, and old validators are migration inputs only. Technical behavior remains governed by the current implementation and its tests.
 
 ## Operations and quality
 
